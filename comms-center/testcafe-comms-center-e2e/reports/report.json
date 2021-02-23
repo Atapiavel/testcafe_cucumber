@@ -1,0 +1,197 @@
+[
+  {
+    "description": "    As a visitor I can login to the Scorpion Home",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-feature;user-login-e2e-scenario",
+        "keyword": "Scenario Outline",
+        "line": 5,
+        "name": "User Login E2E Scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 12963000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "I open the welcome page",
+            "match": {
+              "location": "features/step_definition/loginstepdef.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 659000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I enter Email \"joehaus895@gmail.com\"",
+            "match": {
+              "location": "features/step_definition/loginstepdef.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3715000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I enter Password \"Team123!\"",
+            "match": {
+              "location": "features/step_definition/loginstepdef.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 361000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I click sign in button",
+            "match": {
+              "location": "features/step_definition/loginstepdef.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2403000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@e2e",
+            "line": 4
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-feature;user-login-e2e-scenario",
+        "keyword": "Scenario Outline",
+        "line": 5,
+        "name": "User Login E2E Scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 10539000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "I open the welcome page",
+            "match": {
+              "location": "features/step_definition/loginstepdef.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 233000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I enter Email \"Paulk@ThomasandPaulk.com\"",
+            "match": {
+              "location": "features/step_definition/loginstepdef.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1800000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I enter Password \"Gam3Chang3r!\"",
+            "match": {
+              "location": "features/step_definition/loginstepdef.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 416000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I click sign in button",
+            "match": {
+              "location": "features/step_definition/loginstepdef.js:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1894000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@e2e",
+            "line": 4
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-feature",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login Feature",
+    "tags": [],
+    "uri": "features/login.feature"
+  }
+]

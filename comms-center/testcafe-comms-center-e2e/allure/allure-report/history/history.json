@@ -1,0 +1,222 @@
+{
+  "72cdba1b8e911a04d30a13edc8729867" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "96280a1b5ba7d46a",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1611967399919,
+        "stop" : 1611967425270,
+        "duration" : 25351
+      }
+    } ]
+  },
+  "4458303bf5cf56062fa37d282feef170" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "bee6f3b160ac5674",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1613694109143,
+        "stop" : 1613694125731,
+        "duration" : 16588
+      }
+    } ]
+  },
+  "1c15a7308e2b7ef8063ce89db6801b3d" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "86cd0df1004b0d88",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1611871391173,
+        "stop" : 1611871399443,
+        "duration" : 8270
+      }
+    } ]
+  },
+  "18af3e9c2538724324d1bbc7f297372d" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "cd2173ba0d65e89e",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1612203057272,
+        "stop" : 1612203073093,
+        "duration" : 15821
+      }
+    } ]
+  },
+  "49e8652809e389dade0a3192bcda9b7d" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "4b753ce9268dea9",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1613093285706,
+        "stop" : 1613093303618,
+        "duration" : 17912
+      }
+    } ]
+  },
+  "3e8ed1718d141c71c8a097000f00d5d5" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8ad533346242cbf2",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1611938872461,
+        "stop" : 1611938895781,
+        "duration" : 23320
+      }
+    } ]
+  },
+  "e20a0acbaa67766e1ccd0c16f01f738d" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c1bcac5290b9cd94",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1612213771629,
+        "stop" : 1612213794706,
+        "duration" : 23077
+      }
+    } ]
+  },
+  "9b498b6ee042a8e380d416ebd9e23963" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "4dc353b114b076a5",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: expected 'https://ui-integration.scorpion.co/sign-in?redirect_uri=%2Fphone' to deeply equal 'https://ui-integration.scorpion.co/phone'",
+      "time" : {
+        "start" : 1611938657386,
+        "stop" : 1611938663458,
+        "duration" : 6072
+      }
+    } ]
+  },
+  "31c23894d0032433c394ce840c18e2df" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "788a70676b3b3310",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1613540808316,
+        "stop" : 1613540832200,
+        "duration" : 23884
+      }
+    } ]
+  },
+  "2e26b031862155b0085fde049edccc17" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "35057ab7411b31fe",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1613587270075,
+        "stop" : 1613587288695,
+        "duration" : 18620
+      }
+    } ]
+  },
+  "4b215398b962229b70ffe7b97cd18a71" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "830d8468d8fd2c77",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1613587152773,
+        "stop" : 1613587299843,
+        "duration" : 147070
+      }
+    } ]
+  }
+}

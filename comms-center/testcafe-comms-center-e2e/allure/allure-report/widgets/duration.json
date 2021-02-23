@@ -1,0 +1,111 @@
+[ {
+  "uid" : "8ad533346242cbf2",
+  "name" : "Phone page Test",
+  "time" : {
+    "start" : 1611938872461,
+    "stop" : 1611938895781,
+    "duration" : 23320
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "788a70676b3b3310",
+  "name" : "Chat page Test",
+  "time" : {
+    "start" : 1613540808316,
+    "stop" : 1613540832200,
+    "duration" : 23884
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "35057ab7411b31fe",
+  "name" : "Enter Login Test",
+  "time" : {
+    "start" : 1613587270075,
+    "stop" : 1613587288695,
+    "duration" : 18620
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "86cd0df1004b0d88",
+  "name" : "Assert Login Page Test",
+  "time" : {
+    "start" : 1611871391173,
+    "stop" : 1611871399443,
+    "duration" : 8270
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "bee6f3b160ac5674",
+  "name" : "Enter Login Test",
+  "time" : {
+    "start" : 1613694109143,
+    "stop" : 1613694125731,
+    "duration" : 16588
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c1bcac5290b9cd94",
+  "name" : "Chat page Test",
+  "time" : {
+    "start" : 1612213771629,
+    "stop" : 1612213794706,
+    "duration" : 23077
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "cd2173ba0d65e89e",
+  "name" : "Enter Login Test",
+  "time" : {
+    "start" : 1612203057272,
+    "stop" : 1612203073093,
+    "duration" : 15821
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4dc353b114b076a5",
+  "name" : "Assert Login Page Test",
+  "time" : {
+    "start" : 1611938657386,
+    "stop" : 1611938663458,
+    "duration" : 6072
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "96280a1b5ba7d46a",
+  "name" : "Enter Phone Settings Test",
+  "time" : {
+    "start" : 1611967399919,
+    "stop" : 1611967425270,
+    "duration" : 25351
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "830d8468d8fd2c77",
+  "name" : "Phone page Test",
+  "time" : {
+    "start" : 1613587152773,
+    "stop" : 1613587299843,
+    "duration" : 147070
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4b753ce9268dea9",
+  "name" : "Messenger page Test",
+  "time" : {
+    "start" : 1613093285706,
+    "stop" : 1613093303618,
+    "duration" : 17912
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

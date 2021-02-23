@@ -1,0 +1,52 @@
+{
+  "uid" : "715eb5138ab386e1",
+  "name" : "Enter Phone Settings Test",
+  "fullName" : "Phone Settings Fixture.Enter Phone Settings Test",
+  "historyId" : "72cdba1b8e911a04d30a13edc8729867",
+  "time" : {
+    "start" : 1611966953238,
+    "stop" : 1611966985170,
+    "duration" : 31932
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusMessage" : "This test has been passed.",
+  "statusTrace" : "no error",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "undefined"
+  }, {
+    "name" : "suite",
+    "value" : "Phone Settings Fixture"
+  }, {
+    "name" : "testClass",
+    "value" : "Phone Settings Fixture"
+  }, {
+    "name" : "testMethod",
+    "value" : "Enter Phone Settings Test"
+  }, {
+    "name" : "package",
+    "value" : "Phone Settings Fixture"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "User Agent",
+    "value" : "Chrome 88.0.4324.96 / macOS 10.15.7"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "715eb5138ab386e1.json",
+  "parameterValues" : [ "Chrome 88.0.4324.96 / macOS 10.15.7" ]
+}

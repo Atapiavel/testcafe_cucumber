@@ -1,0 +1,52 @@
+{
+  "uid" : "e1ba56878fdae978",
+  "name" : "Assert Login Page Test",
+  "fullName" : "Phone Fixture.Assert Login Page Test",
+  "historyId" : "9b498b6ee042a8e380d416ebd9e23963",
+  "time" : {
+    "start" : 1611938127723,
+    "stop" : 1611938133661,
+    "duration" : 5938
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusMessage" : "This test has been passed.",
+  "statusTrace" : "no error",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "undefined"
+  }, {
+    "name" : "suite",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "testClass",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "testMethod",
+    "value" : "Assert Login Page Test"
+  }, {
+    "name" : "package",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "User Agent",
+    "value" : "Chrome 88.0.4324.96 / macOS 10.15.7"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e1ba56878fdae978.json",
+  "parameterValues" : [ "Chrome 88.0.4324.96 / macOS 10.15.7" ]
+}

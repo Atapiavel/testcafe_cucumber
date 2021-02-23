@@ -1,0 +1,54 @@
+{
+  "uid" : "830d8468d8fd2c77",
+  "name" : "Phone page Test",
+  "fullName" : "Phone Fixture.Phone page Test",
+  "historyId" : "4b215398b962229b70ffe7b97cd18a71",
+  "time" : {
+    "start" : 1613587152773,
+    "stop" : 1613587299843,
+    "duration" : 147070
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusMessage" : "This test has been passed.",
+  "statusTrace" : "no error",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "undefined"
+  }, {
+    "name" : "suite",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "testClass",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "testMethod",
+    "value" : "Phone page Test"
+  }, {
+    "name" : "package",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "User Agent",
+    "value" : "Chrome 88.0.4324.150 / macOS 10.15.7"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "830d8468d8fd2c77.json",
+  "parameterValues" : [ "Chrome 88.0.4324.150 / macOS 10.15.7" ]
+}

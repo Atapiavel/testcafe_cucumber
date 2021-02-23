@@ -1,0 +1,90 @@
+{
+  "uid" : "8ad533346242cbf2",
+  "name" : "Phone page Test",
+  "fullName" : "Phone Fixture.Phone page Test",
+  "historyId" : "3e8ed1718d141c71c8a097000f00d5d5",
+  "time" : {
+    "start" : 1611938872461,
+    "stop" : 1611938895781,
+    "duration" : 23320
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusMessage" : "This test has been passed.",
+  "statusTrace" : "no error",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "undefined"
+  }, {
+    "name" : "suite",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "testClass",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "testMethod",
+    "value" : "Phone page Test"
+  }, {
+    "name" : "package",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "User Agent",
+    "value" : "Chrome 88.0.4324.96 / macOS 10.15.7"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "501325025c91f710",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1611938680145,
+        "stop" : 1611938702833,
+        "duration" : 22688
+      }
+    }, {
+      "uid" : "6df4c966067d6171",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1611938493674,
+        "stop" : 1611938514089,
+        "duration" : 20415
+      }
+    }, {
+      "uid" : "6aac09a1d76e7127",
+      "status" : "failed",
+      "statusDetails" : "This test has been broken",
+      "time" : {
+        "start" : 1611938339598,
+        "stop" : 1611938354026,
+        "duration" : 14428
+      }
+    }, {
+      "uid" : "216af6a0c8963283",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1611938153731,
+        "stop" : 1611938179724,
+        "duration" : 25993
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "8ad533346242cbf2.json",
+  "parameterValues" : [ "Chrome 88.0.4324.96 / macOS 10.15.7" ]
+}

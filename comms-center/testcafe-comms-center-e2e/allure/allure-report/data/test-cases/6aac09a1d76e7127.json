@@ -1,0 +1,52 @@
+{
+  "uid" : "6aac09a1d76e7127",
+  "name" : "Phone page Test",
+  "fullName" : "Phone Fixture.Phone page Test",
+  "historyId" : "3e8ed1718d141c71c8a097000f00d5d5",
+  "time" : {
+    "start" : 1611938339598,
+    "stop" : 1611938354026,
+    "duration" : 14428
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "This test has been broken",
+  "statusTrace" : "The specified selector does not match any element in the DOM tree.\n                \n                 > | Selector('[type=\"passwordjh\"]')\n                \n                Browser: Chrome 88.0.4324.96 / macOS 10.15.7\n                \n                   17 |test('Phone page Test', async t =>{\n                   18 |    await t\n                   19 |    .maximizeWindow()\n                   20 |    .setTestSpeed(1)\n                   21 |    .typeText(loginpage.email, \"joehaus895@gmail.com\")\n                 > 22 |    .typeText(loginpage.password, \"Team123!\")\n                   23 |    .click(loginpage.signIn)\n                   24 |    .wait(3000)\n                   25 |    .click(phonepage.phoneButton)\n                   26 |    .wait(3000)\n                   27 |    .expect(getURL()).contains('phone')\n                \n                   at <anonymous> (/Users/mehrdad.hassani/Documents/Source/TestCafe_Scorpion_Stuff/test/PhoneTest.js:22:6)\n                   at asyncGeneratorStep (/Users/mehrdad.hassani/Documents/Source/TestCafe_Scorpion_Stuff/test/PhoneTest.js:3:265)\n                   at _next (/Users/mehrdad.hassani/Documents/Source/TestCafe_Scorpion_Stuff/test/PhoneTest.js:3:603)\n                   at <anonymous> (/Users/mehrdad.hassani/Documents/Source/TestCafe_Scorpion_Stuff/test/PhoneTest.js:3:768)\n                   at <anonymous> (/Users/mehrdad.hassani/Documents/Source/TestCafe_Scorpion_Stuff/test/PhoneTest.js:3:509)\n                   at <anonymous> (/Users/mehrdad.hassani/Documents/Source/TestCafe_Scorpion_Stuff/test/PhoneTest.js:17:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "undefined"
+  }, {
+    "name" : "suite",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "testClass",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "testMethod",
+    "value" : "Phone page Test"
+  }, {
+    "name" : "package",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "User Agent",
+    "value" : "Chrome 88.0.4324.96 / macOS 10.15.7"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "6aac09a1d76e7127.json",
+  "parameterValues" : [ "Chrome 88.0.4324.96 / macOS 10.15.7" ]
+}

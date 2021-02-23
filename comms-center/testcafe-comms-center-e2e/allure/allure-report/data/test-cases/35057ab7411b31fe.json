@@ -1,0 +1,135 @@
+{
+  "uid" : "35057ab7411b31fe",
+  "name" : "Enter Login Test",
+  "fullName" : "Login Fixture.Enter Login Test",
+  "historyId" : "2e26b031862155b0085fde049edccc17",
+  "time" : {
+    "start" : 1613587270075,
+    "stop" : 1613587288695,
+    "duration" : 18620
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusMessage" : "This test has been passed.",
+  "statusTrace" : "no error",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "undefined"
+  }, {
+    "name" : "suite",
+    "value" : "Login Fixture"
+  }, {
+    "name" : "testClass",
+    "value" : "Login Fixture"
+  }, {
+    "name" : "testMethod",
+    "value" : "Enter Login Test"
+  }, {
+    "name" : "package",
+    "value" : "Login Fixture"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "User Agent",
+    "value" : "Chrome 88.0.4324.150 / macOS 10.15.7"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "f01c2e02bc0db4a6",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1613587251444,
+        "stop" : 1613587268176,
+        "duration" : 16732
+      }
+    }, {
+      "uid" : "de1386887434a9ee",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1613587234701,
+        "stop" : 1613587261773,
+        "duration" : 27072
+      }
+    }, {
+      "uid" : "797645eb66ee5b43",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1613540676750,
+        "stop" : 1613540686689,
+        "duration" : 9939
+      }
+    }, {
+      "uid" : "2422ffd80f097757",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1613540666799,
+        "stop" : 1613540677019,
+        "duration" : 10220
+      }
+    }, {
+      "uid" : "579286f7bb9ea7f7",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1613540656567,
+        "stop" : 1613540670231,
+        "duration" : 13664
+      }
+    }, {
+      "uid" : "fbe788b83a5188f8",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1613005415942,
+        "stop" : 1613005427702,
+        "duration" : 11760
+      }
+    }, {
+      "uid" : "b4dbf24366c00008",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1613005404159,
+        "stop" : 1613005417682,
+        "duration" : 13523
+      }
+    }, {
+      "uid" : "7ca2396f482eb354",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1612980259393,
+        "stop" : 1612980274041,
+        "duration" : 14648
+      }
+    }, {
+      "uid" : "9077a8f0d6b77c2d",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1612980244725,
+        "stop" : 1612980265195,
+        "duration" : 20470
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "35057ab7411b31fe.json",
+  "parameterValues" : [ "Chrome 88.0.4324.150 / macOS 10.15.7" ]
+}

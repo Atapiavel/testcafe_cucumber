@@ -1,0 +1,23 @@
+{
+  "name": "testcafe_scorpion_stuff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js --tags '@e2e' --format json:reports/report.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "base64-img": "^1.0.4",
+    "cucumber": "^7.0.0-rc.0",
+    "cucumber-html-reporter": "^5.3.0",
+    "node-base64-image": "^2.0.3",
+    "testcafe": "^1.10.1",
+    "testcafe-reporter-allure": "^1.0.5",
+    "testcafe-reporter-html": "^1.4.6"
+  },
+  "devDependencies": {
+    "@applitools/eyes-testcafe": "^1.12.4"
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Login Fixture",
+    "children" : [ {
+      "name" : "Assert Login Page Test",
+      "uid" : "86cd0df1004b0d88",
+      "parentUid" : "57a1d90d07217116c4694cc98ce4534b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1611871391173,
+        "stop" : 1611871399443,
+        "duration" : 8270
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome 88.0.4324.96 / macOS 10.15.7" ]
+    }, {
+      "name" : "Enter Login Test",
+      "uid" : "cd2173ba0d65e89e",
+      "parentUid" : "57a1d90d07217116c4694cc98ce4534b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1612203057272,
+        "stop" : 1612203073093,
+        "duration" : 15821
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome 88.0.4324.96 / macOS 10.15.7" ]
+    }, {
+      "name" : "Enter Login Test",
+      "uid" : "35057ab7411b31fe",
+      "parentUid" : "57a1d90d07217116c4694cc98ce4534b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1613587270075,
+        "stop" : 1613587288695,
+        "duration" : 18620
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome 88.0.4324.150 / macOS 10.15.7" ]
+    }, {
+      "name" : "Enter Login Test",
+      "uid" : "bee6f3b160ac5674",
+      "parentUid" : "57a1d90d07217116c4694cc98ce4534b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1613694109143,
+        "stop" : 1613694125731,
+        "duration" : 16588
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome 88.0.4324.182 / macOS 10.15.7" ]
+    } ],
+    "uid" : "57a1d90d07217116c4694cc98ce4534b"
+  }, {
+    "name" : "Phone Fixture",
+    "children" : [ {
+      "name" : "Assert Login Page Test",
+      "uid" : "4dc353b114b076a5",
+      "parentUid" : "73fd73dddeae869c9ff7a088624deb52",
+      "status" : "failed",
+      "time" : {
+        "start" : 1611938657386,
+        "stop" : 1611938663458,
+        "duration" : 6072
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome 88.0.4324.96 / macOS 10.15.7" ]
+    }, {
+      "name" : "Phone page Test",
+      "uid" : "8ad533346242cbf2",
+      "parentUid" : "73fd73dddeae869c9ff7a088624deb52",
+      "status" : "passed",
+      "time" : {
+        "start" : 1611938872461,
+        "stop" : 1611938895781,
+        "duration" : 23320
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome 88.0.4324.96 / macOS 10.15.7" ]
+    }, {
+      "name" : "Phone page Test",
+      "uid" : "830d8468d8fd2c77",
+      "parentUid" : "73fd73dddeae869c9ff7a088624deb52",
+      "status" : "passed",
+      "time" : {
+        "start" : 1613587152773,
+        "stop" : 1613587299843,
+        "duration" : 147070
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome 88.0.4324.150 / macOS 10.15.7" ]
+    } ],
+    "uid" : "73fd73dddeae869c9ff7a088624deb52"
+  }, {
+    "name" : "Phone Settings Fixture",
+    "children" : [ {
+      "name" : "Enter Phone Settings Test",
+      "uid" : "96280a1b5ba7d46a",
+      "parentUid" : "802c90821dbc2d0941705572d13d0ca5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1611967399919,
+        "stop" : 1611967425270,
+        "duration" : 25351
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome 88.0.4324.96 / macOS 10.15.7" ]
+    } ],
+    "uid" : "802c90821dbc2d0941705572d13d0ca5"
+  }, {
+    "name" : "Chat Fixture",
+    "children" : [ {
+      "name" : "Chat page Test",
+      "uid" : "c1bcac5290b9cd94",
+      "parentUid" : "a17f0af692aa27e68f72c358960d8f93",
+      "status" : "passed",
+      "time" : {
+        "start" : 1612213771629,
+        "stop" : 1612213794706,
+        "duration" : 23077
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome 88.0.4324.96 / macOS 10.15.7" ]
+    }, {
+      "name" : "Chat page Test",
+      "uid" : "788a70676b3b3310",
+      "parentUid" : "a17f0af692aa27e68f72c358960d8f93",
+      "status" : "passed",
+      "time" : {
+        "start" : 1613540808316,
+        "stop" : 1613540832200,
+        "duration" : 23884
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome 88.0.4324.150 / macOS 10.15.7" ]
+    } ],
+    "uid" : "a17f0af692aa27e68f72c358960d8f93"
+  }, {
+    "name" : "Messenger Fixture",
+    "children" : [ {
+      "name" : "Messenger page Test",
+      "uid" : "4b753ce9268dea9",
+      "parentUid" : "4f78eb447e4da82c7c731bcb51dc83ae",
+      "status" : "passed",
+      "time" : {
+        "start" : 1613093285706,
+        "stop" : 1613093303618,
+        "duration" : 17912
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome 88.0.4324.150 / macOS 10.15.7" ]
+    } ],
+    "uid" : "4f78eb447e4da82c7c731bcb51dc83ae"
+  } ]
+}

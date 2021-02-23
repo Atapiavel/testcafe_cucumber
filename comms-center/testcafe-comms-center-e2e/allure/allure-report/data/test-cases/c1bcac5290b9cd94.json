@@ -1,0 +1,54 @@
+{
+  "uid" : "c1bcac5290b9cd94",
+  "name" : "Chat page Test",
+  "fullName" : "Chat Fixture.Chat page Test",
+  "historyId" : "e20a0acbaa67766e1ccd0c16f01f738d",
+  "time" : {
+    "start" : 1612213771629,
+    "stop" : 1612213794706,
+    "duration" : 23077
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusMessage" : "This test has been passed.",
+  "statusTrace" : "no error",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "undefined"
+  }, {
+    "name" : "suite",
+    "value" : "Chat Fixture"
+  }, {
+    "name" : "testClass",
+    "value" : "Chat Fixture"
+  }, {
+    "name" : "testMethod",
+    "value" : "Chat page Test"
+  }, {
+    "name" : "package",
+    "value" : "Chat Fixture"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "User Agent",
+    "value" : "Chrome 88.0.4324.96 / macOS 10.15.7"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "c1bcac5290b9cd94.json",
+  "parameterValues" : [ "Chrome 88.0.4324.96 / macOS 10.15.7" ]
+}

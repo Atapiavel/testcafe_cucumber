@@ -1,0 +1,46 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1611938339598' stop='1611938339611'>
+    <name>Phone Fixture</name>
+    <title>Phone Fixture</title>
+    <test-cases>
+        <test-case start='1611938339598' status='failed' stop='1611938354026'>
+            <name>Phone page Test</name>
+            <title>Phone page Test</title>
+            <labels>
+                <label name='severity' value='undefined'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='User Agent' value='Chrome 88.0.4324.96 / macOS 10.15.7'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>This test has been broken</message>
+                <stack-trace>The specified selector does not match any element in the DOM tree.
+                
+                 > | Selector('[type="passwordjh"]')
+                
+                Browser: Chrome 88.0.4324.96 / macOS 10.15.7
+                
+                   17 |test('Phone page Test', async t =>{
+                   18 |    await t
+                   19 |    .maximizeWindow()
+                   20 |    .setTestSpeed(1)
+                   21 |    .typeText(loginpage.email, "joehaus895@gmail.com")
+                 > 22 |    .typeText(loginpage.password, "Team123!")
+                   23 |    .click(loginpage.signIn)
+                   24 |    .wait(3000)
+                   25 |    .click(phonepage.phoneButton)
+                   26 |    .wait(3000)
+                   27 |    .expect(getURL()).contains('phone')
+                
+                   at &lt;anonymous> (/Users/mehrdad.hassani/Documents/Source/TestCafe_Scorpion_Stuff/test/PhoneTest.js:22:6)
+                   at asyncGeneratorStep (/Users/mehrdad.hassani/Documents/Source/TestCafe_Scorpion_Stuff/test/PhoneTest.js:3:265)
+                   at _next (/Users/mehrdad.hassani/Documents/Source/TestCafe_Scorpion_Stuff/test/PhoneTest.js:3:603)
+                   at &lt;anonymous> (/Users/mehrdad.hassani/Documents/Source/TestCafe_Scorpion_Stuff/test/PhoneTest.js:3:768)
+                   at &lt;anonymous> (/Users/mehrdad.hassani/Documents/Source/TestCafe_Scorpion_Stuff/test/PhoneTest.js:3:509)
+                   at &lt;anonymous> (/Users/mehrdad.hassani/Documents/Source/TestCafe_Scorpion_Stuff/test/PhoneTest.js:17:5)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

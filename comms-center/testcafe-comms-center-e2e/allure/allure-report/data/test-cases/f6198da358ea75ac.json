@@ -1,0 +1,52 @@
+{
+  "uid" : "f6198da358ea75ac",
+  "name" : "Enter Login Test",
+  "fullName" : "Login Fixture.Enter Login Test",
+  "historyId" : "18af3e9c2538724324d1bbc7f297372d",
+  "time" : {
+    "start" : 1611867767035,
+    "stop" : 1611867776168,
+    "duration" : 9133
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusMessage" : "This test has been passed.",
+  "statusTrace" : "no error",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "undefined"
+  }, {
+    "name" : "suite",
+    "value" : "Login Fixture"
+  }, {
+    "name" : "testClass",
+    "value" : "Login Fixture"
+  }, {
+    "name" : "testMethod",
+    "value" : "Enter Login Test"
+  }, {
+    "name" : "package",
+    "value" : "Login Fixture"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "User Agent",
+    "value" : "Chrome 88.0.4324.96 / macOS 10.15.7"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f6198da358ea75ac.json",
+  "parameterValues" : [ "Chrome 88.0.4324.96 / macOS 10.15.7" ]
+}

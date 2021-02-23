@@ -1,0 +1,85 @@
+{
+  "uid" : "4dc353b114b076a5",
+  "name" : "Assert Login Page Test",
+  "fullName" : "Phone Fixture.Assert Login Page Test",
+  "historyId" : "9b498b6ee042a8e380d416ebd9e23963",
+  "time" : {
+    "start" : 1611938657386,
+    "stop" : 1611938663458,
+    "duration" : 6072
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "AssertionError: expected 'https://ui-integration.scorpion.co/sign-in?redirect_uri=%2Fphone' to deeply equal 'https://ui-integration.scorpion.co/phone'",
+  "statusTrace" : "AssertionError: expected 'https://ui-integration.scorpion.co/sign-in?redirect_uri=%2Fphone' to deeply equal 'https://ui-integration.scorpion.co/phone'\n                \n                + expected - actual\n                \n                -'https://ui-integration.scorpion.co/sign-in?redirect_uri=%2Fphone'\n                +'https://ui-integration.scorpion.co/phone'\n                \n                \n                Browser: Chrome 88.0.4324.96 / macOS 10.15.7\n                \n                    8 |fixture('Phone Fixture')\n                    9 |    .page(URL);\n                   10 |\n                   11 |test('Assert Login Page Test', async t =>{\n                   12 |    await t\n                 > 13 |    .expect(getURL()).eql(URL)\n                   14 |    .expect(phonepage.subtitleHeader.exists).ok();\n                   15 |});\n                   16 |\n                   17 |test('Phone page Test', async t =>{\n                   18 |    await t\n                \n                   at <anonymous> (/Users/mehrdad.hassani/Documents/Source/TestCafe_Scorpion_Stuff/test/PhoneTest.js:13:23)\n                   at asyncGeneratorStep (/Users/mehrdad.hassani/Documents/Source/TestCafe_Scorpion_Stuff/test/PhoneTest.js:3:265)\n                   at _next (/Users/mehrdad.hassani/Documents/Source/TestCafe_Scorpion_Stuff/test/PhoneTest.js:3:603)\n                   at <anonymous> (/Users/mehrdad.hassani/Documents/Source/TestCafe_Scorpion_Stuff/test/PhoneTest.js:3:768)\n                   at <anonymous> (/Users/mehrdad.hassani/Documents/Source/TestCafe_Scorpion_Stuff/test/PhoneTest.js:3:509)\n                   at <anonymous> (/Users/mehrdad.hassani/Documents/Source/TestCafe_Scorpion_Stuff/test/PhoneTest.js:11:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "undefined"
+  }, {
+    "name" : "suite",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "testClass",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "testMethod",
+    "value" : "Assert Login Page Test"
+  }, {
+    "name" : "package",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "User Agent",
+    "value" : "Chrome 88.0.4324.96 / macOS 10.15.7"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "a6806d13f29d19f2",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: expected 'https://ui-integration.scorpion.co/sign-in?redirect_uri=%2Fphone' to deeply equal 'https://ui-integration.scorpion.co/phone'",
+      "time" : {
+        "start" : 1611938473227,
+        "stop" : 1611938479300,
+        "duration" : 6073
+      }
+    }, {
+      "uid" : "b038824aec479890",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1611938325112,
+        "stop" : 1611938329762,
+        "duration" : 4650
+      }
+    }, {
+      "uid" : "e1ba56878fdae978",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1611938127723,
+        "stop" : 1611938133661,
+        "duration" : 5938
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "4dc353b114b076a5.json",
+  "parameterValues" : [ "Chrome 88.0.4324.96 / macOS 10.15.7" ]
+}
