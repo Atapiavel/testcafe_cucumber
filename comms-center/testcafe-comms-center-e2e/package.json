@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js --tags '@e2e' --format json:reports/report.json"
+    "test": "cucumber-js --format json:reports/report.json",
+    "report": "node report_generator.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,11 +14,11 @@
     "cucumber": "^7.0.0-rc.0",
     "cucumber-html-reporter": "^5.3.0",
     "node-base64-image": "^2.0.3",
-    "testcafe": "^1.10.1",
-    "testcafe-reporter-allure": "^1.0.5",
-    "testcafe-reporter-html": "^1.4.6"
+    "testcafe": "^1.10.1"
   },
   "devDependencies": {
-    "@applitools/eyes-testcafe": "^1.12.4"
+    "@applitools/eyes-testcafe": "^1.12.4",
+    "allure-commandline": "^2.13.8",
+    "multiple-cucumber-html-reporter": "^1.18.0"
   }
 }

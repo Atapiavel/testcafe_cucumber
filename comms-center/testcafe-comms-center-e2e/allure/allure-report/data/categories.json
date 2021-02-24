@@ -1,26 +1,5 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
-  "name" : "categories",
-  "children" : [ {
-    "name" : "Product defects",
-    "children" : [ {
-      "name" : "AssertionError: expected 'https://ui-integration.scorpion.co/sign-in?redirect_uri=%2Fphone' to deeply equal 'https://ui-integration.scorpion.co/phone'",
-      "children" : [ {
-        "name" : "Assert Login Page Test",
-        "uid" : "4dc353b114b076a5",
-        "parentUid" : "56eafe31714b302a536f3e2a7e38cfbc",
-        "status" : "failed",
-        "time" : {
-          "start" : 1611938657386,
-          "stop" : 1611938663458,
-          "duration" : 6072
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "Chrome 88.0.4324.96 / macOS 10.15.7" ]
-      } ],
-      "uid" : "56eafe31714b302a536f3e2a7e38cfbc"
-    } ],
-    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
-  } ]
+  "children" : [ ],
+  "name" : "categories"
 }

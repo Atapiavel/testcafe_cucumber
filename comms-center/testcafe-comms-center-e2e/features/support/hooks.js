@@ -1,7 +1,7 @@
 const fs = require('fs');
 const createTestCafe = require('testcafe');
 const testControllerHolder = require('./testControllerHolder');
-const {AfterAll, setDefaultTimeout, Before, After, Status} = require('cucumber');
+const { AfterAll, setDefaultTimeout, Before, After, Status } = require('cucumber');
 const errorHandling = require('./errorHandling');
 const TIMEOUT = 20000;
 
@@ -23,7 +23,7 @@ function createTestFile() {
 
 function runTest(iteration, browser) {
     createTestCafe('localhost', 1338 + iteration, 1339 + iteration)
-        .then(function(tc) {
+        .then(function (tc) {
             cafeRunner = tc;
             const runner = tc.createRunner();
             return runner
@@ -31,32 +31,32 @@ function runTest(iteration, browser) {
                 .screenshots('reports/screenshots/', true)
                 .browsers(browser)
                 .run()
-                .catch(function(error) {
+                .catch(function (error) {
                     console.error(error);
                 });
         })
-        .then(function(report) {
+        .then(function (report) {
         });
 }
 
 
 setDefaultTimeout(TIMEOUT);
 
-Before(function() {
+Before(function () {
     runTest(n, this.setBrowser());
     createTestFile();
     n += 2;
-    return this.waitForTestController.then(function(testController) {
+    return this.waitForTestController.then(function (testController) {
         return testController.maximizeWindow();
     });
 });
 
-After(function() {
+After(function () {
     fs.unlinkSync('test.js');
     testControllerHolder.free();
 });
 
-After(async function(testCase) {
+After(async function (testCase) {
     const world = this;
     if (testCase.result.status === Status.FAILED) {
         isTestCafeError = true;
@@ -66,7 +66,7 @@ After(async function(testCase) {
     }
 });
 
-AfterAll(function() {
+AfterAll(function () {
     let intervalId = null;
 
     function waitForTestCafe() {
@@ -84,11 +84,11 @@ AfterAll(function() {
     waitForTestCafe();
 });
 
-const getIsTestCafeError = function() {
+const getIsTestCafeError = function () {
     return isTestCafeError;
 };
 
-const getAttachScreenshotToReport = function(path) {
+const getAttachScreenshotToReport = function (path) {
     return attachScreenshotToReport(path);
 };
 
