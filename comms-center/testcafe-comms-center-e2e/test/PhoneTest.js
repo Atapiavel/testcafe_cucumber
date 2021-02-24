@@ -1,0 +1,54 @@
+import {ClientFunction} from 'testcafe';
+import loginpage from '../pages/LoginPage_Old';
+import phonepage from '../pages/PhonePage_Old';
+
+const dataSet = require('../data/data.json');
+const URL ="https://ui-integration.scorpion.co/phone";
+const getURL = ClientFunction(() =>window.location.href);
+
+fixture('Phone Fixture')
+    .page(URL);
+    
+dataSet.forEach(data => {    
+test('Phone page Test', async t =>{
+    await t
+    .maximizeWindow()
+    .setTestSpeed(1)
+    .typeText(loginpage.email, data.email)
+    .typeText(loginpage.password, data.password)
+    .click(loginpage.signIn)
+    .wait(3000)
+    // .click(phonepage.phoneButton)
+    .wait(3000)
+    .expect(getURL()).contains('phone')
+    .click(phonepage.searchBtn)
+    .click(phonepage.makeCallBtn)
+    .click(phonepage.phoneNrEntry)
+    .typeText(phonepage.phoneNrEntry, data.phoneNr)
+
+    .click(phonepage.callBtn)
+    .click(phonepage.miniBtn)
+    .click(phonepage.maxiBtn)
+    .click(phonepage.miniBtn)
+    .click(phonepage.maxiBtn)
+    .click(phonepage.endCallBtn)
+
+    .click(phonepage.makeCallBtn)
+    .click(phonepage.dialFour)
+    .click(phonepage.dialOne)
+    .click(phonepage.dialFive)
+
+    .click(phonepage.dialEight)
+    .click(phonepage.dialThree)
+    .click(phonepage.dialSeven)
+    
+    .click(phonepage.dialFour)
+    .click(phonepage.dialThree)
+    .click(phonepage.dialOne)
+    .click(phonepage.dialZero)
+    
+    .click(phonepage.callBtn)
+    .click(phonepage.miniBtn)
+    .click(phonepage.endCalMin);
+})
+});
