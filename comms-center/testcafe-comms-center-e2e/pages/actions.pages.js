@@ -7,7 +7,6 @@ async function navigate(url) {
 
 async function click_element(element) {
     await testController.click(element)
-    // cy.get(element).click()
 }
 
 async function click_element_xpath(element) {
@@ -33,12 +32,6 @@ async function type_and_enter(element, value) {
 async function click_element_from_list(element, value) {
     const option = Selector(element).withText(value);
     await testController.click(option)
-
-    // el.each(($el) => {
-    //     if ($el.text().includes(value)) {
-    //         this.click_element($el)
-    //     }
-    // })
 }
 
 async function hover_element(element) {
@@ -64,7 +57,6 @@ async function scroll_to_element(element, value) {
 async function wait(seconds) {
     var time = parseInt(seconds, 10);
     await testController.wait(time * 1000)
-    // cy.wait(time * 1000)
 }
 
 module.exports = {

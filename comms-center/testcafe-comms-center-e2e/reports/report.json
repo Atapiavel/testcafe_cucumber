@@ -1,710 +1,49 @@
 [
   {
-    "description": "    https://scorpionx.atlassian.net/browse/BP-54",
+    "description": "    As a visitor I can navigate to chat",
     "elements": [
       {
         "description": "",
-        "id": "invoice-history-(main)-page;login",
-        "keyword": "Scenario",
-        "line": 6,
-        "name": "Login",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 9385000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 8,
-            "name": "we are in Scorpion login page",
-            "match": {
-              "location": "features\\step_definition\\login.js:6"
-            },
-            "result": {
-              "status": "failed",
-              "duration": 10026000000,
-              "error_message": "Error: function timed out, ensure the promise resolves within 10000 milliseconds\n    at Timeout._onTimeout (C:\\Users\\artur\\testcafe_cucumber\\comms-center\\testcafe-comms-center-e2e\\node_modules\\@cucumber\\cucumber\\src\\user_code_runner.ts:80:18)\n    at listOnTimeout (internal/timers.js:554:17)\n    at processTimers (internal/timers.js:497:7)"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 9,
-            "name": "we enter \"paulk@thomasandpaulk.com\" and \"Gam3Chang3r!\"",
-            "match": {
-              "location": "features\\step_definition\\login.js:10"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 10,
-            "name": "we click on sign in button",
-            "match": {
-              "location": "features\\step_definition\\login.js:14"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 11,
-            "name": "we wait for \"10\" seconds",
-            "match": {
-              "location": "features\\step_definition\\common.js:6"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 12,
-            "name": "we assert the Scorpion main page",
-            "match": {
-              "location": "features\\step_definition\\common.js:10"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 2000000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 3000000
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "invoice-history-(main)-page;assert-invoice-history-page",
-        "keyword": "Scenario",
-        "line": 14,
-        "name": "Assert Invoice History Page",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 6588000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 16,
-            "name": "we click on settings button",
-            "match": {
-              "location": "features\\step_definition\\common.js:14"
-            },
-            "result": {
-              "status": "failed",
-              "duration": 12344000000,
-              "error_message": "{\n  code: 'E24',\n  isTestCafeError: true,\n  callsite: CallsiteRecord {\n    filename: 'C:\\\\Users\\\\artur\\\\testcafe_cucumber\\\\comms-center\\\\testcafe-comms-center-e2e\\\\pages\\\\actions.pages.js',\n    lineNum: 8,\n    callsiteFrameIdx: 6,\n    stackFrames: [\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object]\n    ],\n    isV8Frames: true\n  },\n  apiFnChain: [\n    \"Selector('.ng-star-inserted > .avatar.avatar-color-0.avatar-extra-small.has-image')\"\n  ],\n  apiFnIndex: 0\n}"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 17,
-            "name": "we select the \"Billing\" option",
-            "match": {
-              "location": "features\\step_definition\\common.js:18"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 18,
-            "name": "we wait for \"5\" seconds",
-            "match": {
-              "location": "features\\step_definition\\common.js:6"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 19,
-            "name": "we are in Billing Overview page",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 20,
-            "name": "we click on Billing History option",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 21,
-            "name": "we assert we can see historical invoices",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 2000000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "invoice-history-(main)-page;invoice-filtering",
+        "id": "chat-feature;user-chat-e2e-scenario",
         "keyword": "Scenario Outline",
-        "line": 23,
-        "name": "Invoice Filtering",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 6935000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 25,
-            "name": "we are in Billing Overview page",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 26,
-            "name": "we select the filter \"by_year\" with \"2019-2020\"",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "invoice-history-(main)-page;invoice-filtering",
-        "keyword": "Scenario Outline",
-        "line": 23,
-        "name": "Invoice Filtering",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 6766000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 25,
-            "name": "we are in Billing Overview page",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 26,
-            "name": "we select the filter \"by_date\" with \"1/1/2019-6/6/2019\"",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "invoice-history-(main)-page;invoice-filtering",
-        "keyword": "Scenario Outline",
-        "line": 23,
-        "name": "Invoice Filtering",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 6739000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 25,
-            "name": "we are in Billing Overview page",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 26,
-            "name": "we select the filter \"by_price\" with \"500-10000\"",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "invoice-history-(main)-page;invoice-filtering",
-        "keyword": "Scenario Outline",
-        "line": 23,
-        "name": "Invoice Filtering",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 8789000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 25,
-            "name": "we are in Billing Overview page",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 26,
-            "name": "we select the filter \"by_status\" with \"due-paid\"",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "invoice-history-(main)-page;invoice-filtering",
-        "keyword": "Scenario Outline",
-        "line": 23,
-        "name": "Invoice Filtering",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 8787000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 25,
-            "name": "we are in Billing Overview page",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 26,
-            "name": "we select the filter \"by_status\" with \"services-unpaid\"",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "invoice-history-(main)-page;invoice-filtering",
-        "keyword": "Scenario Outline",
-        "line": 23,
-        "name": "Invoice Filtering",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 8815000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 25,
-            "name": "we are in Billing Overview page",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 26,
-            "name": "we select the filter \"by_status\" with \"advertising-unpaid\"",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "invoice-history-(main)-page;invoice-filtering",
-        "keyword": "Scenario Outline",
-        "line": 23,
-        "name": "Invoice Filtering",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 6779000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 25,
-            "name": "we are in Billing Overview page",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 26,
-            "name": "we select the filter \"by_status\" with \"all\"",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "invoice-history-(main)-page;logout",
-        "keyword": "Scenario",
-        "line": 39,
-        "name": "Logout",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 6886000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 41,
-            "name": "we click on settings button",
-            "match": {
-              "location": "features\\step_definition\\common.js:14"
-            },
-            "result": {
-              "status": "failed",
-              "duration": 12322000000,
-              "error_message": "{\n  code: 'E24',\n  isTestCafeError: true,\n  callsite: CallsiteRecord {\n    filename: 'C:\\\\Users\\\\artur\\\\testcafe_cucumber\\\\comms-center\\\\testcafe-comms-center-e2e\\\\pages\\\\actions.pages.js',\n    lineNum: 8,\n    callsiteFrameIdx: 6,\n    stackFrames: [\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object]\n    ],\n    isV8Frames: true\n  },\n  apiFnChain: [\n    \"Selector('.ng-star-inserted > .avatar.avatar-color-0.avatar-extra-small.has-image')\"\n  ],\n  apiFnIndex: 0\n}"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 42,
-            "name": "we sign out Scorpion",
-            "match": {
-              "location": "features\\step_definition\\common.js:22"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      }
-    ],
-    "id": "invoice-history-(main)-page",
-    "line": 1,
-    "keyword": "Feature",
-    "name": "Invoice History (main) Page",
-    "tags": [],
-    "uri": "features\\billing_invoice_history.feature"
-  },
-  {
-    "description": "    https://scorpionx.atlassian.net/browse/BP-53",
-    "elements": [
-      {
-        "description": "",
-        "id": "recent-invoices-(tile)-on-the-billing-overview-page;login",
-        "keyword": "Scenario",
         "line": 5,
-        "name": "Login",
+        "name": "User Chat E2E Scenario",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 6851000000
+              "duration": 9152000000
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 7,
-            "name": "we are in Scorpion login page",
-            "match": {
-              "location": "features\\step_definition\\login.js:6"
-            },
+            "line": 6,
+            "name": "I open the welcome page",
             "result": {
-              "status": "failed",
-              "duration": 10018000000,
-              "error_message": "Error: function timed out, ensure the promise resolves within 10000 milliseconds\n    at Timeout._onTimeout (C:\\Users\\artur\\testcafe_cucumber\\comms-center\\testcafe-comms-center-e2e\\node_modules\\@cucumber\\cucumber\\src\\user_code_runner.ts:80:18)\n    at listOnTimeout (internal/timers.js:554:17)\n    at processTimers (internal/timers.js:497:7)"
+              "status": "ambiguous",
+              "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 8,
-            "name": "we enter \"paulk@thomasandpaulk.com\" and \"Gam3Chang3r!\"",
-            "match": {
-              "location": "features\\step_definition\\login.js:10"
-            },
+            "line": 7,
+            "name": "I enter Email \"joehaus895@gmail.com\"",
             "result": {
-              "status": "skipped",
+              "status": "ambiguous",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I enter Password \"Team123!\"",
+            "result": {
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -712,12 +51,9 @@
             "arguments": [],
             "keyword": "And ",
             "line": 9,
-            "name": "we click on sign in button",
-            "match": {
-              "location": "features\\step_definition\\login.js:14"
-            },
+            "name": "I click Sign In button",
             "result": {
-              "status": "skipped",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -725,9 +61,19 @@
             "arguments": [],
             "keyword": "And ",
             "line": 10,
-            "name": "we wait for \"10\" seconds",
+            "name": "I wait for 40 seconds",
+            "result": {
+              "status": "ambiguous",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I click Get Started button",
             "match": {
-              "location": "features\\step_definition\\common.js:6"
+              "location": "features\\step_definition\\chatstepdef.js:41"
             },
             "result": {
               "status": "skipped",
@@ -737,142 +83,10 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 11,
-            "name": "we assert the Scorpion main page",
+            "line": 14,
+            "name": "I land on chat dashboard page",
             "match": {
-              "location": "features\\step_definition\\common.js:10"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 2000000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 4000000
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "recent-invoices-(tile)-on-the-billing-overview-page;assert-recent-invoices-tiles",
-        "keyword": "Scenario",
-        "line": 13,
-        "name": "Assert recent invoices tiles",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 9592000000
-            }
-          },
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "recent-invoices-(tile)-on-the-billing-overview-page;assert-kebab-menu-options",
-        "keyword": "Scenario",
-        "line": 17,
-        "name": "Assert Kebab menu options",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 6785000000
-            }
-          },
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "recent-invoices-(tile)-on-the-billing-overview-page;logout",
-        "keyword": "Scenario",
-        "line": 20,
-        "name": "Logout",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 6823000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 22,
-            "name": "we click on settings button",
-            "match": {
-              "location": "features\\step_definition\\common.js:14"
-            },
-            "result": {
-              "status": "failed",
-              "duration": 12329000000,
-              "error_message": "{\n  code: 'E24',\n  isTestCafeError: true,\n  callsite: CallsiteRecord {\n    filename: 'C:\\\\Users\\\\artur\\\\testcafe_cucumber\\\\comms-center\\\\testcafe-comms-center-e2e\\\\pages\\\\actions.pages.js',\n    lineNum: 8,\n    callsiteFrameIdx: 6,\n    stackFrames: [\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object]\n    ],\n    isV8Frames: true\n  },\n  apiFnChain: [\n    \"Selector('.ng-star-inserted > .avatar.avatar-color-0.avatar-extra-small.has-image')\"\n  ],\n  apiFnIndex: 0\n}"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 23,
-            "name": "we sign out Scorpion",
-            "match": {
-              "location": "features\\step_definition\\common.js:22"
+              "location": "features\\step_definition\\chatstepdef.js:46"
             },
             "result": {
               "status": "skipped",
@@ -892,20 +106,25 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 2000000
+              "duration": 1000000
             }
           }
         ],
-        "tags": [],
+        "tags": [
+          {
+            "name": "@e2e",
+            "line": 4
+          }
+        ],
         "type": "scenario"
       }
     ],
-    "id": "recent-invoices-(tile)-on-the-billing-overview-page",
+    "id": "chat-feature",
     "line": 1,
     "keyword": "Feature",
-    "name": "Recent Invoices (tile) on the Billing Overview page",
+    "name": "Chat Feature",
     "tags": [],
-    "uri": "features\\billing_overview.feature"
+    "uri": "features\\chat.feature"
   },
   {
     "description": "    As a visitor I can login to the Scorpion Home",
@@ -922,7 +141,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 6866000000
+              "duration": 6842000000
             }
           },
           {
@@ -930,12 +149,9 @@
             "keyword": "Given ",
             "line": 6,
             "name": "I open the welcome page",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:8"
-            },
             "result": {
-              "status": "passed",
-              "duration": 2537000000
+              "status": "ambiguous",
+              "duration": 0
             }
           },
           {
@@ -943,13 +159,9 @@
             "keyword": "When ",
             "line": 7,
             "name": "I enter Email \"joehaus895@gmail.com\"",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:13"
-            },
             "result": {
-              "status": "failed",
-              "duration": 20010000000,
-              "error_message": "Error: function timed out, ensure the promise resolves within 20000 milliseconds\n    at Timeout._onTimeout (C:\\Users\\artur\\testcafe_cucumber\\comms-center\\testcafe-comms-center-e2e\\node_modules\\@cucumber\\cucumber\\src\\user_code_runner.ts:80:18)\n    at listOnTimeout (internal/timers.js:554:17)\n    at processTimers (internal/timers.js:497:7)"
+              "status": "ambiguous",
+              "duration": 0
             }
           },
           {
@@ -957,11 +169,8 @@
             "keyword": "And ",
             "line": 8,
             "name": "I enter Password \"Team123!\"",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:18"
-            },
             "result": {
-              "status": "skipped",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -983,7 +192,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 2000000
+              "duration": 0
             }
           },
           {
@@ -991,7 +200,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 3000000
+              "duration": 1000000
             }
           }
         ],
@@ -1015,7 +224,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 6701000000
+              "duration": 6766000000
             }
           },
           {
@@ -1023,12 +232,9 @@
             "keyword": "Given ",
             "line": 6,
             "name": "I open the welcome page",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:8"
-            },
             "result": {
-              "status": "passed",
-              "duration": 1469000000
+              "status": "ambiguous",
+              "duration": 0
             }
           },
           {
@@ -1036,13 +242,9 @@
             "keyword": "When ",
             "line": 7,
             "name": "I enter Email \"Paulk@ThomasandPaulk.com\"",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:13"
-            },
             "result": {
-              "status": "failed",
-              "duration": 20009000000,
-              "error_message": "Error: function timed out, ensure the promise resolves within 20000 milliseconds\n    at Timeout._onTimeout (C:\\Users\\artur\\testcafe_cucumber\\comms-center\\testcafe-comms-center-e2e\\node_modules\\@cucumber\\cucumber\\src\\user_code_runner.ts:80:18)\n    at listOnTimeout (internal/timers.js:554:17)\n    at processTimers (internal/timers.js:497:7)"
+              "status": "ambiguous",
+              "duration": 0
             }
           },
           {
@@ -1050,11 +252,8 @@
             "keyword": "And ",
             "line": 8,
             "name": "I enter Password \"Gam3Chang3r!\"",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:18"
-            },
             "result": {
-              "status": "skipped",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -1105,183 +304,6 @@
     "uri": "features\\login.feature"
   },
   {
-    "description": "",
-    "elements": [
-      {
-        "description": "",
-        "id": "login;login-with-email-and-password",
-        "keyword": "Scenario",
-        "line": 3,
-        "name": "Login with email and password",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 6624000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 5,
-            "name": "we are in Scorpion login page",
-            "match": {
-              "location": "features\\step_definition\\login.js:6"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6763000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 6,
-            "name": "we enter \"paulk@thomasandpaulk.com\" and \"Gam3Chang3r!\"",
-            "match": {
-              "location": "features\\step_definition\\login.js:10"
-            },
-            "result": {
-              "status": "failed",
-              "duration": 20012000000,
-              "error_message": "Error: function timed out, ensure the promise resolves within 20000 milliseconds\n    at Timeout._onTimeout (C:\\Users\\artur\\testcafe_cucumber\\comms-center\\testcafe-comms-center-e2e\\node_modules\\@cucumber\\cucumber\\src\\user_code_runner.ts:80:18)\n    at listOnTimeout (internal/timers.js:554:17)\n    at processTimers (internal/timers.js:497:7)"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 7,
-            "name": "we click on sign in button",
-            "match": {
-              "location": "features\\step_definition\\login.js:14"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "we wait for \"10\" seconds",
-            "match": {
-              "location": "features\\step_definition\\common.js:6"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 9,
-            "name": "we assert the Scorpion main page",
-            "match": {
-              "location": "features\\step_definition\\common.js:10"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 13,
-            "name": "we click on settings button",
-            "match": {
-              "location": "features\\step_definition\\common.js:14"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 14,
-            "name": "we select the \"Appjjjj\" option",
-            "match": {
-              "location": "features\\step_definition\\common.js:18"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 15,
-            "name": "we wait for \"5\" seconds",
-            "match": {
-              "location": "features\\step_definition\\common.js:6"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 16,
-            "name": "we click on settings button",
-            "match": {
-              "location": "features\\step_definition\\common.js:14"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 18,
-            "name": "we sign out Scorpion",
-            "match": {
-              "location": "features\\step_definition\\common.js:22"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1000000
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      }
-    ],
-    "id": "login",
-    "line": 1,
-    "keyword": "Feature",
-    "name": "Login",
-    "tags": [],
-    "uri": "features\\login2.feature"
-  },
-  {
     "description": "    As a visitor I can navigate to messenger",
     "elements": [
       {
@@ -1296,7 +318,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 7344000000
+              "duration": 6868000000
             }
           },
           {
@@ -1304,12 +326,9 @@
             "keyword": "Given ",
             "line": 6,
             "name": "I open the welcome page",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:8"
-            },
             "result": {
-              "status": "passed",
-              "duration": 222000000
+              "status": "ambiguous",
+              "duration": 0
             }
           },
           {
@@ -1317,12 +336,9 @@
             "keyword": "When ",
             "line": 7,
             "name": "I enter Email \"joehaus895@gmail.com\"",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:13"
-            },
             "result": {
-              "status": "passed",
-              "duration": 8702000000
+              "status": "ambiguous",
+              "duration": 0
             }
           },
           {
@@ -1330,12 +346,9 @@
             "keyword": "And ",
             "line": 8,
             "name": "I enter Password \"Team123!\"",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:18"
-            },
             "result": {
-              "status": "passed",
-              "duration": 366000000
+              "status": "ambiguous",
+              "duration": 0
             }
           },
           {
@@ -1344,7 +357,7 @@
             "line": 9,
             "name": "I click Sign In button",
             "result": {
-              "status": "undefined",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -1354,7 +367,7 @@
             "line": 10,
             "name": "I wait for 40 seconds",
             "result": {
-              "status": "undefined",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -1363,8 +376,11 @@
             "keyword": "And ",
             "line": 11,
             "name": "I land on Messenger page",
+            "match": {
+              "location": "features\\step_definition\\messengerstepdef.js:35"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1374,7 +390,7 @@
             "line": 12,
             "name": "I click on Search button",
             "result": {
-              "status": "undefined",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -1383,8 +399,11 @@
             "keyword": "And ",
             "line": 13,
             "name": "I click on Groups button",
+            "match": {
+              "location": "features\\step_definition\\messengerstepdef.js:44"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1393,8 +412,11 @@
             "keyword": "And ",
             "line": 14,
             "name": "I click on People button",
+            "match": {
+              "location": "features\\step_definition\\messengerstepdef.js:49"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1403,8 +425,11 @@
             "keyword": "Then ",
             "line": 15,
             "name": "I click on Messages button",
+            "match": {
+              "location": "features\\step_definition\\messengerstepdef.js:54"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1413,7 +438,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 0
             }
           },
           {
@@ -1445,7 +470,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 6795000000
+              "duration": 6744000000
             }
           },
           {
@@ -1453,12 +478,9 @@
             "keyword": "Given ",
             "line": 6,
             "name": "I open the welcome page",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:8"
-            },
             "result": {
-              "status": "passed",
-              "duration": 15034000000
+              "status": "ambiguous",
+              "duration": 0
             }
           },
           {
@@ -1466,13 +488,9 @@
             "keyword": "When ",
             "line": 7,
             "name": "I enter Email \"josh.brown978@yahoo.com\"",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:13"
-            },
             "result": {
-              "status": "failed",
-              "duration": 20003000000,
-              "error_message": "Error: function timed out, ensure the promise resolves within 20000 milliseconds\n    at Timeout._onTimeout (C:\\Users\\artur\\testcafe_cucumber\\comms-center\\testcafe-comms-center-e2e\\node_modules\\@cucumber\\cucumber\\src\\user_code_runner.ts:80:18)\n    at listOnTimeout (internal/timers.js:554:17)\n    at processTimers (internal/timers.js:497:7)"
+              "status": "ambiguous",
+              "duration": 0
             }
           },
           {
@@ -1480,11 +498,8 @@
             "keyword": "And ",
             "line": 8,
             "name": "I enter Password \"Team123!\"",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:18"
-            },
             "result": {
-              "status": "skipped",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -1494,7 +509,7 @@
             "line": 9,
             "name": "I click Sign In button",
             "result": {
-              "status": "undefined",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -1504,7 +519,7 @@
             "line": 10,
             "name": "I wait for 40 seconds",
             "result": {
-              "status": "undefined",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -1513,8 +528,11 @@
             "keyword": "And ",
             "line": 11,
             "name": "I land on Messenger page",
+            "match": {
+              "location": "features\\step_definition\\messengerstepdef.js:35"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1524,7 +542,7 @@
             "line": 12,
             "name": "I click on Search button",
             "result": {
-              "status": "undefined",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -1533,8 +551,11 @@
             "keyword": "And ",
             "line": 13,
             "name": "I click on Groups button",
+            "match": {
+              "location": "features\\step_definition\\messengerstepdef.js:44"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1543,8 +564,11 @@
             "keyword": "And ",
             "line": 14,
             "name": "I click on People button",
+            "match": {
+              "location": "features\\step_definition\\messengerstepdef.js:49"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1553,8 +577,11 @@
             "keyword": "Then ",
             "line": 15,
             "name": "I click on Messages button",
+            "match": {
+              "location": "features\\step_definition\\messengerstepdef.js:54"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1563,7 +590,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 0
+              "duration": 1000000
             }
           },
           {
@@ -1595,7 +622,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 6574000000
+              "duration": 6789000000
             }
           },
           {
@@ -1603,12 +630,9 @@
             "keyword": "Given ",
             "line": 6,
             "name": "I open the welcome page",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:8"
-            },
             "result": {
-              "status": "passed",
-              "duration": 15031000000
+              "status": "ambiguous",
+              "duration": 0
             }
           },
           {
@@ -1616,13 +640,9 @@
             "keyword": "When ",
             "line": 7,
             "name": "I enter Email \"Paulk@ThomasandPaulk.com\"",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:13"
-            },
             "result": {
-              "status": "failed",
-              "duration": 12197000000,
-              "error_message": "{\n  code: 'E24',\n  isTestCafeError: true,\n  callsite: CallsiteRecord {\n    filename: 'C:\\\\Users\\\\artur\\\\testcafe_cucumber\\\\comms-center\\\\testcafe-comms-center-e2e\\\\features\\\\step_definition\\\\loginstepdef.js',\n    lineNum: 13,\n    callsiteFrameIdx: 6,\n    stackFrames: [\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object],\n      [Object]\n    ],\n    isV8Frames: true\n  },\n  apiFnChain: [\n    `Selector('[type=\"text\"]')`,\n    \".with({ boundTestRun: <ref *1> TestController { _executionContext: null, testRun: TestRun { captureRejections: false, warningLog: [WarningLog], opts: [Object: null prototype], test: [Test], browserConnection: [BrowserConnection], phase: 'inTest', driverTaskQueue: [], testDoneCommandQueued: false, activeDialogHandler: null, activeIframeSelector: null, speed: 1, pageLoadTimeout: 3000, disablePageReloads: false, disablePageCaching: false, disableMultipleWindows: false, requestTimeout: [Object], session: [SessionController], consoleMessages: [BrowserConsoleMessages], pendingRequest: [Object], pendingPageError: null, controller: [Circular *1], ctx: [Object: null prototype] {}, fixtureCtx: [Object: null prototype] {}, currentRoleId: null, usedRoleStates: [Object: null prototype] {}, errs: [], lastDriverStatusId: '16026.289999979781', lastDriverStatusResponse: null, fileDownloadingHandled: false, resolveWaitForFileDownloadingPromise: [Function (anonymous)], addingDriverTasksCount: 0, debugging: false, debugOnFail: false, disableDebugBreakpoints: false, debugReporterPluginHost: [ReporterPluginHost], browserManipulationQueue: [BrowserManipulationQueue], debugLog: [TestRunDebugLog], quarantine: null, debugLogger: [Object], observedCallsites: [ObservedCallsitesStorage], requestHooks: [], [Symbol(testRun)]: true }, executionChain: Promise { _then: undefined, then: [Function (anonymous)], click: [Function: fn], rightClick: [Function: fn], doubleClick: [Function: fn], hover: [Function: fn], drag: [Function: fn], dragToElement: [Function: fn], typeText: [Function: fn], selectText: [Function: fn], selectTextAreaContent: [Function: fn], selectEditableContent: [Function: fn], pressKey: [Function: fn], wait: [Function: fn], navigateTo: [Function: fn], setFilesToUpload: [Function: fn], clearUpload: [Function: fn], takeScreenshot: [Function: fn], takeElementScreenshot: [Function: fn], resizeWindow: [Function: fn], resizeWindowToFitDevice: [Function: fn], maximizeWindow: [Function: fn], switchToIframe: [Function: fn], switchToMainWindow: [Function: fn], openWindow: [Function: fn], closeWindow: [Function: fn], getCurrentWindow: [Function: fn], switchToWindow: [Function: fn], switchToParentWindow: [Function: fn], switchToPreviousWindow: [Function: fn], eval: [Function: fn], setNativeDialogHandler: [Function: fn], getNativeDialogHistory: [Function: fn], getBrowserConsoleMessages: [Function: fn], expect: [Function: fn], debug: [Function: fn], setTestSpeed: [Function: fn], setPageLoadTimeout: [Function: fn], useRole: [Function: fn], addRequestHooks: [Function: fn], removeRequestHooks: [Function: fn], _handled: true, _state: 'fulfilled', _data: null }, warningLog: WarningLog { globalLog: [WarningLog], messages: [] } } })\"\n  ],\n  apiFnIndex: 0\n}"
+              "status": "ambiguous",
+              "duration": 0
             }
           },
           {
@@ -1630,11 +650,8 @@
             "keyword": "And ",
             "line": 8,
             "name": "I enter Password \"Gam3Chang3r!\"",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:18"
-            },
             "result": {
-              "status": "skipped",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -1644,7 +661,7 @@
             "line": 9,
             "name": "I click Sign In button",
             "result": {
-              "status": "undefined",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -1654,7 +671,7 @@
             "line": 10,
             "name": "I wait for 40 seconds",
             "result": {
-              "status": "undefined",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -1663,8 +680,11 @@
             "keyword": "And ",
             "line": 11,
             "name": "I land on Messenger page",
+            "match": {
+              "location": "features\\step_definition\\messengerstepdef.js:35"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1674,7 +694,7 @@
             "line": 12,
             "name": "I click on Search button",
             "result": {
-              "status": "undefined",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -1683,8 +703,11 @@
             "keyword": "And ",
             "line": 13,
             "name": "I click on Groups button",
+            "match": {
+              "location": "features\\step_definition\\messengerstepdef.js:44"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1693,8 +716,11 @@
             "keyword": "And ",
             "line": 14,
             "name": "I click on People button",
+            "match": {
+              "location": "features\\step_definition\\messengerstepdef.js:49"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1703,8 +729,11 @@
             "keyword": "Then ",
             "line": 15,
             "name": "I click on Messages button",
+            "match": {
+              "location": "features\\step_definition\\messengerstepdef.js:54"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1713,7 +742,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 0
+              "duration": 2000000
             }
           },
           {
@@ -1721,7 +750,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 3000000
             }
           }
         ],
@@ -1756,7 +785,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 6888000000
+              "duration": 6780000000
             }
           },
           {
@@ -1764,13 +793,9 @@
             "keyword": "Given ",
             "line": 6,
             "name": "I open the welcome page",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:8"
-            },
             "result": {
-              "status": "failed",
-              "duration": 1871000000,
-              "error_message": "PageLoadError {\n  code: 'E54',\n  isTestCafeError: true,\n  callsite: CallsiteRecord {\n    filename: 'C:\\\\Users\\\\artur\\\\testcafe_cucumber\\\\comms-center\\\\testcafe-comms-center-e2e\\\\features\\\\step_definition\\\\loginstepdef.js',\n    lineNum: 8,\n    callsiteFrameIdx: 6,\n    stackFrames: [\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object],\n      [Object]\n    ],\n    isV8Frames: true\n  },\n  url: 'https://ui-integration.scorpion.co/sign-in',\n  errMsg: 'Failed to find a DNS-record for the resource at <a href=\"https://ui-integration.scorpion.co/sign-in\">https://ui-integration.scorpion.co/sign-in</a>.'\n}"
+              "status": "ambiguous",
+              "duration": 0
             }
           },
           {
@@ -1778,11 +803,8 @@
             "keyword": "When ",
             "line": 7,
             "name": "I enter Email \"joehaus895@gmail.com\"",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:13"
-            },
             "result": {
-              "status": "skipped",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -1791,11 +813,8 @@
             "keyword": "And ",
             "line": 8,
             "name": "I enter Password \"Team123!\"",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:18"
-            },
             "result": {
-              "status": "skipped",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -1805,7 +824,7 @@
             "line": 9,
             "name": "I click Sign In button",
             "result": {
-              "status": "undefined",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -1814,8 +833,11 @@
             "keyword": "And ",
             "line": 10,
             "name": "I wait for 4 seconds",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:30"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1824,8 +846,11 @@
             "keyword": "And ",
             "line": 11,
             "name": "I land on Phone page",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:35"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1835,7 +860,7 @@
             "line": 12,
             "name": "I click on Search button",
             "result": {
-              "status": "undefined",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -1844,8 +869,11 @@
             "keyword": "And ",
             "line": 13,
             "name": "I click on Make a Call button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:44"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1854,8 +882,11 @@
             "keyword": "And ",
             "line": 14,
             "name": "I enter numbers in Phone Number entry \"818-234-5566\"",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:48"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1864,8 +895,11 @@
             "keyword": "And ",
             "line": 15,
             "name": "I click on Call button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:52"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1874,8 +908,11 @@
             "keyword": "And ",
             "line": 16,
             "name": "I click on End Call button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:57"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1884,8 +921,11 @@
             "keyword": "And ",
             "line": 17,
             "name": "I click on Make a Call button again",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:62"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1894,8 +934,11 @@
             "keyword": "And ",
             "line": 19,
             "name": "I click on Number Four button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:66"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1904,8 +947,11 @@
             "keyword": "And ",
             "line": 20,
             "name": "I click on Number One button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:70"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1914,8 +960,11 @@
             "keyword": "And ",
             "line": 21,
             "name": "I click on Number Five button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:74"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1924,8 +973,11 @@
             "keyword": "And ",
             "line": 23,
             "name": "I click on Number Nine button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:79"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1934,8 +986,11 @@
             "keyword": "And ",
             "line": 24,
             "name": "I click on Number Two button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:83"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1944,8 +999,11 @@
             "keyword": "And ",
             "line": 25,
             "name": "I click on Number Seven button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:87"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1954,8 +1012,11 @@
             "keyword": "And ",
             "line": 27,
             "name": "I click on Number Six button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:91"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1964,8 +1025,11 @@
             "keyword": "And ",
             "line": 28,
             "name": "I click on Number Three button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:95"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1974,8 +1038,11 @@
             "keyword": "And ",
             "line": 29,
             "name": "I click on Number Eight button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:99"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1984,8 +1051,11 @@
             "keyword": "And ",
             "line": 30,
             "name": "I click on Number Zero button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:103"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -1994,8 +1064,11 @@
             "keyword": "And ",
             "line": 32,
             "name": "I click on Call button again",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:107"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2004,8 +1077,11 @@
             "keyword": "Then ",
             "line": 33,
             "name": "I click on End Call button again",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:112"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2046,7 +1122,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 6869000000
+              "duration": 6832000000
             }
           },
           {
@@ -2054,13 +1130,9 @@
             "keyword": "Given ",
             "line": 6,
             "name": "I open the welcome page",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:8"
-            },
             "result": {
-              "status": "failed",
-              "duration": 20013000000,
-              "error_message": "Error: function timed out, ensure the promise resolves within 20000 milliseconds\n    at Timeout._onTimeout (C:\\Users\\artur\\testcafe_cucumber\\comms-center\\testcafe-comms-center-e2e\\node_modules\\@cucumber\\cucumber\\src\\user_code_runner.ts:80:18)\n    at listOnTimeout (internal/timers.js:554:17)\n    at processTimers (internal/timers.js:497:7)"
+              "status": "ambiguous",
+              "duration": 0
             }
           },
           {
@@ -2068,11 +1140,8 @@
             "keyword": "When ",
             "line": 7,
             "name": "I enter Email \"josh.brown978@yahoo.com\"",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:13"
-            },
             "result": {
-              "status": "skipped",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -2081,11 +1150,8 @@
             "keyword": "And ",
             "line": 8,
             "name": "I enter Password \"Team123!\"",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:18"
-            },
             "result": {
-              "status": "skipped",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -2095,7 +1161,7 @@
             "line": 9,
             "name": "I click Sign In button",
             "result": {
-              "status": "undefined",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -2104,8 +1170,11 @@
             "keyword": "And ",
             "line": 10,
             "name": "I wait for 4 seconds",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:30"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2114,8 +1183,11 @@
             "keyword": "And ",
             "line": 11,
             "name": "I land on Phone page",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:35"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2125,7 +1197,7 @@
             "line": 12,
             "name": "I click on Search button",
             "result": {
-              "status": "undefined",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -2134,8 +1206,11 @@
             "keyword": "And ",
             "line": 13,
             "name": "I click on Make a Call button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:44"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2144,8 +1219,11 @@
             "keyword": "And ",
             "line": 14,
             "name": "I enter numbers in Phone Number entry \"650-334-4466\"",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:48"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2154,8 +1232,11 @@
             "keyword": "And ",
             "line": 15,
             "name": "I click on Call button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:52"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2164,8 +1245,11 @@
             "keyword": "And ",
             "line": 16,
             "name": "I click on End Call button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:57"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2174,8 +1258,11 @@
             "keyword": "And ",
             "line": 17,
             "name": "I click on Make a Call button again",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:62"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2184,8 +1271,11 @@
             "keyword": "And ",
             "line": 19,
             "name": "I click on Number Four button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:66"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2194,8 +1284,11 @@
             "keyword": "And ",
             "line": 20,
             "name": "I click on Number One button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:70"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2204,8 +1297,11 @@
             "keyword": "And ",
             "line": 21,
             "name": "I click on Number Five button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:74"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2214,8 +1310,11 @@
             "keyword": "And ",
             "line": 23,
             "name": "I click on Number Nine button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:79"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2224,8 +1323,11 @@
             "keyword": "And ",
             "line": 24,
             "name": "I click on Number Two button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:83"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2234,8 +1336,11 @@
             "keyword": "And ",
             "line": 25,
             "name": "I click on Number Seven button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:87"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2244,8 +1349,11 @@
             "keyword": "And ",
             "line": 27,
             "name": "I click on Number Six button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:91"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2254,8 +1362,11 @@
             "keyword": "And ",
             "line": 28,
             "name": "I click on Number Three button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:95"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2264,8 +1375,11 @@
             "keyword": "And ",
             "line": 29,
             "name": "I click on Number Eight button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:99"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2274,8 +1388,11 @@
             "keyword": "And ",
             "line": 30,
             "name": "I click on Number Zero button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:103"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2284,8 +1401,11 @@
             "keyword": "And ",
             "line": 32,
             "name": "I click on Call button again",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:107"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2294,8 +1414,11 @@
             "keyword": "Then ",
             "line": 33,
             "name": "I click on End Call button again",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:112"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2336,7 +1459,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 6595000000
+              "duration": 6733000000
             }
           },
           {
@@ -2344,13 +1467,9 @@
             "keyword": "Given ",
             "line": 6,
             "name": "I open the welcome page",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:8"
-            },
             "result": {
-              "status": "failed",
-              "duration": 2406000000,
-              "error_message": "PageLoadError {\n  code: 'E54',\n  isTestCafeError: true,\n  callsite: CallsiteRecord {\n    filename: 'C:\\\\Users\\\\artur\\\\testcafe_cucumber\\\\comms-center\\\\testcafe-comms-center-e2e\\\\features\\\\step_definition\\\\loginstepdef.js',\n    lineNum: 8,\n    callsiteFrameIdx: 6,\n    stackFrames: [\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object],\n      [Object]\n    ],\n    isV8Frames: true\n  },\n  url: 'https://ui-integration.scorpion.co/sign-in',\n  errMsg: 'Failed to find a DNS-record for the resource at <a href=\"https://ui-integration.scorpion.co/sign-in\">https://ui-integration.scorpion.co/sign-in</a>.'\n}"
+              "status": "ambiguous",
+              "duration": 0
             }
           },
           {
@@ -2358,11 +1477,8 @@
             "keyword": "When ",
             "line": 7,
             "name": "I enter Email \"Paulk@ThomasandPaulk.com\"",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:13"
-            },
             "result": {
-              "status": "skipped",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -2371,11 +1487,8 @@
             "keyword": "And ",
             "line": 8,
             "name": "I enter Password \"Gam3Chang3r!\"",
-            "match": {
-              "location": "features\\step_definition\\loginstepdef.js:18"
-            },
             "result": {
-              "status": "skipped",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -2385,7 +1498,7 @@
             "line": 9,
             "name": "I click Sign In button",
             "result": {
-              "status": "undefined",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -2394,8 +1507,11 @@
             "keyword": "And ",
             "line": 10,
             "name": "I wait for 4 seconds",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:30"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2404,8 +1520,11 @@
             "keyword": "And ",
             "line": 11,
             "name": "I land on Phone page",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:35"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2415,7 +1534,7 @@
             "line": 12,
             "name": "I click on Search button",
             "result": {
-              "status": "undefined",
+              "status": "ambiguous",
               "duration": 0
             }
           },
@@ -2424,8 +1543,11 @@
             "keyword": "And ",
             "line": 13,
             "name": "I click on Make a Call button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:44"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2434,8 +1556,11 @@
             "keyword": "And ",
             "line": 14,
             "name": "I enter numbers in Phone Number entry \"408-992-3340\"",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:48"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2444,8 +1569,11 @@
             "keyword": "And ",
             "line": 15,
             "name": "I click on Call button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:52"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2454,8 +1582,11 @@
             "keyword": "And ",
             "line": 16,
             "name": "I click on End Call button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:57"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2464,8 +1595,11 @@
             "keyword": "And ",
             "line": 17,
             "name": "I click on Make a Call button again",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:62"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2474,8 +1608,11 @@
             "keyword": "And ",
             "line": 19,
             "name": "I click on Number Four button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:66"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2484,8 +1621,11 @@
             "keyword": "And ",
             "line": 20,
             "name": "I click on Number One button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:70"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2494,8 +1634,11 @@
             "keyword": "And ",
             "line": 21,
             "name": "I click on Number Five button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:74"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2504,8 +1647,11 @@
             "keyword": "And ",
             "line": 23,
             "name": "I click on Number Nine button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:79"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2514,8 +1660,11 @@
             "keyword": "And ",
             "line": 24,
             "name": "I click on Number Two button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:83"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2524,8 +1673,11 @@
             "keyword": "And ",
             "line": 25,
             "name": "I click on Number Seven button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:87"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2534,8 +1686,11 @@
             "keyword": "And ",
             "line": 27,
             "name": "I click on Number Six button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:91"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2544,8 +1699,11 @@
             "keyword": "And ",
             "line": 28,
             "name": "I click on Number Three button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:95"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2554,8 +1712,11 @@
             "keyword": "And ",
             "line": 29,
             "name": "I click on Number Eight button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:99"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2564,8 +1725,11 @@
             "keyword": "And ",
             "line": 30,
             "name": "I click on Number Zero button",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:103"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2574,8 +1738,11 @@
             "keyword": "And ",
             "line": 32,
             "name": "I click on Call button again",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:107"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2584,8 +1751,11 @@
             "keyword": "Then ",
             "line": 33,
             "name": "I click on End Call button again",
+            "match": {
+              "location": "features\\step_definition\\phonestepdef.js:112"
+            },
             "result": {
-              "status": "undefined",
+              "status": "skipped",
               "duration": 0
             }
           },
@@ -2594,7 +1764,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 2000000
+              "duration": 1000000
             }
           },
           {

@@ -1,14 +1,14 @@
 
     function main_title() {
-        return '.ng-star-inserted.r\:32'
+        return 'body > scorpion-root > scorpion-main > div > scorpion-home-dashboardv2 > scorpion-layout-dashboard > div > header > strong'
     }
 
     function growth_title() {
-        return '.auto.blur.ng-star-inserted.nlf-column.nlp-p40.radius-small.theme-dark  .r\:24'
+        return 'scorpion-ui-card > header > strong'
     }
 
     function revenue_title() {
-        return '.blur.cm\:15.full.ng-star-inserted.nlf-column.nlp-p40.radius-small.theme-dark  .r\:24'
+        return 'body > scorpion-root > scorpion-main > div > scorpion-home-dashboardv2 > scorpion-layout-dashboard > div > main > div:nth-child(1) > div.nlf.two-thirds.ng-star-inserted > scorpion-ui-card > header > strong'
     }
 
     function settings_button() {

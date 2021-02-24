@@ -1,15 +1,15 @@
 Feature: Chat Feature
 
     As a visitor I can navigate to chat
-    @e2e
+    @e2e @focus
     Scenario Outline: User Chat E2E Scenario
-        Given I open the welcome page
-        When I enter Email "<email>"
-        And I enter Password "<password>"
-        And I click Sign In button
-        And I wait for 40 seconds
-        # And I click on Chat button
-        # And I wait for the Chat display
+        Given we are in Scorpion login page
+        When we enter "<email>" and "<password>"
+        And we click on sign in button
+        And we wait for "10" seconds
+        Then we assert the Scorpion main page
+        And I click on Chat button
+        And I wait for the Chat display
         And I click Get Started button
         Then I land on chat dashboard page
         Examples:

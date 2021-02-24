@@ -29,7 +29,15 @@ exports.ChatPage = {
     },
 
     GetStarted: function() {
-        return select('[data-cy=get-started]')
+        return select('scorpion-ui-card:nth-of-type(1)  .nlp-pt30 > .button')
+    },
+
+    ChatTitle:  function() {
+        return select('[data-cy="header"]')
+    },
+
+    ChatDashboardTtitle: function() {
+        return select('data-cy="icon-container"')
     }
 
 }
