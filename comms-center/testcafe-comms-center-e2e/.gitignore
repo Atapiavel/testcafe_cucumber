@@ -1,5 +1,6 @@
 node_modules
 reports
-allure/allure-results
+allure
 .vscode
 package-lock.json
+.DS_Store
