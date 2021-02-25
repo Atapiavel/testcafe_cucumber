@@ -27,16 +27,11 @@ When('I click Sign In button', async function () {
 
   });
 
-When('I wait for 4 seconds', async function() {
-        // await testController.setTimeout(() => { console.log("World!"); }, 40000);
-        await waitFor(4000);
-  });
-
 When('I land on Phone page', async function () {
         await testController.expect(phonepage.PhonePage.exists).ok;
   })
 
-When('I click on Search button', async function() {
+When('I click on Search button from phone page', async function() {
         // await testController.expect(phonepage.PhonePage.SearchBtn().exists).ok;        
         await testController.click(phonepage.PhonePage.SearchBtn());
   });

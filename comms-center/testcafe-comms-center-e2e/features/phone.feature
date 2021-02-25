@@ -1,15 +1,16 @@
 Feature: Phone Feature
 
     As a visitor I can navigate to phone
+
     @e2e
     Scenario Outline: User Phone E2E Scenario
-        Given I open the welcome page
-        When I enter Email "<email>"
-        And I enter Password "<password>"
-        And I click Sign In button
-        And I wait for 4 seconds
+        Given we are in Scorpion login page
+        When we enter "<email>" and "<password>"
+        And we click on sign in button
+        And we wait for "10" seconds
+        Then we assert the Scorpion main page
         And I land on Phone page
-        And I click on Search button
+        And I click on Search button from phone page
         And I click on Make a Call button
         And I enter numbers in Phone Number entry "<phoneNr>"
         And I click on Call button
@@ -34,5 +35,5 @@ Feature: Phone Feature
         Examples:
             | email                    | password     | phoneNr      |
             | joehaus895@gmail.com     | Team123!     | 818-234-5566 |
-            | josh.brown978@yahoo.com  | Team123!     | 650-334-4466 |
-            | Paulk@ThomasandPaulk.com | Gam3Chang3r! | 408-992-3340 |
+            # | josh.brown978@yahoo.com  | Team123!     | 650-334-4466 |
+            # | Paulk@ThomasandPaulk.com | Gam3Chang3r! | 408-992-3340 |

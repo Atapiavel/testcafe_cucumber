@@ -26,10 +26,6 @@ Given('I open the welcome page', async function () {
       await testController.expect(chatpage.ChatPage.HomePage().exists).ok;
   });
 
-  When('I wait for 40 seconds', async function() {
-    await setTimeout(() => { console.log("World!"); }, 20000);
-  });
-
   When('I click on Chat button', async function() {
     await testController.click(chatpage.ChatPage.ChatButton());
   });
