@@ -1,7 +1,7 @@
-Feature: Messenger Feature
+Feature: Messenger
 
     As a visitor I can navigate to messenger
-    @e2e
+    @e2e @focus
     Scenario Outline: User Messenger E2E Scenario
         Given we are in Scorpion login page
         When we enter "<email>" and "<password>"
@@ -14,6 +14,10 @@ Feature: Messenger Feature
         And I click on Groups button
         And I click on People button
         Then I click on Messages button
+        When we click on settings button
+        And we sign out Scorpion
+
+
         Examples:
             | email                    | password     |
             | joehaus895@gmail.com     | Team123!     |

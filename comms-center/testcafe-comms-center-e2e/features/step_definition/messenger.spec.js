@@ -1,35 +1,33 @@
-const assert = require('assert');
-const { Given, When, Then } = require('@cucumber/cucumber');
-const messengerpage = require('../../pages/MessengerPage');
-const { waitForDebugger } = require('inspector');
-const { MessengerPage } = require('../../pages/MessengerPage');
+const { When, Then } = require('@cucumber/cucumber');
+const ActionsPage = require('../../pages/actions.pages.js')
+const MessengerPageLocator = require('../../locators/messenger.locators');
 const waitFor = delay => new Promise(resolve => setTimeout(resolve, delay));
 
 When('we click on Messenger button', async function () {
-
+      await ActionsPage.click_element(MessengerPageLocator.MessengerBtn())
 });
 
 When('I land on Messenger page', async function () {
-      await testController.expect(messengerpage.MessengerPage.exists).ok;
+      await testController.expect(MessengerPageLocator.exists).ok;
 });
 
 When('I click on Search button from messenger page', async function () {
       // await testController.expect(phonepage.PhonePage.SearchBtn().exists).ok;        
-      await testController.click(messengerpage.MessengerPage.SearchBtn());
+      await ActionsPage.click_element(MessengerPageLocator.SearchBtn());
 });
 
 When('I click on Groups button', async function () {
       await waitFor(1000);
-      await testController.click(messengerpage.MessengerPage.GroupsBtn());
+      await ActionsPage.click_element(MessengerPageLocator.GroupsBtn());
 });
 
 When('I click on People button', async function () {
       await waitFor(1000);
-      await testController.click(messengerpage.MessengerPage.PeopleBtn());
+      await ActionsPage.click_element(MessengerPageLocator.PeopleBtn());
 });
 
 Then('I click on Messages button', async function () {
       await waitFor(1000);
-      await testController.click(messengerpage.MessengerPage.MessagesBtn());
+      await ActionsPage.click_element(MessengerPageLocator.MessagesBtn());
 
 });

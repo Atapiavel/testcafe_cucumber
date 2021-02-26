@@ -1,9 +1,5 @@
-const assert = require('assert');
-const { Given, When, Then } = require('@cucumber/cucumber');
-const phonepage = require('../../pages/PhonePage');
-const { waitForDebugger } = require('inspector');
-const { PhonePage } = require('../../pages/PhonePage');
-const waitFor = delay => new Promise(resolve => setTimeout(resolve, delay));
+const { When, Then } = require('@cucumber/cucumber');
+const PhonePageLocator = require('../../locators/phone.locators');
 
 const URL = 'https://ui-integration.scorpion.co/phone';
 
@@ -13,77 +9,74 @@ When('I land on Phone page', async function () {
 
 When('I click on Search button from phone page', async function() {
         // await testController.expect(phonepage.PhonePage.SearchBtn().exists).ok;        
-        await testController.click(phonepage.PhonePage.SearchBtn());
+        await ActionsPage.click_element(PhonePageLocator.SearchBtn());
   });
 
 When('I click on Make a Call button', async function() {
-        await testController.click(phonepage.PhonePage.MakeCallBtn());
+        await ActionsPage.click_element(PhonePageLocator.MakeCallBtn());
   });
 
 When('I enter numbers in Phone Number entry {string}', async function(phoneNr){
-        await testController.typeText(phonepage.PhonePage.PhoneNrEntry(), phoneNr);
+        await ActionsPage.type_text(PhonePageLocator.PhoneNrEntry(), phoneNr);
   });
 
 When('I click on Call button', async function (){
-        await testController.click(phonepage.PhonePage.CallBtn());
-
+        await ActionsPage.click_element(PhonePageLocator.CallBtn());
   });
 
 Then('I click on End Call button', async function (){
-        await testController.click(phonepage.PhonePage.EndCallBtn());
-
+        await ActionsPage.click_element(PhonePageLocator.EndCallBtn());
 });
 
 When('I click on Make a Call button again', async function(){
-        await testController.click(phonepage.PhonePage.MakeCallBtn());
+        await ActionsPage.click_element(PhonePageLocator.MakeCallBtn());
 });
 
 When('I click on Number Four button', async function(){
-        await testController.click(phonepage.PhonePage.FourBtn());
+        await ActionsPage.click_element(PhonePageLocator.FourBtn());
 });
 
 When('I click on Number One button', async function(){
-        await testController.click(phonepage.PhonePage.OneBtn());
+        await ActionsPage.click_element(PhonePageLocator.OneBtn());
 });
 
 When('I click on Number Five button', async function(){
-        await testController.click(phonepage.PhonePage.FiveBtn());
+        await ActionsPage.click_element(PhonePageLocator.FiveBtn());
 
 });
 
 When('I click on Number Nine button', async function(){
-        await testController.click(phonepage.PhonePage.NineBtn());
+        await ActionsPage.click_element(PhonePageLocator.NineBtn());
 });
 
 When('I click on Number Two button', async function(){
-        await testController.click(phonepage.PhonePage.TwoBtn());
+        await ActionsPage.click_element(PhonePageLocator.TwoBtn());
 });
 
 When('I click on Number Seven button', async function(){
-        await testController.click(phonepage.PhonePage.SevenBtn());
+        await ActionsPage.click_element(PhonePageLocator.SevenBtn());
 });
 
 When('I click on Number Six button', async function(){
-        await testController.click(phonepage.PhonePage.SixBtn());
+        await ActionsPage.click_element(PhonePageLocator.SixBtn());
 });
 
 When('I click on Number Three button', async function(){
-        await testController.click(phonepage.PhonePage.ThreeBtn());
+        await ActionsPage.click_element(PhonePageLocator.ThreeBtn());
 });
 
 When('I click on Number Eight button', async function(){
-        await testController.click(phonepage.PhonePage.EightBtn());
+        await ActionsPage.click_element(PhonePageLocator.EightBtn());
 });
 
 When('I click on Number Zero button', async function(){
-        await testController.click(phonepage.PhonePage.ZeroBtn());
+        await ActionsPage.click_element(PhonePageLocator.ZeroBtn());
 });
 
 When('I click on Call button again', async function (){
-        await testController.click(phonepage.PhonePage.CallBtn());
-
+        await ActionsPage.click_element(PhonePageLocator.CallBtn());
   });
 
 Then('I click on End Call button again', async function(){
-        await testController.click(phonepage.PhonePage.EndCallBtn());
+        await ActionsPage.click_element(PhonePageLocator.EndCallBtn());
 });

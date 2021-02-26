@@ -5,7 +5,7 @@ const { Selector } = require('testcafe');
     }
 
     function settings_button() {
-        return '.ng-star-inserted > .avatar.avatar-color-0.avatar-extra-small.has-image'
+        return 'div > scorpion-avatar > button'
     }
 
     function settings_options() {
@@ -14,8 +14,6 @@ const { Selector } = require('testcafe');
 
 module.exports = {
     main_title: main_title,
-    // growth_title: growth_title,
-    // revenue_title: revenue_title,
     settings_button: settings_button,
     settings_options: settings_options
 };

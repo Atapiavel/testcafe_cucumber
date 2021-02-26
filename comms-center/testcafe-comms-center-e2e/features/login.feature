@@ -1,7 +1,7 @@
 Feature: Login
 
     As a visitor I can login to the Scorpion Home
-    @e2e @focus
+    @e2e
     Scenario Outline: User Login E2E Scenario
         Given we are in Scorpion login page
         When we enter "paulk@thomasandpaulk.com" and "Gam3Chang3r!"
