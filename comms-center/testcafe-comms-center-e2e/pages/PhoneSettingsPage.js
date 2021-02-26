@@ -2,10 +2,6 @@ import {Selector,t} from 'testcafe';
 
 class PhoneSettingsPage{
     constructor(){
-        this.subtitleHeader = Selector('h2');
-        this.email = Selector('[type="text"]');
-        this.password = Selector('[type="password"]');
-        this.signIn = Selector('[type="submit"]');
         this.successmsg = Selector('strong').withText('Your Business Growth');
         this.addbtn = Selector('[text="Add"]');
         this.purchasenrs = Selector('[data-name="Purchase Numbers"]');

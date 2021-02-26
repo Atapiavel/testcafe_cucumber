@@ -1,7 +1,7 @@
 Feature: Messenger Feature
 
     As a visitor I can navigate to messenger
-    @e2e @focus
+    @e2e
     Scenario Outline: User Messenger E2E Scenario
         Given we are in Scorpion login page
         When we enter "<email>" and "<password>"
@@ -17,5 +17,5 @@ Feature: Messenger Feature
         Examples:
             | email                    | password     |
             | joehaus895@gmail.com     | Team123!     |
-            # | josh.brown978@yahoo.com  | Team123!     |
-            # | Paulk@ThomasandPaulk.com | Gam3Chang3r! |
+            | josh.brown978@yahoo.com  | Team123!     |
+            | Paulk@ThomasandPaulk.com | Gam3Chang3r! |

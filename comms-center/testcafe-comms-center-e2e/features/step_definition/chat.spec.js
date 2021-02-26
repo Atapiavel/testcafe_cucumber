@@ -6,26 +6,6 @@ const { ChatPage } = require('../../pages/ChatPage');
 
 const URL = 'https://ui-integration.scorpion.co/chat';
 
-Given('I open the welcome page', async function () {
-    await testController.navigateTo(URL);
-    
-  });
-
-  When('I enter Email {string}', async function (email) {
-      await testController.typeText(chatpage.ChatPage.Email(), email);
-    
-  });
-
-  When('I enter Password {string}', async function (password) {
-      await testController.typeText(chatpage.ChatPage.Password(), password);
-    
-  });
-
-  Then('I click Sign In button', async function () {
-      await testController.click(chatpage.ChatPage.SignIn());
-      await testController.expect(chatpage.ChatPage.HomePage().exists).ok;
-  });
-
   When('I click on Chat button', async function() {
     await testController.click(chatpage.ChatPage.ChatButton());
   });

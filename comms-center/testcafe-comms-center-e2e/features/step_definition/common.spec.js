@@ -8,7 +8,7 @@ When('we wait for {string} seconds', async function (seconds) {
 });
 
 Then('we assert the Scorpion main page', async function () {
-    await MainPage.assert_main_modules()
+    await MainPage.assert_main_module()
 });
 
 When('we click on settings button', async function () {

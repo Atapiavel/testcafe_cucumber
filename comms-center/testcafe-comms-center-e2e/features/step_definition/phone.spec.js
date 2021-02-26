@@ -7,26 +7,6 @@ const waitFor = delay => new Promise(resolve => setTimeout(resolve, delay));
 
 const URL = 'https://ui-integration.scorpion.co/phone';
 
-Given('I open the welcome page', async function () {
-        await testController.navigateTo(URL);
-    
-  });
-
-When('I enter Email {string}', async function (email) {
-        await testController.typeText(phonepage.PhonePage.Email(), email);
-    
-  });
-
-When('I enter Password {string}', async function (password) {
-        await testController.typeText(phonepage.PhonePage.Password(), password);
-    
-  });
-
-When('I click Sign In button', async function () {
-        await testController.click(phonepage.PhonePage.SignIn());
-
-  });
-
 When('I land on Phone page', async function () {
         await testController.expect(phonepage.PhonePage.exists).ok;
   })

@@ -5,11 +5,8 @@ function select(selector){
 }
 
 async function assert_text(element, value) {
-    // const text = await Selector(element);
-    // await testController.expect(text).eql(value);
-        // const text = Selector(element);
-        // await testController.expect(text.).eql(value, 'Match')                                                                  
-    // cy.get(element).should('have.text', value)
+    text = Selector(element).withText(value);
+    await testController.expect(text.innerText).eql(value, 'Match') 
 }
 
 async function assert_contains(element, value) {
