@@ -29,5 +29,4 @@ When('I click on People button', async function () {
 Then('I click on Messages button', async function () {
       await waitFor(1000);
       await ActionsPage.click_element(MessengerPageLocator.MessagesBtn());
-
 });

@@ -3,29 +3,37 @@ const {Selector} = require('testcafe') ;
 function select(selector){
     return Selector(selector).with({boundTestRun:testController})
 }
-exports.ChatPage = {
-    HomePage: function() {
+
+function HomePage() {
         return select('scorpion-layout-dashboard')
-    },
+    }
 
-    ChatButton: function() {
+function ChatButton() {
         return select('[title="Chat"]')
-    },
+    }
 
-    SubtitleHeader: function() {
+function SubtitleHeader() {
         return select('h4')
-    },
+    }
 
-    GetStarted: function() {
+function GetStarted() {
         return select('scorpion-ui-card:nth-of-type(1)  .nlp-pt30 > .button')
-    },
+    }
 
-    ChatTitle:  function() {
+function ChatTitle() {
         return select('[data-cy="header"]')
-    },
+    }
 
-    ChatDashboardTtitle: function() {
+function ChatDashboardTtitle() {
         return select('data-cy="icon-container"')
     }
 
-}
+    module.exports = {
+        HomePage: HomePage,
+        ChatButton: ChatButton,
+        SubtitleHeader: SubtitleHeader,
+        GetStarted: GetStarted,
+        ChatTitle: ChatTitle,
+        ChatDashboardTtitle: ChatDashboardTtitle
+    };
+    

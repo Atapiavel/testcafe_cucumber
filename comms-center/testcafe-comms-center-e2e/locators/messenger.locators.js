@@ -28,7 +28,6 @@ function MessagesBtn() {
     return select('scorpion-tile-select-item:nth-of-type(3)')
 }
 
-
 module.exports = {
     MessengerBtn: MessengerBtn,
     HomePage: HomePage,

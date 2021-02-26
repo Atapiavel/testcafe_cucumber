@@ -1,20 +1,20 @@
 [
   {
-    "description": "    As a visitor I can navigate to messenger",
+    "description": "    As a visitor I can navigate to chat",
     "elements": [
       {
         "description": "",
-        "id": "messenger-feature;user-messenger-e2e-scenario",
+        "id": "chat-feature;user-chat-e2e-scenario",
         "keyword": "Scenario Outline",
         "line": 5,
-        "name": "User Messenger E2E Scenario",
+        "name": "User Chat E2E Scenario",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 13480000000
+              "duration": 9141000000
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1606000000
+              "duration": 744000000
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 7960000000
+              "duration": 3892000000
             }
           },
           {
@@ -53,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2721000000
+              "duration": 2615000000
             }
           },
           {
@@ -66,7 +66,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10041000000
+              "duration": 10008000000
             }
           },
           {
@@ -79,43 +79,446 @@
             },
             "result": {
               "status": "passed",
-              "duration": 347000000
+              "duration": 152000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 11,
-            "name": "I land on Messenger page",
+            "name": "I click on Chat button",
             "match": {
-              "location": "features\\step_definition\\messengerstepdef.js:30"
+              "location": "features\\step_definition\\chat.spec.js:6"
             },
             "result": {
               "status": "passed",
-              "duration": 12000000
+              "duration": 11039000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 12,
-            "name": "I click on Search button from messenger page",
+            "name": "I wait for the Chat display",
             "match": {
-              "location": "features\\step_definition\\messengerstepdef.js:34"
+              "location": "features\\step_definition\\chat.spec.js:10"
             },
             "result": {
-              "status": "failed",
-              "duration": 15607000000,
-              "error_message": "{\n  code: 'E24',\n  isTestCafeError: true,\n  callsite: CallsiteRecord {\n    filename: 'C:\\\\Users\\\\artur\\\\testcafe_cucumber\\\\comms-center\\\\testcafe-comms-center-e2e\\\\features\\\\step_definition\\\\messengerstepdef.js',\n    lineNum: 35,\n    callsiteFrameIdx: 6,\n    stackFrames: [\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object],\n      [Object]\n    ],\n    isV8Frames: true\n  },\n  apiFnChain: [\n    \"Selector('[data-cy=search-button]')\",\n    \".with({ boundTestRun: <ref *1> TestController { _executionContext: null, testRun: TestRun { captureRejections: false, warningLog: [WarningLog], opts: [Object: null prototype], test: [Test], browserConnection: [BrowserConnection], phase: 'inTest', driverTaskQueue: [Array], testDoneCommandQueued: false, activeDialogHandler: null, activeIframeSelector: null, speed: 1, pageLoadTimeout: 3000, disablePageReloads: false, disablePageCaching: false, disableMultipleWindows: false, requestTimeout: [Object], session: [SessionController], consoleMessages: [BrowserConsoleMessages], pendingRequest: null, pendingPageError: null, controller: [Circular *1], ctx: [Object: null prototype] {}, fixtureCtx: [Object: null prototype] {}, currentRoleId: null, usedRoleStates: [Object: null prototype] {}, errs: [], lastDriverStatusId: '20582.005000003846', lastDriverStatusResponse: [ExecuteSelectorCommand], fileDownloadingHandled: false, resolveWaitForFileDownloadingPromise: null, addingDriverTasksCount: 0, debugging: false, debugOnFail: false, disableDebugBreakpoints: false, debugReporterPluginHost: [ReporterPluginHost], browserManipulationQueue: [BrowserManipulationQueue], debugLog: [TestRunDebugLog], quarantine: null, debugLogger: [Object], observedCallsites: [ObservedCallsitesStorage], requestHooks: [], preventEmitActionEvents: true, [Symbol(testRun)]: true }, executionChain: Promise { _then: [Array], then: [Function (anonymous)], click: [Function: fn], rightClick: [Function: fn], doubleClick: [Function: fn], hover: [Function: fn], drag: [Function: fn], dragToElement: [Function: fn], typeText: [Function: fn], selectText: [Function: fn], selectTextAreaContent: [Function: fn], selectEditableContent: [Function: fn], pressKey: [Function: fn], wait: [Function: fn], navigateTo: [Function: fn], setFilesToUpload: [Function: fn], clearUpload: [Function: fn], takeScreenshot: [Function: fn], takeElementScreenshot: [Function: fn], resizeWindow: [Function: fn], resizeWindowToFitDevice: [Function: fn], maximizeWindow: [Function: fn], switchToIframe: [Function: fn], switchToMainWindow: [Function: fn], openWindow: [Function: fn], closeWindow: [Function: fn], getCurrentWindow: [Function: fn], switchToWindow: [Function: fn], switchToParentWindow: [Function: fn], switchToPreviousWindow: [Function: fn], eval: [Function: fn], setNativeDialogHandler: [Function: fn], getNativeDialogHistory: [Function: fn], getBrowserConsoleMessages: [Function: fn], expect: [Function: fn], debug: [Function: fn], setTestSpeed: [Function: fn], setPageLoadTimeout: [Function: fn], useRole: [Function: fn], addRequestHooks: [Function: fn], removeRequestHooks: [Function: fn], _handled: true }, warningLog: WarningLog { globalLog: [WarningLog], messages: [] } } })\"\n  ],\n  apiFnIndex: 0\n}"
+              "status": "passed",
+              "duration": 43000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 13,
+            "name": "I click Get Started button",
+            "match": {
+              "location": "features\\step_definition\\chat.spec.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1609000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "I land on chat dashboard page",
+            "match": {
+              "location": "features\\step_definition\\chat.spec.js:18"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 2404000000,
+              "error_message": "{\n  code: 'E4',\n  isTestCafeError: true,\n  callsite: CallsiteRecord {\n    filename: 'C:\\\\Users\\\\artur\\\\testcafe_cucumber\\\\comms-center\\\\testcafe-comms-center-e2e\\\\features\\\\support\\\\asserts.js',\n    lineNum: 16,\n    callsiteFrameIdx: 6,\n    stackFrames: [\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object]\n    ],\n    isV8Frames: true\n  },\n  errMsg: `SyntaxError: Failed to execute 'querySelectorAll' on 'Document': 'data-cy=\"icon-container\"' is not a valid selector.`,\n  instantiationCallsiteName: 'Selector'\n}"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 4000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@e2e",
+            "line": 4
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "chat-feature",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Chat Feature",
+    "tags": [],
+    "uri": "features\\chat.feature"
+  },
+  {
+    "description": "    As a visitor I can login to the Scorpion Home",
+    "elements": [
+      {
+        "description": "",
+        "id": "login;user-login-e2e-scenario",
+        "keyword": "Scenario Outline",
+        "line": 5,
+        "name": "User Login E2E Scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 6616000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "we are in Scorpion login page",
+            "match": {
+              "location": "features\\step_definition\\login.spec.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 234000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "we enter \"paulk@thomasandpaulk.com\" and \"Gam3Chang3r!\"",
+            "match": {
+              "location": "features\\step_definition\\login.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1974000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "we click on sign in button",
+            "match": {
+              "location": "features\\step_definition\\login.spec.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2075000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "we wait for \"10\" seconds",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10005000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "we assert the Scorpion main page",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 71000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@e2e",
+            "line": 4
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login;user-login-e2e-scenario",
+        "keyword": "Scenario Outline",
+        "line": 5,
+        "name": "User Login E2E Scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 8833000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "we are in Scorpion login page",
+            "match": {
+              "location": "features\\step_definition\\login.spec.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 492000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "we enter \"paulk@thomasandpaulk.com\" and \"Gam3Chang3r!\"",
+            "match": {
+              "location": "features\\step_definition\\login.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3679000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "we click on sign in button",
+            "match": {
+              "location": "features\\step_definition\\login.spec.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2832000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "we wait for \"10\" seconds",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10005000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "we assert the Scorpion main page",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 56000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@e2e",
+            "line": 4
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "login",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login",
+    "tags": [],
+    "uri": "features\\login.feature"
+  },
+  {
+    "description": "    As a visitor I can navigate to messenger",
+    "elements": [
+      {
+        "description": "",
+        "id": "messenger;user-messenger-e2e-scenario",
+        "keyword": "Scenario Outline",
+        "line": 5,
+        "name": "User Messenger E2E Scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 6714000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "we are in Scorpion login page",
+            "match": {
+              "location": "features\\step_definition\\login.spec.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 389000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "we enter \"joehaus895@gmail.com\" and \"Team123!\"",
+            "match": {
+              "location": "features\\step_definition\\login.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1793000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "we click on sign in button",
+            "match": {
+              "location": "features\\step_definition\\login.spec.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1999000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "we wait for \"10\" seconds",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10017000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "we assert the Scorpion main page",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 60000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "we click on Messenger button",
+            "match": {
+              "location": "features\\step_definition\\messenger.spec.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 14629000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I land on Messenger page",
+            "match": {
+              "location": "features\\step_definition\\messenger.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I click on Search button from messenger page",
+            "match": {
+              "location": "features\\step_definition\\messenger.spec.js:14"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 20032000000,
+              "error_message": "Error: function timed out, ensure the promise resolves within 20000 milliseconds\n    at Timeout._onTimeout (C:\\Users\\artur\\testcafe_cucumber\\comms-center\\testcafe-comms-center-e2e\\node_modules\\@cucumber\\cucumber\\src\\user_code_runner.ts:80:18)\n    at listOnTimeout (internal/timers.js:554:17)\n    at processTimers (internal/timers.js:497:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
             "name": "I click on Groups button",
             "match": {
-              "location": "features\\step_definition\\messengerstepdef.js:39"
+              "location": "features\\step_definition\\messenger.spec.js:19"
             },
             "result": {
               "status": "skipped",
@@ -125,10 +528,10 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 14,
+            "line": 15,
             "name": "I click on People button",
             "match": {
-              "location": "features\\step_definition\\messengerstepdef.js:44"
+              "location": "features\\step_definition\\messenger.spec.js:24"
             },
             "result": {
               "status": "skipped",
@@ -138,10 +541,36 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 15,
+            "line": 16,
             "name": "I click on Messages button",
             "match": {
-              "location": "features\\step_definition\\messengerstepdef.js:49"
+              "location": "features\\step_definition\\messenger.spec.js:29"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "we click on settings button",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:14"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "we sign out Scorpion",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:22"
             },
             "result": {
               "status": "skipped",
@@ -161,7 +590,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 3000000
+              "duration": 1000000
             }
           }
         ],
@@ -179,7 +608,7 @@
       },
       {
         "description": "",
-        "id": "messenger-feature;user-messenger-e2e-scenario",
+        "id": "messenger;user-messenger-e2e-scenario",
         "keyword": "Scenario Outline",
         "line": 5,
         "name": "User Messenger E2E Scenario",
@@ -189,7 +618,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 8047000000
+              "duration": 6535000000
             }
           },
           {
@@ -202,7 +631,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 415000000
+              "duration": 219000000
             }
           },
           {
@@ -215,7 +644,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4258000000
+              "duration": 1973000000
             }
           },
           {
@@ -228,7 +657,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1426000000
+              "duration": 2277000000
             }
           },
           {
@@ -241,7 +670,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10022000000
+              "duration": 10017000000
             }
           },
           {
@@ -254,73 +683,111 @@
             },
             "result": {
               "status": "passed",
-              "duration": 49000000
+              "duration": 68000000
             }
           },
           {
             "arguments": [],
-            "keyword": "And ",
+            "keyword": "When ",
             "line": 11,
-            "name": "I land on Messenger page",
+            "name": "we click on Messenger button",
             "match": {
-              "location": "features\\step_definition\\messengerstepdef.js:30"
+              "location": "features\\step_definition\\messenger.spec.js:6"
             },
             "result": {
               "status": "passed",
-              "duration": 4000000
+              "duration": 1076000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 12,
-            "name": "I click on Search button from messenger page",
+            "name": "I land on Messenger page",
             "match": {
-              "location": "features\\step_definition\\messengerstepdef.js:34"
+              "location": "features\\step_definition\\messenger.spec.js:10"
             },
             "result": {
-              "status": "failed",
-              "duration": 14843000000,
-              "error_message": "{\n  code: 'E24',\n  isTestCafeError: true,\n  callsite: CallsiteRecord {\n    filename: 'C:\\\\Users\\\\artur\\\\testcafe_cucumber\\\\comms-center\\\\testcafe-comms-center-e2e\\\\features\\\\step_definition\\\\messengerstepdef.js',\n    lineNum: 35,\n    callsiteFrameIdx: 6,\n    stackFrames: [\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object],\n      [Object]\n    ],\n    isV8Frames: true\n  },\n  apiFnChain: [\n    \"Selector('[data-cy=search-button]')\",\n    \".with({ boundTestRun: <ref *1> TestController { _executionContext: null, testRun: TestRun { captureRejections: false, warningLog: [WarningLog], opts: [Object: null prototype], test: [Test], browserConnection: [BrowserConnection], phase: 'inTest', driverTaskQueue: [Array], testDoneCommandQueued: false, activeDialogHandler: null, activeIframeSelector: null, speed: 1, pageLoadTimeout: 3000, disablePageReloads: false, disablePageCaching: false, disableMultipleWindows: false, requestTimeout: [Object], session: [SessionController], consoleMessages: [BrowserConsoleMessages], pendingRequest: null, pendingPageError: null, controller: [Circular *1], ctx: [Object: null prototype] {}, fixtureCtx: [Object: null prototype] {}, currentRoleId: null, usedRoleStates: [Object: null prototype] {}, errs: [], lastDriverStatusId: '15824.679999990622', lastDriverStatusResponse: [ExecuteSelectorCommand], fileDownloadingHandled: false, resolveWaitForFileDownloadingPromise: null, addingDriverTasksCount: 0, debugging: false, debugOnFail: false, disableDebugBreakpoints: false, debugReporterPluginHost: [ReporterPluginHost], browserManipulationQueue: [BrowserManipulationQueue], debugLog: [TestRunDebugLog], quarantine: null, debugLogger: [Object], observedCallsites: [ObservedCallsitesStorage], requestHooks: [], preventEmitActionEvents: true, [Symbol(testRun)]: true }, executionChain: Promise { _then: [Array], then: [Function (anonymous)], click: [Function: fn], rightClick: [Function: fn], doubleClick: [Function: fn], hover: [Function: fn], drag: [Function: fn], dragToElement: [Function: fn], typeText: [Function: fn], selectText: [Function: fn], selectTextAreaContent: [Function: fn], selectEditableContent: [Function: fn], pressKey: [Function: fn], wait: [Function: fn], navigateTo: [Function: fn], setFilesToUpload: [Function: fn], clearUpload: [Function: fn], takeScreenshot: [Function: fn], takeElementScreenshot: [Function: fn], resizeWindow: [Function: fn], resizeWindowToFitDevice: [Function: fn], maximizeWindow: [Function: fn], switchToIframe: [Function: fn], switchToMainWindow: [Function: fn], openWindow: [Function: fn], closeWindow: [Function: fn], getCurrentWindow: [Function: fn], switchToWindow: [Function: fn], switchToParentWindow: [Function: fn], switchToPreviousWindow: [Function: fn], eval: [Function: fn], setNativeDialogHandler: [Function: fn], getNativeDialogHistory: [Function: fn], getBrowserConsoleMessages: [Function: fn], expect: [Function: fn], debug: [Function: fn], setTestSpeed: [Function: fn], setPageLoadTimeout: [Function: fn], useRole: [Function: fn], addRequestHooks: [Function: fn], removeRequestHooks: [Function: fn], _handled: true }, warningLog: WarningLog { globalLog: [WarningLog], messages: [] } } })\"\n  ],\n  apiFnIndex: 0\n}"
+              "status": "passed",
+              "duration": 1000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 13,
-            "name": "I click on Groups button",
+            "name": "I click on Search button from messenger page",
             "match": {
-              "location": "features\\step_definition\\messengerstepdef.js:39"
+              "location": "features\\step_definition\\messenger.spec.js:14"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 2406000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 14,
-            "name": "I click on People button",
+            "name": "I click on Groups button",
             "match": {
-              "location": "features\\step_definition\\messengerstepdef.js:44"
+              "location": "features\\step_definition\\messenger.spec.js:19"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 1210000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "I click on People button",
+            "match": {
+              "location": "features\\step_definition\\messenger.spec.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1187000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 15,
+            "line": 16,
             "name": "I click on Messages button",
             "match": {
-              "location": "features\\step_definition\\messengerstepdef.js:49"
+              "location": "features\\step_definition\\messenger.spec.js:29"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 1202000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "we click on settings button",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 198000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "we sign out Scorpion",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1301000000
             }
           },
           {
@@ -328,7 +795,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 4000000
+              "duration": 1000000
             }
           },
           {
@@ -336,7 +803,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 3000000
+              "duration": 1000000
             }
           }
         ],
@@ -354,7 +821,7 @@
       },
       {
         "description": "",
-        "id": "messenger-feature;user-messenger-e2e-scenario",
+        "id": "messenger;user-messenger-e2e-scenario",
         "keyword": "Scenario Outline",
         "line": 5,
         "name": "User Messenger E2E Scenario",
@@ -364,7 +831,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 8336000000
+              "duration": 6830000000
             }
           },
           {
@@ -377,7 +844,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 579000000
+              "duration": 213000000
             }
           },
           {
@@ -390,7 +857,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4535000000
+              "duration": 2454000000
             }
           },
           {
@@ -403,7 +870,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1795000000
+              "duration": 1613000000
             }
           },
           {
@@ -416,7 +883,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10020000000
+              "duration": 10006000000
             }
           },
           {
@@ -429,43 +896,43 @@
             },
             "result": {
               "status": "passed",
-              "duration": 52000000
+              "duration": 72000000
             }
           },
           {
             "arguments": [],
-            "keyword": "And ",
+            "keyword": "When ",
             "line": 11,
-            "name": "I land on Messenger page",
+            "name": "we click on Messenger button",
             "match": {
-              "location": "features\\step_definition\\messengerstepdef.js:30"
+              "location": "features\\step_definition\\messenger.spec.js:6"
             },
             "result": {
-              "status": "passed",
-              "duration": 3000000
+              "status": "failed",
+              "duration": 12926000000,
+              "error_message": "{\n  code: 'E24',\n  isTestCafeError: true,\n  callsite: CallsiteRecord {\n    filename: 'C:\\\\Users\\\\artur\\\\testcafe_cucumber\\\\comms-center\\\\testcafe-comms-center-e2e\\\\pages\\\\actions.pages.js',\n    lineNum: 8,\n    callsiteFrameIdx: 6,\n    stackFrames: [\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object]\n    ],\n    isV8Frames: true\n  },\n  apiFnChain: [ `Selector('[data-cy=\"dock-app-tile-comms-messenger\"]')` ],\n  apiFnIndex: 0\n}"
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 12,
-            "name": "I click on Search button from messenger page",
+            "name": "I land on Messenger page",
             "match": {
-              "location": "features\\step_definition\\messengerstepdef.js:34"
+              "location": "features\\step_definition\\messenger.spec.js:10"
             },
             "result": {
-              "status": "failed",
-              "duration": 15191000000,
-              "error_message": "{\n  code: 'E24',\n  isTestCafeError: true,\n  callsite: CallsiteRecord {\n    filename: 'C:\\\\Users\\\\artur\\\\testcafe_cucumber\\\\comms-center\\\\testcafe-comms-center-e2e\\\\features\\\\step_definition\\\\messengerstepdef.js',\n    lineNum: 35,\n    callsiteFrameIdx: 6,\n    stackFrames: [\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object],\n      [Object]\n    ],\n    isV8Frames: true\n  },\n  apiFnChain: [\n    \"Selector('[data-cy=search-button]')\",\n    \".with({ boundTestRun: <ref *1> TestController { _executionContext: null, testRun: TestRun { captureRejections: false, warningLog: [WarningLog], opts: [Object: null prototype], test: [Test], browserConnection: [BrowserConnection], phase: 'inTest', driverTaskQueue: [Array], testDoneCommandQueued: false, activeDialogHandler: null, activeIframeSelector: null, speed: 1, pageLoadTimeout: 3000, disablePageReloads: false, disablePageCaching: false, disableMultipleWindows: false, requestTimeout: [Object], session: [SessionController], consoleMessages: [BrowserConsoleMessages], pendingRequest: null, pendingPageError: null, controller: [Circular *1], ctx: [Object: null prototype] {}, fixtureCtx: [Object: null prototype] {}, currentRoleId: null, usedRoleStates: [Object: null prototype] {}, errs: [], lastDriverStatusId: '16552.980000007665', lastDriverStatusResponse: [ExecuteSelectorCommand], fileDownloadingHandled: false, resolveWaitForFileDownloadingPromise: null, addingDriverTasksCount: 0, debugging: false, debugOnFail: false, disableDebugBreakpoints: false, debugReporterPluginHost: [ReporterPluginHost], browserManipulationQueue: [BrowserManipulationQueue], debugLog: [TestRunDebugLog], quarantine: null, debugLogger: [Object], observedCallsites: [ObservedCallsitesStorage], requestHooks: [], preventEmitActionEvents: true, [Symbol(testRun)]: true }, executionChain: Promise { _then: [Array], then: [Function (anonymous)], click: [Function: fn], rightClick: [Function: fn], doubleClick: [Function: fn], hover: [Function: fn], drag: [Function: fn], dragToElement: [Function: fn], typeText: [Function: fn], selectText: [Function: fn], selectTextAreaContent: [Function: fn], selectEditableContent: [Function: fn], pressKey: [Function: fn], wait: [Function: fn], navigateTo: [Function: fn], setFilesToUpload: [Function: fn], clearUpload: [Function: fn], takeScreenshot: [Function: fn], takeElementScreenshot: [Function: fn], resizeWindow: [Function: fn], resizeWindowToFitDevice: [Function: fn], maximizeWindow: [Function: fn], switchToIframe: [Function: fn], switchToMainWindow: [Function: fn], openWindow: [Function: fn], closeWindow: [Function: fn], getCurrentWindow: [Function: fn], switchToWindow: [Function: fn], switchToParentWindow: [Function: fn], switchToPreviousWindow: [Function: fn], eval: [Function: fn], setNativeDialogHandler: [Function: fn], getNativeDialogHistory: [Function: fn], getBrowserConsoleMessages: [Function: fn], expect: [Function: fn], debug: [Function: fn], setTestSpeed: [Function: fn], setPageLoadTimeout: [Function: fn], useRole: [Function: fn], addRequestHooks: [Function: fn], removeRequestHooks: [Function: fn], _handled: true }, warningLog: WarningLog { globalLog: [WarningLog], messages: [] } } })\"\n  ],\n  apiFnIndex: 0\n}"
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 13,
-            "name": "I click on Groups button",
+            "name": "I click on Search button from messenger page",
             "match": {
-              "location": "features\\step_definition\\messengerstepdef.js:39"
+              "location": "features\\step_definition\\messenger.spec.js:14"
             },
             "result": {
               "status": "skipped",
@@ -476,9 +943,22 @@
             "arguments": [],
             "keyword": "And ",
             "line": 14,
+            "name": "I click on Groups button",
+            "match": {
+              "location": "features\\step_definition\\messenger.spec.js:19"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
             "name": "I click on People button",
             "match": {
-              "location": "features\\step_definition\\messengerstepdef.js:44"
+              "location": "features\\step_definition\\messenger.spec.js:24"
             },
             "result": {
               "status": "skipped",
@@ -488,10 +968,36 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 15,
+            "line": 16,
             "name": "I click on Messages button",
             "match": {
-              "location": "features\\step_definition\\messengerstepdef.js:49"
+              "location": "features\\step_definition\\messenger.spec.js:29"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "we click on settings button",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:14"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "we sign out Scorpion",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:22"
             },
             "result": {
               "status": "skipped",
@@ -503,7 +1009,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 4000000
+              "duration": 5000000
             }
           },
           {
@@ -511,7 +1017,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 3000000
+              "duration": 1000000
             }
           }
         ],
@@ -528,10 +1034,10 @@
         "type": "scenario"
       }
     ],
-    "id": "messenger-feature",
+    "id": "messenger",
     "line": 1,
     "keyword": "Feature",
-    "name": "Messenger Feature",
+    "name": "Messenger",
     "tags": [],
     "uri": "features\\messenger.feature"
   },
@@ -542,7 +1048,7 @@
         "description": "",
         "id": "phone-feature;user-phone-e2e-scenario",
         "keyword": "Scenario Outline",
-        "line": 13,
+        "line": 6,
         "name": "User Phone E2E Scenario",
         "steps": [
           {
@@ -550,43 +1056,108 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 8519000000
+              "duration": 6734000000
             }
           },
           {
             "arguments": [],
-            "keyword": "And ",
-            "line": 15,
-            "name": "I land on Phone page",
+            "keyword": "Given ",
+            "line": 7,
+            "name": "we are in Scorpion login page",
             "match": {
-              "location": "features\\step_definition\\phonestepdef.js:30"
+              "location": "features\\step_definition\\login.spec.js:6"
             },
             "result": {
               "status": "passed",
-              "duration": 10000000
+              "duration": 295000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "we enter \"joehaus895@gmail.com\" and \"Team123!\"",
+            "match": {
+              "location": "features\\step_definition\\login.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2005000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 16,
+            "line": 9,
+            "name": "we click on sign in button",
+            "match": {
+              "location": "features\\step_definition\\login.spec.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1827000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "we wait for \"10\" seconds",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10008000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "we assert the Scorpion main page",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 117000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I land on Phone page",
+            "match": {
+              "location": "features\\step_definition\\phone.spec.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
             "name": "I click on Search button from phone page",
             "match": {
-              "location": "features\\step_definition\\phonestepdef.js:34"
+              "location": "features\\step_definition\\phone.spec.js:11"
             },
             "result": {
               "status": "failed",
-              "duration": 13054000000,
-              "error_message": "{\n  code: 'E24',\n  isTestCafeError: true,\n  callsite: CallsiteRecord {\n    filename: 'C:\\\\Users\\\\artur\\\\testcafe_cucumber\\\\comms-center\\\\testcafe-comms-center-e2e\\\\features\\\\step_definition\\\\phonestepdef.js',\n    lineNum: 35,\n    callsiteFrameIdx: 6,\n    stackFrames: [\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object],\n      [Object]\n    ],\n    isV8Frames: true\n  },\n  apiFnChain: [\n    \"Selector('[data-cy=button-search]')\",\n    \".with({ boundTestRun: <ref *1> TestController { _executionContext: null, testRun: TestRun { captureRejections: false, warningLog: [WarningLog], opts: [Object: null prototype], test: [Test], browserConnection: [BrowserConnection], phase: 'inTest', driverTaskQueue: [], testDoneCommandQueued: false, activeDialogHandler: null, activeIframeSelector: null, speed: 1, pageLoadTimeout: 3000, disablePageReloads: false, disablePageCaching: false, disableMultipleWindows: false, requestTimeout: [Object], session: [SessionController], consoleMessages: [BrowserConsoleMessages], pendingRequest: [Object], pendingPageError: null, controller: [Circular *1], ctx: [Object: null prototype] {}, fixtureCtx: [Object: null prototype] {}, currentRoleId: null, usedRoleStates: [Object: null prototype] {}, errs: [], lastDriverStatusId: '1519.2150000075344', lastDriverStatusResponse: null, fileDownloadingHandled: false, resolveWaitForFileDownloadingPromise: null, addingDriverTasksCount: 0, debugging: false, debugOnFail: false, disableDebugBreakpoints: false, debugReporterPluginHost: [ReporterPluginHost], browserManipulationQueue: [BrowserManipulationQueue], debugLog: [TestRunDebugLog], quarantine: null, debugLogger: [Object], observedCallsites: [ObservedCallsitesStorage], requestHooks: [], [Symbol(testRun)]: true }, executionChain: Promise { _then: undefined, then: [Function (anonymous)], click: [Function: fn], rightClick: [Function: fn], doubleClick: [Function: fn], hover: [Function: fn], drag: [Function: fn], dragToElement: [Function: fn], typeText: [Function: fn], selectText: [Function: fn], selectTextAreaContent: [Function: fn], selectEditableContent: [Function: fn], pressKey: [Function: fn], wait: [Function: fn], navigateTo: [Function: fn], setFilesToUpload: [Function: fn], clearUpload: [Function: fn], takeScreenshot: [Function: fn], takeElementScreenshot: [Function: fn], resizeWindow: [Function: fn], resizeWindowToFitDevice: [Function: fn], maximizeWindow: [Function: fn], switchToIframe: [Function: fn], switchToMainWindow: [Function: fn], openWindow: [Function: fn], closeWindow: [Function: fn], getCurrentWindow: [Function: fn], switchToWindow: [Function: fn], switchToParentWindow: [Function: fn], switchToPreviousWindow: [Function: fn], eval: [Function: fn], setNativeDialogHandler: [Function: fn], getNativeDialogHistory: [Function: fn], getBrowserConsoleMessages: [Function: fn], expect: [Function: fn], debug: [Function: fn], setTestSpeed: [Function: fn], setPageLoadTimeout: [Function: fn], useRole: [Function: fn], addRequestHooks: [Function: fn], removeRequestHooks: [Function: fn], _handled: true, _state: 'fulfilled', _data: null }, warningLog: WarningLog { globalLog: [WarningLog], messages: [] } } })\"\n  ],\n  apiFnIndex: 0\n}"
+              "duration": 1000000,
+              "error_message": "TypeError: PhonePageLocator.SearchBtn is not a function\n    at CustomWorld.<anonymous> (C:\\Users\\artur\\testcafe_cucumber\\comms-center\\testcafe-comms-center-e2e\\features\\step_definition\\phone.spec.js:13:58)"
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 17,
+            "line": 14,
             "name": "I click on Make a Call button",
             "match": {
-              "location": "features\\step_definition\\phonestepdef.js:39"
+              "location": "features\\step_definition\\phone.spec.js:16"
             },
             "result": {
               "status": "skipped",
@@ -596,10 +1167,10 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 18,
+            "line": 15,
             "name": "I enter numbers in Phone Number entry \"818-234-5566\"",
             "match": {
-              "location": "features\\step_definition\\phonestepdef.js:43"
+              "location": "features\\step_definition\\phone.spec.js:20"
             },
             "result": {
               "status": "skipped",
@@ -609,10 +1180,36 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 19,
+            "line": 16,
             "name": "I click on Call button",
             "match": {
-              "location": "features\\step_definition\\phonestepdef.js:47"
+              "location": "features\\step_definition\\phone.spec.js:24"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I click on End Call button",
+            "match": {
+              "location": "features\\step_definition\\phone.spec.js:28"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I click on Make a Call button again",
+            "match": {
+              "location": "features\\step_definition\\phone.spec.js:32"
             },
             "result": {
               "status": "skipped",
@@ -623,9 +1220,9 @@
             "arguments": [],
             "keyword": "And ",
             "line": 20,
-            "name": "I click on End Call button",
+            "name": "I click on Number Four button",
             "match": {
-              "location": "features\\step_definition\\phonestepdef.js:52"
+              "location": "features\\step_definition\\phone.spec.js:36"
             },
             "result": {
               "status": "skipped",
@@ -636,9 +1233,9 @@
             "arguments": [],
             "keyword": "And ",
             "line": 21,
-            "name": "I click on Make a Call button again",
+            "name": "I click on Number One button",
             "match": {
-              "location": "features\\step_definition\\phonestepdef.js:57"
+              "location": "features\\step_definition\\phone.spec.js:40"
             },
             "result": {
               "status": "skipped",
@@ -648,10 +1245,10 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 23,
-            "name": "I click on Number Four button",
+            "line": 22,
+            "name": "I click on Number Five button",
             "match": {
-              "location": "features\\step_definition\\phonestepdef.js:61"
+              "location": "features\\step_definition\\phone.spec.js:44"
             },
             "result": {
               "status": "skipped",
@@ -662,9 +1259,9 @@
             "arguments": [],
             "keyword": "And ",
             "line": 24,
-            "name": "I click on Number One button",
+            "name": "I click on Number Nine button",
             "match": {
-              "location": "features\\step_definition\\phonestepdef.js:65"
+              "location": "features\\step_definition\\phone.spec.js:49"
             },
             "result": {
               "status": "skipped",
@@ -675,9 +1272,9 @@
             "arguments": [],
             "keyword": "And ",
             "line": 25,
-            "name": "I click on Number Five button",
+            "name": "I click on Number Two button",
             "match": {
-              "location": "features\\step_definition\\phonestepdef.js:69"
+              "location": "features\\step_definition\\phone.spec.js:53"
             },
             "result": {
               "status": "skipped",
@@ -687,10 +1284,10 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 27,
-            "name": "I click on Number Nine button",
+            "line": 26,
+            "name": "I click on Number Seven button",
             "match": {
-              "location": "features\\step_definition\\phonestepdef.js:74"
+              "location": "features\\step_definition\\phone.spec.js:57"
             },
             "result": {
               "status": "skipped",
@@ -701,9 +1298,9 @@
             "arguments": [],
             "keyword": "And ",
             "line": 28,
-            "name": "I click on Number Two button",
+            "name": "I click on Number Six button",
             "match": {
-              "location": "features\\step_definition\\phonestepdef.js:78"
+              "location": "features\\step_definition\\phone.spec.js:61"
             },
             "result": {
               "status": "skipped",
@@ -714,9 +1311,22 @@
             "arguments": [],
             "keyword": "And ",
             "line": 29,
-            "name": "I click on Number Seven button",
+            "name": "I click on Number Three button",
             "match": {
-              "location": "features\\step_definition\\phonestepdef.js:82"
+              "location": "features\\step_definition\\phone.spec.js:65"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "I click on Number Eight button",
+            "match": {
+              "location": "features\\step_definition\\phone.spec.js:69"
             },
             "result": {
               "status": "skipped",
@@ -727,22 +1337,9 @@
             "arguments": [],
             "keyword": "And ",
             "line": 31,
-            "name": "I click on Number Six button",
+            "name": "I click on Number Zero button",
             "match": {
-              "location": "features\\step_definition\\phonestepdef.js:86"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 32,
-            "name": "I click on Number Three button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:90"
+              "location": "features\\step_definition\\phone.spec.js:73"
             },
             "result": {
               "status": "skipped",
@@ -753,35 +1350,9 @@
             "arguments": [],
             "keyword": "And ",
             "line": 33,
-            "name": "I click on Number Eight button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:94"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 34,
-            "name": "I click on Number Zero button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:98"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 36,
             "name": "I click on Call button again",
             "match": {
-              "location": "features\\step_definition\\phonestepdef.js:102"
+              "location": "features\\step_definition\\phone.spec.js:77"
             },
             "result": {
               "status": "skipped",
@@ -791,10 +1362,10 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 37,
+            "line": 34,
             "name": "I click on End Call button again",
             "match": {
-              "location": "features\\step_definition\\phonestepdef.js:107"
+              "location": "features\\step_definition\\phone.spec.js:81"
             },
             "result": {
               "status": "skipped",
@@ -814,590 +1385,14 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 2000000
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@e2e",
-            "line": 12
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "phone-feature;user-phone-e2e-scenario",
-        "keyword": "Scenario Outline",
-        "line": 13,
-        "name": "User Phone E2E Scenario",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 8068000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 15,
-            "name": "I land on Phone page",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:30"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 4000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 16,
-            "name": "I click on Search button from phone page",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:34"
-            },
-            "result": {
-              "status": "failed",
-              "duration": 13132000000,
-              "error_message": "{\n  code: 'E24',\n  isTestCafeError: true,\n  callsite: CallsiteRecord {\n    filename: 'C:\\\\Users\\\\artur\\\\testcafe_cucumber\\\\comms-center\\\\testcafe-comms-center-e2e\\\\features\\\\step_definition\\\\phonestepdef.js',\n    lineNum: 35,\n    callsiteFrameIdx: 6,\n    stackFrames: [\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object],\n      [Object]\n    ],\n    isV8Frames: true\n  },\n  apiFnChain: [\n    \"Selector('[data-cy=button-search]')\",\n    \".with({ boundTestRun: <ref *1> TestController { _executionContext: null, testRun: TestRun { captureRejections: false, warningLog: [WarningLog], opts: [Object: null prototype], test: [Test], browserConnection: [BrowserConnection], phase: 'inTest', driverTaskQueue: [], testDoneCommandQueued: false, activeDialogHandler: null, activeIframeSelector: null, speed: 1, pageLoadTimeout: 3000, disablePageReloads: false, disablePageCaching: false, disableMultipleWindows: false, requestTimeout: [Object], session: [SessionController], consoleMessages: [BrowserConsoleMessages], pendingRequest: [Object], pendingPageError: null, controller: [Circular *1], ctx: [Object: null prototype] {}, fixtureCtx: [Object: null prototype] {}, currentRoleId: null, usedRoleStates: [Object: null prototype] {}, errs: [], lastDriverStatusId: '1629.3799999984913', lastDriverStatusResponse: null, fileDownloadingHandled: false, resolveWaitForFileDownloadingPromise: null, addingDriverTasksCount: 0, debugging: false, debugOnFail: false, disableDebugBreakpoints: false, debugReporterPluginHost: [ReporterPluginHost], browserManipulationQueue: [BrowserManipulationQueue], debugLog: [TestRunDebugLog], quarantine: null, debugLogger: [Object], observedCallsites: [ObservedCallsitesStorage], requestHooks: [], [Symbol(testRun)]: true }, executionChain: Promise { _then: undefined, then: [Function (anonymous)], click: [Function: fn], rightClick: [Function: fn], doubleClick: [Function: fn], hover: [Function: fn], drag: [Function: fn], dragToElement: [Function: fn], typeText: [Function: fn], selectText: [Function: fn], selectTextAreaContent: [Function: fn], selectEditableContent: [Function: fn], pressKey: [Function: fn], wait: [Function: fn], navigateTo: [Function: fn], setFilesToUpload: [Function: fn], clearUpload: [Function: fn], takeScreenshot: [Function: fn], takeElementScreenshot: [Function: fn], resizeWindow: [Function: fn], resizeWindowToFitDevice: [Function: fn], maximizeWindow: [Function: fn], switchToIframe: [Function: fn], switchToMainWindow: [Function: fn], openWindow: [Function: fn], closeWindow: [Function: fn], getCurrentWindow: [Function: fn], switchToWindow: [Function: fn], switchToParentWindow: [Function: fn], switchToPreviousWindow: [Function: fn], eval: [Function: fn], setNativeDialogHandler: [Function: fn], getNativeDialogHistory: [Function: fn], getBrowserConsoleMessages: [Function: fn], expect: [Function: fn], debug: [Function: fn], setTestSpeed: [Function: fn], setPageLoadTimeout: [Function: fn], useRole: [Function: fn], addRequestHooks: [Function: fn], removeRequestHooks: [Function: fn], _handled: true, _state: 'fulfilled', _data: null }, warningLog: WarningLog { globalLog: [WarningLog], messages: [] } } })\"\n  ],\n  apiFnIndex: 0\n}"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 17,
-            "name": "I click on Make a Call button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:39"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 18,
-            "name": "I enter numbers in Phone Number entry \"650-334-4466\"",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:43"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 19,
-            "name": "I click on Call button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:47"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 20,
-            "name": "I click on End Call button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:52"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 21,
-            "name": "I click on Make a Call button again",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:57"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 23,
-            "name": "I click on Number Four button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:61"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 24,
-            "name": "I click on Number One button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:65"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 25,
-            "name": "I click on Number Five button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:69"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 27,
-            "name": "I click on Number Nine button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:74"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 28,
-            "name": "I click on Number Two button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:78"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 29,
-            "name": "I click on Number Seven button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:82"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 31,
-            "name": "I click on Number Six button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:86"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 32,
-            "name": "I click on Number Three button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:90"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 33,
-            "name": "I click on Number Eight button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:94"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 34,
-            "name": "I click on Number Zero button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:98"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 36,
-            "name": "I click on Call button again",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:102"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 37,
-            "name": "I click on End Call button again",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:107"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
               "duration": 1000000
             }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 2000000
-            }
           }
         ],
         "tags": [
           {
             "name": "@e2e",
-            "line": 12
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "phone-feature;user-phone-e2e-scenario",
-        "keyword": "Scenario Outline",
-        "line": 13,
-        "name": "User Phone E2E Scenario",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 7775000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 15,
-            "name": "I land on Phone page",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:30"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 16,
-            "name": "I click on Search button from phone page",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:34"
-            },
-            "result": {
-              "status": "failed",
-              "duration": 13534000000,
-              "error_message": "{\n  code: 'E24',\n  isTestCafeError: true,\n  callsite: CallsiteRecord {\n    filename: 'C:\\\\Users\\\\artur\\\\testcafe_cucumber\\\\comms-center\\\\testcafe-comms-center-e2e\\\\features\\\\step_definition\\\\phonestepdef.js',\n    lineNum: 35,\n    callsiteFrameIdx: 6,\n    stackFrames: [\n      [Object], [Object],\n      [Object], [Object],\n      [Object], [Object],\n      [Object]\n    ],\n    isV8Frames: true\n  },\n  apiFnChain: [\n    \"Selector('[data-cy=button-search]')\",\n    \".with({ boundTestRun: <ref *1> TestController { _executionContext: null, testRun: TestRun { captureRejections: false, warningLog: [WarningLog], opts: [Object: null prototype], test: [Test], browserConnection: [BrowserConnection], phase: 'inTest', driverTaskQueue: [], testDoneCommandQueued: false, activeDialogHandler: null, activeIframeSelector: null, speed: 1, pageLoadTimeout: 3000, disablePageReloads: false, disablePageCaching: false, disableMultipleWindows: false, requestTimeout: [Object], session: [SessionController], consoleMessages: [BrowserConsoleMessages], pendingRequest: [Object], pendingPageError: null, controller: [Circular *1], ctx: [Object: null prototype] {}, fixtureCtx: [Object: null prototype] {}, currentRoleId: null, usedRoleStates: [Object: null prototype] {}, errs: [], lastDriverStatusId: '1145.2550000103656', lastDriverStatusResponse: null, fileDownloadingHandled: false, resolveWaitForFileDownloadingPromise: null, addingDriverTasksCount: 0, debugging: false, debugOnFail: false, disableDebugBreakpoints: false, debugReporterPluginHost: [ReporterPluginHost], browserManipulationQueue: [BrowserManipulationQueue], debugLog: [TestRunDebugLog], quarantine: null, debugLogger: [Object], observedCallsites: [ObservedCallsitesStorage], requestHooks: [], [Symbol(testRun)]: true }, executionChain: Promise { _then: undefined, then: [Function (anonymous)], click: [Function: fn], rightClick: [Function: fn], doubleClick: [Function: fn], hover: [Function: fn], drag: [Function: fn], dragToElement: [Function: fn], typeText: [Function: fn], selectText: [Function: fn], selectTextAreaContent: [Function: fn], selectEditableContent: [Function: fn], pressKey: [Function: fn], wait: [Function: fn], navigateTo: [Function: fn], setFilesToUpload: [Function: fn], clearUpload: [Function: fn], takeScreenshot: [Function: fn], takeElementScreenshot: [Function: fn], resizeWindow: [Function: fn], resizeWindowToFitDevice: [Function: fn], maximizeWindow: [Function: fn], switchToIframe: [Function: fn], switchToMainWindow: [Function: fn], openWindow: [Function: fn], closeWindow: [Function: fn], getCurrentWindow: [Function: fn], switchToWindow: [Function: fn], switchToParentWindow: [Function: fn], switchToPreviousWindow: [Function: fn], eval: [Function: fn], setNativeDialogHandler: [Function: fn], getNativeDialogHistory: [Function: fn], getBrowserConsoleMessages: [Function: fn], expect: [Function: fn], debug: [Function: fn], setTestSpeed: [Function: fn], setPageLoadTimeout: [Function: fn], useRole: [Function: fn], addRequestHooks: [Function: fn], removeRequestHooks: [Function: fn], _handled: true, _state: 'fulfilled', _data: null }, warningLog: WarningLog { globalLog: [WarningLog], messages: [] } } })\"\n  ],\n  apiFnIndex: 0\n}"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 17,
-            "name": "I click on Make a Call button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:39"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 18,
-            "name": "I enter numbers in Phone Number entry \"408-992-3340\"",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:43"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 19,
-            "name": "I click on Call button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:47"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 20,
-            "name": "I click on End Call button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:52"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 21,
-            "name": "I click on Make a Call button again",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:57"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 23,
-            "name": "I click on Number Four button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:61"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 24,
-            "name": "I click on Number One button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:65"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 25,
-            "name": "I click on Number Five button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:69"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 27,
-            "name": "I click on Number Nine button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:74"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 28,
-            "name": "I click on Number Two button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:78"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 29,
-            "name": "I click on Number Seven button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:82"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 31,
-            "name": "I click on Number Six button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:86"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 32,
-            "name": "I click on Number Three button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:90"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 33,
-            "name": "I click on Number Eight button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:94"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 34,
-            "name": "I click on Number Zero button",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:98"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 36,
-            "name": "I click on Call button again",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:102"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 37,
-            "name": "I click on End Call button again",
-            "match": {
-              "location": "features\\step_definition\\phonestepdef.js:107"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 2000000
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 2000000
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@e2e",
-            "line": 12
+            "line": 5
           }
         ],
         "type": "scenario"

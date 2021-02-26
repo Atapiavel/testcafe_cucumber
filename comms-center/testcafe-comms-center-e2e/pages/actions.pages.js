@@ -1,12 +1,20 @@
-const { Given, When, Then } = require('cucumber');
 const { Selector } = require('testcafe');
+var shell = require('shelljs');
 
 async function navigate(url) {
     await testController.navigateTo(url);
 }
 
 async function click_element(element) {
-    await testController.click(element)
+    await testController.click(element);
+}
+
+async function take_screenshot() {
+    await testController.takeScreenshot()
+}
+
+function execute_shell(command) {
+    shell.exec(command)
 }
 
 // async function click_element_xpath(element) {
@@ -22,7 +30,7 @@ async function click_element(element) {
 // }
 
 async function type_text(element, value) {
-    await testController.typeText(element, value);
+    await testController.typeText(element, value)
 }
 
 // async function type_and_enter(element, value) {
@@ -30,7 +38,7 @@ async function type_text(element, value) {
 // }
 
 async function click_element_from_list(element, value) {
-    const option = Selector(element).withText(value);
+    const option = Selector(element).withText(value)
     await testController.click(option)
 }
 
@@ -62,6 +70,8 @@ async function wait(seconds) {
 module.exports = {
     navigate: navigate,
     click_element: click_element,
+    take_screenshot: take_screenshot,
+    execute_shell: execute_shell,
     // click_element_xpath: click_element_xpath,
     // click_element_force: click_element_force,
     // hit_enter_key: hit_enter_key,

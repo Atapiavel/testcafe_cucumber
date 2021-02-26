@@ -1,10 +1,11 @@
 const { When, Then } = require('@cucumber/cucumber');
+const ActionsPage = require('../../pages/actions.pages.js')
 const PhonePageLocator = require('../../locators/phone.locators');
 
 const URL = 'https://ui-integration.scorpion.co/phone';
 
 When('I land on Phone page', async function () {
-        await testController.expect(phonepage.PhonePage.exists).ok;
+        await testController.expect(PhonePageLocator.exists).ok;
   })
 
 When('I click on Search button from phone page', async function() {

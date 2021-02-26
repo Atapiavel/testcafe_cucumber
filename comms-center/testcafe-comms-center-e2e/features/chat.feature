@@ -1,7 +1,7 @@
 Feature: Chat Feature
 
     As a visitor I can navigate to chat
-    # @e2e
+    @e2e
     Scenario Outline: User Chat E2E Scenario
         Given we are in Scorpion login page
         When we enter "<email>" and "<password>"
