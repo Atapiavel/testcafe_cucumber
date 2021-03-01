@@ -5,7 +5,7 @@ const PhonePage = require('../../pages/phone.pages');
 
 const URL = 'https://ui-integration.scorpion.co/phone';
 
-When('we click on Phone button', async function () {
+When('I click on Phone button', async function () {
         await ActionsPage.click_element(PhonePageLocator.PhoneBtn())
   });
 

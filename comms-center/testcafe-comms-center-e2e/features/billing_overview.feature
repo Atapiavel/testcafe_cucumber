@@ -4,11 +4,11 @@
 
 #     Scenario: Login
 
-#         Given we are in Scorpion login page
-#         When we enter "paulk@thomasandpaulk.com" and "Gam3Chang3r!"
-#         And we click on sign in button
-#         And we wait for "10" seconds
-#         Then we assert the Scorpion main page
+#         Given I am in Scorpion login page
+#         When I enter "paulk@thomasandpaulk.com" and "Gam3Chang3r!"
+#         And I click on sign in button
+#         And I wait for "10" seconds
+#         Then I assert the Scorpion main page
 
 #     Scenario: Assert recent invoices tiles
 
@@ -19,6 +19,6 @@
 
 #     Scenario: Logout
 
-#         When we click on settings button
-#         And we sign out Scorpion
+#         When I click on settings button
+#         And I sign out Scorpion
 

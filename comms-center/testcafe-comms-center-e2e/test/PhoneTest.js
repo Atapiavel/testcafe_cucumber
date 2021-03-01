@@ -1,6 +1,6 @@
 import {ClientFunction} from 'testcafe';
-import loginpage from '../pages/LoginPage_Old';
-import phonepage from '../pages/PhonePage_Old';
+import loginpage from '../test/pages/LoginPage_Old';
+import phonepage from '../test/pages/PhonePage_Old';
 
 const dataSet = require('../data/data.json');
 const URL ="https://ui-integration.scorpion.co/phone";

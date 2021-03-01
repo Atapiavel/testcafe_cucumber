@@ -3,11 +3,11 @@ Feature: Chat Feature
     As a visitor I can navigate to chat
     @e2e
     Scenario Outline: User Chat E2E Scenario
-        Given we are in Scorpion login page
-        When we enter "<email>" and "<password>"
-        And we click on sign in button
-        And we wait for "10" seconds
-        Then we assert the Scorpion main page
+        Given I am in Scorpion login page
+        When I enter "<email>" and "<password>"
+        And I click on sign in button
+        And I wait for "10" seconds
+        Then I assert the Scorpion main page
         And I click on Chat button
         And I wait for the Chat display
         And I click Get Started button

@@ -5,25 +5,25 @@
 
 #     Scenario: Login
 
-#         Given we are in Scorpion login page
-#         When we enter "paulk@thomasandpaulk.com" and "Gam3Chang3r!"
-#         And we click on sign in button
-#         And we wait for "10" seconds
-#         Then we assert the Scorpion main page
+#         Given I am in Scorpion login page
+#         When I enter "paulk@thomasandpaulk.com" and "Gam3Chang3r!"
+#         And I click on sign in button
+#         And I wait for "10" seconds
+#         Then I assert the Scorpion main page
 
 #     Scenario: Assert Invoice History Page
 
-#         When we click on settings button
-#         Then we select the "Billing" option
-#         And we wait for "5" seconds
-#         Given we are in Billing Overview page
-#         When we click on Billing History option
-#         Then we assert we can see historical invoices
+#         When I click on settings button
+#         Then I select the "Billing" option
+#         And I wait for "5" seconds
+#         Given I am in Billing Overview page
+#         When I click on Billing History option
+#         Then I assert I can see historical invoices
 
 #     Scenario Outline: Invoice Filtering
 
-#         Given we are in Billing Overview page
-#         When we select the filter "<filter>" with "<option>"
+#         Given I am in Billing Overview page
+#         When I select the filter "<filter>" with "<option>"
 
 #         Examples:
 
@@ -38,5 +38,5 @@
 
 #     Scenario: Logout
 
-#         When we click on settings button
-#         And we sign out Scorpion
+#         When I click on settings button
+#         And I sign out Scorpion
