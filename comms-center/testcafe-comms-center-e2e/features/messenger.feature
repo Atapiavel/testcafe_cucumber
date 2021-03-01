@@ -1,7 +1,7 @@
 Feature: Messenger
 
     As a visitor I can navigate to messenger
-    @e2e @focus
+    @e2e
     Scenario Outline: User Messenger E2E Scenario
         Given we are in Scorpion login page
         When we enter "<email>" and "<password>"

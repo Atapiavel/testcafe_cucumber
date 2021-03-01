@@ -4,7 +4,7 @@ const ActionsPage = require('../../pages/actions.pages.js')
 const testControllerHolder = require('./testControllerHolder');
 const { AfterAll, setDefaultTimeout, Before, After, Status, BeforeAll } = require('cucumber');
 const errorHandling = require('./errorHandling');
-const TIMEOUT = 20000;
+const TIMEOUT = 40000;
 
 let isTestCafeError = false;
 let attachScreenshotToReport = null;
