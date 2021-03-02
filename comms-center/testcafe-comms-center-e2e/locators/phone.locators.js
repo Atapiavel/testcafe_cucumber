@@ -9,31 +9,31 @@ function HomePage() {
 }
 
 function SearchBtn() {
-    return select('[data-cy="button-search"]')
+    return select('[data-cy=button-search]')
 }
 
 function MakeCallBtn() {
-    return select('[data-cy="make-a-call"]')
+    return select('[data-cy=make-a-call]')
 }
 
 function PhoneNrEntry() {
-    return select('[data-cy="input-wrapper"]')
+    return select('[data-cy=input-wrapper]')
 }
 
 function CallBtn() {
-    return select('[data-cy="call"]')
+    return select('[data-cy=call]')
 }
 
 function EndCallBtn() {
-    return select('[data-cy="end-call"]')
+    return select('[data-cy=end-call]')
 }
 
 function DialPad() {
-    return select('[data-cy="scorpion-dialer"]')
+    return select('[data-cy=scorpion-dialer]')
 }
 
 function PhoneBtn() {
-    return select('[data-cy="dock-app-tile-comms-phone"]')
+    return select('[data-cy=dock-app-tile-comms-phone]')
 }
 
 module.exports = {

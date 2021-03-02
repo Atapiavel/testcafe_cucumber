@@ -21,7 +21,7 @@ function GetStarted() {
     }
 
 function ChatTitle() {
-        return select('[data-cy="header"]')
+        return select('[data-cy=header]')
     }
 
 function ChatDashboardTtitle() {

@@ -5,7 +5,7 @@ function select(selector) {
 }
 
 function MessengerBtn() {
-    return '[data-cy="dock-app-tile-comms-messenger"]'
+    return '[data-cy=dock-app-tile-comms-messenger]'
 }
 
 function HomePage() {
