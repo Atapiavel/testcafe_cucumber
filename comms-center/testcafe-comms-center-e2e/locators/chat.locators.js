@@ -17,7 +17,7 @@ function SubtitleHeader() {
     }
 
 function GetStarted() {
-        return select('scorpion-ui-card:nth-of-type(1)  .nlp-pt30 > .button')
+        return select('data-cy=get-started')
     }
 
 function ChatTitle() {
