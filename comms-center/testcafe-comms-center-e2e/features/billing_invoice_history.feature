@@ -1,42 +1,63 @@
-# Feature: Billing Invoice History
+Feature: Billing Invoice History
 
-#     https://scorpionx.atlassian.net/browse/BP-54
+    https://scorpionx.atlassian.net/browse/BP-54
 
 
-#     Scenario: Login
+    Scenario: Login
 
-#         Given I am in Scorpion login page
-#         When I enter "paulk@thomasandpaulk.com" and "Gam3Chang3r!"
-#         And I click on sign in button
-#         And I wait for "10" seconds
-#         Then I assert the Scorpion main page
+        Given I am in Scorpion login page
+        When I enter "paulk@thomasandpaulk.com" and "Gam3Chang3r!"
+        And I click on sign in button
+        And I wait for "10" seconds
+        Then I assert the Scorpion main page
 
-#     Scenario: Assert Invoice History Page
+    Scenario: Assert Invoice History Page
 
-#         When I click on settings button
-#         Then I select the "Billing" option
-#         And I wait for "5" seconds
-#         Given I am in Billing Overview page
-#         When I click on Billing History option
-#         Then I assert I can see historical invoices
+        When I click on settings button
+        Then I select the "Billing" option
+        And I wait for "5" seconds
+        Given I am in Billing Overview page
+        When I click on Billing History option
+        Then I assert I can see historical invoices
 
-#     Scenario Outline: Invoice Filtering
+    Scenario Outline: Invoice Filtering
 
-#         Given I am in Billing Overview page
-#         When I select the filter "<filter>" with "<option>"
+        https://scorpionx.atlassian.net/browse/BP-90
 
-#         Examples:
+        Given I am in Billing Overview page
+        When I select the filter "<filter>" with "<option>"
 
-#             | filter    | option             |
-#             | by_year   | 2019-2020          |
-#             | by_date   | 1/1/2019-6/6/2019  |
-#             | by_price  | 500-10000          |
-#             | by_status | due-paid           |
-#             | by_status | services-unpaid    |
-#             | by_status | advertising-unpaid |
-#             | by_status | all                |
+        Examples:
 
-#     Scenario: Logout
+            | filter    | option             |
+            | by_year   | 2019-2020          |
+            | by_date   | 1/1/2019-6/6/2019  |
+            | by_price  | 500-10000          |
+            | by_status | due-paid           |
+            | by_status | services-unpaid    |
+            | by_status | advertising-unpaid |
+            | by_status | all                |
 
-#         When I click on settings button
-#         And I sign out Scorpion
+    Scenario Outline: Assert Kebab menu option <kebab_option> functionality
+
+        https://scorpionx.atlassian.net/browse/BP-95
+
+        When I click on settings button
+        Then I select the "Billing" option
+        And I wait for "5" seconds
+        Given I am in Billing Overview page
+        Then I click the kebab option "<kebab_option>"
+        And I assert the kebab "<kebab_option>" functionality
+
+        Examples:
+            | kebab_option   |
+            | send           |
+            | print          |
+            | download - CSV |
+            | download - PDF |
+            | download - DOC |
+
+    Scenario: Logout
+
+        When I click on settings button
+        And I sign out Scorpion
