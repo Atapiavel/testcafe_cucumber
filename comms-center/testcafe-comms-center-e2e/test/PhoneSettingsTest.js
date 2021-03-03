@@ -1,6 +1,6 @@
 import {ClientFunction} from 'testcafe';
-import loginpage from '../pages/LoginPage_Old';
-import phonesettingspage from '../pages/PhoneSettingsPage';
+import loginpage from '../test/pages/LoginPage_Old';
+import phonesettingspage from '../test/pages/PhoneSettingsPage';
 
 // Adding this const for the Data Driven testing
 const dataSet = require('../data/data.json');

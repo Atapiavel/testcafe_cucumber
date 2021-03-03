@@ -1,6 +1,6 @@
 import {ClientFunction} from 'testcafe';
-import loginpage from '../pages/LoginPage_Old';
-import homepage from '../pages/HomePage';
+import loginpage from '../test/pages/LoginPage_Old';
+import homepage from '../test/pages/HomePage';
 
 const URL ="https://ui-integration.scorpion.co/sign-in";
 const getURL = ClientFunction(() =>window.location.href);

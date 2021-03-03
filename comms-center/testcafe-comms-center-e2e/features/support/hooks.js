@@ -1,9 +1,10 @@
 const fs = require('fs');
 const createTestCafe = require('testcafe');
+const ActionsPage = require('../../pages/actions.pages.js')
 const testControllerHolder = require('./testControllerHolder');
-const { AfterAll, setDefaultTimeout, Before, After, Status } = require('cucumber');
+const { AfterAll, setDefaultTimeout, Before, After, Status, BeforeAll } = require('cucumber');
 const errorHandling = require('./errorHandling');
-const TIMEOUT = 20000;
+const TIMEOUT = 40000;
 
 let isTestCafeError = false;
 let attachScreenshotToReport = null;
@@ -42,6 +43,13 @@ function runTest(iteration, browser) {
 
 setDefaultTimeout(TIMEOUT);
 
+BeforeAll(function () {
+    ActionsPage.execute_shell('cd reports')
+    ActionsPage.execute_shell('rmdir /Q /S screenshots')
+    ActionsPage.execute_shell('mkdir screenshots')
+    ActionsPage.execute_shell('cd ..')
+});
+
 Before(function () {
     runTest(n, this.setBrowser());
     createTestFile();
@@ -59,6 +67,7 @@ After(function () {
 After(async function (testCase) {
     const world = this;
     if (testCase.result.status === Status.FAILED) {
+        ActionsPage.take_screenshot()
         isTestCafeError = true;
         attachScreenshotToReport = world.attachScreenshotToReport;
         errorHandling.addErrorToController();
