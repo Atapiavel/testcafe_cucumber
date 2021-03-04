@@ -24,7 +24,7 @@ Feature: Billing Invoice History
 
         https://scorpionx.atlassian.net/browse/BP-90
 
-        Given I am in Billing Overview page
+        Given I am in Billing Invoice History page
         When I select the filter "<filter>" with "<option>"
 
         Examples:
@@ -42,10 +42,7 @@ Feature: Billing Invoice History
 
         https://scorpionx.atlassian.net/browse/BP-95
 
-        When I click on settings button
-        Then I select the "Billing" option
-        And I wait for "5" seconds
-        Given I am in Billing Overview page
+        Given I am in Billing Invoice History page
         Then I click the kebab option "<kebab_option>"
         And I assert the kebab "<kebab_option>" functionality
 
@@ -56,6 +53,14 @@ Feature: Billing Invoice History
             | download - CSV |
             | download - PDF |
             | download - DOC |
+
+    Scenario: Assert invoice history tiles
+
+        https://scorpionx.atlassian.net/browse/BP-96
+
+        Given I am in Billing Invoice History page
+        Then I verify the tiles are showed with
+            | Invoice # | Invoice Date | Billing Period | Status | Amount |
 
     Scenario: Logout
 

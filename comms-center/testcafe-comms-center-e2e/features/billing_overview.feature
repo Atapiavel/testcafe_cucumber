@@ -8,6 +8,15 @@ Feature: Billing Overview
         And I wait for "10" seconds
         Then I assert the Scorpion main page
 
+        Scenario: Assert Invoice History Page
+
+        When I click on settings button
+        Then I select the "Billing" option
+        And I wait for "5" seconds
+        Given I am in Billing Overview page
+        When I click on Billing History option
+        Then I assert I can see historical invoices
+    
     Scenario: Assert recent invoices tiles
 
         https://scorpionx.atlassian.net/browse/BP-91
