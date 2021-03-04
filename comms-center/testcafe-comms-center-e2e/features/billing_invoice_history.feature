@@ -1,8 +1,5 @@
 Feature: Billing Invoice History
 
-    https://scorpionx.atlassian.net/browse/BP-54
-
-
     Scenario: Login
 
         Given I am in Scorpion login page
@@ -22,8 +19,6 @@ Feature: Billing Invoice History
 
     Scenario Outline: Invoice Filtering
 
-        https://scorpionx.atlassian.net/browse/BP-90
-
         Given I am in Billing Invoice History page
         When I select the filter "<filter>" with "<option>"
 
@@ -40,8 +35,6 @@ Feature: Billing Invoice History
 
     Scenario Outline: Assert Kebab menu option <kebab_option> functionality
 
-        https://scorpionx.atlassian.net/browse/BP-95
-
         Given I am in Billing Invoice History page
         Then I click the kebab option "<kebab_option>"
         And I assert the kebab "<kebab_option>" functionality
@@ -55,8 +48,6 @@ Feature: Billing Invoice History
             | download - DOC |
 
     Scenario: Assert invoice history tiles
-
-        https://scorpionx.atlassian.net/browse/BP-96
 
         Given I am in Billing Invoice History page
         Then I verify the tiles are showed with
