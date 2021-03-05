@@ -1,8 +1,10 @@
 Feature: Billing Invoice History
 
+
+
     Scenario: Login
 
-        Given I am in Scorpion login page
+        Given I am in Scorpion "sign-in" page
         When I enter "paulk@thomasandpaulk.com" and "Gam3Chang3r!"
         And I click on sign in button
         And I wait for "10" seconds

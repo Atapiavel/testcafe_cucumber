@@ -5,7 +5,7 @@ const { Selector } = require('testcafe');
     }
 
     function settings_button() {
-        return '[data-cy=user-menu]'
+        return 'div > scorpion-avatar > button'
     }
 
     function settings_options() {

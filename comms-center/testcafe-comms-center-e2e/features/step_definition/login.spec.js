@@ -3,8 +3,8 @@ const ActionsPage = require('../../pages/actions.pages.js')
 const LoginPageLocator = require('../../locators/login.locators.js');
 const {Given, When, Then} = require('cucumber');
 
-Given('I am in Scorpion login page', {timeout: 2 * 5000}, async function () {
-    await ActionsPage.navigate("https://ui-integration.scorpion.co/sign-in?redirect_uri=%2F")
+Given('I am in Scorpion {string} page', {timeout: 3 * 5000}, async function (url) {
+    await ActionsPage.navigate("https://ui-integration.scorpion.co/" + url)
 });
 
 When('I enter {string} and {string}', async function (email, password) {

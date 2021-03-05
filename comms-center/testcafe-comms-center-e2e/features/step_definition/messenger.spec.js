@@ -3,10 +3,6 @@ const ActionsPage = require('../../pages/actions.pages.js')
 const MessengerPageLocator = require('../../locators/messenger.locators');
 const waitFor = delay => new Promise(resolve => setTimeout(resolve, delay));
 
-When('I click on Messenger button', async function () {
-      await ActionsPage.click_element(MessengerPageLocator.MessengerBtn())
-});
-
 When('I land on Messenger page', async function () {
       await testController.expect(MessengerPageLocator.exists).ok;
 });

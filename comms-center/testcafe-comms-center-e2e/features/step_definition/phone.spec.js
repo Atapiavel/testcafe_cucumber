@@ -3,12 +3,6 @@ const ActionsPage = require('../../pages/actions.pages.js')
 const PhonePageLocator = require('../../locators/phone.locators');
 const PhonePage = require('../../pages/phone.pages');
 
-const URL = 'https://ui-integration.scorpion.co/phone';
-
-When('I click on Phone button', async function () {
-        await ActionsPage.click_element(PhonePageLocator.PhoneBtn())
-  });
-
 When('I land on Phone page', async function () {
         await testController.expect(PhonePageLocator.exists).ok;
 })

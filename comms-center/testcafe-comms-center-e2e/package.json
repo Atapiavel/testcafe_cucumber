@@ -6,6 +6,7 @@
   "scripts": {
     "test": "cucumber-js --tags @e2e --format json:reports/report.json",
     "test_focus": "cucumber-js --tags @focus",
+    "normal_option": "testcafe chrome",
     "report": "node report_generator.js"
   },
   "author": "",
