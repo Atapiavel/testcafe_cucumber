@@ -67,6 +67,11 @@ async function wait(seconds) {
     await testController.wait(time * 1000)
 }
 
+function getActualDate() {
+    const act_date = new Date();
+    return act_date
+}
+
 module.exports = {
     navigate: navigate,
     click_element: click_element,

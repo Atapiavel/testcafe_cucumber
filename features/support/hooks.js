@@ -29,7 +29,7 @@ function runTest(iteration, browser) {
             const runner = tc.createRunner();
             return runner
                 .src('./test.js')
-                .screenshots('reports/screenshots/', true)
+                .screenshots('screenshots/', true)
                 .browsers(browser)
                 .run()
                 .catch(function (error) {
@@ -40,12 +40,12 @@ function runTest(iteration, browser) {
         });
 }
 
-
 setDefaultTimeout(TIMEOUT);
 
 BeforeAll(function () {
-    ActionsPage.execute_shell('rmdir /Q /S reports')
-    ActionsPage.execute_shell('mkdir reports')
+    ActionsPage.execute_shell('rmdir /Q /S screenshots')
+    ActionsPage.execute_shell('mkdir screenshots')
+    export const start_date = ActionsPage.getActualDate()
 });
 
 Before(function () {
@@ -89,6 +89,7 @@ AfterAll(function () {
     }
 
     waitForTestCafe();
+    export const end_date = ActionsPage.getActualDate()
 });
 
 const getIsTestCafeError = function () {
