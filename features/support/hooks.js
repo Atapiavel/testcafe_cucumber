@@ -44,10 +44,8 @@ function runTest(iteration, browser) {
 setDefaultTimeout(TIMEOUT);
 
 BeforeAll(function () {
-    ActionsPage.execute_shell('cd reports')
-    ActionsPage.execute_shell('rmdir /Q /S screenshots')
-    ActionsPage.execute_shell('mkdir screenshots')
-    ActionsPage.execute_shell('cd ..')
+    ActionsPage.execute_shell('rmdir /Q /S reports')
+    ActionsPage.execute_shell('mkdir reports')
 });
 
 Before(function () {
