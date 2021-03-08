@@ -17,7 +17,7 @@ function SubtitleHeader() {
     }
 
 function GetStarted() {
-        return select('data-cy=get-started')
+        return select('[data-cy=get-started]')
     }
 
 function ChatTitle() {
@@ -25,7 +25,7 @@ function ChatTitle() {
     }
 
 function ChatDashboardTtitle() {
-        return select('data-cy="icon-container"')
+        return select('[data-cy=icon-container]')
     }
 
     module.exports = {
