@@ -3,6 +3,10 @@ const {Given, When, Then} = require('cucumber');
 const MainPage = require('../../pages/main.pages.js');
 const MainPageLocator = require('../../locators/main.locators.js');
 
+Given('I am in Scorpion {string} page', {timeout: 3 * 5000}, async function (url) {
+    await ActionsPage.navigate("https://ui-integration.scorpion.co/" + url)
+});
+
 When('I wait for {string} seconds', async function (seconds) {
     await ActionsPage.wait(seconds)
 });
