@@ -1,0 +1,16 @@
+Feature: Login
+
+    @e2e
+    Scenario Outline: User Login E2E Scenario
+        Given I am in Scorpion "login" page
+        When I enter "<email>" and "<password>"
+        And I click on sign in button
+        And I wait for "10" seconds
+        Then I assert the Scorpion main page
+        When I click on settings button
+        And I sign out Scorpion
+
+        Examples:
+            | email                    | password     |
+            | joehaus895@gmail.com     | Team123!     |
+            | Paulk@ThomasandPaulk.com | Gam3Chang3r! |
