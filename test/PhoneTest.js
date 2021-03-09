@@ -47,6 +47,7 @@ test('Phone page Test', async t =>{
     .click(phonepage.dialOne)
     .click(phonepage.dialZero)
     
+    .drag(phonepage.dragBtn, -180, -180, {offsetX: 10, offsetY: 10})
     .click(phonepage.callBtn)
     .click(phonepage.miniBtn)
     .click(phonepage.endCalMin);

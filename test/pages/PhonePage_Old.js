@@ -23,6 +23,7 @@ class PhonePage{
         this.dialEight = Selector('[data-cy=dial-input-button8]');
         this.dialNine = Selector('[data-cy=dial-input-button9]');
         this.endCalMin = Selector('button.mod-red');
+        this.dragBtn = Selector('[aria-label="drag"]');
     }
 }
 export default new PhonePage();

@@ -2,13 +2,15 @@ const { When, Then } = require('@cucumber/cucumber');
 const ActionsPage = require('../../pages/actions.pages.js')
 const PhonePageLocator = require('../../locators/phone.locators');
 const PhonePage = require('../../pages/phone.pages');
+const waitFor = delay => new Promise(resolve => setTimeout(resolve, delay));
 
 When('I land on Phone page', async function () {
         await testController.expect(PhonePageLocator.exists).ok;
 })
 
 When('I click on Search button from phone page', async function () {
-        // await testController.expect(phonepage.PhonePage.SearchBtn().exists).ok;        
+        // await testController.expect(phonepage.PhonePage.SearchBtn().exists).ok;
+        await waitFor(10000)        
         await ActionsPage.click_element(PhonePageLocator.SearchBtn());
 });
 
