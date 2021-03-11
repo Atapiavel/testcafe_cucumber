@@ -42,6 +42,10 @@ When('I click on Call button again', async function () {
         await ActionsPage.click_element(PhonePageLocator.CallBtn());
 });
 
+When('I drag the dialpad {string} for x {string} for y', async function(value_1,value_2) {
+        await ActionsPage.drag(PhonePageLocator.DragBtn(), value_1,value_2);
+})
+
 When('I click on Minimize button', async function() {
         await waitFor(1000) 
         await ActionsPage.click_element(PhonePageLocator.MiniBtn());
