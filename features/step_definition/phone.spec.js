@@ -42,6 +42,16 @@ When('I click on Call button again', async function () {
         await ActionsPage.click_element(PhonePageLocator.CallBtn());
 });
 
+When('I click on Minimize button', async function() {
+        await waitFor(1000) 
+        await ActionsPage.click_element(PhonePageLocator.MiniBtn());
+})
+
+When('I click on Maximize button', async function() {
+        await waitFor(1000) 
+        await ActionsPage.click_element(PhonePageLocator.MaxiBtn());
+})
+
 Then('I click on End Call button again', async function () {
         await ActionsPage.click_element(PhonePageLocator.EndCallBtn());
 });
