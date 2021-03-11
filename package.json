@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js --tags @e2e --format json:reports/report.json",
-    "test_focus": "cucumber-js --tags @focus",
+    "test_focus": "cucumber-js --tags @focus --format json:reports/report.json",
+    "test_billing": "cucumber-js --tags @billing --format json:reports/report.json",
     "normal_option": "testcafe chrome",
     "report": "node report_generator.js"
   },

@@ -36,8 +36,6 @@ function runTest(iteration, browser) {
                     console.error(error);
                 });
         })
-        .then(function (report) {
-        });
 }
 
 setDefaultTimeout(TIMEOUT);
@@ -45,7 +43,6 @@ setDefaultTimeout(TIMEOUT);
 BeforeAll(function () {
     ActionsPage.execute_shell('rmdir /Q /S screenshots')
     ActionsPage.execute_shell('mkdir screenshots')
-    export const start_date = ActionsPage.getActualDate()
 });
 
 Before(function () {
@@ -67,7 +64,7 @@ After(async function (testCase) {
     if (testCase.result.status === Status.FAILED) {
         ActionsPage.take_screenshot()
         isTestCafeError = true;
-        attachScreenshotToReport = world.attachScreenshotToReport;
+        this.attachScreenshotToReport('reports/report.json');
         errorHandling.addErrorToController();
         await errorHandling.ifErrorTakeScreenshot(testController)
     }
@@ -89,7 +86,7 @@ AfterAll(function () {
     }
 
     waitForTestCafe();
-    export const end_date = ActionsPage.getActualDate()
+    const end_date = ActionsPage.getActualDate()
 });
 
 const getIsTestCafeError = function () {

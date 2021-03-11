@@ -72,6 +72,10 @@ function getActualDate() {
     return act_date
 }
 
+function write_date(value) {
+
+}   
+
 module.exports = {
     navigate: navigate,
     click_element: click_element,
@@ -86,5 +90,6 @@ module.exports = {
     // hover_element: hover_element,
     // hover_element_from_list: hover_element_from_list,
     // scroll_to_element: scroll_to_element,
-    wait: wait
+    wait: wait,
+    getActualDate: getActualDate,
 };
