@@ -27,6 +27,6 @@ Feature: Phone Feature
         Examples:
             | email                    | password     | phoneNr    |
             | joehaus895@gmail.com     | Team123!     | 8182345566 |
-            | josh.brown978@yahoo.com  | Team123!     | 6503344466 |
-            | Paulk@ThomasandPaulk.com | Gam3Chang3r! | 4089923340 |
+            # | josh.brown978@yahoo.com  | Team123!     | 6503344466 |
+            # | Paulk@ThomasandPaulk.com | Gam3Chang3r! | 4089923340 |
 
