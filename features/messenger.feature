@@ -1,6 +1,6 @@
 Feature: Messenger
 
-    @e2e @focus
+    @e2e
     Scenario Outline: User Messenger E2E Scenario
         Given I am in Scorpion "sign-in" page
         When I enter "<email>" and "<password>"

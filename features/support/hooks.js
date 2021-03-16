@@ -41,8 +41,10 @@ function runTest(iteration, browser) {
 setDefaultTimeout(TIMEOUT);
 
 BeforeAll(function () {
+    fs.unlinkSync('date.txt');
     ActionsPage.execute_shell('rmdir /Q /S screenshots')
     ActionsPage.execute_shell('mkdir screenshots')
+    ActionsPage.write_date()
 });
 
 Before(function () {
@@ -86,7 +88,7 @@ AfterAll(function () {
     }
 
     waitForTestCafe();
-    const end_date = ActionsPage.getActualDate()
+    ActionsPage.write_date()
 });
 
 const getIsTestCafeError = function () {
