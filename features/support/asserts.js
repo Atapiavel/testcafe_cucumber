@@ -14,7 +14,7 @@ async function assert_contains(element, value) {
 }
 
 async function assert_exists(element) {
-    await testController.expect(select(element).visible).ok();
+    await testController.expect(element.exists).ok;
 }
 
 module.exports = {
