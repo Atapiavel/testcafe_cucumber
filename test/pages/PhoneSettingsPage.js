@@ -11,7 +11,7 @@ class PhoneSettingsPage{
         this.searchbtn = Selector('[data-cy=button-search]');
         this.filterbtn = Selector('[data-cy=trigger-button]');
         this.cancelbtn = Selector('[data-cy=cancel-button]');
-        this.kebob1row = Selector('[data-cy=icon]').withExactText('SAN FRANCISCO');
+        this.kebob1row = Selector('[data-cy=popup-menu-button]');
       }
 }
 export default new PhoneSettingsPage();
