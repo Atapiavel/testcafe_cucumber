@@ -14,10 +14,6 @@ async function take_screenshot() {
     await testController.takeScreenshot()
 }
 
-function execute_shell(command) {
-    shell.exec(command)
-}
-
 // async function click_element_xpath(element) {
 //     cy.xpath(element).first().click()
 // }
@@ -66,6 +62,10 @@ async function click_element_from_list(element, value) {
 async function wait(seconds) {
     var time = parseInt(seconds, 10);
     await testController.wait(time * 1000)
+}
+
+function execute_shell(command) {
+    shell.exec(command)
 }
 
 function get_actual_date() {

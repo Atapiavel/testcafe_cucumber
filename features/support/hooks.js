@@ -29,7 +29,10 @@ function runTest(iteration, browser) {
             const runner = tc.createRunner();
             return runner
                 .src('./test.js')
-                .screenshots('screenshots/', true)
+                .screenshots('screenshots/', {
+                    takeOnFails: true
+                })
+                .video('videos/')
                 .browsers(browser)
                 .run()
                 .catch(function (error) {
@@ -44,6 +47,8 @@ BeforeAll(function () {
     fs.unlinkSync('date.txt');
     ActionsPage.execute_shell('rmdir /Q /S screenshots')
     ActionsPage.execute_shell('mkdir screenshots')
+    ActionsPage.execute_shell('rmdir /Q /S videos')
+    ActionsPage.execute_shell('mkdir videos')
     ActionsPage.write_date()
 });
 

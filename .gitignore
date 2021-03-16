@@ -1,7 +1,7 @@
 node_modules
 reports
 screenshots
-allure
+videos
 .vscode
 package-lock.json
 .DS_Store
