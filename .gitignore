@@ -5,3 +5,4 @@ videos
 .vscode
 package-lock.json
 .DS_Store
+date.txt
