@@ -9,13 +9,17 @@
     "test_billing": "cucumber-js --tags @billing --format json:reports/report.json",
     "test_comms": "cucumber-js --tags @comms --format json:reports/report.json",
     "normal_option": "testcafe chrome",
-    "report": "node report_generator.js"
+    "report": "node report_generator.js",
+    "PhoneTest": "testcafe firefox test/PhoneTest.js",
+    "ChatSettingsTest": "testcafe chrome test/ChatSettingsTest.js",
+    "PhoneSettingsTest": "testcafe chrome test/PhoneSettingsTest.js",
+    "RemoteTest": "testcafe remote test/LoginTest.js --qr-code"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.0.20",
-    "base64-img": "^1.0.4",
+    "base64-img": "^1.0.1",
     "cucumber": "^7.0.0-rc.0",
     "cucumber-html-reporter": "^5.3.0",
     "node-base64-image": "^2.0.3",

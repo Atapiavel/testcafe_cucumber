@@ -64,6 +64,11 @@ async function wait(seconds) {
     await testController.wait(time * 1000)
 }
 
+async function drag(element,x,y) {
+    var value_1 = parseInt(x,10);
+    var value_2 = parseInt(y,10);
+    await testController.drag(element,value_1,value_2,{offsetX: 10, offsetY: 10})
+
 function execute_shell(command) {
     shell.exec(command)
 }
@@ -92,7 +97,6 @@ function read_end_date() {
     var end_date_raw = dates[1]
     var end_date = end_date_raw.split('(')
     return end_date[0]
-}
 
 async function drag(element,x,y) {
     var value_1 = parseInt(x,10);
