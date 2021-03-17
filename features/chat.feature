@@ -1,8 +1,8 @@
 Feature: Chat Feature
 
-    @e2e
+    @e2e @comms
     Scenario Outline: User Chat E2E Scenario
-        Given I am in Scorpion "login" page
+        Given I am in Scorpion "sign-in" page
         When I enter "<email>" and "<password>"
         And I click on sign in button
         And I wait for "10" seconds

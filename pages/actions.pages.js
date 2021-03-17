@@ -1,5 +1,6 @@
 const { Selector } = require('testcafe');
 var shell = require('shelljs');
+const fs = require('fs')
 
 async function navigate(url) {
     await testController.navigateTo(url);
@@ -11,10 +12,6 @@ async function click_element(element) {
 
 async function take_screenshot() {
     await testController.takeScreenshot()
-}
-
-function execute_shell(command) {
-    shell.exec(command)
 }
 
 // async function click_element_xpath(element) {
@@ -71,7 +68,35 @@ async function drag(element,x,y) {
     var value_1 = parseInt(x,10);
     var value_2 = parseInt(y,10);
     await testController.drag(element,value_1,value_2,{offsetX: 10, offsetY: 10})
+
+function execute_shell(command) {
+    shell.exec(command)
 }
+
+function get_actual_date() {
+    const act_date = new Date();
+    return act_date
+}
+
+function write_date() {
+    let data = String(this.get_actual_date())
+    fs.appendFileSync("date.txt", data + '_', "UTF-8", { 'flags': 'a+' });
+}
+
+function read_start_date() {
+    var str = fs.readFileSync('./date.txt', 'utf8');
+    var dates = str.split('_')
+    var start_date_raw = dates[0]
+    var start_date = start_date_raw.split('(')
+    return start_date[0]
+}
+
+function read_end_date() {
+    var str = fs.readFileSync('./date.txt', 'utf8');
+    var dates = str.split('_')
+    var end_date_raw = dates[1]
+    var end_date = end_date_raw.split('(')
+    return end_date[0]
 
 module.exports = {
     navigate: navigate,
@@ -88,5 +113,9 @@ module.exports = {
     // hover_element_from_list: hover_element_from_list,
     // scroll_to_element: scroll_to_element,
     wait: wait,
-    drag: drag
+    drag: drag,
+    get_actual_date: get_actual_date,
+    write_date: write_date,
+    read_start_date: read_start_date,
+    read_end_date: read_end_date
 };

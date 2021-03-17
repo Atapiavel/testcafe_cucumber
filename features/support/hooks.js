@@ -29,32 +29,34 @@ function runTest(iteration, browser) {
             const runner = tc.createRunner();
             return runner
                 .src('./test.js')
-                .screenshots('reports/screenshots/', true)
+                .screenshots('screenshots/', {
+                    takeOnFails: true
+                })
+                .video('videos/')
                 .browsers(browser)
                 .run()
                 .catch(function (error) {
                     console.error(error);
                 });
         })
-        .then(function (report) {
-        });
 }
-
 
 setDefaultTimeout(TIMEOUT);
 
 BeforeAll(function () {
-    ActionsPage.execute_shell('rmdir /Q /S reports')
-    ActionsPage.execute_shell('mkdir reports')
+    fs.unlinkSync('date.txt');
+    ActionsPage.execute_shell('rmdir /Q /S screenshots')
+    ActionsPage.execute_shell('mkdir screenshots')
+    ActionsPage.execute_shell('rmdir /Q /S videos')
+    ActionsPage.execute_shell('mkdir videos')
+    ActionsPage.write_date()
 });
 
 Before(function () {
     runTest(n, this.setBrowser());
     createTestFile();
     n += 2;
-    return this.waitForTestController.then(function (testController) {
-        return testController.maximizeWindow();
-    });
+    return this.waitForTestController
 });
 
 After(function () {
@@ -67,7 +69,7 @@ After(async function (testCase) {
     if (testCase.result.status === Status.FAILED) {
         ActionsPage.take_screenshot()
         isTestCafeError = true;
-        attachScreenshotToReport = world.attachScreenshotToReport;
+        this.attachScreenshotToReport('reports/report.json');
         errorHandling.addErrorToController();
         await errorHandling.ifErrorTakeScreenshot(testController)
     }
@@ -89,6 +91,7 @@ AfterAll(function () {
     }
 
     waitForTestCafe();
+    ActionsPage.write_date()
 });
 
 const getIsTestCafeError = function () {
