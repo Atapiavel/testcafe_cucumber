@@ -1,7 +1,7 @@
 Feature: Billing Invoice History
 
 
-    @e2e @billing
+     @billing
     Scenario: Login
 
         Given I am in Scorpion "sign-in" page
@@ -10,7 +10,7 @@ Feature: Billing Invoice History
         And I wait for "10" seconds
         Then I assert the Scorpion main page
 
-    @e2e @billing
+     @billing
     Scenario: Assert Invoice History Page
 
         When I click on settings button
@@ -20,7 +20,7 @@ Feature: Billing Invoice History
         When I click on Billing History option
         Then I assert I can see historical invoices
 
-    @e2e @billing
+     @billing
     Scenario Outline: Invoice Filtering <filter>
 
         Given I am in Billing Invoice History page
@@ -37,7 +37,7 @@ Feature: Billing Invoice History
             | by_status | advertising-unpaid |
             | by_status | all                |
 
-    @e2e @billing
+     @billing
     Scenario Outline: Assert Kebab menu option <kebab_option> functionality
 
         Given I am in Billing Invoice History page
@@ -52,14 +52,14 @@ Feature: Billing Invoice History
             | download - PDF |
             | download - DOC |
 
-    @e2e @billing
+     @billing
     Scenario: Assert invoice history tiles
 
         Given I am in Billing Invoice History page
         Then I verify the tiles are showed with
             | Invoice # | Invoice Date | Billing Period | Status | Amount |
 
-    @e2e @billing
+     @billing
     Scenario: Logout
 
         When I click on settings button

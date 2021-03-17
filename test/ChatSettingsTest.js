@@ -14,11 +14,23 @@ fixture('Chat Settings Fixture')
 dataSet.forEach(data => {
 test('Enter Chat Settings Test', async t =>{
     await t
+    .maximizeWindow()
+    .setTestSpeed(1)
     .typeText(loginpage.email, data.email)
     .typeText(loginpage.password, data.password)
     .click(loginpage.signIn)
     .takeScreenshot()
     .wait(3000)
-    .click(chatsettingspage.partmngbtn);
+    .click(chatsettingspage.partmngbtn)
+    .wait(3000)
+    .click(chatsettingspage.closemngbtn)
+    .wait(3000)
+    .click(chatsettingspage.genwidgbtn)
+    .wait(3000)
+    .click(chatsettingspage.deskwidgbtn)
+    .wait(3000)
+    .click(chatsettingspage.mobilewidgbtn)
+    .wait(3000)
+    .click(chatsettingspage.fbchatbtn);
 })
 });

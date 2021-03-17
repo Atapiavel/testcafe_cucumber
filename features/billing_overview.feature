@@ -1,6 +1,6 @@
 Feature: Billing Overview
 
-    @e2e @billing
+     @billing
     Scenario: Login
         Given I am in Scorpion login page
         When I enter "paulk@thomasandpaulk.com" and "Gam3Chang3r!"
@@ -8,7 +8,7 @@ Feature: Billing Overview
         And I wait for "10" seconds
         Then I assert the Scorpion main page
 
-    @e2e @billing
+     @billing
     Scenario: Assert Billing Overview Page
         When I click on settings button
         And I select the "Billing" option
@@ -24,7 +24,7 @@ Feature: Billing Overview
         And I assert I can see Current Billing Cycle graph
         And I assert the Total Balance Due sum
 
-    @e2e @billing
+     @billing
     Scenario Outline: <module> module is visible
         Given I am in Billing Overview page
         Then I assert "<module>" module is visible
@@ -37,7 +37,7 @@ Feature: Billing Overview
             | Payment Method  |
             | Bill to address |
 
-    @e2e @billing
+     @billing
     Scenario: <module> <kebab_option> option is visible
         Given I am in Billing Overview page
         Then I assert "<kebab_option>" option is visible
@@ -55,7 +55,7 @@ Feature: Billing Overview
             | Set as Primary | Payment Method  |
             | Delete         | Payment Method  |
 
-    @e2e @billing
+     @billing
     Scenario Outline: Assert Cancel button from <module> <kebab_option> functionality
         Given I am in Billing Overview page
         Then I click the kebab option "<kebab_option>" for "<module>"
@@ -72,7 +72,7 @@ Feature: Billing Overview
             | Manage       | Billing Contact |
             | Update       | Bill to address |
 
-    @e2e @billing
+     @billing
     Scenario Outline: <kebab_option> functionality from <module>
         Given I am in Billing Overview page
         Then I click the kebab option "<kebab_option>" for "<module>"
@@ -86,7 +86,7 @@ Feature: Billing Overview
             | kebab_option | module          |
             | Send         | Recent Invoices |
 
-    @e2e @billing
+     @billing
     Scenario Outline: <kebab_option> <download_option> functionality from <module>
         Given I am in Billing Overview page
         Then I click the kebab option "<kebab_option>" for "<module>"
@@ -98,7 +98,7 @@ Feature: Billing Overview
             | Download     | Recent Invoices | PDF             |
             | Download     | Recent Invoices | DOC             |
 
-    @e2e @billing
+     @billing
     Scenario Outline: <kebab_option> functionality from <module>
         Given I am in Billing Overview page
         Then I click the kebab option "<kebab_option>" for "<module>"
@@ -110,7 +110,7 @@ Feature: Billing Overview
             | kebab_option   | module          | contact       |
             | Set as Primary | Billing Contact | David Gilmore |
 
-    @e2e @billing
+     @billing
     Scenario Outline: <kebab_option> functionality from <module>
         Given I am in Billing Overview page
         Then I click the kebab option "<kebab_option>" for "<module>"
@@ -122,7 +122,7 @@ Feature: Billing Overview
             | kebab_option   | module         | payment_method |
             | Set as Primary | Payment Method | Visa **** 4520 |
 
-    @e2e @billing
+     @billing
     Scenario Outline: <kebab_option> functionality from <module>
         Given I am in Billing Overview page
         Then I click the kebab option "<kebab_option>" for "<module>"}
@@ -134,7 +134,7 @@ Feature: Billing Overview
             | kebab_option | module          | contact      |
             | Delete       | Billing Contact | Andy Timmons |
 
-    @e2e @billing
+     @billing
     Scenario Outline: <kebab_option> functionality from <module>
         Given I am in Billing Overview page
         Then I click the kebab option "<kebab_option>" for "<module>"
@@ -146,7 +146,7 @@ Feature: Billing Overview
             | kebab_option | module         | payment_method |
             | Delete       | Payment Method | Visa **** 5869 |
 
-    @e2e @billing
+     @billing
     Scenario Outline: <kebab_option> <module> functionality
         Given I am in Billing Overview page
         When I click the kebab option "<kebab_option>" for "<module>"
@@ -172,7 +172,7 @@ Feature: Billing Overview
             | kebab_option | module         |
             | Update       | Payment Method |
 
-    @e2e @billing
+     @billing
     Scenario Outline: <kebab_option> <module> functionality
         Given I am in Billing Overview page
         When I click the kebab option "<kebab_option>" for "<module>"
@@ -184,7 +184,7 @@ Feature: Billing Overview
             | Add          | Payment Method | eCheck                 | Name here    | 00000000       | 00000000       |
             | Add          | Payment Method | PayPal                 |              |                |                |
 
-    @e2e @billing
+     @billing
     Scenario Outline: Add Billing Contact functionality
         Given I am in Billing Overview page
         Then I click on manage contacts
@@ -193,7 +193,7 @@ Feature: Billing Overview
             | first_name | last_name | email_address         | phone_number   |
             | Samm       | Robinson  | samrobinson@gmail.com | (485) 569 3859 |
 
-    @e2e @billing
+     @billing
     Scenario: Logout
 
         When I click on settings button
