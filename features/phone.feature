@@ -1,6 +1,6 @@
 Feature: Phone Feature
 
-    @e2e @comms @focus
+    @e2e @comms
     Scenario Outline: User Phone E2E Scenario
         Given I am in Scorpion "sign-in" page
         When I enter "<email>" and "<password>"
@@ -27,6 +27,6 @@ Feature: Phone Feature
         Examples:
             | email                    | password     | phoneNr    |
             | joehaus895@gmail.com     | Team123!     | 8182345566 |
-            # | josh.brown978@yahoo.com  | Team123!     | 6503344466 |
-            # | Paulk@ThomasandPaulk.com | Gam3Chang3r! | 4089923340 |
+            | josh.brown978@yahoo.com  | Team123!     | 6503344466 |
+            | Paulk@ThomasandPaulk.com | Gam3Chang3r! | 4089923340 |
 

@@ -52,7 +52,6 @@ function DragBtn() {
     return select('[aria-label="drag"]')
 }
 
-
 module.exports = {
     HomePage: HomePage,
     SearchBtn: SearchBtn,
