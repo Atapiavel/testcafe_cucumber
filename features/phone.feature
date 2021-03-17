@@ -15,8 +15,11 @@ Feature: Phone Feature
         And I click on Call button
         And I click on End Call button
         And I click on Make a Call button again
-        And I make a call to the number "<phoneNr>"
+        And I make a call to the number "<phoneNr>"        
         And I click on Call button again
+        And I drag the dialpad "-180" for x "-180" for y
+        And I click on Minimize button
+        And I click on Maximize button        
         Then I click on End Call button again
         When I click on settings button
         And I sign out Scorpion
@@ -24,6 +27,6 @@ Feature: Phone Feature
         Examples:
             | email                    | password     | phoneNr    |
             | joehaus895@gmail.com     | Team123!     | 8182345566 |
-            | josh.brown978@yahoo.com  | Team123!     | 6503344466 |
-            | Paulk@ThomasandPaulk.com | Gam3Chang3r! | 4089923340 |
+            # | josh.brown978@yahoo.com  | Team123!     | 6503344466 |
+            # | Paulk@ThomasandPaulk.com | Gam3Chang3r! | 4089923340 |
 

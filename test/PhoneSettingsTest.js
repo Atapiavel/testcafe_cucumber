@@ -14,6 +14,8 @@ fixture('Phone Settings Fixture')
 dataSet.forEach(data => {
 test('Enter Phone Settings Test', async t =>{
     await t
+    .maximizeWindow()
+    .setTestSpeed(1)
     .typeText(loginpage.email, data.email)
     .typeText(loginpage.password, data.password)
     .click(loginpage.signIn)
@@ -29,7 +31,10 @@ test('Enter Phone Settings Test', async t =>{
     .click(phonesettingspage.filterbtn)
     .click(phonesettingspage.cancelbtn)
     // .takeScreenshot()
-    // .click(phonesettingspage.kebob1row)
+    .click(phonesettingspage.searchbtn)
+    .wait(3000)
+    .typeText(phonesettingspage.searchbtn, '415')
+    .click(phonesettingspage.kebob1row)
     .takeScreenshot();
 })
 });
