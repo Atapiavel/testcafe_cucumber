@@ -56,7 +56,9 @@ Before(function () {
     runTest(n, this.setBrowser());
     createTestFile();
     n += 2;
-    return this.waitForTestController
+    return this.waitForTestController.then(function (testController) {
+        return testController.maximizeWindow();
+    });
 });
 
 After(function () {
