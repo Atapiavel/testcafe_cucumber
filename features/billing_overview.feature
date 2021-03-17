@@ -13,7 +13,7 @@ Feature: Billing Overview
         When I click on settings button
         And I select the "Billing" option
         And I wait for "5" seconds
-        Given I am in Billing Overview page
+        Given I am in Scorpion "billing" page
         Then I assert I can see recent invoices
             | Invoice_Date | Invoice_# | Billing_Period | Status         | Amount    |
             | Nov 1, 2019  | 10010     | Monthly        | Paid           | $1,500.00 |
@@ -26,7 +26,7 @@ Feature: Billing Overview
 
      @billing
     Scenario Outline: <module> module is visible
-        Given I am in Billing Overview page
+        Given I am in Scorpion "billing" page
         Then I assert "<module>" module is visible
         And I assert that the primary "<module>" is visible
 
@@ -39,7 +39,7 @@ Feature: Billing Overview
 
      @billing
     Scenario: <module> <kebab_option> option is visible
-        Given I am in Billing Overview page
+        Given I am in Scorpion "billing" page
         Then I assert "<kebab_option>" option is visible
 
         Examples:
@@ -57,7 +57,7 @@ Feature: Billing Overview
 
      @billing
     Scenario Outline: Assert Cancel button from <module> <kebab_option> functionality
-        Given I am in Billing Overview page
+        Given I am in Scorpion "billing" page
         Then I click the kebab option "<kebab_option>" for "<module>"
         And I click on cancel button
 
@@ -74,7 +74,7 @@ Feature: Billing Overview
 
      @billing
     Scenario Outline: <kebab_option> functionality from <module>
-        Given I am in Billing Overview page
+        Given I am in Scorpion "billing" page
         Then I click the kebab option "<kebab_option>" for "<module>"
         And I fill the contact information with
             | David Gilmore | jamesissac@gmail.com |
@@ -88,7 +88,7 @@ Feature: Billing Overview
 
      @billing
     Scenario Outline: <kebab_option> <download_option> functionality from <module>
-        Given I am in Billing Overview page
+        Given I am in Scorpion "billing" page
         Then I click the kebab option "<kebab_option>" for "<module>"
         And I assert "<dowload_option>" dowload option
 
@@ -100,7 +100,7 @@ Feature: Billing Overview
 
      @billing
     Scenario Outline: <kebab_option> functionality from <module>
-        Given I am in Billing Overview page
+        Given I am in Scorpion "billing" page
         Then I click the kebab option "<kebab_option>" for "<module>"
         And I assert that the text is shown
             | Success! |
@@ -112,7 +112,7 @@ Feature: Billing Overview
 
      @billing
     Scenario Outline: <kebab_option> functionality from <module>
-        Given I am in Billing Overview page
+        Given I am in Scorpion "billing" page
         Then I click the kebab option "<kebab_option>" for "<module>"
         And I assert that the text is shown
             | Success! |
@@ -124,7 +124,7 @@ Feature: Billing Overview
 
      @billing
     Scenario Outline: <kebab_option> functionality from <module>
-        Given I am in Billing Overview page
+        Given I am in Scorpion "billing" page
         Then I click the kebab option "<kebab_option>" for "<module>"}
         And I assert that the text is shown
             | Success! |
@@ -136,7 +136,7 @@ Feature: Billing Overview
 
      @billing
     Scenario Outline: <kebab_option> functionality from <module>
-        Given I am in Billing Overview page
+        Given I am in Scorpion "billing" page
         Then I click the kebab option "<kebab_option>" for "<module>"
         And I assert that the text is shown
             | Success! |
@@ -148,7 +148,7 @@ Feature: Billing Overview
 
      @billing
     Scenario Outline: <kebab_option> <module> functionality
-        Given I am in Billing Overview page
+        Given I am in Scorpion "billing" page
         When I click the kebab option "<kebab_option>" for "<module>"
         Then I update "<module>" card information with
             | Credit_Number    | Name_on_Card   | Expiration | CVV |
@@ -174,7 +174,7 @@ Feature: Billing Overview
 
      @billing
     Scenario Outline: <kebab_option> <module> functionality
-        Given I am in Billing Overview page
+        Given I am in Scorpion "billing" page
         When I click the kebab option "<kebab_option>" for "<module>"
 
         Examples:
@@ -186,7 +186,7 @@ Feature: Billing Overview
 
      @billing
     Scenario Outline: Add Billing Contact functionality
-        Given I am in Billing Overview page
+        Given I am in Scorpion "billing" page
         Then I click on manage contacts
         And I click on add billing contact
         And I fill billing contact info with
