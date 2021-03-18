@@ -57,7 +57,7 @@ Before(function () {
     createTestFile();
     n += 2;
     return this.waitForTestController.then(function (testController) {
-        return testController.maximizeWindow();
+        // return testController.maximizeWindow();
     });
 });
 

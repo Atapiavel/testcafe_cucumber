@@ -1,0 +1,330 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "phone-feature;user-phone-e2e-scenario",
+        "keyword": "Scenario Outline",
+        "line": 4,
+        "name": "User Phone E2E Scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 10826000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am in Scorpion \"sign-in\" page",
+            "match": {
+              "location": "features/step_definition/common.spec.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 780000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I enter \"joehaus895@gmail.com\" and \"Team123!\"",
+            "match": {
+              "location": "features/step_definition/login.spec.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4394000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I click on sign in button",
+            "match": {
+              "location": "features/step_definition/login.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1676000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I wait for \"10\" seconds",
+            "match": {
+              "location": "features/step_definition/common.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10008000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I assert the Scorpion main page",
+            "match": {
+              "location": "features/step_definition/common.spec.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 80000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "I am in Scorpion \"phone\" page",
+            "match": {
+              "location": "features/step_definition/common.spec.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1204000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "I land on Phone page",
+            "match": {
+              "location": "features/step_definition/phone.spec.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I click on Search button from phone page",
+            "match": {
+              "location": "features/step_definition/phone.spec.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10335000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I click on Make a Call button",
+            "match": {
+              "location": "features/step_definition/phone.spec.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 414000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I enter numbers in Phone Number entry \"8182345566\"",
+            "match": {
+              "location": "features/step_definition/phone.spec.js:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 606000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "I click on Call button",
+            "match": {
+              "location": "features/step_definition/phone.spec.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 813000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I click on End Call button",
+            "match": {
+              "location": "features/step_definition/phone.spec.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 888000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I click on Make a Call button again",
+            "match": {
+              "location": "features/step_definition/phone.spec.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 809000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I make a call to the number \"8182345566\"",
+            "match": {
+              "location": "features/step_definition/phone.spec.js:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "I click on Call button again",
+            "match": {
+              "location": "features/step_definition/phone.spec.js:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3180000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "I drag the dialpad \"-360\" for x \"-10\" for y",
+            "match": {
+              "location": "features/step_definition/phone.spec.js:45"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 425000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "I click on Minimize button",
+            "match": {
+              "location": "features/step_definition/phone.spec.js:49"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1362000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "I click on Maximize button",
+            "match": {
+              "location": "features/step_definition/phone.spec.js:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1333000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 23,
+            "name": "I click on End Call button again",
+            "match": {
+              "location": "features/step_definition/phone.spec.js:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 841000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 24,
+            "name": "I click on settings button",
+            "match": {
+              "location": "features/step_definition/common.spec.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 798000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "I sign out Scorpion",
+            "match": {
+              "location": "features/step_definition/common.spec.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1030000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@e2e",
+            "line": 3
+          },
+          {
+            "name": "@focus",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "phone-feature",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Phone Feature",
+    "tags": [],
+    "uri": "features/phone.feature"
+  }
+]

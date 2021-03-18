@@ -13,4 +13,3 @@ Feature: Login
         Examples:
             | email                    | password     |
             | joehaus895@gmail.com     | Team123!     |
-            | Paulk@ThomasandPaulk.com | Gam3Chang3r! |
