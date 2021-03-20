@@ -21,26 +21,6 @@ test('Messenger page Test', async t =>{
     .click(messengerpage.msgSearchBtn)
     .click(messengerpage.groupsBtn)
     .click(messengerpage.peopleBtn)
-    .click(messengerpage.messagesBtn)
-    .click(messengerpage.addGroupsBtn)
-    .typeText(messengerpage.groupNameInput, "Auto Test Group1")   
-    .typeText(messengerpage.searchTeamMembers, "mehrdad")
-    .wait(1000)
-    .click(messengerpage.selectMemberRadio)
-    .click(messengerpage.createBtn)
-    .click(messengerpage.kebobBtn)
-    .wait(3000)
-    .click(messengerpage.deleteGroupBtn)
-    .click(messengerpage.yesBtn)
-    .wait(1000)
-    .click(messengerpage.addCoworkersBtn)
-    .typeText(messengerpage.coworkerSearchInput, "shawn")
-    .wait(3000)
-    .click(messengerpage.continueBtn)
-    .click(messengerpage.kebobBtn)
-    .wait(1000)
-    .click(messengerpage.hideBtn)
-    .wait(1000);
-    
+    .click(messengerpage.messagesBtn);
     
 });
