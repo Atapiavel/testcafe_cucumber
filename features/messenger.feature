@@ -19,5 +19,3 @@ Feature: Messenger
         Examples:
             | email                    | password     |
             | joehaus895@gmail.com     | Team123!     |
-            | josh.brown978@yahoo.com  | Team123!     |
-            | Paulk@ThomasandPaulk.com | Gam3Chang3r! |
