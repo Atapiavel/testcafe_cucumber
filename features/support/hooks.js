@@ -32,7 +32,12 @@ function runTest(iteration, browser) {
                 .screenshots('screenshots/', {
                     takeOnFails: true
                 })
-                .video('videos/')
+                .video('videos/', {
+                    singleFile: true
+                }, {
+                    r: 120,
+                    aspect: '16:9'
+                })
                 .browsers(browser)
                 .run()
                 .catch(function (error) {
@@ -56,9 +61,7 @@ Before(function () {
     runTest(n, this.setBrowser());
     createTestFile();
     n += 2;
-    return this.waitForTestController.then(function (testController) {
-        // return testController.maximizeWindow();
-    });
+    return this.waitForTestController
 });
 
 After(function () {
