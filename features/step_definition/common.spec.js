@@ -2,6 +2,7 @@ const ActionsPage = require('../../pages/actions.pages.js')
 const {Given, When, Then} = require('cucumber');
 const MainPage = require('../../pages/main.pages.js');
 const MainPageLocator = require('../../locators/main.locators.js');
+const SettingsPage = require('../../pages/settings.pages.js')
 
 Given('I am in Scorpion {string} page', {timeout: 3 * 5000}, async function (url) {
     await ActionsPage.navigate("https://ui-integration.scorpion.co/" + url)
@@ -25,4 +26,8 @@ Then('I select the {string} option', async function (option) {
 
 When('I sign out Scorpion', async function () {
     await ActionsPage.click_element_from_list(MainPageLocator.settings_options(), "Sign Out")
+});
+
+When('I hover on More option', async function () {
+    await SettingsPage.hover_more_option()
 });

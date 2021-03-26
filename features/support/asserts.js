@@ -1,16 +1,17 @@
 const { Selector, test, t } = require('testcafe');
-
-function select(selector){
-    return Selector(selector).with({boundTestRun:testController})
-}
+var assert = require('assert');
 
 async function assert_text(element, value) {
-    text = Selector(element).withText(value);
-    await testController.expect(text.innerText).eql(value, 'Match') 
+    const text = await select(element).innerText;
+    // var text = document.getElementBySelector(element).innerHTML
+    console.log(text)
+    console.log(value)
+    assert(element.text == value, 'Match')
 }
 
 async function assert_contains(element, value) {
-    await testController.expect(element.innerText).contains(value, 'string contains the expected substring')
+    const text = Selector(element)
+    await testController.expect(text).contains(value, 'String contains the expected substring')
 }
 
 async function assert_exists(element) {

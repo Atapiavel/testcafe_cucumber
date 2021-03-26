@@ -1,24 +1,32 @@
 Feature: Billing Invoice History
 
-
-    @billing
-    Scenario: Login
-
+    @billing @focus
+    Scenario: Assert Invoice History Page
         Given I am in Scorpion "sign-in" page
         When I enter "paulk@thomasandpaulk.com" and "Gam3Chang3r!"
         And I click on sign in button
         And I wait for "10" seconds
         Then I assert the Scorpion main page
-
-    @billing
-    Scenario: Assert Invoice History Page
-
-        When I click on settings button
+        Given I am in Scorpion "settings" page
+        And I wait for "15" seconds
+        And I hover on More option
         Then I select the "Billing" option
+        And I click on see all option
         And I wait for "5" seconds
-        Given I am in Scorpion "billing" page
-        When I click on Billing History option
-        Then I assert I can see historical invoices
+        Then I assert the Scorpion Billing History page
+        Then I verify the tiles are showed with
+            | Invoice Date | Invoice | Billing Period | Status | Amount |
+        And I assert I can see historical invoices with
+            | Mar 31, 2021 | 25      | Monthly        | Paid   | $20,000.00 |
+            | Feb 28, 2021 | 24      | Monthly        | Paid   | $20,000.00 |
+            | Jan 31, 2021 | 23      | Monthly        | Paid   | $20,000.00 |
+            | Dec 31, 2020 | 22      | Monthly        | Paid   | $20,000.00 |
+            | Nov 30, 2020 | 21      | Monthly        | Paid   | $20,000.00 |
+            | Oct 31, 2020 | 20      | Monthly        | Paid   | $20,000.00 |
+            | Sep 30, 2020 | 19      | Monthly        | Paid   | $20,000.00 |
+            | Aug 31, 2020 | 18      | Monthly        | Paid   | $20,000.00 |
+            | Jul 31, 2020 | 17      | Monthly        | Paid   | $20,000.00 |
+            | Jun 30, 2020 | 16      | Monthly        | Paid   | $20,000.00 |
 
     @billing
     Scenario Outline: Invoice Filtering <filter>
