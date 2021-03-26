@@ -39,9 +39,9 @@ async function click_element_from_list(element, value) {
     await testController.click(option)
 }
 
-// async function hover_element(element) {
-//     cy.get(element).trigger('mouseover')
-// }
+async function hover_element(element) {
+    await testController.hover(element)
+}
 
 // async function hover_element_from_list(element, value) {
 //     cy.get(element).each(($el) => {
@@ -117,7 +117,7 @@ module.exports = {
     type_text: type_text,
     // type_and_enter: type_and_enter,
     click_element_from_list: click_element_from_list,
-    // hover_element: hover_element,
+    hover_element: hover_element,
     // hover_element_from_list: hover_element_from_list,
     // scroll_to_element: scroll_to_element,
     wait: wait,
