@@ -8,6 +8,7 @@ class PhoneSettingsPage{
         this.managenrs = Selector('[data-name="Manage Numbers"]');
         this.routingconf = Selector('[data-name="Routing Configuration"]');
         this.routinggrs = Selector('[data-name="Routing Groups"]');
+        this.routingKebob1row = Selector('tr:nth-child(1) > td.scorpion-cell.cdk-cell.icon-col.cdk-column-menus.scorpion-column-menus > scorpion-popup-menu > button > scorpion-icon')
         this.searchbtn = Selector('[data-cy=button-search]');
         this.filterbtn = Selector('[data-cy=trigger-button]');
         this.cancelbtn = Selector('[data-cy=cancel-button]');
