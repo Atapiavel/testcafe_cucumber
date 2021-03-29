@@ -19,6 +19,8 @@ test('Enter Chat Settings Test', async t =>{
     .typeText(loginpage.email, data.email)
     .typeText(loginpage.password, data.password)
     .click(loginpage.signIn)
+    .click(loginpage.tpRadionBtn)
+    .click(loginpage.signInBtn)
     .takeScreenshot()
     .wait(3000)
     .click(chatsettingspage.partmngbtn)

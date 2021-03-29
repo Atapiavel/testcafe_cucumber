@@ -1,7 +1,7 @@
 import {Selector,t} from 'testcafe';
 
 class ChatSettingsPage{
-    constructor(){
+    constructor(){                
         this.successmsg = Selector('strong').withText('Your Business Growth');
         this.partmngbtn = Selector('div:nth-child(1) > scorpion-service-description > scorpion-ui-card > div > scorpion-button > button');        
         this.closemngbtn = Selector('[data-cy=exit-button]');
