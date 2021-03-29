@@ -6,7 +6,6 @@ Feature: Login
         When I enter "<email>" and "<password>"
         And I click on sign in button
         And I wait for "10" seconds
-        Then I assert the Scorpion main page
         When I click on settings button
         And I sign out Scorpion
 

@@ -1,12 +1,11 @@
 Feature: Phone Feature
 
-    @e2e
+    @e2e @focus
     Scenario Outline: User Phone E2E Scenario
         Given I am in Scorpion "sign-in" page
         When I enter "<email>" and "<password>"
         And I click on sign in button
         And I wait for "10" seconds
-        Then I assert the Scorpion main page
         Given I am in Scorpion "phone" page
         When I land on Phone page
         And I click on Search button from phone page

@@ -7,8 +7,7 @@ When('I land on Messenger page', async function () {
       await testController.expect(MessengerPageLocator.exists).ok;
 });
 
-When('I click on Search button from messenger page', async function () {
-      // await testController.expect(phonepage.PhonePage.SearchBtn().exists).ok;        
+When('I click on Search button from messenger page', async function () {     
       await ActionsPage.click_element(MessengerPageLocator.SearchBtn());
 });
 
