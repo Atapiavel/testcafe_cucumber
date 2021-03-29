@@ -1,8 +1,12 @@
 const ActionsPage = require('../../pages/actions.pages.js')
 const {Given, When, Then} = require('cucumber');
-const MainPage = require('../../pages/main.pages.js');
 const MainPageLocator = require('../../locators/main.locators.js');
 const SettingsPage = require('../../pages/settings.pages.js')
+const { Selector } = require('testcafe');
+
+function select(selector) {
+    return Selector(selector).with({ boundTestRun: testController })
+}
 
 Given('I am in Scorpion {string} page', {timeout: 3 * 5000}, async function (url) {
     await ActionsPage.navigate("https://ui-integration.scorpion.co/" + url)
@@ -12,9 +16,10 @@ When('I wait for {string} seconds', async function (seconds) {
     await ActionsPage.wait(seconds)
 });
 
-Then('I assert the Scorpion main page', async function () {
-    await MainPage.assert_main_module()
-});
+// Then('', async function () {
+//     const text = await select(MainPageLocator.main_title()).innerText;
+//     assert(text == "Your Business Growth")
+// });
 
 When('I click on settings button', async function () {
     await ActionsPage.click_element(MainPageLocator.settings_button())

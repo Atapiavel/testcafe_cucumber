@@ -6,7 +6,6 @@ Feature: Billing Overview
         When I enter "paulk@thomasandpaulk.com" and "Gam3Chang3r!"
         And I click on sign in button
         And I wait for "10" seconds
-        Then I assert the Scorpion main page
 
     @billing
     Scenario: Assert Billing Overview Page
