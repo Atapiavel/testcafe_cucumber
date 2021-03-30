@@ -1,0 +1,1 @@
+SELECT * FROM [CSXBilling].csb.Invoices;

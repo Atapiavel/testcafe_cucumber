@@ -1,4 +1,4 @@
-const { When } = require('@cucumber/cucumber');
+const { When, Then } = require('@cucumber/cucumber');
 const BillingHistoryPageLocator = require('../../locators/billing_history.locators.js');
 const { Selector } = require('testcafe');
 var assert = require('assert');
