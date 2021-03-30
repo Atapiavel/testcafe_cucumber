@@ -10,6 +10,10 @@ class PhoneSettingsPage{
         this.confTitle = Selector('[label="Configuration Title"]');
         this.confDesc = Selector('[label="Configuration Description"]');
         this.addRoutConfBtn = Selector('scorpion-modal-actions > scorpion-button:nth-child(1) > button');
+        this.needsConfBtn = Selector('div.nlp-pl60-pt60-pb160 [data-cy=icon]');
+        this.saveBtn = Selector('[text="Save"]');
+        this.configInst = Selector('[content="Configure Instructions"]');
+        this.addInstBtn = Selector('[text="Add Instructions"]');
         this.deleteRoutConf = Selector('[content="Delete"]');
         this.deleteConfirmBtn = Selector('[text="Delete"]');
         this.routingGrs = Selector('[data-name="Routing Groups"]');

@@ -6,7 +6,8 @@ class LoginPage{
         this.email = Selector('[type="text"]');
         this.password = Selector('[type="password"]');
         this.signIn = Selector('[type="submit"]');
-        this.tpRadionBtn = Selector('li:nth-child(13) [data-cy=shared-radio-circle-container]');
+        this.searchAccount = Selector('[aria-label="Search"]');
+        this.tpRadionBtn = Selector('[data-cy=shared-radio-circle-container]');
         this.signInBtn = Selector('button').withText('Sign In');
         this.successmsg = Selector('strong').withText('Your Business Growth');
     }
