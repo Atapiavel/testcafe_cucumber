@@ -5,6 +5,7 @@ Feature: Messenger
         Given I am in Scorpion "sign-in" page
         When I enter "<email>" and "<password>"
         And I click on sign in button
+        And I select the account to use with "Thomas & Paulk"
         And I wait for "10" seconds
         Given I am in Scorpion "messenger" page
         And I land on Messenger page
@@ -16,5 +17,5 @@ Feature: Messenger
         And I sign out Scorpion
 
         Examples:
-            | email                    | password     |
-            | joehaus895@gmail.com     | Team123!     |
+            | email                  | password   |
+            | commcenter@scorpion.co | Comms1234! |

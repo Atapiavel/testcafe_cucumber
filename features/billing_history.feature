@@ -1,10 +1,19 @@
 Feature: Billing Invoice History
 
-    @billing 
-    Scenario: Login
+    @billing @focus
+    Scenario Outline: DB Preconditions
+        When I execute the next query "<query>"
+
+        Examples:
+            | query                   |
+            | SELECT_Invoices_Clients |
+
+    @billing
+    Scenario: Assert Invoice History Page
         Given I am in Scorpion "sign-in" page
-        When I enter "paulk@thomasandpaulk.com" and "Gam3Chang3r!"
+        When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
+        And I select the account to use with "Thomas & Paulk"
         And I wait for "10" seconds
 
     @billing 
@@ -29,29 +38,6 @@ Feature: Billing Invoice History
             | Aug 31, 2020 | 18 | Monthly | Paid | $20,000.00 |
             | Jul 31, 2020 | 17 | Monthly | Paid | $20,000.00 |
             | Jun 30, 2020 | 16 | Monthly | Paid | $20,000.00 |
-
-    @billing 
-    Scenario: <module> <kebab_option> option is visible
-        Given I am in Scorpion "settings/billing/invoices" page
-        Then I assert the kebab "<kebab_option>" option is visible
-
-
-    @billing
-    Scenario Outline: Assert Kebab menu option <kebab_option> functionality
-
-        Given I am in Scorpion "settings/billing/invoices" page
-        Then I click the kebab menu "<kebab_option>" for
-            | Invoice Date | Invoice | Billing Period | Status | Amount     |
-            | Mar 31, 2021 | 25      | Monthly        | Paid   | $20,000.00 |
-        And I assert the kebab "<kebab_option>" functionality
-
-        Examples:
-            | kebab_option   |
-            | send           |
-            | print          |
-            | download - CSV |
-            | download - PDF |
-            | download - DOC |
 
     @billing
     Scenario Outline: Invoice Filtering <filter>
