@@ -9,7 +9,6 @@ When('I land on Phone page', async function () {
 })
 
 When('I click on Search button from phone page', async function () {
-        // await testController.expect(phonepage.PhonePage.SearchBtn().exists).ok;
         await waitFor(10000)        
         await ActionsPage.click_element(PhonePageLocator.SearchBtn());
 });

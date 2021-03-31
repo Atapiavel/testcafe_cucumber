@@ -1,7 +1,4 @@
-const ActionsPage = require('../../pages/actions.pages.js')
 const { When, Then } = require('@cucumber/cucumber');
-const BillingHistoryPage = require('../../pages/billing_history.pages.js');
-const BillingPageLocator = require('../../locators/billing.locators');
 const BillingHistoryPageLocator = require('../../locators/billing_history.locators.js');
 const { Selector } = require('testcafe');
 var assert = require('assert');
@@ -11,7 +8,6 @@ function select(selector) {
 }
 
 When('I assert the Scorpion Billing History page', async function () {
-    // Asserts.assert_text(BillingHistoryPageLocator.page_title(), "Hello bad assert")
     const text = await select(BillingHistoryPageLocator.page_title()).innerText;
     assert(text == "Billing History")
 })
@@ -35,4 +31,8 @@ When('I verify the tiles are showed with', async function (datatable) {
         const text = await select(header).innerText
         assert(text == data_flat[i])
     }
+})
+
+Then('I assert the kebab {string} option is visible', async function (option) {
+    
 })

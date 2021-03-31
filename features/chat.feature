@@ -5,15 +5,15 @@ Feature: Chat Feature
         Given I am in Scorpion "sign-in" page
         When I enter "<email>" and "<password>"
         And I click on sign in button
+        And I select the account to use with "Thomas & Paulk"
         And I wait for "10" seconds
-        Then I assert the Scorpion main page
         Given I am in Scorpion "chat" page
         And I wait for the Chat display
-        And I click Get Started button
+        # And I click Get Started button
         Then I land on chat dashboard page
         When I click on settings button
         And I sign out Scorpion
 
         Examples:
-            | email                | password |
-            | joehaus895@gmail.com | Team123! |
+            | email                  | password   |
+            | commcenter@scorpion.co | Comms1234! |

@@ -3,10 +3,10 @@ Feature: Billing Overview
     @billing
     Scenario: Login
         Given I am in Scorpion login page
-        When I enter "paulk@thomasandpaulk.com" and "Gam3Chang3r!"
+        When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
+        And I select the account to use with "Thomas & Paulk"
         And I wait for "10" seconds
-        Then I assert the Scorpion main page
 
     @billing
     Scenario: Assert Billing Overview Page

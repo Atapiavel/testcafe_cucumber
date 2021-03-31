@@ -27,6 +27,18 @@ function scorpion_button() {
     return "[data-cy='signin-scorpion-button']"
 }
 
+function search_account() {
+    return "[data-cy=search-input]"
+}
+
+function radio_circle() {
+    return "[data-cy=shared-radio-circle-container]"
+}
+
+function sign_in_button_modal() {
+    return "scorpion-modal-actions > scorpion-button > button"
+}
+
 module.exports = {
     email: email,
     password: password,
@@ -34,5 +46,8 @@ module.exports = {
     google_button: google_button,
     facebook_button: facebook_button,
     apple_button: apple_button,
-    scorpion_button: scorpion_button
+    scorpion_button: scorpion_button,
+    search_account: search_account,
+    radio_circle: radio_circle,
+    sign_in_button_modal: sign_in_button_modal
 };

@@ -1,12 +1,23 @@
 Feature: Billing Invoice History
 
     @billing @focus
+    Scenario Outline: DB Preconditions
+        When I execute the next query "<query>"
+
+        Examples:
+            | query                   |
+            | SELECT_Invoices_Clients |
+
+    @billing
     Scenario: Assert Invoice History Page
         Given I am in Scorpion "sign-in" page
-        When I enter "paulk@thomasandpaulk.com" and "Gam3Chang3r!"
+        When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
+        And I select the account to use with "Thomas & Paulk"
         And I wait for "10" seconds
-        Then I assert the Scorpion main page
+
+    @billing 
+    Scenario: Assert Invoice History Page
         Given I am in Scorpion "settings" page
         And I wait for "15" seconds
         And I hover on More option
@@ -17,16 +28,16 @@ Feature: Billing Invoice History
         Then I verify the tiles are showed with
             | Invoice Date | Invoice | Billing Period | Status | Amount |
         And I assert I can see historical invoices with
-            | Mar 31, 2021 | 25      | Monthly        | Paid   | $20,000.00 |
-            | Feb 28, 2021 | 24      | Monthly        | Paid   | $20,000.00 |
-            | Jan 31, 2021 | 23      | Monthly        | Paid   | $20,000.00 |
-            | Dec 31, 2020 | 22      | Monthly        | Paid   | $20,000.00 |
-            | Nov 30, 2020 | 21      | Monthly        | Paid   | $20,000.00 |
-            | Oct 31, 2020 | 20      | Monthly        | Paid   | $20,000.00 |
-            | Sep 30, 2020 | 19      | Monthly        | Paid   | $20,000.00 |
-            | Aug 31, 2020 | 18      | Monthly        | Paid   | $20,000.00 |
-            | Jul 31, 2020 | 17      | Monthly        | Paid   | $20,000.00 |
-            | Jun 30, 2020 | 16      | Monthly        | Paid   | $20,000.00 |
+            | Mar 31, 2021 | 25 | Monthly | Paid | $20,000.00 |
+            | Feb 28, 2021 | 24 | Monthly | Paid | $20,000.00 |
+            | Jan 31, 2021 | 23 | Monthly | Paid | $20,000.00 |
+            | Dec 31, 2020 | 22 | Monthly | Paid | $20,000.00 |
+            | Nov 30, 2020 | 21 | Monthly | Paid | $20,000.00 |
+            | Oct 31, 2020 | 20 | Monthly | Paid | $20,000.00 |
+            | Sep 30, 2020 | 19 | Monthly | Paid | $20,000.00 |
+            | Aug 31, 2020 | 18 | Monthly | Paid | $20,000.00 |
+            | Jul 31, 2020 | 17 | Monthly | Paid | $20,000.00 |
+            | Jun 30, 2020 | 16 | Monthly | Paid | $20,000.00 |
 
     @billing
     Scenario Outline: Invoice Filtering <filter>
@@ -45,20 +56,7 @@ Feature: Billing Invoice History
             | by_status | advertising-unpaid |
             | by_status | all                |
 
-    @billing
-    Scenario Outline: Assert Kebab menu option <kebab_option> functionality
 
-        Given I am in Billing Invoice History page
-        Then I click the kebab option "<kebab_option>"
-        And I assert the kebab "<kebab_option>" functionality
-
-        Examples:
-            | kebab_option   |
-            | send           |
-            | print          |
-            | download - CSV |
-            | download - PDF |
-            | download - DOC |
 
     @billing
     Scenario: Assert invoice history tiles
