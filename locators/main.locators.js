@@ -1,7 +1,5 @@
-const { Selector } = require('testcafe');
-
     function main_title() {
-        return Selector('strong').withText('Your Business Growth');
+        return 'scorpion-dashboard-title > div > h1';
     }
 
     function settings_button() {
