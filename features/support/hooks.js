@@ -29,9 +29,7 @@ function runTest(iteration, browser) {
             const runner = tc.createRunner();
             return runner
                 .src('./test.js')
-                .screenshots('screenshots/', {
-                    takeOnFails: true
-                })
+                .screenshots('screenshots/')
                 .video('videos/', {
                     singleFile: true
                 }, {
@@ -71,12 +69,12 @@ After(function () {
 
 After(async function (testCase) {
     const world = this;
+    var scenario = testCase.pickle.name
     if (testCase.result.status === Status.FAILED) {
-        ActionsPage.take_screenshot()
+        ActionsPage.take_screenshot(testCase.pickle.name)
         isTestCafeError = true;
-        this.attachScreenshotToReport('reports/report.json');
+        this.attachScreenshotToReport('screenshots/' + scenario + '/' + scenario + '.png');
         errorHandling.addErrorToController();
-        await errorHandling.ifErrorTakeScreenshot(testController)
     }
 });
 
