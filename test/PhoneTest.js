@@ -17,7 +17,11 @@ test('Phone page Test', async t =>{
     .typeText(loginpage.email, data.email)
     .typeText(loginpage.password, data.password)
     .click(loginpage.signIn)
-    // .wait(1000)
+    .typeText(loginpage.searchAccount, 'tho')
+    .wait(1000)
+    .click(loginpage.tpRadionBtn)
+    .click(loginpage.signInBtn)
+    .wait(3000)
     // .click(phonepage.phoneButton)    
     .expect(getURL()).contains('phone')
     .click(phonepage.searchBtn)
@@ -51,6 +55,8 @@ test('Phone page Test', async t =>{
     .drag(phonepage.dragBtn, -360, -5, {offsetX: 10, offsetY: 10})
     .click(phonepage.callBtn)
     .click(phonepage.miniBtn)
-    .click(phonepage.endCalMin);
+    .click(phonepage.endCalMin)
+    .click(loginpage.settingsBtn)
+    .click(loginpage.signOutBtn);
 })
 });

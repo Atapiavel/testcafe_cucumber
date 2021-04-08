@@ -1,7 +1,7 @@
 Feature: Phone
 
-    @e2e @focus
-    Scenario Outline: User_Phone_E2E_Scenario
+    @e2e @comms
+    Scenario Outline: User Phone E2E Scenario
         Given I am in Scorpion "sign-in" page
         When I enter "<email>" and "<password>"
         And I click on sign in button
@@ -20,7 +20,7 @@ Feature: Phone
         And I maximize the window
         And I make a call to the number "<phoneNr>"
         And I click on Call button again
-        And I drag the dialpad "-5" for x "-5" for y
+        And I drag the dialpad "-360" for x "-5" for y
         And I click on Minimize button
         And I click on Maximize button
         Then I click on End Call button again

@@ -1,7 +1,7 @@
 Feature: Messenger
 
-    @e2e @comms
-    Scenario Outline: User_Messenger_E2E_Scenario
+    @e2e 
+    Scenario Outline: User Messenger E2E Scenario
         Given I am in Scorpion "sign-in" page
         When I enter "<email>" and "<password>"
         And I click on sign in button

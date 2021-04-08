@@ -22,6 +22,8 @@ class PhoneSettingsPage{
         this.filterBtn = Selector('[data-cy=trigger-button]');
         this.cancelBtn = Selector('[data-cy=cancel-button]');
         this.kebob1Row = Selector('[data-cy=popup-menu-button]');
+        this.confNumbBtn = Selector('[content="Configure"]');
+        this.arrowRight = Selector('[aria-label="arrow_right"]');
       }
 }
 export default new PhoneSettingsPage();
