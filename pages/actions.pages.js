@@ -1,6 +1,6 @@
 const { Selector } = require('testcafe');
 var shell = require('shelljs');
-const fs = require('fs')
+const fs = require('fs');
 
 async function navigate(url) {
     await testController.navigateTo(url);
@@ -10,8 +10,8 @@ async function click_element(element) {
     await testController.click(element);
 }
 
-async function take_screenshot() {
-    await testController.takeScreenshot()
+async function take_screenshot(scenario) {
+    await testController.takeScreenshot({ path: "/" + scenario + "/" + scenario + ".png" })
 }
 
 // async function click_element_xpath(element) {
@@ -58,6 +58,10 @@ async function hover_element(element) {
 //         }
 //     })
 // }
+
+async function maximize_window() {
+    await testController.maximizeWindow()
+}
 
 async function wait(seconds) {
     var time = parseInt(seconds, 10);
@@ -125,5 +129,6 @@ module.exports = {
     get_actual_date: get_actual_date,
     write_date: write_date,
     read_start_date: read_start_date,
-    read_end_date: read_end_date
+    read_end_date: read_end_date,
+    maximize_window, maximize_window
 };

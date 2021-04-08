@@ -5,6 +5,11 @@ const SettingsPage = require('../../pages/settings.pages.js')
 const sql = require('mssql')
 const config = require('../../db_config');
 const fs = require('fs')
+const { Selector } = require('testcafe');
+
+function select(selector) {
+    return Selector(selector).with({ boundTestRun: testController })
+}
 
 Given('I am in Scorpion {string} page', { timeout: 3 * 5000 }, async function (url) {
     await ActionsPage.navigate("https://ui-integration.scorpion.co/" + url)
@@ -13,11 +18,6 @@ Given('I am in Scorpion {string} page', { timeout: 3 * 5000 }, async function (u
 When('I wait for {string} seconds', async function (seconds) {
     await ActionsPage.wait(seconds)
 });
-
-// Then('', async function () {
-//     const text = await select(MainPageLocator.main_title()).innerText;
-//     assert(text == "Your Business Growth")
-// });
 
 When('I click on settings button', async function () {
     await ActionsPage.click_element(MainPageLocator.settings_button())
@@ -40,6 +40,15 @@ When('I execute the next query {string}', async function (file) {
     var query_file = fs.readFileSync('./sql/' + file + '.txt', 'utf8');
     const result = await sql.query([query_file])
     console.log(result)
-    // console.log(result.recordset[0])
-    // console.log(result.recordset[0].StartDate)
+    console.log(result.recordset[0])
+    console.log(result.recordset[0].StartDate)
+})
+
+When('I maximize the window', async function () {
+    await ActionsPage.maximize_window()
+})
+
+When('I assert we are in Scorpion main page', async function () {
+    const element = select(MainPageLocator.main_title()).exists;
+    await testController.expect(element).ok();
 })

@@ -5,10 +5,12 @@ Feature: Messenger
         Given I am in Scorpion "sign-in" page
         When I enter "<email>" and "<password>"
         And I click on sign in button
+        And I wait for "2" seconds
         And I select the account to use with "Thomas & Paulk"
         And I wait for "10" seconds
         Given I am in Scorpion "messenger" page
         And I land on Messenger page
+        And I wait for "2" seconds
         And I click on Search button from messenger page
         And I click on Groups button
         And I click on People button

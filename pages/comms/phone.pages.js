@@ -1,4 +1,4 @@
-const ActionsPage = require("./actions.pages");
+const ActionsPage = require("../actions.pages");
 
 async function dial_number(number) {
     number_list = number.split("")
