@@ -1,6 +1,6 @@
 const { When, Then } = require('@cucumber/cucumber');
-const ActionsPage = require('../../pages/actions.pages.js')
-const MessengerPageLocator = require('../../locators/messenger.locators');
+const ActionsPage = require('../../../pages/actions.pages.js')
+const MessengerPageLocator = require('../../../locators/comms/messenger.locators.js');
 const waitFor = delay => new Promise(resolve => setTimeout(resolve, delay));
 
 When('I land on Messenger page', async function () {

@@ -1,6 +1,6 @@
-const ActionsPage = require('../../pages/actions.pages.js')
+const ActionsPage = require('../../../pages/actions.pages.js')
 const { When, Then } = require('@cucumber/cucumber');
-const ChatPageLocator = require('../../locators/chat.locators');
+const ChatPageLocator = require('../../../locators/comms/chat.locators.js');
 const waitFor = delay => new Promise(resolve => setTimeout(resolve, delay));
 
 When('I wait for the Chat display', async function () {

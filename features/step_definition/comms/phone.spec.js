@@ -1,7 +1,7 @@
 const { When, Then } = require('@cucumber/cucumber');
-const ActionsPage = require('../../pages/actions.pages.js')
-const PhonePageLocator = require('../../locators/phone.locators');
-const PhonePage = require('../../pages/phone.pages');
+const ActionsPage = require('../../../pages/actions.pages.js')
+const PhonePageLocator = require('../../../locators/comms/phone.locators');
+const PhonePage = require('../../../pages/comms/phone.pages');
 const waitFor = delay => new Promise(resolve => setTimeout(resolve, delay));
 
 When('I land on Phone page', async function () {
