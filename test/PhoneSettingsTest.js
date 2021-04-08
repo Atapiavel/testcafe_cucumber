@@ -50,6 +50,11 @@ test('Enter Phone Settings Test', async t =>{
     // .wait(3000)
     .typeText(phonesettingspage.searchBtn, '415')
     .click(phonesettingspage.kebob1Row)
+    .click(phonesettingspage.confNumbBtn)
+    .wait(1000)
+    .click(phonesettingspage.arrowRight)
+    .click(loginpage.settingsBtn)
+    .click(loginpage.signOutBtn)
     .takeScreenshot();
 })
 });

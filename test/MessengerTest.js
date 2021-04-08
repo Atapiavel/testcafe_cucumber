@@ -16,8 +16,10 @@ test('Messenger page Test', async t =>{
     .typeText(loginpage.password, "Team123!")
     .click(loginpage.signIn)
     .wait(3000)
-    // .click(messengerpage.messengerButton)
-    .expect(getURL()).contains('messenger')
+    // .click(messengerpage.messengerBtn)
+    .expect(getURL()).contains('messenger')    
+    .hover(messengerpage.msgSearchBtn)
+    .wait(1000)
     .click(messengerpage.msgSearchBtn)
     .click(messengerpage.groupsBtn)
     .click(messengerpage.peopleBtn)
@@ -29,18 +31,20 @@ test('Messenger page Test', async t =>{
     .click(messengerpage.selectMemberRadio)
     .click(messengerpage.createBtn)
     .click(messengerpage.kebobBtn)
-    .wait(3000)
+    .wait(1000)
     .click(messengerpage.deleteGroupBtn)
     .click(messengerpage.yesBtn)
     .wait(1000)
     .click(messengerpage.addCoworkersBtn)
     .typeText(messengerpage.coworkerSearchInput, "shawn")
-    .wait(3000)
+    .wait(1000)
     .click(messengerpage.continueBtn)
     .click(messengerpage.kebobBtn)
     .wait(1000)
     .click(messengerpage.hideBtn)
-    .wait(1000);
+    .wait(1000)
+    .click(loginpage.settingsBtn)
+    .click(loginpage.signOutBtn);
     
     
 });
