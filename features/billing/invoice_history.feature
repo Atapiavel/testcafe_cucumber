@@ -1,7 +1,7 @@
 Feature: Billing Invoice History
 
     @billing @invoice_history
-    Scenario: Assert_invoice_history_columns_and_records
+    Scenario: Invoice_history_columns_and_records
         Given I am in Scorpion "sign-in" page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
@@ -18,20 +18,20 @@ Feature: Billing Invoice History
         Then I verify the columns are showed with
             | Invoice Date | Invoice | Description | Billing Period | Status | Amount |
         Then I assert I can see historical invoices with
-            | Invoice Date | Invoice | Billing Period | Status  | Amount |
-            | Mar 31, 2021 | 25      |                | Monthly | Paid   | $20,000.00 |
-            | Feb 28, 2021 | 24      |                | Monthly | Paid   | $20,000.00 |
-            | Jan 31, 2021 | 23      |                | Monthly | Paid   | $20,000.00 |
-            | Dec 31, 2020 | 22      |                | Monthly | Paid   | $20,000.00 |
-            | Nov 30, 2020 | 21      |                | Monthly | Paid   | $20,000.00 |
-            | Oct 31, 2020 | 20      |                | Monthly | Paid   | $20,000.00 |
-            | Sep 30, 2020 | 19      |                | Monthly | Paid   | $20,000.00 |
-            | Aug 31, 2020 | 18      |                | Monthly | Paid   | $20,000.00 |
-            | Jul 31, 2020 | 17      |                | Monthly | Paid   | $20,000.00 |
-            | Jun 30, 2020 | 16      |                | Monthly | Paid   | $20,000.00 |
+            | Invoice Date | Invoice | Description | Billing Period | Status | Amount     |
+            | Mar 31, 2021 | 25      |             | Monthly        | Paid   | $20,000.00 |
+            | Feb 28, 2021 | 24      |             | Monthly        | Paid   | $20,000.00 |
+            | Jan 31, 2021 | 23      |             | Monthly        | Paid   | $20,000.00 |
+            | Dec 31, 2020 | 22      |             | Monthly        | Paid   | $20,000.00 |
+            | Nov 30, 2020 | 21      |             | Monthly        | Paid   | $20,000.00 |
+            | Oct 31, 2020 | 20      |             | Monthly        | Paid   | $20,000.00 |
+            | Sep 30, 2020 | 19      |             | Monthly        | Paid   | $20,000.00 |
+            | Aug 31, 2020 | 18      |             | Monthly        | Paid   | $20,000.00 |
+            | Jul 31, 2020 | 17      |             | Monthly        | Paid   | $20,000.00 |
+            | Jun 30, 2020 | 16      |             | Monthly        | Paid   | $20,000.00 |
 
     @billing @invoice_history
-    Scenario: Assert_invoice_filtering_by_year
+    Scenario: Invoice_filtering_by_year
         Given I am in Scorpion "sign-in" page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
@@ -58,7 +58,7 @@ Feature: Billing Invoice History
             | 2019         | ...     |             |                |        |            |
 
     @billing @invoice_history
-    Scenario: Assert_invoice_filtering_by_date
+    Scenario: Invoice_filtering_by_date
         Given I am in Scorpion "sign-in" page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button/
@@ -80,7 +80,7 @@ Feature: Billing Invoice History
             | ...          | 20      | description | Monthly        | Paid   | $20,000.00 |
 
     @billing @invoice_history
-    Scenario: Assert_invoice_filtering_by_price
+    Scenario: Invoice_filtering_by_price
         Given I am in Scorpion "sign-in" page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
@@ -102,7 +102,7 @@ Feature: Billing Invoice History
             | ...          | 20      |             | Monthly        | Paid   | $1,000.00  |
 
     @billing @invoice_history
-    Scenario: Assert_invoice_filtering_by_status
+    Scenario: Invoice_filtering_by_status
         Given I am in Scorpion "sign-in" page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
@@ -154,7 +154,7 @@ Feature: Billing Invoice History
             | ...          | 20      | Monthly        | Services | $1,000.00  |
 
     @billing @invoice_history
-    Scenario Outline: Assert_invoice_filtering_with_no_results_filtering_<filter>
+    Scenario Outline: Invoice_filtering_with_no_results_filtering_<filter>
         Given I am in Scorpion "sign-in" page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
@@ -180,7 +180,7 @@ Feature: Billing Invoice History
             | by_status | Services          |
 
     @billing @invoice_history
-    Scenario Outline: Assert_download_<download_option>_functionality
+    Scenario Outline: Download_<download_option>_functionality
         Given I am in Scorpion "sign-in" page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
@@ -206,7 +206,7 @@ Feature: Billing Invoice History
             | Download     | DOC             |
 
     @billing @invoice_history
-    Scenario: Assert_send_functionality
+    Scenario: Send_functionality
         Given I am in Scorpion "sign-in" page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
@@ -230,7 +230,7 @@ Feature: Billing Invoice History
             | Success! |
 
     @billing @invoice_history
-    Scenario: Assert_print_functionality
+    Scenario: Print_functionality
         Given I am in Scorpion "sign-in" page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
@@ -250,7 +250,7 @@ Feature: Billing Invoice History
         And I assert print functionality
 
     @billing @invoice_history
-    Scenario: Assert_order_by_date
+    Scenario: Order_by_date
         Given I am in Scorpion "sign-in" page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
@@ -269,7 +269,7 @@ Feature: Billing Invoice History
             | datatable |
 
     @billing @invoice_history
-    Scenario: Assert_order_by_invoice_number
+    Scenario: Order_by_invoice_number
         Given I am in Scorpion "sign-in" page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
@@ -288,7 +288,7 @@ Feature: Billing Invoice History
             | datatable |
 
     @billing @invoice_history
-    Scenario: Assert_order_by_description
+    Scenario: Order_by_description
         Given I am in Scorpion "sign-in" page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
@@ -307,7 +307,7 @@ Feature: Billing Invoice History
             | datatable |
 
     @billing @invoice_history
-    Scenario: Assert_order_by_billing_period
+    Scenario: Order_by_billing_period
         Given I am in Scorpion "sign-in" page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
@@ -326,7 +326,7 @@ Feature: Billing Invoice History
             | datatable |
 
     @billing @invoice_history
-    Scenario: Assert_order_by_status
+    Scenario: Order_by_status
         Given I am in Scorpion "sign-in" page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
@@ -345,7 +345,7 @@ Feature: Billing Invoice History
             | datatable |
 
     @billing @invoice_history
-    Scenario: Assert_order_by_amount
+    Scenario: Order_by_amount
         Given I am in Scorpion "sign-in" page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
@@ -364,7 +364,7 @@ Feature: Billing Invoice History
             | datatable |
 
     @billing @invoice_history
-    Scenario Outline: Assert_invoice_search_<criteria>
+    Scenario Outline: Invoice_search_<criteria>
         Given I am in Scorpion "sign-in" page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
@@ -392,7 +392,7 @@ Feature: Billing Invoice History
             | by_date           | ...      |
 
     @billing @invoice_history
-    Scenario Outline: Assert_invoice_search__with_no_results_searching_<criteria>
+    Scenario Outline: Invoice_search__with_no_results_searching_<criteria>
         Given I am in Scorpion "sign-in" page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button

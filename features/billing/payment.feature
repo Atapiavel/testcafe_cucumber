@@ -1,7 +1,16 @@
 Feature: Billing Payment
 
     @billing @payment
-    Scenario: Make a payment
+    Scenario: Make_a_payment
+        Given I am in Scorpion login page
+        When I enter "commcenter@scorpion.co" and "Comms1234!"
+        And I click on sign in button
+        And I wait for "2" seconds
+        And I select the account to use with "Thomas & Paulk"
+        And I wait for "10" seconds
+        When I click on settings button
+        And I select the "Billing" option
+        And I wait for "5" seconds
         Given I am in Scorpion "billing" page
         Then I check the Current Total Balance Due with "$1,380.00"
         When I click on make a payment option
@@ -20,7 +29,16 @@ Feature: Billing Payment
             | Success! You succsesfully paid $1,380.00 |
 
     @billing @payment
-    Scenario: Make a payment (Overpay)
+    Scenario: Make_a_payment_(Overpay)
+        Given I am in Scorpion login page
+        When I enter "commcenter@scorpion.co" and "Comms1234!"
+        And I click on sign in button
+        And I wait for "2" seconds
+        And I select the account to use with "Thomas & Paulk"
+        And I wait for "10" seconds
+        When I click on settings button
+        And I select the "Billing" option
+        And I wait for "5" seconds
         Given I am in Scorpion "billing" page
         Then I check the Current Total Balance Due with "$1,380.00"
         When I click on make a payment option
@@ -44,7 +62,16 @@ Feature: Billing Payment
             | Success! You succsesfully paid $8,000.00 |
 
     @billing @payment
-    Scenario: Make a payment (Past due payment)
+    Scenario: Make_a_payment_(Past_due_payment)
+        Given I am in Scorpion login page
+        When I enter "commcenter@scorpion.co" and "Comms1234!"
+        And I click on sign in button
+        And I wait for "2" seconds
+        And I select the account to use with "Thomas & Paulk"
+        And I wait for "10" seconds
+        When I click on settings button
+        And I select the "Billing" option
+        And I wait for "5" seconds
         Given I am in Scorpion "billing" page
         Then I check the Current Total Balance Due with "$1,380.00"
         When I hover the advertisement
@@ -70,7 +97,16 @@ Feature: Billing Payment
             | Success! You succsesfully paid $xxx.00 |
 
     @billing @payment
-    Scenario: Make a payment (Underpay)
+    Scenario: Make_a_payment_(Underpay)
+        Given I am in Scorpion login page
+        When I enter "commcenter@scorpion.co" and "Comms1234!"
+        And I click on sign in button
+        And I wait for "2" seconds
+        And I select the account to use with "Thomas & Paulk"
+        And I wait for "10" seconds
+        When I click on settings button
+        And I select the "Billing" option
+        And I wait for "5" seconds
         Given I am in Scorpion "billing" page
         Then I check the Current Total Balance Due with "$1,380.00"
         When I click on make a payment option
@@ -92,7 +128,16 @@ Feature: Billing Payment
             | Success! You succsesfully paid $100.00 |
 
     @billing @payment
-    Scenario: Make a payment (Pay specific invoice)
+    Scenario: Make_a_payment_(Pay_specific_invoice)
+        Given I am in Scorpion login page
+        When I enter "commcenter@scorpion.co" and "Comms1234!"
+        And I click on sign in button
+        And I wait for "2" seconds
+        And I select the account to use with "Thomas & Paulk"
+        And I wait for "10" seconds
+        When I click on settings button
+        And I select the "Billing" option
+        And I wait for "5" seconds
         Given I am in Scorpion "billing" page
         Then I check the Current Total Balance Due with "$1,380.00"
         And I click the kebab option "Pay" for "Recent Invoices" with "Unpaid" status
@@ -111,7 +156,16 @@ Feature: Billing Payment
             | Success! You succsesfully paid $1,380.00 |
 
     @billing @payment
-    Scenario: Make a payment (View and pay specific invoice)
+    Scenario: Make_a_payment_(View_and_pay_specific_invoice)
+        Given I am in Scorpion login page
+        When I enter "commcenter@scorpion.co" and "Comms1234!"
+        And I click on sign in button
+        And I wait for "2" seconds
+        And I select the account to use with "Thomas & Paulk"
+        And I wait for "10" seconds
+        When I click on settings button
+        And I select the "Billing" option
+        And I wait for "5" seconds
         Given I am in Scorpion "billing" page
         Then I check the Current Total Balance Due with "$1,380.00"
         And I click the kebab option "View" for "Recent Invoices" with "Unpaid" status
