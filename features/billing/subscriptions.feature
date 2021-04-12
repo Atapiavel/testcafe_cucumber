@@ -15,4 +15,3 @@ Feature: Billing Subscriptions
         And I click the kebab option "Edit" for "Subscriptions"
         And I select the assigned payment method with "Credit Card ****3857" and "Enabled" autopay
         And I click on save button
-
