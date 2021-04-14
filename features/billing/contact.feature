@@ -1,7 +1,7 @@
-Feature: Billing Overview
+Feature: Billing Contact
 
-    @billing @overview
-    Scenario: Billing_overview_page
+    @billing @contact
+    Scenario Outline: Set_as_primary_functionality_from_<module>
         Given I am in Scorpion login page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
         And I click on sign in button
@@ -12,40 +12,16 @@ Feature: Billing Overview
         And I select the "Billing" option
         And I wait for "5" seconds
         Given I am in Scorpion "billing" page
-        Then I assert I can see recent invoices
-            | Invoice_Date | Invoice_# | Billing_Period | Status         | Amount    |
-            | Nov 1, 2019  | 10010     | Monthly        | Paid           | $1,500.00 |
-            | Nov 1, 2019  | 10011     | Monthly        | Unpaid         | $1,500.00 |
-            | Nov 1, 2019  | 10012     | Monthly        | Partially Paid | $1,500.00 |
-            | Nov 1, 2019  | 10013     | Monthly        | Paid           | $1,500.00 |
-            | Nov 1, 2019  | 10014     | Monthly        | Paid           | $1,500.00 |
-        And I assert I can see Current Billing Cycle graph
-        And I assert the Total Balance Due sum
-
-    @billing @overview
-    Scenario Outline: <module>_module_is_visible
-        Given I am in Scorpion login page
-        When I enter "commcenter@scorpion.co" and "Comms1234!"
-        And I click on sign in button
-        And I wait for "2" seconds
-        And I select the account to use with "Thomas & Paulk"
-        And I wait for "10" seconds
-        When I click on settings button
-        And I select the "Billing" option
-        And I wait for "5" seconds
-        Given I am in Scorpion "billing" page
-        Then I assert "<module>" module is visible
-        And I assert that the primary "<module>" is visible
+        Then I click the kebab option "<kebab_option>" for "<module>"
+        And I assert that the text is shown
+            | Success! |
+        And I assert "<contact>" as primary contact
 
         Examples:
+            | kebab_option   | module          | contact       |
+            | Set_as_primary | Billing_contact | David Gilmore |
 
-            | module          |
-            | Recent_invoices |
-            | Billing_contact |
-            | Payment_method  |
-            | Bill_to_address |
-
-    @billing @overview
+    @billing @contact
     Scenario: <module>_<kebab_option>_option_is_visible
         Given I am in Scorpion login page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
@@ -62,13 +38,67 @@ Feature: Billing Overview
         Examples:
 
             | kebab_option   | module          |
-            | send           | Recent_invoices |
-            | print          | Recent_invoices |
-            | download_CSV   | Recent_invoices |
-            | download_PDF   | Recent_invoices |
-            | download_DOC   | Recent_invoices |
+            | Set_as_primary | Billing_contact |
+            | delete         | Billing_contact |
 
-    @billing @overview
+    @billing @contact
+    Scenario: Add_billing_contact_functionality
+        Given I am in Scorpion login page
+        When I enter "commcenter@scorpion.co" and "Comms1234!"
+        And I click on sign in button
+        And I wait for "2" seconds
+        And I select the account to use with "Thomas & Paulk"
+        And I wait for "10" seconds
+        When I click on settings button
+        And I select the "Billing" option
+        And I wait for "5" seconds
+        Given I am in Scorpion "billing" page
+        And I click on add billing contact
+        And I fill billing contact info with
+            | first_name | last_name | email_address         | phone_number   |
+            | Samm       | Robinson  | samrobinson@gmail.com | (485) 569 3859 |
+        Then I click on save button
+
+    @billing @contact
+    Scenario: Edit_billing_contact_functionality
+        Given I am in Scorpion login page
+        When I enter "commcenter@scorpion.co" and "Comms1234!"
+        And I click on sign in button
+        And I wait for "2" seconds
+        And I select the account to use with "Thomas & Paulk"
+        And I wait for "10" seconds
+        When I click on settings button
+        And I select the "Billing" option
+        And I wait for "5" seconds
+        Given I am in Scorpion "billing" page
+        When I click on edit contact "<first_name>" "<last_name>"
+        And I fill billing contact info with
+            | first_name | last_name | email_address         | phone_number   |
+            | Samm       | Robinson  | samrobinson@gmail.com | (485) 569 3859 |
+        Then I click on update button
+
+    @billing @contact
+    Scenario Outline: Delete_functionality_from_<module>
+        Given I am in Scorpion login page
+        When I enter "commcenter@scorpion.co" and "Comms1234!"
+        And I click on sign in button
+        And I wait for "2" seconds
+        And I select the account to use with "Thomas & Paulk"
+        And I wait for "10" seconds
+        When I click on settings button
+        And I select the "Billing" option
+        And I wait for "5" seconds
+        Given I am in Scorpion "billing" page
+        Then I click the kebab option "<kebab_option>" for "<module>"}
+        And I assert that the text is shown
+            | Success! |
+        And I assert "<contact>" contact is not visible
+
+        Examples:
+            | kebab_option | module          | contact      |
+            | delete       | Billing_contact | Andy Timmons |
+
+    @billing @contact
     Scenario Outline: Cancel_button_from_<module>_<kebab_option>_functionality
         Given I am in Scorpion login page
         When I enter "commcenter@scorpion.co" and "Comms1234!"
@@ -86,48 +116,6 @@ Feature: Billing Overview
         Examples:
 
             | kebab_option | module          |
-            | send         | Recent_invoices |
-
-    @billing @overview
-    Scenario Outline: <kebab_option>_functionality_from_<module>
-        Given I am in Scorpion login page
-        When I enter "commcenter@scorpion.co" and "Comms1234!"
-        And I click on sign in button
-        And I wait for "2" seconds
-        And I select the account to use with "Thomas & Paulk"
-        And I wait for "10" seconds
-        When I click on settings button
-        And I select the "Billing" option
-        And I wait for "5" seconds
-        Given I am in Scorpion "billing" page
-        Then I click the kebab option "<kebab_option>" for "<module>"
-        And I fill the contact information with
-            | David Gilmore | jamesissac@gmail.com |
-        And I click on send button
-        And I assert that the text is shown
-            | Success! |
-
-        Examples:
-            | kebab_option | module          |
-            | send         | Recent_invoices |
-
-    @billing @overview
-    Scenario Outline: Download_<download_option>_functionality_from_<module>
-        Given I am in Scorpion login page
-        When I enter "commcenter@scorpion.co" and "Comms1234!"
-        And I click on sign in button
-        And I wait for "2" seconds
-        And I select the account to use with "Thomas & Paulk"
-        And I wait for "10" seconds
-        When I click on settings button
-        And I select the "Billing" option
-        And I wait for "5" seconds
-        Given I am in Scorpion "billing" page
-        Then I click the kebab option "<kebab_option>" for "<module>"
-        And I assert "<dowload_option>" dowload option
-
-        Examples:
-            | kebab_option | module          | download_option |
-            | download     | Recent_invoices | CSV             |
-            | download     | Recent_invoices | PDF             |
-            | download     | Recent_invoices | DOC             |
+            | update       | Billing_contact |
+            | add          | Billing_contact |
+            | update       | Bill_to_address |
