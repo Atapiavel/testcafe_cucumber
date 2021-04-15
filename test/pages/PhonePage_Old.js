@@ -25,6 +25,9 @@ class PhonePage{
         this.endCalMin = Selector('button.mod-red');
         this.dragBtn = Selector('[aria-label="drag"]');
         this.collapseBtn = Selector('[aria-label="Dialpad"]');
+        this.sidePanelBtn = Selector('[aria-label="Open Calls Panel"]');
+        this.participants = Selector('span').withText('Participants');
+        this.exitBtn = Selector('[aria-label="exit"]');
     }
 }
 export default new PhonePage();

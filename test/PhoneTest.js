@@ -13,7 +13,7 @@ dataSet.forEach(data => {
 test('Phone page Test', async t =>{
     await t
     .maximizeWindow()
-    .setTestSpeed(1)
+    .setTestSpeed(0.1)
     .typeText(loginpage.email, data.email)
     .typeText(loginpage.password, data.password)
     .click(loginpage.signIn)
@@ -36,8 +36,12 @@ test('Phone page Test', async t =>{
     .click(phonepage.collapseBtn)
     .click(phonepage.miniBtn)
     .click(phonepage.maxiBtn)
-    .click(phonepage.endCallBtn)
+    .click(phonepage.sidePanelBtn)
+    
+    // .hover(phonepage.participants)
 
+    .click(phonepage.exitBtn)
+    .click(phonepage.endCallBtn)
     .click(phonepage.makeCallBtn)
     .click(phonepage.dialFour)
     .click(phonepage.dialOne)
