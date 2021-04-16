@@ -37,11 +37,8 @@ When('I hover on More option', async function () {
 
 When('I execute the next query {string}', async function (file) {
     await sql.connect(config)
-    var query_file = fs.readFileSync('./sql/' + file + '.txt', 'utf8');
-    const result = await sql.query([query_file])
-    console.log(result)
-    console.log(result.recordset[0])
-    console.log(result.recordset[0].StartDate)
+    var query_file = fs.readFileSync('./sql/' + file + '.sql', 'utf8');
+    await sql.query([query_file])
 })
 
 When('I maximize the window', async function () {

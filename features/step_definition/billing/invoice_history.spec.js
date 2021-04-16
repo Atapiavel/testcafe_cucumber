@@ -1,4 +1,5 @@
 const { When, Then } = require('@cucumber/cucumber');
+const ActionsPage = require('../../../pages/actions.pages.js')
 const BillingHistoryPage = require('../../../pages/billing/invoice_history.pages.js');
 const BillingHistoryPageLocator = require('../../../locators/billing/invoice_history.locators.js');
 const { Selector } = require('testcafe');
@@ -24,3 +25,21 @@ When('I verify the columns are showed with', async function (datatable) {
 Then('I assert {string} kebab option is visible for', async function (option, datatable) {
     await BillingHistoryPage.assert_kebab_option(option, datatable)
 })
+
+When('I select the filter {string} with {string}', async function (filter, value) {
+    await BillingHistoryPage.filter_invoices(filter, value)
+})
+
+Then('I assert no invoices are shown', async function () {
+    const text = await select(BillingHistoryPageLocator.no_results()).innerText;
+    assert(text == "Sorry, we couldn´t find any matches.")
+})
+
+When('I click on apply button', async function () {
+    await ActionsPage.click_element_from_list(BillingHistoryPageLocator.apply_button(), "Apply")
+})
+
+Then('I assert the results count showing {string}', async function (results) {
+    const text = await select(BillingHistoryPageLocator.results_count()).innerText;
+    assert(text == results)
+}) 
