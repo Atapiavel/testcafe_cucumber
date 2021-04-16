@@ -27,7 +27,7 @@ async function take_screenshot(scenario) {
 // }
 
 async function type_text(element, value) {
-    await testController.typeText(element, value)
+    await testController.typeText(element, value, { replace: true })
 }
 
 // async function type_and_enter(element, value) {
@@ -43,21 +43,10 @@ async function hover_element(element) {
     await testController.hover(element)
 }
 
-// async function hover_element_from_list(element, value) {
-//     cy.get(element).each(($el) => {
-//         if ($el.text().includes(value)) {
-//             this.hover_element($el)
-//         }
-//     })
-// }
-
-// async function scroll_to_element(element, value) {
-//     cy.get(element).each(($el) => {
-//         if ($el.text().includes(value)) {
-//             element.scrollIntoView();
-//         }
-//     })
-// }
+async function hover_element_from_list(element, value) {
+    const option = Selector(element).withText(value)
+    await testController.hover(option)
+}
 
 async function maximize_window() {
     await testController.maximizeWindow()
@@ -122,8 +111,7 @@ module.exports = {
     // type_and_enter: type_and_enter,
     click_element_from_list: click_element_from_list,
     hover_element: hover_element,
-    // hover_element_from_list: hover_element_from_list,
-    // scroll_to_element: scroll_to_element,
+    hover_element_from_list: hover_element_from_list,
     wait: wait,
     drag: drag,
     get_actual_date: get_actual_date,

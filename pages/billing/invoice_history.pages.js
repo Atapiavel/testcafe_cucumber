@@ -1,4 +1,5 @@
-const ActionsPage = require("../actions.pages");
+const ActionsPage = require("../actions.pages")
+const BillingHistoryPageLocator = require('../../locators/billing/invoice_history.locators.js');
 const { Selector } = require('testcafe');
 var assert = require('assert');
 
@@ -53,7 +54,7 @@ async function assert_kebab_option(option, datatable) {
                             if (text == data_flat[n + 4]) {
                                 kebab = select("tbody .ng-star-inserted:nth-of-type(" + (i + 1) + ") scorpion-icon")
                                 await ActionsPage.hover_element(kebab)
-                                if (option == "send"){
+                                if (option == "send") {
                                     await ActionsPage.click_element(kebab)
                                     menu_option = "scorpion-menu-item:nth-of-type(1) > .full.nlf-between-center"
                                     await ActionsPage.hover_element(menu_option)
@@ -61,7 +62,7 @@ async function assert_kebab_option(option, datatable) {
                                     assert(text == "Send")
                                     await ActionsPage.click_element(kebab)
                                 }
-                                if (option == "print"){
+                                if (option == "print") {
                                     await ActionsPage.click_element(kebab)
                                     menu_option = "scorpion-menu-item:nth-of-type(2) > .full.nlf-between-center"
                                     await ActionsPage.hover_element(menu_option)
@@ -69,7 +70,7 @@ async function assert_kebab_option(option, datatable) {
                                     assert(text == "Print")
                                     await ActionsPage.click_element(kebab)
                                 }
-                                if (option == "download_PDF"){
+                                if (option == "download_PDF") {
                                     await ActionsPage.click_element(kebab)
                                     menu_option = "scorpion-menu-item:nth-of-type(3) > .full.nlf-between-center"
                                     const text = await select(menu_option).innerText
@@ -81,7 +82,7 @@ async function assert_kebab_option(option, datatable) {
                                     await ActionsPage.hover_element(download_option)
                                     await ActionsPage.click_element(kebab)
                                 }
-                                if (option == "download_DOC"){
+                                if (option == "download_DOC") {
                                     await ActionsPage.click_element(kebab)
                                     menu_option = "scorpion-menu-item:nth-of-type(3) > .full.nlf-between-center"
                                     const text = await select(menu_option).innerText
@@ -93,7 +94,7 @@ async function assert_kebab_option(option, datatable) {
                                     await ActionsPage.hover_element(download_option)
                                     await ActionsPage.click_element(kebab)
                                 }
-                                if (option == "download_CSV"){
+                                if (option == "download_CSV") {
                                     await ActionsPage.click_element(kebab)
                                     menu_option = "scorpion-menu-item:nth-of-type(3) > .full.nlf-between-center"
                                     const text = await select(menu_option).innerText
@@ -114,9 +115,41 @@ async function assert_kebab_option(option, datatable) {
     }
 }
 
+async function filter_invoices(filter, value) {
+    if (filter == 'by_year') {
+        await ActionsPage.click_element(BillingHistoryPageLocator.start_date())
+        await ActionsPage.click_element(BillingHistoryPageLocator.by_year())
+        await ActionsPage.click_element_from_list(BillingHistoryPageLocator.year_buttons(), value)
+    }
+    if (filter == 'by_date') {
+        dates = value.split('-')
+        await ActionsPage.click_element(BillingHistoryPageLocator.start_date())
+        await ActionsPage.click_element(BillingHistoryPageLocator.custom())
+        await ActionsPage.type_text(BillingHistoryPageLocator.start_date(), dates[0])
+        await ActionsPage.type_text(BillingHistoryPageLocator.end_date(), dates[1])
+    }
+    if (filter == 'by_month') {
+        month = value.split('-')
+        await ActionsPage.click_element(BillingHistoryPageLocator.start_date())
+        await ActionsPage.click_element(BillingHistoryPageLocator.by_month())
+        // await ActionsPage.click_element_from_list(BillingHistoryPageLocator.month_buttons(), month[0] + "\n" + month[1]) 
+        const record = BillingHistoryPageLocator.month_buttons()
+        const text = await select(record).innerText
+        console.log(text)
+        // await ActionsPage.click_element_from_list(BillingHistoryPageLocator.start_date(), dates[0])
+    }
+    if (filter == 'by_price') {
+        prices = value.split('-')
+        await ActionsPage.click_element(BillingHistoryPageLocator.filter_button())
+        await ActionsPage.type_text(BillingHistoryPageLocator.min_price(), prices[0])
+        await ActionsPage.type_text(BillingHistoryPageLocator.max_price(), prices[1])
+    }
+}
+
 
 module.exports = {
     assert_historical_invoices: assert_historical_invoices,
     assert_columns: assert_columns,
-    assert_kebab_option: assert_kebab_option
+    assert_kebab_option: assert_kebab_option,
+    filter_invoices: filter_invoices
 };
