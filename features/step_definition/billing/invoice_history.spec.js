@@ -30,6 +30,7 @@ When('I select the filter {string} with {string}', async function (filter, value
     await BillingHistoryPage.filter_invoices(filter, value)
 })
 
+
 Then('I assert no invoices are shown', async function () {
     const text = await select(BillingHistoryPageLocator.no_results()).innerText;
     assert(text == "Sorry, we couldn´t find any matches.")
@@ -42,4 +43,20 @@ When('I click on apply button', async function () {
 Then('I assert the results count showing {string}', async function (results) {
     const text = await select(BillingHistoryPageLocator.results_count()).innerText;
     assert(text == results)
+}) 
+
+Then('I click on clear all filters button', async function () {
+    await ActionsPage.click_element(BillingHistoryPageLocator.clear_all_filters())
+})
+
+Then('I click on filter button', async function () {
+    await ActionsPage.click_element(BillingHistoryPageLocator.filter_button())
+})
+
+Then('I click on cancel button', async function () {
+    await ActionsPage.click_element_from_list(BillingHistoryPageLocator.apply_button(), "Cancel")
+})
+
+Then('I click on clear all filters link', async function () {
+    await ActionsPage.click_element(BillingHistoryPageLocator.clear_all_filters())
 }) 

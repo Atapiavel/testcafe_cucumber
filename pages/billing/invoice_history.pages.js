@@ -121,14 +121,14 @@ async function filter_invoices(filter, value) {
         await ActionsPage.click_element(BillingHistoryPageLocator.by_year())
         await ActionsPage.click_element_from_list(BillingHistoryPageLocator.year_buttons(), value)
     }
-    if (filter == 'by_date') {
+    else if (filter == 'by_date') {
         dates = value.split('-')
         await ActionsPage.click_element(BillingHistoryPageLocator.start_date())
         await ActionsPage.click_element(BillingHistoryPageLocator.custom())
         await ActionsPage.type_text(BillingHistoryPageLocator.start_date(), dates[0])
         await ActionsPage.type_text(BillingHistoryPageLocator.end_date(), dates[1])
     }
-    if (filter == 'by_month') {
+    else if (filter == 'by_month') {
         month = value.split('-')
         await ActionsPage.click_element(BillingHistoryPageLocator.start_date())
         await ActionsPage.click_element(BillingHistoryPageLocator.by_month())
@@ -138,11 +138,22 @@ async function filter_invoices(filter, value) {
         console.log(text)
         // await ActionsPage.click_element_from_list(BillingHistoryPageLocator.start_date(), dates[0])
     }
-    if (filter == 'by_price') {
+    else if (filter == 'by_price') {
         prices = value.split('-')
-        await ActionsPage.click_element(BillingHistoryPageLocator.filter_button())
         await ActionsPage.type_text(BillingHistoryPageLocator.min_price(), prices[0])
         await ActionsPage.type_text(BillingHistoryPageLocator.max_price(), prices[1])
+    }
+    else if (filter == 'by_status') {
+        if (value == 'Paid') {
+            await ActionsPage.click_element(BillingHistoryPageLocator.paid_checkbox())
+        }
+        else if (value == 'Unpaid') {
+            await ActionsPage.click_element(BillingHistoryPageLocator.unpaid_checkbox())
+        }
+        else if (value == 'Partially paid') {
+            await ActionsPage.click_element(BillingHistoryPageLocator.partially_paid_checkbox())
+        }
+
     }
 }
 
