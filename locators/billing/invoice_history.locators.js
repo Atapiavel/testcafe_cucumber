@@ -70,6 +70,23 @@ function results_count() {
     return "[data-cy=results-count]"
 }
 
+function paid_checkbox() {
+    return "li:nth-of-type(1) > scorpion-checkbox  button"
+}
+
+function unpaid_checkbox() {
+    return "li:nth-of-type(2) > scorpion-checkbox  button"
+}
+
+function partially_paid_checkbox() {
+    return "li:nth-of-type(3) > scorpion-checkbox  button"
+}
+
+function clear_all_filters() {
+    return "[data-cy=text]"
+}
+
+
 module.exports = {
     page_title: page_title,
     filter_button: filter_button,
@@ -88,5 +105,9 @@ module.exports = {
     custom: custom,
     min_price: min_price,
     max_price: max_price,
-    results_count: results_count
+    results_count: results_count,
+    paid_checkbox: paid_checkbox,
+    unpaid_checkbox: unpaid_checkbox,
+    partially_paid_checkbox: partially_paid_checkbox,
+    clear_all_filters: clear_all_filters
 }
