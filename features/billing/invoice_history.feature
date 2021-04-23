@@ -18,11 +18,10 @@ Feature: Billing Invoice History
         Then I assert I can see historical invoices with
             | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
             | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
-            | Feb 18, 2021 | 3             | Monthly | Unpaid | $80,000.00 |
             | Feb 18, 2021 | 2             | Monthly | Unpaid | $80,000.00 |
             | Feb 18, 2021 | 1             | Monthly | Paid   | $80,000.00 |
 
-    @billing @invoice_history
+    @billing @invoice_history @focus
     Scenario: Invoice_history_kebab_options_are_visible_for_<Invoice_Number>
         Given I am in Scorpion "sign-in" page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
@@ -55,13 +54,8 @@ Feature: Billing Invoice History
             | Invoice_Date | Invoice_Number | Billing_Period | Status | Amount     |
             | Apr 12, 2021 | 20210412-0005  | Monthly        | Unpaid | $20,000.00 |
             | Apr 8, 2021  | 20210408-0004  | Monthly        | Unpaid | $40,000.00 |
-            | Feb 18, 2021 | 3              | Monthly        | Unpaid | $80,000.00 |
             | Feb 18, 2021 | 2              | Monthly        | Unpaid | $80,000.00 |
             | Feb 18, 2021 | 1              | Monthly        | Paid   | $80,000.00 |
-
-    @billing @invoice_history
-    Scenario: PRE_Invoice_filtering_by_year
-        When I execute the next query "PRE_Invoice_filtering_by_year"
 
     @billing @invoice_history
     Scenario: Invoice_filtering_by_year
@@ -85,6 +79,7 @@ Feature: Billing Invoice History
         And I click on apply button
         And I wait for "1" seconds
         Then I assert I can see historical invoices with
+            | May 1, 2021  | 20210501-0006 | Monthly | Unpaid | $20,000.00 |
             | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
             | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
             | Feb 18, 2021 | 2             | Monthly | Unpaid | $80,000.00 |
@@ -132,11 +127,6 @@ Feature: Billing Invoice History
             | ...          | 21      | description | Monthly        | Paid   | $20,000.00 |
             | ...          | 20      | description | Monthly        | Paid   | $20,000.00 |
 
-
-    @billing @invoice_history
-    Scenario: POS_Invoice_filtering_by_year
-        When I execute the next query "POS_Invoice_filtering_by_year"
-
     @billing @invoice_history
     Scenario: Invoice_filtering_by_price
         Given I am in Scorpion "sign-in" page
@@ -162,11 +152,10 @@ Feature: Billing Invoice History
         And I click on filter button
         When I select the filter "by_price" with "80000.00-80000.00"
         And I wait for "2" seconds
-        Then I assert the results count showing "3 Results"
+        Then I assert the results count showing "2 Results"
         And I click on apply button
         And I wait for "1" seconds
         Then I assert I can see historical invoices with
-            | Feb 18, 2021 | 3 | Monthly | Unpaid | $80,000.00 |
             | Feb 18, 2021 | 2 | Monthly | Unpaid | $80,000.00 |
             | Feb 18, 2021 | 1 | Monthly | Paid   | $80,000.00 |
 
@@ -208,13 +197,12 @@ Feature: Billing Invoice History
         And I click on filter button
         When I select the filter "by_status" with "Unpaid"
         And I wait for "2" seconds
-        Then I assert the results count showing "4 Results"
+        Then I assert the results count showing "3 Results"
         And I click on apply button
         And I wait for "1" seconds
         Then I assert I can see historical invoices with
             | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
             | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
-            | Feb 18, 2021 | 3             | Monthly | Unpaid | $80,000.00 |
             | Feb 18, 2021 | 2             | Monthly | Unpaid | $80,000.00 |
 
     # UNFINISHED CODE
@@ -262,7 +250,6 @@ Feature: Billing Invoice History
         And I click on see all option
         And I wait for "5" seconds
         Then I assert the Scorpion Billing History page
-        And I click on filter button
         When I select the filter "<filter>" with "<value>"
         And I wait for "2" seconds
         And I click on apply button
@@ -272,7 +259,7 @@ Feature: Billing Invoice History
 
             | filter   | value                   |
             | by_date  | 30 Mar 2010-30 Mar 2010 |
-            | by_price | 10000000-1000001        |
+            # | by_price | 10000000-1000001        |
             # | by_status | Services                | no data and no filter shown
             | by_month | April-2020              |
 
@@ -297,7 +284,7 @@ Feature: Billing Invoice History
         And I click on filter button
         When I select the filter "by_status" with "Unpaid"
         And I wait for "2" seconds
-        Then I assert the results count showing "4 Results"
+        Then I assert the results count showing "3 Results"
         And I click on cancel button
         And I click on filter button
         When I select the filter "by_price" with "20000.00-40000.00"
@@ -309,12 +296,7 @@ Feature: Billing Invoice History
         When I select the filter "by_price" with "80000.00-80000.00"
         And I click on filter button
         And I wait for "2" seconds
-        Then I assert the results count showing "3 Results"
-
-    @billing @invoice_history
-    Scenario: PRE_Invoice_filtering_by_year
-        When I execute the next query "PRE_Invoice_filtering_by_year"
-
+        Then I assert the results count showing "2 Results"
 
     @billing @invoice_history
     Scenario Outline: Clear_all_filters_functionality
@@ -338,7 +320,66 @@ Feature: Billing Invoice History
         And I assert I can see historical invoices with
             | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
             | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
-            | Feb 18, 2020 | 3             | Monthly | Unpaid | $80,000.00 |
+            | Feb 18, 2021 | 2             | Monthly | Unpaid | $80,000.00 |
+            | Feb 18, 2021 | 1             | Monthly | Paid   | $80,000.00 |
+        And I click on filter button
+        When I select the filter "by_price" with "20000.00-40000.00"
+        And I wait for "2" seconds
+        Then I assert the results count showing "2 Results"
+        When I click on apply button
+        And I wait for "1" seconds
+        Then I assert I can see historical invoices with
+            | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
+            | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
+        And I click on clear all filters link
+        And I assert I can see historical invoices with
+            | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
+            | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
+            | Feb 18, 2021 | 2             | Monthly | Unpaid | $80,000.00 |
+            | Feb 18, 2021 | 1             | Monthly | Paid   | $80,000.00 |
+        And I click on filter button
+        When I select the filter "by_price" with "80000.00-80000.00"
+        And I wait for "2" seconds
+        Then I assert the results count showing "2 Results"
+        And I click on apply button
+        And I wait for "1" seconds
+        Then I assert I can see historical invoices with
+            | Feb 18, 2021 | 2 | Monthly | Unpaid | $80,000.00 |
+            | Feb 18, 2021 | 1 | Monthly | Paid   | $80,000.00 |
+        And I click on clear all filters link
+        And I assert I can see historical invoices with
+            | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
+            | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
+            | Feb 18, 2021 | 2             | Monthly | Unpaid | $80,000.00 |
+            | Feb 18, 2021 | 1             | Monthly | Paid   | $80,000.00 |
+        And I click on filter button
+        When I select the filter "by_status" with "Paid"
+        And I wait for "2" seconds
+        Then I assert the results count showing "1 Result"
+        And I click on apply button
+        And I wait for "1" seconds
+        Then I assert I can see historical invoices with
+            | Feb 18, 2021 | 1 | Monthly | Paid | $80,000.00 |
+        And I click on clear all filters link
+        And I assert I can see historical invoices with
+            | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
+            | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
+            | Feb 18, 2021 | 2             | Monthly | Unpaid | $80,000.00 |
+            | Feb 18, 2021 | 1             | Monthly | Paid   | $80,000.00 |
+        And I click on filter button
+        When I select the filter "by_status" with "Unpaid"
+        And I wait for "2" seconds
+        Then I assert the results count showing "3 Results"
+        And I click on apply button
+        And I wait for "1" seconds
+        Then I assert I can see historical invoices with
+            | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
+            | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
+            | Feb 18, 2021 | 2             | Monthly | Unpaid | $80,000.00 |
+        And I click on clear all filters link
+        And I assert I can see historical invoices with
+            | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
+            | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
             | Feb 18, 2021 | 2             | Monthly | Unpaid | $80,000.00 |
             | Feb 18, 2021 | 1             | Monthly | Paid   | $80,000.00 |
 
