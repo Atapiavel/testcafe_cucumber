@@ -45,6 +45,10 @@ When('I drag the dialpad {string} for x {string} for y', async function(value_1,
         await ActionsPage.drag(PhonePageLocator.DragBtn(), value_1,value_2);
 })
 
+When('I click on Collapse button', async function() {
+        await ActionsPage.click_element(PhonePageLocator.CollapseBtn());
+})
+
 When('I click on Minimize button', async function() {
         await waitFor(1000) 
         await ActionsPage.click_element(PhonePageLocator.MiniBtn());
@@ -53,6 +57,18 @@ When('I click on Minimize button', async function() {
 When('I click on Maximize button', async function() {
         await waitFor(1000) 
         await ActionsPage.click_element(PhonePageLocator.MaxiBtn());
+})
+
+When('I click on Collapse button again', async function() {
+        await ActionsPage.click_element(PhonePageLocator.CollapseBtn());
+})
+
+When('I click on Sidepanel button', async function() {
+        await ActionsPage.click_element(PhonePageLocator.SidePan());
+})
+
+When('I click on Exit button', async function() {
+        await ActionsPage.click_element(PhonePageLocator.ExitBtn());
 })
 
 Then('I click on End Call button again', async function () {
