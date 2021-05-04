@@ -79,6 +79,7 @@ Feature: Billing Invoice History
         And I click on apply button
         And I wait for "1" seconds
         Then I assert I can see historical invoices with
+            | May 8, 2021  | 20210508-0029 | Monthly | Unpaid | $20,000.00 |
             | May 1, 2021  | 20210501-0006 | Monthly | Unpaid | $20,000.00 |
             | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
             | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
