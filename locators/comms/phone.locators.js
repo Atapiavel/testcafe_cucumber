@@ -36,12 +36,24 @@ function PhoneBtn() {
     return select('[data-cy=dock-app-tile-comms-phone]')
 }
 
+function CollapseBtn() {
+    return select('[aria-label="Dialpad"]')
+}
+
 function MiniBtn() {
     return select('[data-cy=minimize-dialer]')
 }
 
 function MaxiBtn() {
     return select('[data-cy=maximize-dialer]')
+}
+
+function SidePan() {
+    return select('[aria-label="Open Calls Panel"]')
+}
+
+function ExitBtn() {
+    return select('[aria-label="exit"]')
 }
 
 function EndCallMinBtn() {
@@ -61,8 +73,11 @@ module.exports = {
     EndCallBtn: EndCallBtn,
     DialPad: DialPad,
     PhoneBtn: PhoneBtn,
+    CollapseBtn: CollapseBtn,
     MiniBtn: MiniBtn,
     MaxiBtn: MaxiBtn,
+    SidePan: SidePan,
+    ExitBtn: ExitBtn,
     EndCallMinBtn: EndCallMinBtn,
     DragBtn: DragBtn
 };
