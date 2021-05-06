@@ -10,8 +10,19 @@ Feature: Chat Feature
         And I wait for "10" seconds
         Given I am in Scorpion "chat" page
         And I wait for the Chat display
-        # And I click Get Started button
-        Then I land on chat dashboard page
+        And I land on chat dashboard page
+        When I click on the Agent Availability button
+        Then The Set Your Availability displays
+        And I wait for "2" seconds
+        And I click on toggle for Availability
+        And I wait for "2" seconds
+        And I click on toggle for Availability again
+        And I wait for "2" seconds
+        And I click on the Agent Availability button again
+        And I wait for "2" seconds
+        And I click on Mine button
+        And I wait for "2" seconds
+        And I click on All button
         When I click on settings button
         And I sign out Scorpion
 
