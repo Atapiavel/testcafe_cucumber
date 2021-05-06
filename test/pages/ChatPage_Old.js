@@ -7,6 +7,8 @@ class ChatPage{
         this.getStartedButton = Selector('[data-cy=get-started]');
         this.allTab = Selector('[data-name="All"]');
         this.mineTab = Selector('[data-name="Mine"]');
+        this.agentAvailBtn = Selector('[title="Customer Service Agent Availability"]');
+        this.availToggleBtn = Selector('[class="toggle"]');
     }
 }
 export default new ChatPage();
