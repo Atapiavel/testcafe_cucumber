@@ -35,6 +35,6 @@ When('I click on Mine button', async function() {
   await ActionsPage.click_element(ChatPageLocator.MineBtn());
 });
 
-When('I click on All button', async function() {
+Then('I click on All button', async function() {
   await ActionsPage.click_element(ChatPageLocator.AllBtn());
 });

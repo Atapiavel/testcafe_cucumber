@@ -1,6 +1,6 @@
 Feature: Chat Feature
 
-    @e2e
+    @e2e @comms
     Scenario Outline: User Chat E2E Scenario
         Given I am in Scorpion "sign-in" page
         When I enter "<email>" and "<password>"
@@ -22,7 +22,7 @@ Feature: Chat Feature
         And I wait for "2" seconds
         And I click on Mine button
         And I wait for "2" seconds
-        And I click on All button
+        Then I click on All button
         When I click on settings button
         And I sign out Scorpion
 
