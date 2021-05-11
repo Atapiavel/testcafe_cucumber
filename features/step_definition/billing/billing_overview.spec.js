@@ -1,9 +1,10 @@
 const ActionsPage = require('../../../pages/actions.pages.js')
 const { When, Then } = require('@cucumber/cucumber');
 const BillingOverviewPage = require('../../../pages/billing/billing_overview.pages.js');
+const BillingOverviewPageLocator = require('../../../locators/billing/billing_overview.locators.js')
 
 When('I click on see all option', async function () {
-    await ActionsPage.click_element(BillingPageLocator.billing_history())
+    await ActionsPage.click_element(BillingOverviewPageLocator.billing_history())
 })
 
 When('I verify the columns are showed in billing overview with', async function (datatable) {

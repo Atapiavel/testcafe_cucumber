@@ -1,23 +1,23 @@
 Feature: Billing Overview
 
-    # @billing @overview
-    # Scenario: Recent_invoices
-    #     Given I am in Scorpion "sign-in" page
-    #     When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
-    #     And I click on sign in button
-    #     And I wait for "10" seconds
-    #     Given I am in Scorpion "settings" page
-    #     And I wait for "5" seconds
-    #     And I hover on More option
-    #     Then I select the "Billing" option
-    #     Then I verify the columns are shown on the billing overview page with
-    #         | Invoice Date | Invoice | Billing Period | Status | Amount |
-    #     Then I assert I can see recent invoices with
-    #         | May 12, 2021 | 20210512-0008 | Monthly | Unpaid | $20,000.00 |
-    #         | May 8, 2021  | 20210508-0029 | Monthly | Unpaid | $40,000.00 |
-    #         | May 1, 2021  | 20210501-0006 | Monthly | Unpaid | $20,000.00 |
-    #         | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
-    #         | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
+    @billing @overview
+    Scenario: Recent_invoices
+        Given I am in Scorpion "sign-in" page
+        When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
+        And I click on sign in button
+        And I wait for "10" seconds
+        Given I am in Scorpion "settings" page
+        And I wait for "5" seconds
+        And I hover on More option
+        Then I select the "Billing" option
+        Then I verify the columns are shown on the billing overview page with
+            | Invoice Date | Invoice | Billing Period | Status | Amount |
+        Then I assert I can see recent invoices with
+            | May 12, 2021 | 20210512-0008 | Monthly | Unpaid | $20,000.00 |
+            | May 8, 2021  | 20210508-0029 | Monthly | Unpaid | $40,000.00 |
+            | May 1, 2021  | 20210501-0006 | Monthly | Unpaid | $20,000.00 |
+            | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
+            | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
 
     @billing @overview
     Scenario Outline: Recent_invoices_kebab_options_are_visible_for_<Invoice_Number>
