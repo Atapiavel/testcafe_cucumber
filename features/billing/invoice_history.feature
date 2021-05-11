@@ -16,13 +16,15 @@ Feature: Billing Invoice History
         Then I verify the columns are showed with
             | Invoice Date | Invoice Number | Billing Period | Status | Amount |
         Then I assert I can see historical invoices with
+            | May 8, 2021  | 20210508-0029 | Monthly | Unpaid | $40,000.00 |
+            | May 1, 2021  | 20210501-0006 | Monthly | Unpaid | $20,000.00 |
             | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
             | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
             | Feb 18, 2021 | 2             | Monthly | Unpaid | $80,000.00 |
             | Feb 18, 2021 | 1             | Monthly | Paid   | $80,000.00 |
 
     @billing @invoice_history @focus
-    Scenario: Invoice_history_kebab_options_are_visible_for_<Invoice_Number>
+    Scenario Outline: Invoice_history_kebab_options_are_visible_for_<Invoice_Number>
         Given I am in Scorpion "sign-in" page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
         And I click on sign in button
@@ -52,6 +54,8 @@ Feature: Billing Invoice History
         Examples:
 
             | Invoice_Date | Invoice_Number | Billing_Period | Status | Amount     |
+            | May 8, 2021  | 20210508-0029  | Monthly        | Unpaid | $40,000.00 |
+            | May 1, 2021  | 20210501-0006  | Monthly        | Unpaid | $20,000.00 |
             | Apr 12, 2021 | 20210412-0005  | Monthly        | Unpaid | $20,000.00 |
             | Apr 8, 2021  | 20210408-0004  | Monthly        | Unpaid | $40,000.00 |
             | Feb 18, 2021 | 2              | Monthly        | Unpaid | $80,000.00 |
@@ -79,6 +83,7 @@ Feature: Billing Invoice History
         And I click on apply button
         And I wait for "1" seconds
         Then I assert I can see historical invoices with
+            | May 8, 2021  | 20210508-0029 | Monthly | Unpaid | $20,000.00 |
             | May 1, 2021  | 20210501-0006 | Monthly | Unpaid | $20,000.00 |
             | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
             | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
@@ -237,31 +242,31 @@ Feature: Billing Invoice History
 
     # UNFINISHED CODE
 
-    @billing @invoice_history
-    Scenario Outline: Invoice_filtering_with_no_results_filtering_<filter>
-        Given I am in Scorpion "sign-in" page
-        When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
-        And I click on sign in button
-        And I wait for "10" seconds
-        Given I am in Scorpion "settings" page
-        And I wait for "5" seconds
-        And I hover on More option
-        Then I select the "Billing" option
-        And I click on see all option
-        And I wait for "5" seconds
-        Then I assert the Scorpion Billing History page
-        When I select the filter "<filter>" with "<value>"
-        And I wait for "2" seconds
-        And I click on apply button
-        Then I assert no invoices are shown
+    # @billing @invoice_history
+    # Scenario Outline: Invoice_filtering_with_no_results_filtering_<filter>
+    #     Given I am in Scorpion "sign-in" page
+    #     When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
+    #     And I click on sign in button
+    #     And I wait for "10" seconds
+    #     Given I am in Scorpion "settings" page
+    #     And I wait for "5" seconds
+    #     And I hover on More option
+    #     Then I select the "Billing" option
+    #     And I click on see all option
+    #     And I wait for "5" seconds
+    #     Then I assert the Scorpion Billing History page
+    #     When I select the filter "<filter>" with "<value>"
+    #     And I wait for "2" seconds
+    #     And I click on apply button
+    #     Then I assert no invoices are shown
 
-        Examples:
+    #     Examples:
 
-            | filter   | value                   |
-            | by_date  | 30 Mar 2010-30 Mar 2010 |
-            # | by_price | 10000000-1000001        |
-            # | by_status | Services                | no data and no filter shown
-            | by_month | April-2020              |
+    #         | filter   | value                   |
+    #         | by_date  | 30 Mar 2010-30 Mar 2010 |
+    #         | by_price | 10000000-1000001        |
+    #         | by_status | Services                | no data and no filter shown
+    #         | by_month | April-2020              |
 
     @billing @invoice_history
     Scenario: Results_counter_from_filter_modal
