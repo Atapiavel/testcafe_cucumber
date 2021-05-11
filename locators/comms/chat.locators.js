@@ -27,6 +27,21 @@ function ChatTitle() {
 function ChatDashboardTtitle() {
         return select('[data-cy=icon-container]')
     }
+    function AgentAvailBtn() {
+        return select('[title="Customer Service Agent Availability"]')
+    }
+
+function AvailToggleBtn() {
+        return select('[class="toggle"]')
+    }
+
+function MineBtn() {
+        return select('[data-name="Mine"]')
+    }
+
+function AllBtn() {
+        return select('[data-name="All"]')
+    }    
 
     module.exports = {
         HomePage: HomePage,
@@ -34,6 +49,10 @@ function ChatDashboardTtitle() {
         SubtitleHeader: SubtitleHeader,
         GetStarted: GetStarted,
         ChatTitle: ChatTitle,
-        ChatDashboardTtitle: ChatDashboardTtitle
+        ChatDashboardTtitle: ChatDashboardTtitle,
+        AgentAvailBtn: AgentAvailBtn,
+        AvailToggleBtn: AvailToggleBtn,
+        MineBtn: MineBtn,
+        AllBtn: AllBtn
     };
     
