@@ -24,3 +24,7 @@ When('I fill billing contact info with', async function (datatable) {
 Then('I click on add button', async function () {
     await ActionsPage.click_element(ContactPageLocator.add())
 })
+
+Then('I assert that contact is shown with', async function (datatable) {
+    await ContactPage.verify_contact(datatable)
+})
