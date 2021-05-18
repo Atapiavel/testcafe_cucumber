@@ -28,7 +28,7 @@ async function assert_columns(datatable) {
     }
 }
 
-async function assert_kebab_text(option_text, option){                  
+async function assert_kebab_text(option_text, option) {
     await ActionsPage.click_element(kebab)
     menu_option = "scorpion-menu-item:nth-of-type(" + option + ") > .full.nlf-between-center"
     await ActionsPage.hover_element(menu_option)
@@ -37,7 +37,7 @@ async function assert_kebab_text(option_text, option){
     await ActionsPage.click_element(kebab)
 }
 
-async function assert_kebab_file_download(option_text, option){
+async function assert_kebab_file_download(option_text, option) {
     await ActionsPage.click_element(kebab)
     menu_option = "scorpion-menu-item:nth-of-type(3) > .full.nlf-between-center"
     const text = await select(menu_option).innerText
@@ -59,6 +59,7 @@ async function assert_kebab_option(option, datatable) {
     const records_count = await records.count
     //i = records
     //n = columns
+    var z = 0
     for (var i = 0; i < records_count; i++) {
         const record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(2)"
         const text = await select(record).innerText
@@ -79,19 +80,24 @@ async function assert_kebab_option(option, datatable) {
                                 kebab = select("tbody .ng-star-inserted:nth-of-type(" + (i + 1) + ") scorpion-icon")
                                 await ActionsPage.hover_element(kebab)
                                 if (option == "send") {
-                                    await assert_kebab_text("Send","1")
+                                    await assert_kebab_text("Send", "1")
+                                    z = 1
                                 }
                                 if (option == "print") {
-                                    await assert_kebab_text("Print","2")
+                                    await assert_kebab_text("Print", "2")
+                                    z = 1
                                 }
                                 if (option == "download_PDF") {
                                     await assert_kebab_file_download(".PDF", "1")
+                                    z = 1
                                 }
                                 if (option == "download_DOC") {
                                     await assert_kebab_file_download(".DOC", "2")
+                                    z = 1
                                 }
                                 if (option == "download_CSV") {
                                     await assert_kebab_file_download(".CSV", "3")
+                                    z = 1
                                 }
                             }
                         }
@@ -99,6 +105,9 @@ async function assert_kebab_option(option, datatable) {
                 }
             }
         }
+    }
+    if (z != 1) {
+        assert.ok(false)
     }
 }
 

@@ -6,12 +6,13 @@ const sql = require('mssql')
 const config = require('../../db_config');
 const fs = require('fs')
 const { Selector } = require('testcafe');
+var assert = require('assert');
 
 function select(selector) {
     return Selector(selector).with({ boundTestRun: testController })
 }
 
-Given('I am in Scorpion {string} page', { timeout: 6 * 5000 }, async function (url) {
+Given('I am in Scorpion {string} page', { timeout: 4 * 5000 }, async function (url) {
     await ActionsPage.navigate("http://localhost:4200/" + url)
 });
 
@@ -46,11 +47,18 @@ When('I maximize the window', async function () {
 })
 
 When('I assert we are in Scorpion main page', async function () {
-    const element = select(MainPageLocator.main_title()).exists;
-    await testController.expect(element).ok();
+    const element = select(MainPageLocator.main_title());
+    await testController.expect(element.exists).ok();
 })
 
-// Then('I assert that the text is shown', async function (datatable) {
-//     const option = Selector(element).withText(value)
-//     await testController.expect(element).ok();
-// })
+Then('I assert that the text is shown {string}', async function (value) {
+    const element = await select('scorpion-snackbar').innerText;
+    console.log(element)
+    console.log(value)
+    assert(element == value)
+})
+
+Then('I assert that the snackbar is shown', async function () {
+    const element = select('scorpion-snackbar');
+    await testController.expect(element.exists).ok();
+})

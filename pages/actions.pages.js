@@ -39,6 +39,11 @@ async function click_element_from_list(element, value) {
     await testController.click(option)
 }
 
+async function fill_element_from_list(element, value, string) {
+    const selector = Selector(element).withText(value)
+    await testController.typeText(selector, string, { replace: true })
+}
+
 async function hover_element(element) {
     await testController.hover(element)
 }
@@ -110,6 +115,7 @@ module.exports = {
     type_text: type_text,
     // type_and_enter: type_and_enter,
     click_element_from_list: click_element_from_list,
+    fill_element_from_list: fill_element_from_list,
     hover_element: hover_element,
     hover_element_from_list: hover_element_from_list,
     wait: wait,
