@@ -1,6 +1,6 @@
 Feature: Chat Feature
 
-    @e2e @comms
+    @e2e
     Scenario Outline: User Chat E2E Scenario
         Given I am in Scorpion "sign-in" page
         When I enter "<email>" and "<password>"
@@ -11,6 +11,7 @@ Feature: Chat Feature
         Given I am in Scorpion "chat" page
         And I wait for the Chat display
         And I land on chat dashboard page
+        And I maximize the window
         When I click on the Agent Availability button
         Then The Set Your Availability displays
         And I wait for "2" seconds

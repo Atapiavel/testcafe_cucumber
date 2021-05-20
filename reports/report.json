@@ -4,17 +4,17 @@
     "elements": [
       {
         "description": "",
-        "id": "chat-feature;user-chat-e2e-scenario",
+        "id": "messenger;user-messenger-e2e-scenario",
         "keyword": "Scenario Outline",
         "line": 4,
-        "name": "User Chat E2E Scenario",
+        "name": "User Messenger E2E Scenario",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 10974000000
+              "duration": 24090000000
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1324000000
+              "duration": 1726000000
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3513000000
+              "duration": 14298000000
             }
           },
           {
@@ -53,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1293000000
+              "duration": 3561000000
             }
           },
           {
@@ -66,7 +66,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2005000000
+              "duration": 2006000000
             }
           },
           {
@@ -79,7 +79,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5644000000
+              "duration": 12112000000
             }
           },
           {
@@ -92,228 +92,189 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10009000000
+              "duration": 10335000000
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
             "line": 11,
-            "name": "I am in Scorpion \"chat\" page",
+            "name": "I am in Scorpion \"messenger\" page",
             "match": {
               "location": "features/step_definition/common.spec.js:14"
             },
             "result": {
               "status": "passed",
-              "duration": 619000000
+              "duration": 7033000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 12,
-            "name": "I wait for the Chat display",
+            "name": "I land on Messenger page",
             "match": {
-              "location": "features/step_definition/comms/chat.spec.js:6"
+              "location": "features/step_definition/comms/messenger.spec.js:6"
             },
             "result": {
               "status": "passed",
-              "duration": 4000000
+              "duration": 13000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 13,
-            "name": "I land on chat dashboard page",
+            "name": "I maximize the window",
             "match": {
-              "location": "features/step_definition/comms/chat.spec.js:10"
+              "location": "features/step_definition/common.spec.js:44"
             },
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 5709000000
             }
           },
           {
             "arguments": [],
-            "keyword": "When ",
+            "keyword": "And ",
             "line": 14,
-            "name": "I click on the Agent Availability button",
+            "name": "I wait for \"2\" seconds",
             "match": {
-              "location": "features/step_definition/comms/chat.spec.js:14"
+              "location": "features/step_definition/common.spec.js:18"
             },
             "result": {
               "status": "passed",
-              "duration": 6845000000
+              "duration": 2033000000
             }
           },
           {
             "arguments": [],
-            "keyword": "Then ",
+            "keyword": "And ",
             "line": 15,
-            "name": "The Set Your Availability displays",
+            "name": "I click on Search button from messenger page",
             "match": {
-              "location": "features/step_definition/comms/chat.spec.js:18"
+              "location": "features/step_definition/comms/messenger.spec.js:10"
             },
             "result": {
               "status": "passed",
-              "duration": 2000000
+              "duration": 20181000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 16,
-            "name": "I wait for \"2\" seconds",
+            "name": "I click on Groups button",
             "match": {
-              "location": "features/step_definition/common.spec.js:18"
+              "location": "features/step_definition/comms/messenger.spec.js:14"
             },
             "result": {
               "status": "passed",
-              "duration": 2006000000
+              "duration": 1596000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 17,
-            "name": "I click on toggle for Availability",
+            "name": "I click on People button",
             "match": {
-              "location": "features/step_definition/comms/chat.spec.js:22"
+              "location": "features/step_definition/comms/messenger.spec.js:19"
             },
             "result": {
               "status": "passed",
-              "duration": 541000000
+              "duration": 1849000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 18,
-            "name": "I wait for \"2\" seconds",
+            "name": "I click on Messages button",
             "match": {
-              "location": "features/step_definition/common.spec.js:18"
+              "location": "features/step_definition/comms/messenger.spec.js:24"
             },
             "result": {
               "status": "passed",
-              "duration": 2007000000
+              "duration": 1502000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 19,
-            "name": "I click on toggle for Availability again",
+            "name": "I wait for \"3\" seconds",
             "match": {
-              "location": "features/step_definition/comms/chat.spec.js:26"
+              "location": "features/step_definition/common.spec.js:18"
             },
             "result": {
               "status": "passed",
-              "duration": 505000000
+              "duration": 3005000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 20,
-            "name": "I wait for \"2\" seconds",
+            "name": "I click on Aaron McFly button",
             "match": {
-              "location": "features/step_definition/common.spec.js:18"
+              "location": "features/step_definition/comms/messenger.spec.js:29"
             },
             "result": {
               "status": "passed",
-              "duration": 2007000000
+              "duration": 2172000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 21,
-            "name": "I click on the Agent Availability button again",
+            "name": "I enter a \"Hey Aaron. What's happening dude? You get tons of this from my automation!\" into the message field",
             "match": {
-              "location": "features/step_definition/comms/chat.spec.js:30"
+              "location": "features/step_definition/comms/messenger.spec.js:34"
             },
             "result": {
               "status": "passed",
-              "duration": 251000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 22,
-            "name": "I wait for \"2\" seconds",
-            "match": {
-              "location": "features/step_definition/common.spec.js:18"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2007000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 23,
-            "name": "I click on Mine button",
-            "match": {
-              "location": "features/step_definition/comms/chat.spec.js:34"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 208000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 24,
-            "name": "I wait for \"2\" seconds",
-            "match": {
-              "location": "features/step_definition/common.spec.js:18"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2009000000
+              "duration": 21169000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 25,
-            "name": "I click on All button",
+            "line": 22,
+            "name": "I click on Send Message button",
             "match": {
-              "location": "features/step_definition/comms/chat.spec.js:38"
+              "location": "features/step_definition/comms/messenger.spec.js:38"
             },
             "result": {
               "status": "passed",
-              "duration": 228000000
+              "duration": 474000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 26,
+            "line": 23,
             "name": "I click on settings button",
             "match": {
               "location": "features/step_definition/common.spec.js:22"
             },
             "result": {
               "status": "passed",
-              "duration": 252000000
+              "duration": 6780000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 27,
+            "line": 24,
             "name": "I sign out Scorpion",
             "match": {
               "location": "features/step_definition/common.spec.js:30"
             },
             "result": {
               "status": "passed",
-              "duration": 1185000000
+              "duration": 2709000000
             }
           },
           {
@@ -321,7 +282,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 9000000
             }
           },
           {
@@ -329,7 +290,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 0
+              "duration": 8000000
             }
           }
         ],
@@ -346,11 +307,11 @@
         "type": "scenario"
       }
     ],
-    "id": "chat-feature",
+    "id": "messenger",
     "line": 1,
     "keyword": "Feature",
-    "name": "Chat Feature",
+    "name": "Messenger",
     "tags": [],
-    "uri": "features/comms/chat.feature"
+    "uri": "features/comms/messenger.feature"
   }
 ]
