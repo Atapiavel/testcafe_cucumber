@@ -5,12 +5,8 @@ const BillingHistoryPageLocator = require('../../../locators/billing/invoice_his
 const { Selector } = require('testcafe');
 var assert = require('assert');
 
-function select(selector) {
-    return Selector(selector).with({ boundTestRun: testController })
-}
-
 When('I assert the Scorpion Billing History page', async function () {
-    const text = await select(BillingHistoryPageLocator.page_title()).innerText;
+    const text = await ActionsPage.ActionsPage.select(BillingHistoryPageLocator.page_title()).innerText;
     assert(text == "Billing History")
 })
 
@@ -32,7 +28,7 @@ When('I select the filter {string} with {string}', async function (filter, value
 
 
 Then('I assert no invoices are shown', async function () {
-    const text = await select(BillingHistoryPageLocator.no_results()).innerText;
+    const text = await ActionsPage.select(BillingHistoryPageLocator.no_results()).innerText;
     assert(text == "Sorry, we couldn´t find any matches.")
 })
 
@@ -41,7 +37,7 @@ When('I click on apply button', async function () {
 })
 
 Then('I assert the results count showing {string}', async function (results) {
-    const text = await select(BillingHistoryPageLocator.results_count()).innerText;
+    const text = await ActionsPage.select(BillingHistoryPageLocator.results_count()).innerText;
     assert(text == results)
 }) 
 

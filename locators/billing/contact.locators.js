@@ -30,6 +30,10 @@ function add() {
     return '#billing-modal-add-button-add'
 }
 
+function update() {
+    return '#billing-modal-update-button-update'
+}
+
 function cancel() {
     return '#billing-modal-add-button-cancel'
 }
@@ -43,5 +47,6 @@ module.exports = {
     phone: phone,
     notification: notification,
     add: add,
-    cancel: cancel
+    cancel: cancel,
+    update: update
 };
