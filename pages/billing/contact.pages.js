@@ -102,10 +102,8 @@ async function assert_primary_contact(contact_name){
     for (var i = 0; i < records_count; i++) {
         const name = '[id=billing-contact-list-name-' + (i) + ']'
         const text_name = await ActionsPage.select(name).innerText
-        console.log(text_name)
-        console.log(contact_name)
         if (text_name.includes(contact_name)) {
-            console.log("Eureka")
+            assert(text_name == contact_name + ' (Primary)')
         }
     }
 }
