@@ -12,7 +12,7 @@ function select(selector) {
 }
 
 Given('I am in Scorpion {string} page', { timeout: 6 * 5000 }, async function (url) {
-    await ActionsPage.navigate("http://localhost:4200/" + url)
+    await ActionsPage.navigate("https://ui-integration.scorpion.co/" + url)
 });
 
 When('I wait for {string} seconds', async function (seconds) {

@@ -44,6 +44,14 @@ function SendMessageBtn() {
     return select('[class="send-message"]')
 }
 
+function EmojiBtn() {
+    return select('scorpion-message-input > div > div > div > scorpion-emoji-select > div > scorpion-button-icon > button > scorpion-icon > div > svg')
+}
+
+function RelaxedEmoji() {
+    return select('[title="relaxed"]')
+}
+
 module.exports = {
     MessengerBtn: MessengerBtn,
     HomePage: HomePage,
@@ -54,5 +62,7 @@ module.exports = {
     PeopleShowMoreBtn: PeopleShowMoreBtn,
     AaronBtn: AaronBtn,
     MessageAaron: MessageAaron,
-    SendMessageBtn: SendMessageBtn
+    SendMessageBtn: SendMessageBtn,
+    EmojiBtn: EmojiBtn,
+    RelaxedEmoji: RelaxedEmoji
 };

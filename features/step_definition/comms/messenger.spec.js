@@ -35,6 +35,18 @@ When('I enter a {string} into the message field', async function(message) {
       await ActionsPage.type_text(MessengerPageLocator.MessageAaron(), message)
 });
 
-Then('I click on Send Message button', async function () {
+When('I click on Send Message button', async function () {
+      await ActionsPage.click_element(MessengerPageLocator.SendMessageBtn());
+});
+
+When('I click on Emoji button', async function() {
+      await ActionsPage.click_element(MessengerPageLocator.EmojiBtn());
+});
+
+When('I click on Relaxed Emoji', async function() {
+      await ActionsPage.click_element(MessengerPageLocator.RelaxedEmoji());
+});
+
+Then('I click on Send Message button again', async function() {
       await ActionsPage.click_element(MessengerPageLocator.SendMessageBtn());
 });
