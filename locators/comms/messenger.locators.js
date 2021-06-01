@@ -52,6 +52,10 @@ function RelaxedEmoji() {
     return select('[title="relaxed"]')
 }
 
+function paperClipBtn() {
+    return select('scorpion-button-icon[icon="paperclip"]')
+}
+
 module.exports = {
     MessengerBtn: MessengerBtn,
     HomePage: HomePage,
@@ -64,5 +68,6 @@ module.exports = {
     MessageAaron: MessageAaron,
     SendMessageBtn: SendMessageBtn,
     EmojiBtn: EmojiBtn,
-    RelaxedEmoji: RelaxedEmoji
+    RelaxedEmoji: RelaxedEmoji,
+    paperClipBtn: paperClipBtn
 };

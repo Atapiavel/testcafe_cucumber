@@ -23,7 +23,7 @@ Feature: Billing Invoice History
             | Feb 18, 2021 | 2             | Monthly | Unpaid | $80,000.00 |
             | Feb 18, 2021 | 1             | Monthly | Paid   | $80,000.00 |
 
-    @billing @invoice_history @focus
+    @billing @invoice_history 
     Scenario Outline: Invoice_history_kebab_options_are_visible_for_<Invoice_Number>
         Given I am in Scorpion "sign-in" page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
