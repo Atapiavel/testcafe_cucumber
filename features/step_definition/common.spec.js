@@ -5,7 +5,6 @@ const SettingsPage = require('../../pages/settings.pages.js')
 const sql = require('mssql')
 const config = require('../../db_config');
 const fs = require('fs')
-const { Selector } = require('testcafe');
 var assert = require('assert');
 
 Given('I am in Scorpion {string} page', { timeout: 4 * 5000 }, async function (url) {
