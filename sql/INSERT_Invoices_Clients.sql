@@ -1,5 +1,5 @@
 INSERT INTO csb.Invoices_Clients 
-(ClientID,InvoiceNumber,InvoiceContractID,SourceID,PaymentMethodID,DueDate,StartDate,EndDate,InvoiceCreatedDate,AmountDue,AmountPaid,PaidInFull,InvoiceStatusID)
+(ClientID,InvoiceNumber,SubscriptionID,SourceID,PaymentMethodID,DueDate,StartDate,EndDate,InvoiceCreatedDate,AmountDue,AmountPaid,PaidInFull,InvoiceStatusID)
 VALUES
 ('4197','2','1','1','1','2019-04-30 00:00:00:000','2019-04-01 00:00:00:000','2019-04-30 00:00:00:000','2019-04-01 00:00:00:000','20000.00','20000.00','1','1'),
 ('4197','1','1','1','1','2019-03-31 00:00:00:000','2019-03-01 00:00:00:000','2019-03-31 00:00:00:000','2019-03-01 00:00:00:000','20000.00','20000.00','1','1'),

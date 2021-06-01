@@ -14,29 +14,18 @@ async function take_screenshot(scenario) {
     await testController.takeScreenshot({ path: "/" + scenario + "/" + scenario + ".png" })
 }
 
-// async function click_element_xpath(element) {
-//     cy.xpath(element).first().click()
-// }
-
-// async function click_element_force(element) {
-//     cy.get(element).click({ force: true })
-// }
-
-// async function hit_enter_key(element) {
-//     cy.get(element).type("{enter}")
-// }
-
 async function type_text(element, value) {
     await testController.typeText(element, value, { replace: true })
 }
 
-// async function type_and_enter(element, value) {
-//     cy.get(element).type(String(value)).type("{enter}")
-// }
-
 async function click_element_from_list(element, value) {
     const option = Selector(element).withText(value)
     await testController.click(option)
+}
+
+async function fill_element_from_list(element, value, string) {
+    const selector = Selector(element).withText(value)
+    await testController.typeText(selector, string, { replace: true })
 }
 
 async function hover_element(element) {
@@ -93,6 +82,10 @@ function read_end_date() {
     return end_date[0]
 }
 
+function select(selector) {
+    return Selector(selector).with({ boundTestRun: testController })
+}
+
 async function drag(element, x, y) {
     var value_1 = parseInt(x, 10);
     var value_2 = parseInt(y, 10);
@@ -104,12 +97,9 @@ module.exports = {
     click_element: click_element,
     take_screenshot: take_screenshot,
     execute_shell: execute_shell,
-    // click_element_xpath: click_element_xpath,
-    // click_element_force: click_element_force,
-    // hit_enter_key: hit_enter_key,
     type_text: type_text,
-    // type_and_enter: type_and_enter,
     click_element_from_list: click_element_from_list,
+    fill_element_from_list: fill_element_from_list,
     hover_element: hover_element,
     hover_element_from_list: hover_element_from_list,
     wait: wait,
@@ -118,5 +108,6 @@ module.exports = {
     write_date: write_date,
     read_start_date: read_start_date,
     read_end_date: read_end_date,
-    maximize_window, maximize_window
+    maximize_window: maximize_window,
+    select: select
 };
