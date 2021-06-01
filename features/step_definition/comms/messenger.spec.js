@@ -21,7 +21,32 @@ When('I click on People button', async function () {
       await ActionsPage.click_element(MessengerPageLocator.PeopleBtn());
 });
 
-Then('I click on Messages button', async function () {
+When('I click on Messages button', async function () {
       await waitFor(1000);
       await ActionsPage.click_element(MessengerPageLocator.MessagesBtn());
+});
+
+When('I click on Aaron McFly button', async function() {
+      await waitFor(1000);
+      await ActionsPage.click_element(MessengerPageLocator.AaronBtn());
+});
+
+When('I enter a {string} into the message field', async function(message) {
+      await ActionsPage.type_text(MessengerPageLocator.MessageAaron(), message)
+});
+
+When('I click on Send Message button', async function () {
+      await ActionsPage.click_element(MessengerPageLocator.SendMessageBtn());
+});
+
+When('I click on Emoji button', async function() {
+      await ActionsPage.click_element(MessengerPageLocator.EmojiBtn());
+});
+
+When('I click on Relaxed Emoji', async function() {
+      await ActionsPage.click_element(MessengerPageLocator.RelaxedEmoji());
+});
+
+Then('I click on Send Message button again', async function() {
+      await ActionsPage.click_element(MessengerPageLocator.SendMessageBtn());
 });

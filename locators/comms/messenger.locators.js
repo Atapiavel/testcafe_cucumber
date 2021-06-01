@@ -28,11 +28,41 @@ function MessagesBtn() {
     return select('scorpion-tile-select-item:nth-of-type(3)')
 }
 
+function PeopleShowMoreBtn() {
+    return select('section:nth-child(3) > div > div.ta\:center.nlp-pt15 > scorpion-button > button')
+}
+
+function AaronBtn() {
+    return select('scorpion-ui-card').withText('Aaron McFly')
+}
+
+function MessageAaron() {
+    return select('[placeholder="Message Aaron..."]')
+}
+
+function SendMessageBtn() {
+    return select('[class="send-message"]')
+}
+
+function EmojiBtn() {
+    return select('scorpion-message-input > div > div > div > scorpion-emoji-select > div > scorpion-button-icon > button > scorpion-icon > div > svg')
+}
+
+function RelaxedEmoji() {
+    return select('[title="relaxed"]')
+}
+
 module.exports = {
     MessengerBtn: MessengerBtn,
     HomePage: HomePage,
     SearchBtn: SearchBtn,
     PeopleBtn: PeopleBtn,
     GroupsBtn: GroupsBtn,
-    MessagesBtn: MessagesBtn
+    MessagesBtn: MessagesBtn,
+    PeopleShowMoreBtn: PeopleShowMoreBtn,
+    AaronBtn: AaronBtn,
+    MessageAaron: MessageAaron,
+    SendMessageBtn: SendMessageBtn,
+    EmojiBtn: EmojiBtn,
+    RelaxedEmoji: RelaxedEmoji
 };
