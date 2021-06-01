@@ -1,5 +1,5 @@
 INSERT INTO csb.Invoices_Clients_BillingLineItems
-(BillingLineItemID,InvoiceClientID,Quantity,UnitPrice,Amount)
+(ClientID,InvoiceNumber,SubscriptionID,SourceID,PaymentMethodID,DueDate,StartDate,EndDate,InvoiceCreatedDate,AmountDue,AmountPaid,PaidInFull,InvoiceStatusID)
 VALUES
 ('1','80','1','10000.00','10000.00'),
 ('2','80','1','10000.00','10000.00'),
