@@ -1,0 +1,7 @@
+        query{
+            getBillingContacts{
+							billingContactID,
+              name,
+              primaryContact
+            }
+          }

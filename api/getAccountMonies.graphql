@@ -1,0 +1,6 @@
+        query{
+            getAccountMonies(serviceLineId:0){
+			    accountMoniesID,
+            	amount
+            }
+          }

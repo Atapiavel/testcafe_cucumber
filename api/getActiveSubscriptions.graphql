@@ -1,0 +1,8 @@
+        query{
+            getActiveSubscriptions{
+							amount,
+            	subscriptionID,
+              billingLineItemID,
+              billingLineItemName
+            }
+        }
