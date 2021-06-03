@@ -2,6 +2,12 @@ const { When, Then } = require('@cucumber/cucumber');
 const ActionsPage = require('../../../pages/actions.pages.js')
 const MessengerPageLocator = require('../../../locators/comms/messenger.locators.js');
 const waitFor = delay => new Promise(resolve => setTimeout(resolve, delay));
+const { Selector } = require('testcafe');
+const { click_element } = require('../../../pages/actions.pages.js');
+
+function select(selector) {
+      return Selector(selector).with({ boundTestRun: testController })
+  }
 
 When('I land on Messenger page', async function () {
       await testController.expect(MessengerPageLocator.exists).ok;
@@ -55,6 +61,21 @@ When('I click on the paperclip', async function() {
       await ActionsPage.click_element(MessengerPageLocator.paperClipBtn())
 })
 
+When('I click on attach icon', async function() {
+      await ActionsPage.click_element('[aria-label="Attach files"]')
+})
+
+When('I click on browse link', async function() {
+      await ActionsPage.wait(1000)
+      await ActionsPage.click_element('[class="upload-action"]')
+})
+
 Then('I upload the file', async function() {
-      await testController.setFilesToUpload('div > scorpion-file-upload > input', '../../upload/IMG_0071.jpg')
+      await ActionsPage.wait(1000)
+      await testController.setFilesToUpload(select('div > scorpion-file-upload > input'), '../upload/IMG_0071.jpg')
   })
+
+Then('I click on send button', async function() {
+      const uploadSendBtn = Selector('button').withText('Send');
+      await ActionsPage.click_element(uploadSendBtn)
+})

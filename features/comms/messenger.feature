@@ -1,6 +1,6 @@
 Feature: Messenger
 
-    @e2e @comms
+    @e2e @comms @focus
     Scenario Outline: User Messenger E2E Scenario
         Given I am in Scorpion "sign-in" page
         When I enter "<email>" and "<password>"
@@ -24,9 +24,9 @@ Feature: Messenger
         And I click on Relaxed Emoji
         And I click on Send Message button again
         And I click on the paperclip
-        Then I upload the file 
-        When I click on settings button
-        And I sign out Scorpion
+        When I click on attach icon
+        Then I upload the file
+        And I click on send button
 
         Examples:
             | email                  | password   | message |

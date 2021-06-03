@@ -50,10 +50,6 @@ When('I assert we are in Scorpion main page', async function () {
     await testController.expect(element).ok();
 })
 
-When('I upload the file', async function() {
-    await testController.setFilesToUpload('div > scorpion-file-upload > input', '../../upload/IMG_0071.jpg')
-})
-
 // Then('I assert that the text is shown', async function (datatable) {
 //     const option = Selector(element).withText(value)
 //     await testController.expect(element).ok();
