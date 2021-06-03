@@ -1,5 +1,5 @@
 function add_billing_contact() {
-    return '#billing\.contact\.list\.link\.add'
+    return '#billing-contact-list-link-add'
 }
 
 function contact_select() {
@@ -7,31 +7,35 @@ function contact_select() {
 }
 
 function create_contact() {
-    return '#billing\.modal\.add\.link\.create'
+    return '#billing-modal-add-link-create'
 }
 
 function name() {
-    return '#billing\.modal\.form\.input\.name'
+    return '#billing-contact-form-input-name'
 }
 
 function email() {
-    return '#billing\.modal\.form\.input\.email'
+    return '#billing-contact-form-input-email'
 }
 
 function phone() {
-    return '#billing\.modal\.form\.input\.phone'
+    return '#billing-contact-form-input-phone'
 }
 
 function notification() {
-    return '#billing\.modal\.form\.checkbox\.monthlyNotification'
+    return '[data-cy=checkbox-button]'
 }
 
 function add() {
-    return '#billing\.modal\.add\.button\.add'
+    return '#billing-modal-add-button-add'
+}
+
+function update() {
+    return '#billing-modal-update-button-update'
 }
 
 function cancel() {
-    return '#billing\.modal\.add\.button\.cancel'
+    return '#billing-modal-add-button-cancel'
 }
 
 module.exports = {
@@ -43,5 +47,6 @@ module.exports = {
     phone: phone,
     notification: notification,
     add: add,
-    cancel: cancel
+    cancel: cancel,
+    update: update
 };

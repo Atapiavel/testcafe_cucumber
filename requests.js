@@ -1,0 +1,19 @@
+const fetch = require("node-fetch");
+var file = "getInvoiceList"
+const fs = require('fs')
+var graphql = fs.readFileSync('./api/' + file + '.graphql', 'utf8');
+var bearer = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImU1Mzg0NTE3LTdlM2ItNDQxYi1hMjczLTk0MDcxODU1ODEwNSIsInR5cCI6IkpXVCJ9.eyJzdWlkIjoiM0Y4M0Q4NzA5RkE5OEE0RUExNTFBMUM1MDQ2NDAwQTIiLCJleHAiOjE2MjI1MDQ1ODcsIm5iZiI6IjE2MjI1MDA5ODciLCJlbnYiOiJpbnRlZ3JhdGlvbi10eCIsImlkZW50aXR5IjoiZWFiYWQzNGItMWVlNi00NzdjLWFiOGYtMmQwNTJkYmE4ZGQ5IiwidXNlcklkIjoxMzM2OCwidXNlckd1aWQiOiIwYWU1YzljZC1kZTZmLTQ0OWYtMDM4Zi0wNzhlOTBjMDUxMGYiLCJuYW1lIjoiQXJ0dXJvIFRhcGlhIFZlbGFzY28iLCJlbWFpbCI6ImFydHVyby50YXBhaWFAc2NvcnBpb24uY28iLCJhY2NvdW50IjoiYjk2YmU5ZDAtNmNhYi05OTQ2LWE0NTgtMmE1MWVlOTE5OTQ4Iiwic2NvcnBpb25Vc2VyIjpmYWxzZSwibG9jYWxVc2VyIjpmYWxzZSwiaW1wZXJzb25hdGVkIjpmYWxzZSwibXVsdGlUZW5hbnQiOmZhbHNlLCJjbGllbnRJZCI6NDE5NywiY2xpZW50R3VpZCI6ImI5NmJlOWQwLTZjYWItOTk0Ni1hNDU4LTJhNTFlZTkxOTk0OCIsIm9yaWdpbmFsQ2xpZW50SWQiOjQxOTcsIm9yaWdpbmFsQ2xpZW50R3VpZCI6ImI5NmJlOWQwLTZjYWItOTk0Ni1hNDU4LTJhNTFlZTkxOTk0OCIsInN5c3RlbVJvbGVzIjoiMCIsImFjY291bnRSb2xlcyI6IjAiLCJwZXJtaXNzaW9ucyI6IlsyNDMxODg0NiwyNjIxNDQsMSw4MjExODk5MjAsMTY3ODExOTIsMCwwLDAsMCwwLDAsMCwwLDAsMCwwXSIsImFwaWtleSI6ZmFsc2UsImVuYWJsZUFwaUxvZyI6ZmFsc2UsImhpcGFhIjpmYWxzZSwiaXNzIjoiaWRlbnRpdHkuc2NvcnBpb24uY28iLCJhdWQiOiJ1c2VycyJ9.HSJh5_emnbMM1zpWuHgc9B_ytemXpT5mEzsOFsWdccuIZlwC1lKtSrEanws1iqD2-OXe1P1_Sod1nORzwVa2jsORKhq7-ihAW7aNzVyuFRCDoTQe3C_XKCHtPBuO90Dn2ARutcyPGexcVd_HY4sO1uFbG5aaOuqtfsjgdy1qLjQqpqPrZIQs4eiZZK2KaPpw1ZPwycTv_L2PPK9JaXm94WInEVK8kesK5Kc85TuOs6fFRsAGjh7m4NRfB0bS7AlN27HrTXxV6TyLeHTZntRdik0nFwQxZ9ICguN5lG8LLvwmUmv5ZJAQFz9TkIwEMLnfKtdlSNmudz1kCMm0t9wcvoRpoD3aOQzrChfApgJGI32olyirWDbwJLI73PN1kmeqo_TIZ0S1lXM4CsvLa5zqt0TNHTFni92ktlgG1jngIUw9Hx85lYTLhS2scQKOqda9EFIB9lyXy-ECmhuxMBpRdViugfxY7m7zIQmmfcLWnHdMejBR4tc7sgGARnEf-bHyFI8pkYpUeIOTyvAHpeJuktZ-9wHRg3foDaksOCS3MTivLt7oc7rYFW--Yxiv10rIlIZ5VpbGK2TxA7_I7KkmsrepC8LlWB97XBz33zvc6LDEZb0G4IzpkmutakAMc7SF9E072OJxRTyhBpJTTQ9tJbN_tPvgKUOnzyvFPbTRBbo"
+  
+fetch('https://integration.scorpion.co/csx/billing/graphql', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      "Authorization": "Bearer " + bearer,
+    },
+    body: JSON.stringify({
+        query: graphql,
+    })
+  })
+    .then(r => r.json())
+    .then(data => console.log(data.data.getInvoiceList.items[0].invoiceId));

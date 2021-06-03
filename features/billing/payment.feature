@@ -1,88 +1,91 @@
-# Feature: Payment
+Feature: Payment
 
-#     @billing @payment
-#     Scenario Outline: Set_as_primary_functionality_from_<module>
-#         Given I am in Scorpion login page
-#         When I enter "commcenter@scorpion.co" and "Comms1234!"
-#         And I click on sign in button
-#         And I wait for "2" seconds
-#         And I select the account to use with "Thomas & Paulk"
-#         And I wait for "10" seconds
-#         When I click on settings button
-#         And I select the "Billing" option
-#         And I wait for "5" seconds
-#         Given I am in Scorpion "billing" page
-#         Then I click the kebab option "<kebab_option>" for "<module>"
-#         And I assert that the text is shown
-#             | Success! |
-#         Then I assert "<payment_method>" as primary payment method
+    #     @billing @payment
+    #     Scenario Outline: Set_as_primary_functionality_from_<module>
+    #         Given I am in Scorpion login page
+    #         When I enter "commcenter@scorpion.co" and "Comms1234!"
+    #         And I click on sign in button
+    #         And I wait for "2" seconds
+    #         And I select the account to use with "Thomas & Paulk"
+    #         And I wait for "10" seconds
+    #         When I click on settings button
+    #         And I select the "Billing" option
+    #         And I wait for "5" seconds
+    #         Given I am in Scorpion "billing" page
+    #         Then I click the kebab option "<kebab_option>" for "<module>"
+    #         And I assert that the text is shown
+    #             | Success! |
+    #         Then I assert "<payment_method>" as primary payment method
 
-#         Examples:
-#             | kebab_option   | module         | payment_method |
-#             | Set_as_primary | Payment_method | Visa **** 4520 |
+    #         Examples:
+    #             | kebab_option   | module         | payment_method |
+    #             | Set_as_primary | Payment_method | Visa **** 4520 |
 
-#     @billing @payment
-#     Scenario: <module>_<kebab_option>_option_is_visible
-#         Given I am in Scorpion login page
-#         When I enter "commcenter@scorpion.co" and "Comms1234!"
-#         And I click on sign in button
-#         And I wait for "2" seconds
-#         And I select the account to use with "Thomas & Paulk"
-#         And I wait for "10" seconds
-#         When I click on settings button
-#         And I select the "Billing" option
-#         And I wait for "5" seconds
-#         Given I am in Scorpion "billing" page
-#         Then I assert "<kebab_option>" option is visible
+    #     @billing @payment
+    #     Scenario: <module>_<kebab_option>_option_is_visible
+    #         Given I am in Scorpion login page
+    #         When I enter "commcenter@scorpion.co" and "Comms1234!"
+    #         And I click on sign in button
+    #         And I wait for "2" seconds
+    #         And I select the account to use with "Thomas & Paulk"
+    #         And I wait for "10" seconds
+    #         When I click on settings button
+    #         And I select the "Billing" option
+    #         And I wait for "5" seconds
+    #         Given I am in Scorpion "billing" page
+    #         Then I assert "<kebab_option>" option is visible
 
-#         Examples:
+    #         Examples:
 
-#             | kebab_option   | module         |
-#             | Set_as_primary | Payment_method |
-#             | delete         | Payment_method |
+    #             | kebab_option   | module         |
+    #             | Set_as_primary | Payment_method |
+    #             | delete         | Payment_method |
 
-#     @billing @payment
-#     Scenario Outline: Cancel_button_from_<module>_<kebab_option>_functionality
-#         Given I am in Scorpion login page
-#         When I enter "commcenter@scorpion.co" and "Comms1234!"
-#         And I click on sign in button
-#         And I wait for "2" seconds
-#         And I select the account to use with "Thomas & Paulk"
-#         And I wait for "10" seconds
-#         When I click on settings button
-#         And I select the "Billing" option
-#         And I wait for "5" seconds
-#         Given I am in Scorpion "billing" page
-#         Then I click the kebab option "<kebab_option>" for "<module>"
-#         And I click on cancel button
+    #     @billing @payment
+    #     Scenario Outline: Cancel_button_from_<module>_<kebab_option>_functionality
+    #         Given I am in Scorpion login page
+    #         When I enter "commcenter@scorpion.co" and "Comms1234!"
+    #         And I click on sign in button
+    #         And I wait for "2" seconds
+    #         And I select the account to use with "Thomas & Paulk"
+    #         And I wait for "10" seconds
+    #         When I click on settings button
+    #         And I select the "Billing" option
+    #         And I wait for "5" seconds
+    #         Given I am in Scorpion "billing" page
+    #         Then I click the kebab option "<kebab_option>" for "<module>"
+    #         And I click on cancel button
 
-#         Examples:
+    #         Examples:
 
-#             | kebab_option | module          |
-#             | send         | Recent_invoices |
-#             | update       | Payment_method  |
-#             | add          | Payment_method  |
+    #             | kebab_option | module          |
+    #             | send         | Recent_invoices |
+    #             | update       | Payment_method  |
+    #             | add          | Payment_method  |
 
-#     @billing @payment
-#     Scenario Outline: Add_payment_method_functionality
-#         Given I am in Scorpion login page
-#         When I enter "commcenter@scorpion.co" and "Comms1234!"
-#         And I click on sign in button
-#         And I wait for "2" seconds
-#         And I select the account to use with "Thomas & Paulk"
-#         And I wait for "10" seconds
-#         When I click on settings button
-#         And I select the "Billing" option
-#         And I wait for "5" seconds
-#         Given I am in Scorpion "billing" page
-#         When I click the kebab option "<kebab_option>" for "<module>"
+    @billing @payment
+    Scenario Outline: Add_payment_method_functionality
+        Given I am in Scorpion "sign-in" page
+        When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
+        And I click on sign in button
+        And I wait for "10" seconds
+        Given I am in Scorpion "settings" page
+        And I wait for "5" seconds
+        And I hover on More option
+        Then I select the "Billing" option
+        And I wait for "5" seconds
+        When I click on add payment method
+        And I select the payment method with "<payment_method>"
+        And I click on continue button
+        Then I fill payment method information with
+            | <payment_method> | <payment_nickname> | <account_name> | <account_number> | <expiration> | <CVV> |
 
-#         Examples:
+        Examples:
 
-#             | kebab_option | module         | payment_method         | account_name | routing_number | account_number |
-#             | add          | Payment_method | Credit and Debit Cards |              |                |                |
-#             | add          | Payment_method | eCheck                 | Name here    | 00000000       | 00000000       |
-#             | add          | Payment_method | PayPal                 |              |                |                |
+            | module         | payment_method         | payment_nickname | account_name       | account_number   | expiration | CVV |
+            | Payment_method | Credit and Debit cards | El tester        | Testing Automation | 4242424242424242 | 0723       | 111 |
+# | Payment_method | eCheck                 |                  | Name here          | 00000000         |            |111|
+
 
 #     @billing @payment
 #     Scenario Outline: Update_payment_method_functionality
