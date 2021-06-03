@@ -10,22 +10,26 @@ class MessengerPage{
         this.peopleBtn = Selector('scorpion-tile-select-item:nth-of-type(1)');
         this.groupsBtn = Selector('scorpion-tile-select-item:nth-of-type(2)');
         this.messagesBtn = Selector('scorpion-tile-select-item:nth-of-type(3)');
+        this.filesBtn = Selector('scorpion-tile-select-item:nth-of-type(4)');
         this.addGroupsBtn = Selector('section:nth-child(2) > header > scorpion-dropdown > div > scorpion-link > button > span');
-        this.addCoworkersBtn = Selector('section:nth-child(3) > header > scorpion-icon');
+        this.addPeopleBtn = Selector('section:nth-child(3) > header > scorpion-dropdown > div > scorpion-link > button > span');
         this.groupNameInput = Selector('[data-cy=input-wrapper]').withText('Name Your Group');
         this.searchTeamMembers = Selector('[data-cy=member-search]');
-        this.selectMemberRadio = Selector('[aria-label="check"]');
-        this.createBtn = Selector('button').withText('Create');
-        this.kebobBtn = Selector('[data-cy=popup-menu-button]');
+        this.memberCheckboxBtn = Selector('[class="checkbox-button"]');
+        this.createBtn = Selector('[data-cy="create-button"]');
+        this.groupsKebobBtn = Selector('section:nth-child(2) [aria-label="ellipsis"]');
         this.deleteGroupBtn = Selector('span').withText('Delete Group');
         this.yesBtn = Selector('button').withText('Yes');
-        this.coworkerSearchInput = Selector('[data-cy=search-input]');
-        this.continueBtn = Selector('div').withText('Continue');
+        this.peopleSearchInput = Selector('[type="search"]');
+        this.peopleRadioBtn = Selector('[data-cy=shared-radio-circle-container]')
+        this.startBtn = Selector('button').withText('Start');
+        this.shawnKebobBtn = Selector('section:nth-child(3) > div > div:nth-child(2) [aria-label="ellipsis"]');
         this.hideBtn = Selector('scorpion-menu-item > span');
         this.aaronBtn = Selector('scorpion-ui-card').withText('Aaron McFly');
         this.paperClipBtn = Selector('scorpion-button-icon[icon="paperclip"]');
         // this.fileUpload = Selector('[class="upload-action"]');
         this.uploadSendBtn = Selector('button').withText('Send');
+        this.cancelModalBtn = Selector('button').withText('Cancel')
         this.clickAddMoreBtn = Selector('button').withText('click');
         
 
