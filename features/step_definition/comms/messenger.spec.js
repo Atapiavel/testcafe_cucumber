@@ -47,6 +47,14 @@ When('I click on Relaxed Emoji', async function() {
       await ActionsPage.click_element(MessengerPageLocator.RelaxedEmoji());
 });
 
-Then('I click on Send Message button again', async function() {
+When('I click on Send Message button again', async function() {
       await ActionsPage.click_element(MessengerPageLocator.SendMessageBtn());
 });
+
+When('I click on the paperclip', async function() {
+      await ActionsPage.click_element(MessengerPageLocator.paperClipBtn())
+})
+
+Then('I upload the file', async function() {
+      await testController.setFilesToUpload('div > scorpion-file-upload > input', '../../upload/IMG_0071.jpg')
+  })
