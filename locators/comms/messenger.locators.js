@@ -37,7 +37,7 @@ function AaronBtn() {
 }
 
 function MessageAaron() {
-    return select('[placeholder="Message Aaron..."]')
+    return select('scorpion-message-input > div > div > div.nlf-middle-between.auto')
 }
 
 function SendMessageBtn() {

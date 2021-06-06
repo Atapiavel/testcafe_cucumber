@@ -10,21 +10,21 @@ Feature: Messenger
         And I wait for "10" seconds
         Given I am in Scorpion "messenger" page
         # And I land on Messenger page
-        # And I maximize the window
+        And I maximize the window
         And I wait for "20" seconds
         And I click on Search button from messenger page
         And I click on Groups button
         And I click on People button
         And I click on Messages button
-        And I wait for "3" seconds
+        And I wait for "23" seconds
         And I click on Aaron McFly button
+        And I wait for "140" seconds
+        And I click in the message field
         And I enter a "<message>" into the message field
         And I click on Send Message button
         And I click on Emoji button
         And I click on Relaxed Emoji
-        And I click on Send Message button again
-        And I click on the paperclip
-        Then I upload the file 
+        Then I click on Send Message button again
         When I click on settings button
         And I sign out Scorpion
 
