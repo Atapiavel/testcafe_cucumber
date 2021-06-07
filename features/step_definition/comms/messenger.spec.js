@@ -31,8 +31,13 @@ When('I click on Aaron McFly button', async function() {
       await ActionsPage.click_element(MessengerPageLocator.AaronBtn());
 });
 
+When('I click in the message field', async function() {
+      await ActionsPage.click_element(MessengerPageLocator.MessageAaron());
+})
+
 When('I enter a {string} into the message field', async function(message) {
-      await ActionsPage.type_text(MessengerPageLocator.MessageAaron(), message)
+      await waitFor(1000);
+      await ActionsPage.type_text(MessengerPageLocator.MessageAaron(), message);
 });
 
 When('I click on Send Message button', async function () {
@@ -47,14 +52,6 @@ When('I click on Relaxed Emoji', async function() {
       await ActionsPage.click_element(MessengerPageLocator.RelaxedEmoji());
 });
 
-When('I click on Send Message button again', async function() {
+Then('I click on Send Message button again', async function() {
       await ActionsPage.click_element(MessengerPageLocator.SendMessageBtn());
 });
-
-When('I click on the paperclip', async function() {
-      await ActionsPage.click_element(MessengerPageLocator.paperClipBtn())
-})
-
-Then('I upload the file', async function() {
-      await testController.setFilesToUpload('div > scorpion-file-upload > input', '../../upload/IMG_0071.jpg')
-  })

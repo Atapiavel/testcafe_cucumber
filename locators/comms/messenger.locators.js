@@ -1,4 +1,5 @@
 const { Selector } = require('testcafe');
+const iframeName = Selector('iframe[title="Rich Text Editor, editor1"]');
 
 function select(selector) {
     return Selector(selector).with({ boundTestRun: testController })
@@ -37,7 +38,8 @@ function AaronBtn() {
 }
 
 function MessageAaron() {
-    return select('[placeholder="Message Aaron..."]')
+    
+    return select('div[class="nlf-middle-between auto"]')
 }
 
 function SendMessageBtn() {
