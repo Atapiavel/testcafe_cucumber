@@ -47,7 +47,7 @@ function SendMessageBtn() {
 }
 
 function EmojiBtn() {
-    return select('scorpion-message-input > div > div > div > scorpion-emoji-select > div > scorpion-button-icon > button > scorpion-icon > div > svg')
+    return select('scorpion-message-input > div > div > div.nlf-middle-between.auto > div > scorpion-emoji-select > div > scorpion-button-icon > button > scorpion-icon > div > svg')
 }
 
 function RelaxedEmoji() {

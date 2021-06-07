@@ -28,6 +28,8 @@ class MessengerPage{
         this.aaronBtn = Selector('scorpion-ui-card').withText('Aaron McFly');
         this.messageField = Selector('body[contenteditable=true]');
         this.sendMessageBtn = Selector('[class="send-message"]');
+        this.emojiBtn = Selector('scorpion-message-input > div > div > div.nlf-middle-between.auto > div > scorpion-emoji-select > div > scorpion-button-icon > button > scorpion-icon > div > svg');
+        this.maskEmoji = Selector('[title="mask"]');
         this.paperClipBtn = Selector('scorpion-button-icon[icon="paperclip"]');
         // this.fileUpload = Selector('[class="upload-action"]');
         this.uploadSendBtn = Selector('button').withText('Send');
