@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 10525000000
+              "duration": 13781000000
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 720000000
+              "duration": 786000000
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5774000000
+              "duration": 6324000000
             }
           },
           {
@@ -53,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3295000000
+              "duration": 3150000000
             }
           },
           {
@@ -66,7 +66,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2071000000
+              "duration": 2015000000
             }
           },
           {
@@ -79,7 +79,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6106000000
+              "duration": 4841000000
             }
           },
           {
@@ -92,7 +92,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10023000000
+              "duration": 10017000000
             }
           },
           {
@@ -105,7 +105,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 478000000
+              "duration": 903000000
             }
           },
           {
@@ -118,7 +118,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3062000000
+              "duration": 2302000000
             }
           },
           {
@@ -131,7 +131,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20017000000
+              "duration": 20012000000
             }
           },
           {
@@ -144,7 +144,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 430000000
+              "duration": 456000000
             }
           },
           {
@@ -157,7 +157,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1269000000
+              "duration": 1263000000
             }
           },
           {
@@ -170,7 +170,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1216000000
+              "duration": 1262000000
             }
           },
           {
@@ -183,7 +183,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1237000000
+              "duration": 1255000000
             }
           },
           {
@@ -196,7 +196,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23006000000
+              "duration": 23018000000
             }
           },
           {
@@ -209,7 +209,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1323000000
+              "duration": 1335000000
             }
           },
           {
@@ -222,7 +222,7 @@
             },
             "result": {
               "status": "failed",
-              "duration": 40011000000,
+              "duration": 40014000000,
               "error_message": "Error: function timed out, ensure the promise resolves within 40000 milliseconds\n    at Timeout._onTimeout (C:\\Users\\mehas\\OneDrive\\Documents\\Private-Repository\\testcafe_cucumber\\node_modules\\@cucumber\\cucumber\\src\\user_code_runner.ts:80:18)\n    at listOnTimeout (internal/timers.js:554:17)\n    at processTimers (internal/timers.js:497:7)"
             }
           },
@@ -335,7 +335,7 @@
             "hidden": true,
             "result": {
               "status": "failed",
-              "duration": 3000000,
+              "duration": 11000000,
               "error_message": "Error: ENOENT: no such file or directory, open 'screenshots/User Messenger E2E Scenario/User Messenger E2E Scenario.png'\n    at Object.openSync (fs.js:476:3)\n    at Object.readFileSync (fs.js:377:35)\n    at Object.exports.base64Sync (C:\\Users\\mehas\\OneDrive\\Documents\\Private-Repository\\testcafe_cucumber\\node_modules\\base64-img\\base64-img.js:60:17)\n    at CustomWorld.attachScreenshotToReport (C:\\Users\\mehas\\OneDrive\\Documents\\Private-Repository\\testcafe_cucumber\\features\\support\\world.js:41:39)\n    at CustomWorld.<anonymous> (C:\\Users\\mehas\\OneDrive\\Documents\\Private-Repository\\testcafe_cucumber\\features\\support\\hooks.js:76:14)"
             }
           },
@@ -344,7 +344,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 3000000
             }
           }
         ],

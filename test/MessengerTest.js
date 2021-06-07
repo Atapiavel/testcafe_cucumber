@@ -5,6 +5,8 @@ import messengerpage from '../test/pages/MessengerPage _Old';
 
 const dataSet = require('../data/data.json');
 const fileUpload = Selector('button[class="upload-action"]');
+const iframeName = Selector('iframe[class="cke_wysiwyg_frame cke_reset"]');
+// const textArea = Selector('scorpion-message-input > div > div > div.nlf-middle-between.auto');
 // const fileUpload = Selector('scorpion-file-upload>input[type="file"]');
 const fileAttachment = Selector('scorpion-modal-title').withText('File Attachment');
 const uploadSendBtn = Selector('button').withText('Send');
@@ -58,6 +60,13 @@ test('Messenger page Test', async t =>{
     .click(messengerpage.hideBtn)
     .wait(1000)
     .click(messengerpage.aaronBtn)
+    .wait(10000)
+    .switchToIframe(iframeName)
+    .click(messengerpage.messageField)
+    .pressKey('ctrl+a delete')
+    .typeText(messengerpage.messageField, "Hey Aaron. What's happening dude? :smiling_face: :smiling_face_with_sunglasses: :man_dancing: :champagne: You get tons of this from my automation! :pray: :thumbsup:")
+    .switchToMainWindow()
+    .click(messengerpage.sendMessageBtn)
     .click(messengerpage.paperClipBtn)
     .expect(fileAttachment.exists).ok()
     .click(fileUpload)

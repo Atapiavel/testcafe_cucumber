@@ -26,6 +26,8 @@ class MessengerPage{
         this.shawnKebobBtn = Selector('section:nth-child(3) > div > div:nth-child(2) [aria-label="ellipsis"]');
         this.hideBtn = Selector('scorpion-menu-item > span');
         this.aaronBtn = Selector('scorpion-ui-card').withText('Aaron McFly');
+        this.messageField = Selector('body[contenteditable=true]');
+        this.sendMessageBtn = Selector('[class="send-message"]');
         this.paperClipBtn = Selector('scorpion-button-icon[icon="paperclip"]');
         // this.fileUpload = Selector('[class="upload-action"]');
         this.uploadSendBtn = Selector('button').withText('Send');
