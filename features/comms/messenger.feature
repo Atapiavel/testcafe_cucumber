@@ -1,6 +1,6 @@
 Feature: Messenger
 
-    @e2e
+    @e2e @comms
     Scenario Outline: User Messenger E2E Scenario
         Given I am in Scorpion "sign-in" page
         When I enter "<email>" and "<password>"
@@ -9,15 +9,17 @@ Feature: Messenger
         And I select the account to use with "Thomas & Paulk"
         And I wait for "10" seconds
         Given I am in Scorpion "messenger" page
-        And I land on Messenger page
+        # And I land on Messenger page
         And I maximize the window
-        And I wait for "2" seconds
+        And I wait for "20" seconds
         And I click on Search button from messenger page
         And I click on Groups button
         And I click on People button
         And I click on Messages button
-        And I wait for "3" seconds
+        And I wait for "23" seconds
         And I click on Aaron McFly button
+        And I wait for "140" seconds
+        And I click in the message field
         And I enter a "<message>" into the message field
         And I click on Send Message button
         And I click on Emoji button

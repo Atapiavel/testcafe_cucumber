@@ -1,4 +1,5 @@
 const { Selector } = require('testcafe');
+const iframeName = Selector('iframe[title="Rich Text Editor, editor1"]');
 
 function select(selector) {
     return Selector(selector).with({ boundTestRun: testController })
@@ -37,7 +38,8 @@ function AaronBtn() {
 }
 
 function MessageAaron() {
-    return select('[placeholder="Message Aaron..."]')
+    
+    return select('div[class="nlf-middle-between auto"]')
 }
 
 function SendMessageBtn() {
@@ -45,11 +47,15 @@ function SendMessageBtn() {
 }
 
 function EmojiBtn() {
-    return select('scorpion-message-input > div > div > div > scorpion-emoji-select > div > scorpion-button-icon > button > scorpion-icon > div > svg')
+    return select('scorpion-message-input > div > div > div.nlf-middle-between.auto > div > scorpion-emoji-select > div > scorpion-button-icon > button > scorpion-icon > div > svg')
 }
 
 function RelaxedEmoji() {
     return select('[title="relaxed"]')
+}
+
+function paperClipBtn() {
+    return select('scorpion-button-icon[icon="paperclip"]')
 }
 
 module.exports = {
@@ -64,5 +70,6 @@ module.exports = {
     MessageAaron: MessageAaron,
     SendMessageBtn: SendMessageBtn,
     EmojiBtn: EmojiBtn,
-    RelaxedEmoji: RelaxedEmoji
+    RelaxedEmoji: RelaxedEmoji,
+    paperClipBtn: paperClipBtn
 };

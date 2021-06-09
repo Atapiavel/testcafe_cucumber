@@ -31,8 +31,13 @@ When('I click on Aaron McFly button', async function() {
       await ActionsPage.click_element(MessengerPageLocator.AaronBtn());
 });
 
+When('I click in the message field', async function() {
+      await ActionsPage.click_element(MessengerPageLocator.MessageAaron());
+})
+
 When('I enter a {string} into the message field', async function(message) {
-      await ActionsPage.type_text(MessengerPageLocator.MessageAaron(), message)
+      await waitFor(1000);
+      await ActionsPage.type_text(MessengerPageLocator.MessageAaron(), message);
 });
 
 When('I click on Send Message button', async function () {
