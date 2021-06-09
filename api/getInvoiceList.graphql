@@ -1,5 +1,0 @@
-query{
-    getInvoiceList(first: 1, offset: 0 ){
-      items{invoiceId}
-    }
-  }

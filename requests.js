@@ -1,43 +1,105 @@
+const Requests = require("./api/requests.js");
 const fetch = require("node-fetch");
-const fs = require('fs')
-var bearer = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImU1Mzg0NTE3LTdlM2ItNDQxYi1hMjczLTk0MDcxODU1ODEwNSIsInR5cCI6IkpXVCJ9.eyJzdWlkIjoiRjJEOEVERENENzQwQzk0RDk3RUNFNkQ1QkFEQkMzQTkiLCJleHAiOjE2MjI3NDY2MjMsIm5iZiI6IjE2MjI3NDMwMjMiLCJlbnYiOiJpbnRlZ3JhdGlvbi10eCIsImlkZW50aXR5IjoiZWFiYWQzNGItMWVlNi00NzdjLWFiOGYtMmQwNTJkYmE4ZGQ5IiwidXNlcklkIjoxMzM2OCwidXNlckd1aWQiOiIwYWU1YzljZC1kZTZmLTQ0OWYtMDM4Zi0wNzhlOTBjMDUxMGYiLCJuYW1lIjoiQXJ0dXJvIFRhcGlhIFZlbGFzY28iLCJlbWFpbCI6ImFydHVyby50YXBhaWFAc2NvcnBpb24uY28iLCJhY2NvdW50IjoiYjk2YmU5ZDAtNmNhYi05OTQ2LWE0NTgtMmE1MWVlOTE5OTQ4Iiwic2NvcnBpb25Vc2VyIjpmYWxzZSwibG9jYWxVc2VyIjpmYWxzZSwiaW1wZXJzb25hdGVkIjpmYWxzZSwibXVsdGlUZW5hbnQiOmZhbHNlLCJjbGllbnRJZCI6NDE5NywiY2xpZW50R3VpZCI6ImI5NmJlOWQwLTZjYWItOTk0Ni1hNDU4LTJhNTFlZTkxOTk0OCIsIm9yaWdpbmFsQ2xpZW50SWQiOjQxOTcsIm9yaWdpbmFsQ2xpZW50R3VpZCI6ImI5NmJlOWQwLTZjYWItOTk0Ni1hNDU4LTJhNTFlZTkxOTk0OCIsInN5c3RlbVJvbGVzIjoiMCIsImFjY291bnRSb2xlcyI6IjAiLCJwZXJtaXNzaW9ucyI6IlsyNDMxODg0NiwyNjIxNDQsMSw4MjExODk5MjAsMTY3ODExOTIsMCwwLDAsMCwwLDAsMCwwLDAsMCwwXSIsImFwaWtleSI6ZmFsc2UsImVuYWJsZUFwaUxvZyI6ZmFsc2UsImhpcGFhIjpmYWxzZSwiaXNzIjoiaWRlbnRpdHkuc2NvcnBpb24uY28iLCJhdWQiOiJ1c2VycyJ9.FG-jKTVIgn-uCx9PwnNH0a7To03awnfqGaCPItTmM5OMcIgpo1eP3KHGXGPw43cmD9C-_OCOCMaVgVSE4Ebtrl4A0_r9or6nmpxwWNakCAGueXkL8bTprMPn1DR_MRkKw1uiSMc1XP1QHGVuqZnKpKWymhnpW7YDDN0gcr_Mu7G7NzG18v_e7I7ZOWTV3jxx-Rg0NxQYz3Fr2rBfB6RxRIVqDMzH5HiKmJOYG8CgO4xS8SaCsTWA4VMZQbtKwn5oiWDfQn577EvIMoeOHxClssY5n9gsZ3W7f95pYXmY96MTN9Z9tem2ckHk6XyeSayD251ePWYZpXWB3iwVcAXWl_Jk1BCgNWGiMut87_gCiK_zR4m1RnqoPLCq35pVg-fnVNF5U75NsBlPYCVwEnAv_C3KNkwu_YTv5sixWeuxsoDbz8umoBpHL_IPmTcc23rsYwCLSXEKTEkdPtU8sLm2tXamxEIq7_xHIm6Qp2OpUYK1JzFNB8mjxKyL2JHuo1DmKRPobJ-o3SBt3ZySrvcja5K5ncjpGUn0OhU8Vf80pHFJYFfFCJbAR7K8phi1cHsP4lFMNJg33uQdG9psjwz_ZwcjIk-ntIwLZQm6lS56N7MpLkuVN0OC9_7vptX5U4im22X9xQdawlFDOiGPDd_DJ1EFm9_YlQJ2T_bujrc6PaA"
+const { sort } = require("shelljs");
+var bearer = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImU1Mzg0NTE3LTdlM2ItNDQxYi1hMjczLTk0MDcxODU1ODEwNSIsInR5cCI6IkpXVCJ9.eyJzdWlkIjoiNTkyODdEQjYxN0NDNzU0RjhEOEMyRjIzMDM4MUY1MjkiLCJleHAiOjE2MjMxOTcyMDksIm5iZiI6IjE2MjMxOTM2MDkiLCJlbnYiOiJpbnRlZ3JhdGlvbi10eCIsImlkZW50aXR5IjoiZWFiYWQzNGItMWVlNi00NzdjLWFiOGYtMmQwNTJkYmE4ZGQ5IiwidXNlcklkIjoxMzM2OCwidXNlckd1aWQiOiIwYWU1YzljZC1kZTZmLTQ0OWYtMDM4Zi0wNzhlOTBjMDUxMGYiLCJuYW1lIjoiQXJ0dXJvIFRhcGlhIFZlbGFzY28iLCJlbWFpbCI6ImFydHVyby50YXBhaWFAc2NvcnBpb24uY28iLCJhY2NvdW50IjoiYjk2YmU5ZDAtNmNhYi05OTQ2LWE0NTgtMmE1MWVlOTE5OTQ4Iiwic2NvcnBpb25Vc2VyIjpmYWxzZSwibG9jYWxVc2VyIjpmYWxzZSwiaW1wZXJzb25hdGVkIjpmYWxzZSwibXVsdGlUZW5hbnQiOmZhbHNlLCJjbGllbnRJZCI6NDE5NywiY2xpZW50R3VpZCI6ImI5NmJlOWQwLTZjYWItOTk0Ni1hNDU4LTJhNTFlZTkxOTk0OCIsIm9yaWdpbmFsQ2xpZW50SWQiOjQxOTcsIm9yaWdpbmFsQ2xpZW50R3VpZCI6ImI5NmJlOWQwLTZjYWItOTk0Ni1hNDU4LTJhNTFlZTkxOTk0OCIsInN5c3RlbVJvbGVzIjoiMCIsImFjY291bnRSb2xlcyI6IjAiLCJwZXJtaXNzaW9ucyI6IlsyNDMxODg0NiwyNjIxNDQsMSw4MjExODk5MjAsMTY3ODExOTIsMCwwLDAsMCwwLDAsMCwwLDAsMCwwXSIsImFwaWtleSI6ZmFsc2UsImVuYWJsZUFwaUxvZyI6ZmFsc2UsImhpcGFhIjpmYWxzZSwiaXNzIjoiaWRlbnRpdHkuc2NvcnBpb24uY28iLCJhdWQiOiJ1c2VycyJ9.ZNiv5GiHdDO72BdNLOiwPpfL62V8S6rN7FGAkIqoAxL_fk_SCXtx0QTK0QyPeiKRhJH38lNXzeJ6MFQtJuVZGRtxIKiw2nBAXvNi1wh8JDYG8T1BGn2j_UIdB-nPuKuYEhaAMigWB_p_0dWF2AdScs0OH9d40ElEspFjWcK8xaG7jsTFQ0NC1orxyC_Oz48uvUjnck3AR5LKvuYmC9HZe0MUaibasMvDez-KhfYXyIby2hgbHi97c8s1Y67gDO149xnf-lUlfBUc7Rx3BJudUfRs3fuX8F5rR3PqwvdnVnGxOro8vnMV2bC5zvO8U369lGQ1GnH5xMOaqNzOygiDTbJt_Q3JSCqD7a9oWgu56ES1PfKtQtLazJJChel9EOVeLYTmJ_sIS0vJFPLQQJ5Kted_ADcKyr_ZXqqyDSx4pwrof_-Wmr3xi5KvMGzOsch_WuC9y-U7hWk53FWED7vkS5lA4oz_Fb19KhYSqj-SWypKdJ1ysKVPs-xnNmJpwjreb-xl6DXiOZEa-zhXl9AxYppPs2uofy00yuUa0D213gVLnCW6jCJwwA_-AGkdI_AkNjWBgMW-fouMXH4f91Y0MbQl1S-qzG0JmN9TjnsiXBC7B5wYs2Jvc9oo7g3xDzCiFVl2eyLWawPPaSmhakm6f3Kr6uvlXvQ-AmSW2zzQ6yg"
 var url = "https://integration.scorpion.co/csx/billing/graphql"
-
-function checkStatus(res) {
-  if (res.ok) { // res.status >= 200 && res.status < 300
-    console.log(res.status)
-    return res;
-  } else {
-    throw MyCustomError(res.statusText);
-  }
+const headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json',
+  "Authorization": "Bearer " + bearer,
 }
 
-function execute_request(url, bearer, file) {
-  var graphql = fs.readFileSync('./api/' + file + '.graphql', 'utf8');
-  fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-      "Authorization": "Bearer " + bearer,
-    },
-    body: JSON.stringify({
-      query: graphql,
-    })
+var act_date = new Date();
+var year = act_date.getFullYear();
+var month = act_date.getMonth();
+var day = act_date.getDate();
+var prev_date = new Date(year - 1, month, day);
+let invoice_arr = []
+var z = 0
+
+fetch(url, {
+  method: 'POST',
+  headers: headers,
+  body: JSON.stringify({
+    query: Requests.getInvoiceList(100),
   })
-    .then(checkStatus)
-    .then(r => r.json())
-    .then(data => console.log(data.log));
-}
+})
+  .then(r => r.json())
+  .then(data => {
+    var i = data.data.getInvoiceList.items.length
+    for (var n = 0; n < i; n++) {
+      var invoice = data.data.getInvoiceList.items[n].invoiceId
+      fetch(url, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({
+          query: Requests.getInvoice(invoice),
+        })
+      })
+        .then(r => r.json())
+        .then(data => {
+          let str = new Date(data.data.getInvoice.dueDate);
+          if (str > prev_date && str < act_date) {
+            const formattedDate = str.toLocaleString("en-US", {
+              month: "short",
+              day: "numeric",
+              year: "numeric"
+            });
+            if (z > 0) {
+              invoice_arr[z] = [
+                {
+                  date: formattedDate,
+                  number: data.data.getInvoice.invoiceNumber,
+                  period: data.data.getInvoice.billingFrequency,
+                  status: data.data.getInvoice.invoiceStatus,
+                  amount: data.data.getInvoice.amountDue
+                }
+              ]
+            }
+            if (z == 0) {
+              invoice_arr[0] = [
+                {
+                  date: formattedDate,
+                  number: data.data.getInvoice.invoiceNumber,
+                  period: data.data.getInvoice.billingFrequency,
+                  status: data.data.getInvoice.invoiceStatus,
+                  amount: data.data.getInvoice.amountDue
+                }
+              ]
+            }
+            z = z + 1
+            // console.log(invoice_arr)
+            if (z == 10) {
+              console.log(invoice_arr)
+              var sorted = invoice_arr[0].sort(function (a, b) {
+                console.log(a.date)
+                console.log(b.date)
+                var dateA = new Date(a.date), dateB = new Date(b.date);
+                console.log(dateA)
+                console.log(dateB)
+                return dateA - dateB;
+              })
+              console.log(sorted)
+            }
+            // for (var y = 0; y < invoice_arr.length; y++) {
+            //   console.log(y)
+            //   var aux = invoice_arr[y]
+            //   var date = aux[0]
+            //   console.log(date)
+            // }
+          }
+        })
+    }
+  });
 
-// for (var i = 0; i < 10; i++) {
-//   execute_request(url, bearer, "getBillingContacts")
-// }
-
-// for (var i = 0; i < 10; i++) {
-//   execute_request(url, bearer, "getActiveSubscriptions")
-// }
-
-for (var i = 0; i < 10; i++) {
-  execute_request(url, bearer, "getAccountMonies")
-}
+// execute_request(url, bearer, Requests.getBillingContacts())
+// execute_request(url, bearer, Requests.getActiveSubscriptions())
+// execute_request(url, bearer, Requests.getAccountMonies(0))
+// execute_request(url, bearer, Requests.getInvoiceList(100))
+// execute_request(url, bearer, Requests.getBillingLocationByClient())
+// execute_request(url, bearer, Requests.getInvoice("25a35fda-25c7-f2b3-e44c-66f6901a50d5"))
+// execute_request(url, bearer, Requests.getPaymentMethods())
+// execute_request(url, bearer, Requests.getPlatformLocations())
+// execute_request(url, bearer, Requests.getPlatformUsers())
+// execute_request(url, bearer, Requests.getScorpionAddress(1))
+// execute_request(url, bearer, Requests.getScorpionAddress(2))
