@@ -8,7 +8,7 @@ const fs = require('fs')
 var assert = require('assert');
 
 Given('I am in Scorpion {string} page', { timeout: 6 * 5000 }, async function (url) {
-    await ActionsPage.navigate("https://ui-integration.scorpion.co/" + url)
+    await ActionsPage.navigate("http://localhost:4200/" + url)
 });
 
 When('I wait for {string} seconds', async function (seconds) {
@@ -51,7 +51,7 @@ Then('I assert that the text is shown {string}', async function (value) {
     assert(element == value)
 })
 
-When('I upload the file', async function() {
+When('I upload the file', async function () {
     await testController.setFilesToUpload('div > scorpion-file-upload > input', '../../upload/IMG_0071.jpg')
 })
 

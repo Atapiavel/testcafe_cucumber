@@ -2,7 +2,6 @@ const ActionsPage = require('../../../pages/actions.pages.js')
 const { When, Then } = require('@cucumber/cucumber');
 const ContactPage = require('../../../pages/billing/contact.pages.js');
 const ContactPageLocator = require('../../../locators/billing/contact.locators.js');
-const contactPages = require('../../../pages/billing/contact.pages.js');
 
 
 Then('I assert contact module is visible', async function () {
