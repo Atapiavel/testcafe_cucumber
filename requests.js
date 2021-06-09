@@ -1,7 +1,6 @@
 const Requests = require("./api/requests.js");
 const fetch = require("node-fetch");
-const { sort } = require("shelljs");
-var bearer = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImU1Mzg0NTE3LTdlM2ItNDQxYi1hMjczLTk0MDcxODU1ODEwNSIsInR5cCI6IkpXVCJ9.eyJzdWlkIjoiNTkyODdEQjYxN0NDNzU0RjhEOEMyRjIzMDM4MUY1MjkiLCJleHAiOjE2MjMxOTcyMDksIm5iZiI6IjE2MjMxOTM2MDkiLCJlbnYiOiJpbnRlZ3JhdGlvbi10eCIsImlkZW50aXR5IjoiZWFiYWQzNGItMWVlNi00NzdjLWFiOGYtMmQwNTJkYmE4ZGQ5IiwidXNlcklkIjoxMzM2OCwidXNlckd1aWQiOiIwYWU1YzljZC1kZTZmLTQ0OWYtMDM4Zi0wNzhlOTBjMDUxMGYiLCJuYW1lIjoiQXJ0dXJvIFRhcGlhIFZlbGFzY28iLCJlbWFpbCI6ImFydHVyby50YXBhaWFAc2NvcnBpb24uY28iLCJhY2NvdW50IjoiYjk2YmU5ZDAtNmNhYi05OTQ2LWE0NTgtMmE1MWVlOTE5OTQ4Iiwic2NvcnBpb25Vc2VyIjpmYWxzZSwibG9jYWxVc2VyIjpmYWxzZSwiaW1wZXJzb25hdGVkIjpmYWxzZSwibXVsdGlUZW5hbnQiOmZhbHNlLCJjbGllbnRJZCI6NDE5NywiY2xpZW50R3VpZCI6ImI5NmJlOWQwLTZjYWItOTk0Ni1hNDU4LTJhNTFlZTkxOTk0OCIsIm9yaWdpbmFsQ2xpZW50SWQiOjQxOTcsIm9yaWdpbmFsQ2xpZW50R3VpZCI6ImI5NmJlOWQwLTZjYWItOTk0Ni1hNDU4LTJhNTFlZTkxOTk0OCIsInN5c3RlbVJvbGVzIjoiMCIsImFjY291bnRSb2xlcyI6IjAiLCJwZXJtaXNzaW9ucyI6IlsyNDMxODg0NiwyNjIxNDQsMSw4MjExODk5MjAsMTY3ODExOTIsMCwwLDAsMCwwLDAsMCwwLDAsMCwwXSIsImFwaWtleSI6ZmFsc2UsImVuYWJsZUFwaUxvZyI6ZmFsc2UsImhpcGFhIjpmYWxzZSwiaXNzIjoiaWRlbnRpdHkuc2NvcnBpb24uY28iLCJhdWQiOiJ1c2VycyJ9.ZNiv5GiHdDO72BdNLOiwPpfL62V8S6rN7FGAkIqoAxL_fk_SCXtx0QTK0QyPeiKRhJH38lNXzeJ6MFQtJuVZGRtxIKiw2nBAXvNi1wh8JDYG8T1BGn2j_UIdB-nPuKuYEhaAMigWB_p_0dWF2AdScs0OH9d40ElEspFjWcK8xaG7jsTFQ0NC1orxyC_Oz48uvUjnck3AR5LKvuYmC9HZe0MUaibasMvDez-KhfYXyIby2hgbHi97c8s1Y67gDO149xnf-lUlfBUc7Rx3BJudUfRs3fuX8F5rR3PqwvdnVnGxOro8vnMV2bC5zvO8U369lGQ1GnH5xMOaqNzOygiDTbJt_Q3JSCqD7a9oWgu56ES1PfKtQtLazJJChel9EOVeLYTmJ_sIS0vJFPLQQJ5Kted_ADcKyr_ZXqqyDSx4pwrof_-Wmr3xi5KvMGzOsch_WuC9y-U7hWk53FWED7vkS5lA4oz_Fb19KhYSqj-SWypKdJ1ysKVPs-xnNmJpwjreb-xl6DXiOZEa-zhXl9AxYppPs2uofy00yuUa0D213gVLnCW6jCJwwA_-AGkdI_AkNjWBgMW-fouMXH4f91Y0MbQl1S-qzG0JmN9TjnsiXBC7B5wYs2Jvc9oo7g3xDzCiFVl2eyLWawPPaSmhakm6f3Kr6uvlXvQ-AmSW2zzQ6yg"
+var bearer = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImU1Mzg0NTE3LTdlM2ItNDQxYi1hMjczLTk0MDcxODU1ODEwNSIsInR5cCI6IkpXVCJ9.eyJzdWlkIjoiOEUzODhGREUxQkY2QjE0ODkwN0MzM0Y4NjAxREE0MjciLCJleHAiOjE2MjMyMDE2NTMsIm5iZiI6IjE2MjMxOTgwNTMiLCJlbnYiOiJpbnRlZ3JhdGlvbi10eCIsImlkZW50aXR5IjoiZWFiYWQzNGItMWVlNi00NzdjLWFiOGYtMmQwNTJkYmE4ZGQ5IiwidXNlcklkIjoxMzM2OCwidXNlckd1aWQiOiIwYWU1YzljZC1kZTZmLTQ0OWYtMDM4Zi0wNzhlOTBjMDUxMGYiLCJuYW1lIjoiQXJ0dXJvIFRhcGlhIFZlbGFzY28iLCJlbWFpbCI6ImFydHVyby50YXBhaWFAc2NvcnBpb24uY28iLCJhY2NvdW50IjoiYjk2YmU5ZDAtNmNhYi05OTQ2LWE0NTgtMmE1MWVlOTE5OTQ4Iiwic2NvcnBpb25Vc2VyIjpmYWxzZSwibG9jYWxVc2VyIjpmYWxzZSwiaW1wZXJzb25hdGVkIjpmYWxzZSwibXVsdGlUZW5hbnQiOmZhbHNlLCJjbGllbnRJZCI6NDE5NywiY2xpZW50R3VpZCI6ImI5NmJlOWQwLTZjYWItOTk0Ni1hNDU4LTJhNTFlZTkxOTk0OCIsIm9yaWdpbmFsQ2xpZW50SWQiOjQxOTcsIm9yaWdpbmFsQ2xpZW50R3VpZCI6ImI5NmJlOWQwLTZjYWItOTk0Ni1hNDU4LTJhNTFlZTkxOTk0OCIsInN5c3RlbVJvbGVzIjoiMCIsImFjY291bnRSb2xlcyI6IjAiLCJwZXJtaXNzaW9ucyI6IlsyNDMxODg0NiwyNjIxNDQsMSw4MjExODk5MjAsMTY3ODExOTIsMCwwLDAsMCwwLDAsMCwwLDAsMCwwXSIsImFwaWtleSI6ZmFsc2UsImVuYWJsZUFwaUxvZyI6ZmFsc2UsImhpcGFhIjpmYWxzZSwiaXNzIjoiaWRlbnRpdHkuc2NvcnBpb24uY28iLCJhdWQiOiJ1c2VycyJ9.DBDZKHsHIFUNROW4RgPOBCRBG6c2svskysrrySPnD8r4egRq3GKZvpguDa8ISNGIfCv3bD_z6xr1MIaER26_nnW5egUGC8dTAAEP9KkcqEZYOjnCy0nkFkrXZf81pAcPcyzJvoB6WOZaph1JXkJtrV4y97gZtmdMhWfqVu9N61c1S6eBcPBiUAvVo7h2O1_PKXDPoavFMY1VzMI4CmAZgKGNgPMu7Wl0ZEcfzNptyjSOrHleE76ahHKDZGsb7Zud64Q3RG-uC6b4Uv9StMRjGhooVyLBx-X8X_x0X6mCu2O9bRT8U0E21lnqSGUNkw8HQ8jgk9ASti8Gy7Gg05kFknozz2eILmHupksphwsHg580mX8Vt8eI8w2dfRcGStB6mPxn_Gd5MSmCsXZdhEY_yg_IMPdWv6VDqpshgw_mKxKiZ8KfSa-2nS2I7hIdb7_YBO8TNAOWjgbWfNZJGM6SESKsY5GYJixdacyI9Iz1aP6R_W-8gcthftW8D4vD8XuBAffuzt1k9RmLbWzarVKz_7va6Ee1dWVeAcVgWAH7S3xAaI2VK_nCi3pTIJmSduGIzKjrlPVSFhLKMRxoVpDOyhSLhy305o_4J-duQnjehnT1hXax6gHrP5l6yMa16Rbf5R1BL9o1eVm4VsumUP9KTASRpx0elxiyd_-jwif5Qz0"
 var url = "https://integration.scorpion.co/csx/billing/graphql"
 const headers = {
   'Content-Type': 'application/json',
@@ -46,7 +45,7 @@ fetch(url, {
               year: "numeric"
             });
             if (z > 0) {
-              invoice_arr[z] = [
+              invoice_arr[z] = 
                 {
                   date: formattedDate,
                   number: data.data.getInvoice.invoiceNumber,
@@ -54,10 +53,9 @@ fetch(url, {
                   status: data.data.getInvoice.invoiceStatus,
                   amount: data.data.getInvoice.amountDue
                 }
-              ]
             }
             if (z == 0) {
-              invoice_arr[0] = [
+              invoice_arr[0] = 
                 {
                   date: formattedDate,
                   number: data.data.getInvoice.invoiceNumber,
@@ -65,21 +63,17 @@ fetch(url, {
                   status: data.data.getInvoice.invoiceStatus,
                   amount: data.data.getInvoice.amountDue
                 }
-              ]
             }
             z = z + 1
             // console.log(invoice_arr)
             if (z == 10) {
-              console.log(invoice_arr)
-              var sorted = invoice_arr[0].sort(function (a, b) {
-                console.log(a.date)
-                console.log(b.date)
+              // console.log(invoice_arr)
+              var sorted = invoice_arr.sort(function (a, b) {
+                console.log(invoice_arr[0].date)
                 var dateA = new Date(a.date), dateB = new Date(b.date);
-                console.log(dateA)
-                console.log(dateB)
                 return dateA - dateB;
               })
-              console.log(sorted)
+              // console.log(sorted)
             }
             // for (var y = 0; y < invoice_arr.length; y++) {
             //   console.log(y)
