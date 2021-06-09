@@ -6,12 +6,12 @@ const { Selector } = require('testcafe');
 var assert = require('assert');
 
 When('I assert the Scorpion Billing History page', async function () {
-    const text = await ActionsPage.ActionsPage.select(BillingHistoryPageLocator.page_title()).innerText;
+    const text = await ActionsPage.select(BillingHistoryPageLocator.page_title()).innerText;
     assert(text == "Billing History")
 })
 
-When('I assert I can see historical invoices with', async function (datatable) {
-    await BillingHistoryPage.assert_historical_invoices(datatable)
+When('I assert I can see historical invoices', async function () {
+    await BillingHistoryPage.assert_historical_invoices()
 })
 
 When('I verify the columns are showed with', async function (datatable) {
