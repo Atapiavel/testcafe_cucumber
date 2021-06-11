@@ -7,8 +7,12 @@ const config = require('../../db_config');
 const fs = require('fs')
 var assert = require('assert');
 
+Given('I am in Scorpion login page', { timeout: 6 * 5000 }, async function () {
+    await ActionsPage.navigate("https://login-integration.scorpion.co/")
+});
+
 Given('I am in Scorpion {string} page', { timeout: 6 * 5000 }, async function (url) {
-    await ActionsPage.navigate("http://localhost:4200/" + url)
+    await ActionsPage.navigate("https://ui-integration.scorpion.co/" + url)
 });
 
 When('I wait for {string} seconds', async function (seconds) {

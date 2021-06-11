@@ -10,7 +10,7 @@ function address_kebab_menu() {
     return '#billing-address-menu-button scorpion-icon'
 }
 
-function update_address () {
+function update_address() {
     return '.menu-item-label'
 }
 

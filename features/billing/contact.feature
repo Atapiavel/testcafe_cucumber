@@ -2,7 +2,7 @@ Feature: Billing Contact
 
         @billing @contact
         Scenario Outline: Contact_module_is_visible
-                Given I am in Scorpion "sign-in" page
+                Given I am in Scorpion login page
                 When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
                 And I click on sign in button
                 And I wait for "10" seconds
@@ -15,7 +15,7 @@ Feature: Billing Contact
 
         @billing @contact
         Scenario: Contact_kebab_options_are_visible_for_<contact_name>
-                Given I am in Scorpion "sign-in" page
+                Given I am in Scorpion login page
                 When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
                 And I click on sign in button
                 And I wait for "10" seconds
@@ -40,7 +40,7 @@ Feature: Billing Contact
 
         @billing @contact
         Scenario Outline: Add_billing_contact_functionality
-                Given I am in Scorpion "sign-in" page
+                Given I am in Scorpion login page
                 When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
                 And I click on sign in button
                 And I wait for "10" seconds
@@ -65,7 +65,7 @@ Feature: Billing Contact
 
         @billing @contact
         Scenario Outline: Update_billing_contact_functionality
-                Given I am in Scorpion "sign-in" page
+                Given I am in Scorpion login page
                 When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
                 And I click on sign in button
                 And I wait for "10" seconds
@@ -89,7 +89,7 @@ Feature: Billing Contact
 
         @billing @contact
         Scenario Outline: Set_as_primary_functionality_from_<module>
-                Given I am in Scorpion "sign-in" page
+                Given I am in Scorpion login page
                 When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
                 And I click on sign in button
                 And I wait for "10" seconds

@@ -2,7 +2,7 @@ Feature: Billing Invoice History
 
     @billing @invoice_history
     Scenario: Invoice_history_columns_and_records
-        Given I am in Scorpion "sign-in" page
+        Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
         And I click on sign in button
         And I wait for "10" seconds
@@ -19,7 +19,7 @@ Feature: Billing Invoice History
 
 #     @billing @invoice_history @focus
 #     Scenario Outline: Invoice_history_kebab_options_are_visible_for_<Invoice_Number>
-#         Given I am in Scorpion "sign-in" page
+#         Given I am in Scorpion login page
 #         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
 #         And I click on sign in button
 #         And I wait for "10" seconds
@@ -57,7 +57,7 @@ Feature: Billing Invoice History
 
 #     @billing @invoice_history
 #     Scenario: Invoice_filtering_by_year
-#         Given I am in Scorpion "sign-in" page
+#         Given I am in Scorpion login page
 #         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
 #         And I click on sign in button
 #         And I wait for "10" seconds
@@ -86,7 +86,7 @@ Feature: Billing Invoice History
 
 #     @billing @invoice_history
 #     Scenario: Invoice_filtering_by_date
-#         Given I am in Scorpion "sign-in" page
+#         Given I am in Scorpion login page
 #         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
 #         And I click on sign in button
 #         And I wait for "10" seconds
@@ -107,7 +107,7 @@ Feature: Billing Invoice History
 
 #     @billing @invoice_history
 #     Scenario: Invoice_filtering_by_month
-#         Given I am in Scorpion "sign-in" page
+#         Given I am in Scorpion login page
 #         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
 #         And I click on sign in button
 #         And I wait for "10" seconds
@@ -128,7 +128,7 @@ Feature: Billing Invoice History
 
 #     @billing @invoice_history
 #     Scenario: Invoice_filtering_by_price
-#         Given I am in Scorpion "sign-in" page
+#         Given I am in Scorpion login page
 #         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
 #         And I click on sign in button
 #         And I wait for "10" seconds
@@ -160,7 +160,7 @@ Feature: Billing Invoice History
 
 #     @billing @invoice_history
 #     Scenario: Invoice_filtering_by_paid_status
-#         Given I am in Scorpion "sign-in" page
+#         Given I am in Scorpion login page
 #         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
 #         And I click on sign in button
 #         And I wait for "10" seconds
@@ -182,7 +182,7 @@ Feature: Billing Invoice History
 
 #     @billing @invoice_history
 #     Scenario: Invoice_filtering_by_unpaid_status
-#         Given I am in Scorpion "sign-in" page
+#         Given I am in Scorpion login page
 #         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
 #         And I click on sign in button
 #         And I wait for "10" seconds
@@ -238,7 +238,7 @@ Feature: Billing Invoice History
 
 #     # @billing @invoice_history
 #     # Scenario Outline: Invoice_filtering_with_no_results_filtering_<filter>
-#     #     Given I am in Scorpion "sign-in" page
+#     #     Given I am in Scorpion login page
 #     #     When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
 #     #     And I click on sign in button
 #     #     And I wait for "10" seconds
@@ -264,7 +264,7 @@ Feature: Billing Invoice History
 
 #     @billing @invoice_history
 #     Scenario: Results_counter_from_filter_modal
-#         Given I am in Scorpion "sign-in" page
+#         Given I am in Scorpion login page
 #         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
 #         And I click on sign in button
 #         And I wait for "10" seconds
@@ -299,7 +299,7 @@ Feature: Billing Invoice History
 
 #     @billing @invoice_history
 #     Scenario Outline: Clear_all_filters_functionality
-#         Given I am in Scorpion "sign-in" page
+#         Given I am in Scorpion login page
 #         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
 #         And I click on sign in button
 #         And I wait for "10" seconds
@@ -384,7 +384,7 @@ Feature: Billing Invoice History
 
 # # @billing @invoice_history
 # # Scenario Outline: Download_<download_option>_functionality
-# #     Given I am in Scorpion "sign-in" page
+# #     Given I am in Scorpion login page
 # #     When I enter "commcenter@scorpion.co" and "Comms1234!"
 # #     And I click on sign in button
 # #     And I wait for "2" seconds
@@ -410,7 +410,7 @@ Feature: Billing Invoice History
 
 # # @billing @invoice_history
 # # Scenario: Send_functionality
-# #     Given I am in Scorpion "sign-in" page
+# #     Given I am in Scorpion login page
 # #     When I enter "commcenter@scorpion.co" and "Comms1234!"
 # #     And I click on sign in button
 # #     And I wait for "2" seconds
@@ -434,7 +434,7 @@ Feature: Billing Invoice History
 
 # # @billing @invoice_history
 # # Scenario: Print_functionality
-# #     Given I am in Scorpion "sign-in" page
+# #     Given I am in Scorpion login page
 # #     When I enter "commcenter@scorpion.co" and "Comms1234!"
 # #     And I click on sign in button
 # #     And I wait for "2" seconds
@@ -454,7 +454,7 @@ Feature: Billing Invoice History
 
 # # @billing @invoice_history
 # # Scenario: Order_by_date
-# #     Given I am in Scorpion "sign-in" page
+# #     Given I am in Scorpion login page
 # #     When I enter "commcenter@scorpion.co" and "Comms1234!"
 # #     And I click on sign in button
 # #     And I wait for "2" seconds
@@ -473,7 +473,7 @@ Feature: Billing Invoice History
 
 # # @billing @invoice_history
 # # Scenario: Order_by_invoice_number
-# #     Given I am in Scorpion "sign-in" page
+# #     Given I am in Scorpion login page
 # #     When I enter "commcenter@scorpion.co" and "Comms1234!"
 # #     And I click on sign in button
 # #     And I wait for "2" seconds
@@ -492,7 +492,7 @@ Feature: Billing Invoice History
 
 # # @billing @invoice_history
 # # Scenario: Order_by_description
-# #     Given I am in Scorpion "sign-in" page
+# #     Given I am in Scorpion login page
 # #     When I enter "commcenter@scorpion.co" and "Comms1234!"
 # #     And I click on sign in button
 # #     And I wait for "2" seconds
@@ -511,7 +511,7 @@ Feature: Billing Invoice History
 
 # # @billing @invoice_history
 # # Scenario: Order_by_billing_period
-# #     Given I am in Scorpion "sign-in" page
+# #     Given I am in Scorpion login page
 # #     When I enter "commcenter@scorpion.co" and "Comms1234!"
 # #     And I click on sign in button
 # #     And I wait for "2" seconds
@@ -530,7 +530,7 @@ Feature: Billing Invoice History
 
 # # @billing @invoice_history
 # # Scenario: Order_by_status
-# #     Given I am in Scorpion "sign-in" page
+# #     Given I am in Scorpion login page
 # #     When I enter "commcenter@scorpion.co" and "Comms1234!"
 # #     And I click on sign in button
 # #     And I wait for "2" seconds
@@ -549,7 +549,7 @@ Feature: Billing Invoice History
 
 # # @billing @invoice_history
 # # Scenario: Order_by_amount
-# #     Given I am in Scorpion "sign-in" page
+# #     Given I am in Scorpion login page
 # #     When I enter "commcenter@scorpion.co" and "Comms1234!"
 # #     And I click on sign in button
 # #     And I wait for "2" seconds
@@ -568,7 +568,7 @@ Feature: Billing Invoice History
 
 # # @billing @invoice_history
 # # Scenario Outline: Invoice_search_<criteria>
-# #     Given I am in Scorpion "sign-in" page
+# #     Given I am in Scorpion login page
 # #     When I enter "commcenter@scorpion.co" and "Comms1234!"
 # #     And I click on sign in button
 # #     And I wait for "2" seconds
@@ -596,7 +596,7 @@ Feature: Billing Invoice History
 
 # # @billing @invoice_history
 # # Scenario Outline: Invoice_search__with_no_results_searching_<criteria>
-# #     Given I am in Scorpion "sign-in" page
+# #     Given I am in Scorpion login page
 # #     When I enter "commcenter@scorpion.co" and "Comms1234!"
 # #     And I click on sign in button
 # #     And I wait for "2" seconds

@@ -39,7 +39,6 @@ Then('I assert {string} option is visible for contact {string}', async function 
     await ContactPage.verify_kebab_from_contact(option, contact_name)
 })
 
-
 When('I click {string} option for contact {string}', async function (option, contact_name) {
     await ContactPage.click_kebab_option(option, contact_name)
 })

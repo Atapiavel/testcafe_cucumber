@@ -2,7 +2,7 @@ Feature: Billing Overview
 
     @billing @overview
     Scenario: Recent_invoices
-        Given I am in Scorpion "sign-in" page
+        Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
         And I click on sign in button
         And I wait for "10" seconds
@@ -21,7 +21,7 @@ Feature: Billing Overview
 
     @billing @overview
     Scenario Outline: Recent_invoices_kebab_options_are_visible_for_<Invoice_Number>
-        Given I am in Scorpion "sign-in" page
+        Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
         And I click on sign in button
         And I wait for "10" seconds
@@ -55,7 +55,7 @@ Feature: Billing Overview
             | Apr 8, 2021  | 20210408-0004  | Monthly        | Unpaid | $40,000.00 |
 
 # Scenario: <module>_<kebab_option>_option_is_visible
-#     Given I am in Scorpion "sign-in" page
+#     Given I am in Scorpion login page
 #     When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
 #     And I click on sign in button
 #     And I wait for "10" seconds
@@ -76,7 +76,7 @@ Feature: Billing Overview
 
 # @billing @overview
 # Scenario Outline: <module>_module_is_visible
-#     Given I am in Scorpion "sign-in" page
+#     Given I am in Scorpion login page
 #     When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
 #     And I click on sign in button
 #     And I wait for "10" seconds
@@ -96,7 +96,7 @@ Feature: Billing Overview
 
 # @billing @overview
 # Scenario Outline: Cancel_button_from_<module>_<kebab_option>_functionality
-#     Given I am in Scorpion "sign-in" page
+#     Given I am in Scorpion login page
 #     When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
 #     And I click on sign in button
 #     And I wait for "10" seconds
@@ -114,7 +114,7 @@ Feature: Billing Overview
 
 # @billing @overview
 # Scenario Outline: <kebab_option>_functionality_from_<module>
-#     Given I am in Scorpion "sign-in" page
+#     Given I am in Scorpion login page
 #     When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
 #     And I click on sign in button
 #     And I wait for "10" seconds
@@ -135,7 +135,7 @@ Feature: Billing Overview
 
 # @billing @overview
 # Scenario Outline: Download_<download_option>_functionality_from_<module>
-#     Given I am in Scorpion "sign-in" page
+#     Given I am in Scorpion login page
 #     When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
 #     And I click on sign in button
 #     And I wait for "10" seconds
