@@ -12,7 +12,7 @@ function getAccountMonies(serviceLineId) {
 }
 
 function getActiveSubscriptions() {
-  return`
+  return `
   query{
     getActiveSubscriptions{
       amount,
@@ -25,7 +25,7 @@ function getActiveSubscriptions() {
 }
 
 function getBillingContacts() {
-  return`
+  return `
   query{
     getBillingContacts{
       billingContactID,
@@ -37,7 +37,7 @@ function getBillingContacts() {
 }
 
 function getBillingLocationByClient() {
-  return`
+  return `
   query{
     getBillingLocationByClient{
       address1,
@@ -51,7 +51,7 @@ function getBillingLocationByClient() {
 }
 
 function getInvoice(id) {
-  return`
+  return `
   query{
     getInvoice(invoiceId:"` + id + `"){
       invoiceID,
@@ -66,7 +66,7 @@ function getInvoice(id) {
 }
 
 function getInvoiceList(invoices) {
-  return`
+  return `
   query{
     getInvoiceList(first: ` + invoices + `, offset: 0 ){
       items{invoiceId}
@@ -76,7 +76,7 @@ function getInvoiceList(invoices) {
 }
 
 function getPaymentMethods() {
-  return`
+  return `
   query{
     getPaymentMethods{
       accountType,
@@ -88,7 +88,7 @@ function getPaymentMethods() {
 }
 
 function getPlatformLocations() {
-  return`
+  return `
   query{
     getPlatformLocations{
       address1,
@@ -115,7 +115,7 @@ function getScorpionAddress(locationTypeId) {
 }
 
 function getPlatformUsers() {
-  return`
+  return `
   query{
     getPlatformUsers{
       billingContactID,
