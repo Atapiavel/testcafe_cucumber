@@ -2,7 +2,6 @@ const ActionsPage = require('../../../pages/actions.pages.js')
 const { When, Then } = require('@cucumber/cucumber');
 const ContactPage = require('../../../pages/billing/contact.pages.js');
 const ContactPageLocator = require('../../../locators/billing/contact.locators.js');
-const contactPages = require('../../../pages/billing/contact.pages.js');
 
 
 Then('I assert contact module is visible', async function () {
@@ -39,7 +38,6 @@ Then('I assert that contact is shown with', async function (datatable) {
 Then('I assert {string} option is visible for contact {string}', async function (option, contact_name) {
     await ContactPage.verify_kebab_from_contact(option, contact_name)
 })
-
 
 When('I click {string} option for contact {string}', async function (option, contact_name) {
     await ContactPage.click_kebab_option(option, contact_name)

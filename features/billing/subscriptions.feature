@@ -2,7 +2,7 @@
 
 #     @billing @subscriptions
 #     Scenario: Edit Subscription
-#         Given I am in Scorpion "sign-in" page
+#         Given I am in Scorpion login page
 #         When I enter "commcenter@scorpion.co" and "Comms1234!"
 #         And I click on sign in button
 #         And I wait for "2" seconds

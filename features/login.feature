@@ -2,7 +2,7 @@ Feature: Login
 
     @e2e
     Scenario Outline: User_Login_E2E_Scenario
-        Given I am in Scorpion "sign-in" page
+        Given I am in Scorpion login page
         When I enter "<email>" and "<password>"
         And I click on sign in button
         And I wait for "2" seconds

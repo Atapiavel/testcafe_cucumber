@@ -65,7 +65,7 @@ Feature: Payment
 
     @billing @payment
     Scenario Outline: Add_payment_method_functionality
-        Given I am in Scorpion "sign-in" page
+        Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
         And I click on sign in button
         And I wait for "10" seconds

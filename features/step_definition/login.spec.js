@@ -3,7 +3,7 @@ const ActionsPage = require('../../pages/actions.pages.js')
 const LoginPageLocator = require('../../locators/login.locators.js');
 const { When } = require('cucumber');
 
-When('I enter {string} and {string}', async function (email, password) {
+When('I enter {string} and {string}', { timeout: 6 * 5000 }, async function (email, password) {
     await LoginPage.email_login(email, password)
 });
 
