@@ -1,6 +1,6 @@
 const ActionsPage = require("../actions.pages")
-const Requests = require("../../api/requests.js");
-const request = require("../../requests.js")
+// const Requests = require("../../api/requests.js");
+// const request = require("../../requests.js")
 const BillingHistoryPageLocator = require('../../locators/billing/invoice_history.locators.js');
 var assert = require('assert');
 var bearer = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImU1Mzg0NTE3LTdlM2ItNDQxYi1hMjczLTk0MDcxODU1ODEwNSIsInR5cCI6IkpXVCJ9.eyJzdWlkIjoiOEUzODhGREUxQkY2QjE0ODkwN0MzM0Y4NjAxREE0MjciLCJleHAiOjE2MjMyMDE2NTMsIm5iZiI6IjE2MjMxOTgwNTMiLCJlbnYiOiJpbnRlZ3JhdGlvbi10eCIsImlkZW50aXR5IjoiZWFiYWQzNGItMWVlNi00NzdjLWFiOGYtMmQwNTJkYmE4ZGQ5IiwidXNlcklkIjoxMzM2OCwidXNlckd1aWQiOiIwYWU1YzljZC1kZTZmLTQ0OWYtMDM4Zi0wNzhlOTBjMDUxMGYiLCJuYW1lIjoiQXJ0dXJvIFRhcGlhIFZlbGFzY28iLCJlbWFpbCI6ImFydHVyby50YXBhaWFAc2NvcnBpb24uY28iLCJhY2NvdW50IjoiYjk2YmU5ZDAtNmNhYi05OTQ2LWE0NTgtMmE1MWVlOTE5OTQ4Iiwic2NvcnBpb25Vc2VyIjpmYWxzZSwibG9jYWxVc2VyIjpmYWxzZSwiaW1wZXJzb25hdGVkIjpmYWxzZSwibXVsdGlUZW5hbnQiOmZhbHNlLCJjbGllbnRJZCI6NDE5NywiY2xpZW50R3VpZCI6ImI5NmJlOWQwLTZjYWItOTk0Ni1hNDU4LTJhNTFlZTkxOTk0OCIsIm9yaWdpbmFsQ2xpZW50SWQiOjQxOTcsIm9yaWdpbmFsQ2xpZW50R3VpZCI6ImI5NmJlOWQwLTZjYWItOTk0Ni1hNDU4LTJhNTFlZTkxOTk0OCIsInN5c3RlbVJvbGVzIjoiMCIsImFjY291bnRSb2xlcyI6IjAiLCJwZXJtaXNzaW9ucyI6IlsyNDMxODg0NiwyNjIxNDQsMSw4MjExODk5MjAsMTY3ODExOTIsMCwwLDAsMCwwLDAsMCwwLDAsMCwwXSIsImFwaWtleSI6ZmFsc2UsImVuYWJsZUFwaUxvZyI6ZmFsc2UsImhpcGFhIjpmYWxzZSwiaXNzIjoiaWRlbnRpdHkuc2NvcnBpb24uY28iLCJhdWQiOiJ1c2VycyJ9.DBDZKHsHIFUNROW4RgPOBCRBG6c2svskysrrySPnD8r4egRq3GKZvpguDa8ISNGIfCv3bD_z6xr1MIaER26_nnW5egUGC8dTAAEP9KkcqEZYOjnCy0nkFkrXZf81pAcPcyzJvoB6WOZaph1JXkJtrV4y97gZtmdMhWfqVu9N61c1S6eBcPBiUAvVo7h2O1_PKXDPoavFMY1VzMI4CmAZgKGNgPMu7Wl0ZEcfzNptyjSOrHleE76ahHKDZGsb7Zud64Q3RG-uC6b4Uv9StMRjGhooVyLBx-X8X_x0X6mCu2O9bRT8U0E21lnqSGUNkw8HQ8jgk9ASti8Gy7Gg05kFknozz2eILmHupksphwsHg580mX8Vt8eI8w2dfRcGStB6mPxn_Gd5MSmCsXZdhEY_yg_IMPdWv6VDqpshgw_mKxKiZ8KfSa-2nS2I7hIdb7_YBO8TNAOWjgbWfNZJGM6SESKsY5GYJixdacyI9Iz1aP6R_W-8gcthftW8D4vD8XuBAffuzt1k9RmLbWzarVKz_7va6Ee1dWVeAcVgWAH7S3xAaI2VK_nCi3pTIJmSduGIzKjrlPVSFhLKMRxoVpDOyhSLhy305o_4J-duQnjehnT1hXax6gHrP5l6yMa16Rbf5R1BL9o1eVm4VsumUP9KTASRpx0elxiyd_-jwif5Qz0"
@@ -17,42 +17,42 @@ var month = act_date.getMonth();
 var day = act_date.getDate();
 var future_date = new Date(year + 1, month, day);
 
-async function assert_historical_invoices() {
-    console.log(act_date)
-    console.log(future_date);
-    fetch(url, {
-        method: 'POST',
-        headers: headers,
-        body: JSON.stringify({
-            query: Requests.getInvoiceList(100),
-        })
-    })
-        .then(r => r.json())
-        .then(data => {
-            var i = data.data.getInvoiceList.items.length
-            for (var n = 0; n < i; n++) {
-                var invoice = data.data.getInvoiceList.items[n].invoiceId
-                fetch(url, {
-                    method: 'POST',
-                    headers: headers,
-                    body: JSON.stringify({
-                        query: Requests.getInvoice(invoice),
-                    })
-                })
-                    .then(r => r.json())
-                    .then(data => {
-                        console.log(act_date)
-                        console.log(future_date)
-                        console.log(data.data.getInvoice.dueDate)
-                        let str = data.data.getInvoice.dueDate;
-                        str = str.substring(0, str.length - 2);
-                        console.log(str)
-                        if (str >= act_date) {
-                            console.log(n)
-                        }
-                    })
-            }
-        });
+// async function assert_historical_invoices() {
+//     console.log(act_date)
+//     console.log(future_date);
+//     fetch(url, {
+//         method: 'POST',
+//         headers: headers,
+//         body: JSON.stringify({
+//             query: Requests.getInvoiceList(100),
+//         })
+//     })
+//         .then(r => r.json())
+//         .then(data => {
+//             var i = data.data.getInvoiceList.items.length
+//             for (var n = 0; n < i; n++) {
+//                 var invoice = data.data.getInvoiceList.items[n].invoiceId
+//                 fetch(url, {
+//                     method: 'POST',
+//                     headers: headers,
+//                     body: JSON.stringify({
+//                         query: Requests.getInvoice(invoice),
+//                     })
+//                 })
+//                     .then(r => r.json())
+//                     .then(data => {
+//                         console.log(act_date)
+//                         console.log(future_date)
+//                         console.log(data.data.getInvoice.dueDate)
+//                         let str = data.data.getInvoice.dueDate;
+//                         str = str.substring(0, str.length - 2);
+//                         console.log(str)
+//                         if (str >= act_date) {
+//                             console.log(n)
+//                         }
+//                     })
+//             }
+//         });
     // data = datatable.raw()
     // for (var n = 0; n < data.length; n++) {
     //     for (var i = 0; i < data[n].length; i++) {
@@ -61,7 +61,7 @@ async function assert_historical_invoices() {
     //         assert(text == data[n][i])
     //     }
     // }
-}
+// }
 
 async function assert_columns(datatable) {
     data = datatable.raw()
