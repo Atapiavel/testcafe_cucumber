@@ -200,7 +200,7 @@ async function filter_invoices(filter, value) {
 
 
 module.exports = {
-    assert_historical_invoices: assert_historical_invoices,
+    // assert_historical_invoices: assert_historical_invoices,
     assert_columns: assert_columns,
     assert_kebab_option: assert_kebab_option,
     filter_invoices: filter_invoices
