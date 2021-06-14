@@ -13,21 +13,19 @@ Feature: Messenger
         And I maximize the window
         And I wait for "20" seconds
         And I click on Search button from messenger page
+        And I click on Files button
         And I click on Groups button
         And I click on People button
-        And I click on Messages button
-        And I wait for "23" seconds
+        And I click on Messages button        
+        And I wait for "2" seconds
         And I click on Aaron McFly button
-        And I wait for "140" seconds
-        And I click in the message field
-        And I enter a "<message>" into the message field
-        And I click on Send Message button
+        And I wait for "2" seconds        
         And I click on Emoji button
-        And I click on Relaxed Emoji
-        Then I click on Send Message button again
+        And I click on Mask Emoji
+        Then I click on Send Message button
         When I click on settings button
         And I sign out Scorpion
 
         Examples:
-            | email                  | password   | message |
-            | commcenter@scorpion.co | Comms1234! | Hey Aaron. What's happening dude? :smiley: :sunglasses: :dancer: :champagne: You get tons of this from my automation! :pray: :thumbsup: |
+            | email                  | password   | 
+            | commcenter@scorpion.co | Comms1234! | 

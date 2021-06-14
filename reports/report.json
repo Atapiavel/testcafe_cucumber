@@ -14,20 +14,20 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 13781000000
+              "duration": 11474000000
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
             "line": 5,
-            "name": "I am in Scorpion \"sign-in\" page",
+            "name": "I am in Scorpion login page",
             "match": {
-              "location": "features\\step_definition\\common.spec.js:10"
+              "location": "features/step_definition/common.spec.js:10"
             },
             "result": {
               "status": "passed",
-              "duration": 786000000
+              "duration": 1451000000
             }
           },
           {
@@ -36,11 +36,11 @@
             "line": 6,
             "name": "I enter \"commcenter@scorpion.co\" and \"Comms1234!\"",
             "match": {
-              "location": "features\\step_definition\\login.spec.js:6"
+              "location": "features/step_definition/login.spec.js:6"
             },
             "result": {
               "status": "passed",
-              "duration": 6324000000
+              "duration": 5094000000
             }
           },
           {
@@ -49,11 +49,11 @@
             "line": 7,
             "name": "I click on sign in button",
             "match": {
-              "location": "features\\step_definition\\login.spec.js:10"
+              "location": "features/step_definition/login.spec.js:10"
             },
             "result": {
               "status": "passed",
-              "duration": 3150000000
+              "duration": 1561000000
             }
           },
           {
@@ -62,11 +62,11 @@
             "line": 8,
             "name": "I wait for \"2\" seconds",
             "match": {
-              "location": "features\\step_definition\\common.spec.js:14"
+              "location": "features/step_definition/common.spec.js:18"
             },
             "result": {
               "status": "passed",
-              "duration": 2015000000
+              "duration": 2009000000
             }
           },
           {
@@ -75,11 +75,11 @@
             "line": 9,
             "name": "I select the account to use with \"Thomas & Paulk\"",
             "match": {
-              "location": "features\\step_definition\\login.spec.js:14"
+              "location": "features/step_definition/login.spec.js:14"
             },
             "result": {
               "status": "passed",
-              "duration": 4841000000
+              "duration": 6101000000
             }
           },
           {
@@ -88,11 +88,11 @@
             "line": 10,
             "name": "I wait for \"10\" seconds",
             "match": {
-              "location": "features\\step_definition\\common.spec.js:14"
+              "location": "features/step_definition/common.spec.js:18"
             },
             "result": {
               "status": "passed",
-              "duration": 10017000000
+              "duration": 10022000000
             }
           },
           {
@@ -101,11 +101,11 @@
             "line": 11,
             "name": "I am in Scorpion \"messenger\" page",
             "match": {
-              "location": "features\\step_definition\\common.spec.js:10"
+              "location": "features/step_definition/common.spec.js:14"
             },
             "result": {
               "status": "passed",
-              "duration": 903000000
+              "duration": 667000000
             }
           },
           {
@@ -114,11 +114,11 @@
             "line": 13,
             "name": "I maximize the window",
             "match": {
-              "location": "features\\step_definition\\common.spec.js:40"
+              "location": "features/step_definition/common.spec.js:44"
             },
             "result": {
               "status": "passed",
-              "duration": 2302000000
+              "duration": 2703000000
             }
           },
           {
@@ -127,11 +127,11 @@
             "line": 14,
             "name": "I wait for \"20\" seconds",
             "match": {
-              "location": "features\\step_definition\\common.spec.js:14"
+              "location": "features/step_definition/common.spec.js:18"
             },
             "result": {
               "status": "passed",
-              "duration": 20012000000
+              "duration": 20016000000
             }
           },
           {
@@ -140,203 +140,167 @@
             "line": 15,
             "name": "I click on Search button from messenger page",
             "match": {
-              "location": "features\\step_definition\\comms\\messenger.spec.js:10"
+              "location": "features/step_definition/comms/messenger.spec.js:10"
             },
             "result": {
               "status": "passed",
-              "duration": 456000000
+              "duration": 454000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 16,
-            "name": "I click on Groups button",
+            "name": "I click on Files button",
             "match": {
-              "location": "features\\step_definition\\comms\\messenger.spec.js:14"
+              "location": "features/step_definition/comms/messenger.spec.js:29"
             },
             "result": {
               "status": "passed",
-              "duration": 1263000000
+              "duration": 392000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 17,
-            "name": "I click on People button",
+            "name": "I click on Groups button",
             "match": {
-              "location": "features\\step_definition\\comms\\messenger.spec.js:19"
+              "location": "features/step_definition/comms/messenger.spec.js:14"
             },
             "result": {
               "status": "passed",
-              "duration": 1262000000
+              "duration": 1269000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 18,
-            "name": "I click on Messages button",
+            "name": "I click on People button",
             "match": {
-              "location": "features\\step_definition\\comms\\messenger.spec.js:24"
+              "location": "features/step_definition/comms/messenger.spec.js:19"
             },
             "result": {
               "status": "passed",
-              "duration": 1255000000
+              "duration": 1239000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 19,
-            "name": "I wait for \"23\" seconds",
+            "name": "I click on Messages button",
             "match": {
-              "location": "features\\step_definition\\common.spec.js:14"
+              "location": "features/step_definition/comms/messenger.spec.js:24"
             },
             "result": {
               "status": "passed",
-              "duration": 23018000000
+              "duration": 1292000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 20,
-            "name": "I click on Aaron McFly button",
+            "name": "I wait for \"2\" seconds",
             "match": {
-              "location": "features\\step_definition\\comms\\messenger.spec.js:29"
+              "location": "features/step_definition/common.spec.js:18"
             },
             "result": {
               "status": "passed",
-              "duration": 1335000000
+              "duration": 2007000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 21,
-            "name": "I wait for \"140\" seconds",
+            "name": "I click on Aaron McFly button",
             "match": {
-              "location": "features\\step_definition\\common.spec.js:14"
+              "location": "features/step_definition/comms/messenger.spec.js:33"
             },
             "result": {
-              "status": "failed",
-              "duration": 40014000000,
-              "error_message": "Error: function timed out, ensure the promise resolves within 40000 milliseconds\n    at Timeout._onTimeout (C:\\Users\\mehas\\OneDrive\\Documents\\Private-Repository\\testcafe_cucumber\\node_modules\\@cucumber\\cucumber\\src\\user_code_runner.ts:80:18)\n    at listOnTimeout (internal/timers.js:554:17)\n    at processTimers (internal/timers.js:497:7)"
+              "status": "passed",
+              "duration": 1348000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 22,
-            "name": "I click in the message field",
+            "name": "I wait for \"2\" seconds",
             "match": {
-              "location": "features\\step_definition\\comms\\messenger.spec.js:34"
+              "location": "features/step_definition/common.spec.js:18"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 2009000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 23,
-            "name": "I enter a \"Hey Aaron. What's happening dude? :smiley: :sunglasses: :dancer: :champagne: You get tons of this from my automation! :pray: :thumbsup:\" into the message field",
+            "name": "I click on Emoji button",
             "match": {
-              "location": "features\\step_definition\\comms\\messenger.spec.js:38"
+              "location": "features/step_definition/comms/messenger.spec.js:47"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 21094000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 24,
-            "name": "I click on Send Message button",
+            "name": "I click on Mask Emoji",
             "match": {
-              "location": "features\\step_definition\\comms\\messenger.spec.js:43"
+              "location": "features/step_definition/comms/messenger.spec.js:51"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 25,
-            "name": "I click on Emoji button",
-            "match": {
-              "location": "features\\step_definition\\comms\\messenger.spec.js:47"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 26,
-            "name": "I click on Relaxed Emoji",
-            "match": {
-              "location": "features\\step_definition\\comms\\messenger.spec.js:51"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 1988000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 27,
-            "name": "I click on Send Message button again",
+            "line": 25,
+            "name": "I click on Send Message button",
             "match": {
-              "location": "features\\step_definition\\comms\\messenger.spec.js:55"
+              "location": "features/step_definition/comms/messenger.spec.js:55"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 729000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 28,
+            "line": 26,
             "name": "I click on settings button",
             "match": {
-              "location": "features\\step_definition\\common.spec.js:18"
+              "location": "features/step_definition/common.spec.js:22"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 1376000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 29,
+            "line": 27,
             "name": "I sign out Scorpion",
             "match": {
-              "location": "features\\step_definition\\common.spec.js:26"
+              "location": "features/step_definition/common.spec.js:30"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "failed",
-              "duration": 11000000,
-              "error_message": "Error: ENOENT: no such file or directory, open 'screenshots/User Messenger E2E Scenario/User Messenger E2E Scenario.png'\n    at Object.openSync (fs.js:476:3)\n    at Object.readFileSync (fs.js:377:35)\n    at Object.exports.base64Sync (C:\\Users\\mehas\\OneDrive\\Documents\\Private-Repository\\testcafe_cucumber\\node_modules\\base64-img\\base64-img.js:60:17)\n    at CustomWorld.attachScreenshotToReport (C:\\Users\\mehas\\OneDrive\\Documents\\Private-Repository\\testcafe_cucumber\\features\\support\\world.js:41:39)\n    at CustomWorld.<anonymous> (C:\\Users\\mehas\\OneDrive\\Documents\\Private-Repository\\testcafe_cucumber\\features\\support\\hooks.js:76:14)"
+              "status": "passed",
+              "duration": 2343000000
             }
           },
           {
@@ -344,7 +308,15 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 3000000
+              "duration": 2000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 7000000
             }
           }
         ],
@@ -366,6 +338,6 @@
     "keyword": "Feature",
     "name": "Messenger",
     "tags": [],
-    "uri": "features\\comms\\messenger.feature"
+    "uri": "features/comms/messenger.feature"
   }
 ]
