@@ -23,11 +23,11 @@ class PhonePage{
         this.dialEight = Selector('[data-cy=dial-input-button8]');
         this.dialNine = Selector('[data-cy=dial-input-button9]');
         this.endCalMin = Selector('button.mod-red');
-        this.dragBtn = Selector('[aria-label="drag"]');
+        this.dragBtn = Selector('[aria-label="double_ellipsis"]');
         this.collapseBtn = Selector('[aria-label="Dialpad"]');
-        this.sidePanelBtn = Selector('[aria-label="Open Calls Panel"]');
+        this.sidePanelBtn = Selector('scorpion-button-icon[svgtitle="Call List"]');
+        this.backMainDialPadBtn = Selector('div[title="Back"]');
         this.participants = Selector('span').withText('Participants');
-        this.exitBtn = Selector('[aria-label="exit"]');
-    }
+     }
 }
 export default new PhonePage();

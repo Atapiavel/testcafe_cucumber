@@ -1,0 +1,46 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1623726607512' stop='1623726607523'>
+    <name>Phone Fixture</name>
+    <title>Phone Fixture</title>
+    <test-cases>
+        <test-case start='1623726607512' status='failed' stop='1623726640537'>
+            <name>Phone page Test</name>
+            <title>Phone page Test</title>
+            <labels>
+                <label name='severity' value='undefined'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='User Agent' value='Chrome 91.0.4472.101 / macOS 10.15.7'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>This test has been broken</message>
+                <stack-trace>The specified selector does not match any element in the DOM tree.
+                
+                 > | Selector('[aria-label="Open Calls Panel"]')
+                
+                Browser: Chrome 91.0.4472.101 / macOS 10.15.7
+                
+                   38 |    .click(phonepage.miniBtn)
+                   39 |    .click(phonepage.maxiBtn)
+                   40 |    .click(phonepage.collapseBtn)
+                   41 |    .click(phonepage.miniBtn)
+                   42 |    .click(phonepage.maxiBtn)
+                 > 43 |    .click(phonepage.sidePanelBtn)
+                   44 |    
+                   45 |    // .hover(phonepage.participants)
+                   46 |
+                   47 |    .click(phonepage.exitBtn)
+                   48 |    .click(phonepage.endCallBtn)
+                
+                   at &lt;anonymous> (/Users/mehrdadfhassani/Documents/Source/Private-Repository/testcafe_cucumber/test/PhoneTest.js:43:6)
+                   at asyncGeneratorStep (/Users/mehrdadfhassani/Documents/Source/Private-Repository/testcafe_cucumber/test/PhoneTest.js:3:278)
+                   at _next (/Users/mehrdadfhassani/Documents/Source/Private-Repository/testcafe_cucumber/test/PhoneTest.js:3:616)
+                   at &lt;anonymous> (/Users/mehrdadfhassani/Documents/Source/Private-Repository/testcafe_cucumber/test/PhoneTest.js:3:781)
+                   at &lt;anonymous> (/Users/mehrdadfhassani/Documents/Source/Private-Repository/testcafe_cucumber/test/PhoneTest.js:3:522)
+                   at &lt;anonymous> (/Users/mehrdadfhassani/Documents/Source/Private-Repository/testcafe_cucumber/test/PhoneTest.js:13:5)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

@@ -1,0 +1,39 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "Messenger Fixture",
+    "children" : [ {
+      "name" : "Messenger page Test",
+      "uid" : "9f9bb2e180bb86f2",
+      "parentUid" : "e1cb5137e4c8aa7c18924529ef9d606f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1623725963548,
+        "stop" : 1623726048250,
+        "duration" : 84702
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+    } ],
+    "uid" : "e1cb5137e4c8aa7c18924529ef9d606f"
+  }, {
+    "name" : "Phone Fixture",
+    "children" : [ {
+      "name" : "Phone page Test",
+      "uid" : "d2ad5191f1b635b6",
+      "parentUid" : "2781629b461d7dea315f7071f0083604",
+      "status" : "passed",
+      "time" : {
+        "start" : 1623728728379,
+        "stop" : 1623728755922,
+        "duration" : 27543
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+    } ],
+    "uid" : "2781629b461d7dea315f7071f0083604"
+  } ]
+}

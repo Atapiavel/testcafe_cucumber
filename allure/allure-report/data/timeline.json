@@ -1,0 +1,83 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "Phone page Test",
+    "uid" : "19a220927877d8d7",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1623726322218,
+      "stop" : 1623726325768,
+      "duration" : 3550
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+  }, {
+    "name" : "Phone page Test",
+    "uid" : "65bb80d2b3f4efd0",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1623726607512,
+      "stop" : 1623726640537,
+      "duration" : 33025
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+  }, {
+    "name" : "Phone page Test",
+    "uid" : "d2ad5191f1b635b6",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1623728728379,
+      "stop" : 1623728755922,
+      "duration" : 27543
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+  }, {
+    "name" : "Phone page Test",
+    "uid" : "b91ae4678e4bcb2e",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1623726172405,
+      "stop" : 1623726177199,
+      "duration" : 4794
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+  }, {
+    "name" : "Messenger page Test",
+    "uid" : "9f9bb2e180bb86f2",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1623725963548,
+      "stop" : 1623726048250,
+      "duration" : 84702
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+  }, {
+    "name" : "Phone page Test",
+    "uid" : "2ce63be183229913",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1623726071200,
+      "stop" : 1623726088185,
+      "duration" : 16985
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+  } ]
+}
