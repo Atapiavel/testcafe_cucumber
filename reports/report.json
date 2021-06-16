@@ -4,17 +4,17 @@
     "elements": [
       {
         "description": "",
-        "id": "messenger;user-messenger-e2e-scenario",
+        "id": "phone;user-phone-e2e-scenario",
         "keyword": "Scenario Outline",
         "line": 4,
-        "name": "User Messenger E2E Scenario",
+        "name": "User Phone E2E Scenario",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 11474000000
+              "duration": 12614000000
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1451000000
+              "duration": 699000000
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5094000000
+              "duration": 4020000000
             }
           },
           {
@@ -53,20 +53,20 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1561000000
+              "duration": 2489000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 8,
-            "name": "I wait for \"2\" seconds",
+            "name": "I wait for \"10\" seconds",
             "match": {
               "location": "features/step_definition/common.spec.js:18"
             },
             "result": {
               "status": "passed",
-              "duration": 2009000000
+              "duration": 10007000000
             }
           },
           {
@@ -79,7 +79,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6101000000
+              "duration": 5356000000
             }
           },
           {
@@ -92,215 +92,358 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10022000000
+              "duration": 10009000000
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
             "line": 11,
-            "name": "I am in Scorpion \"messenger\" page",
+            "name": "I am in Scorpion \"phone\" page",
             "match": {
               "location": "features/step_definition/common.spec.js:14"
             },
             "result": {
               "status": "passed",
-              "duration": 667000000
+              "duration": 1650000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "I wait for \"10\" seconds",
+            "match": {
+              "location": "features/step_definition/common.spec.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10014000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 13,
-            "name": "I maximize the window",
+            "name": "I land on Phone page",
             "match": {
-              "location": "features/step_definition/common.spec.js:44"
+              "location": "features/step_definition/comms/phone.spec.js:7"
             },
             "result": {
               "status": "passed",
-              "duration": 2703000000
+              "duration": 8000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 14,
-            "name": "I wait for \"20\" seconds",
+            "name": "I click on Search button from phone page",
             "match": {
-              "location": "features/step_definition/common.spec.js:18"
+              "location": "features/step_definition/comms/phone.spec.js:11"
             },
             "result": {
               "status": "passed",
-              "duration": 20016000000
+              "duration": 10395000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 15,
-            "name": "I click on Search button from messenger page",
+            "name": "I click on Make a Call button",
             "match": {
-              "location": "features/step_definition/comms/messenger.spec.js:10"
+              "location": "features/step_definition/comms/phone.spec.js:16"
             },
             "result": {
               "status": "passed",
-              "duration": 454000000
+              "duration": 820000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 16,
-            "name": "I click on Files button",
+            "name": "I enter numbers in Phone Number entry \"8182345566\"",
             "match": {
-              "location": "features/step_definition/comms/messenger.spec.js:29"
+              "location": "features/step_definition/comms/phone.spec.js:20"
             },
             "result": {
               "status": "passed",
-              "duration": 392000000
+              "duration": 1197000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 17,
-            "name": "I click on Groups button",
+            "name": "I click on Call button",
             "match": {
-              "location": "features/step_definition/comms/messenger.spec.js:14"
+              "location": "features/step_definition/comms/phone.spec.js:24"
             },
             "result": {
               "status": "passed",
-              "duration": 1269000000
+              "duration": 1095000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 18,
-            "name": "I click on People button",
+            "name": "I click on End Call button",
             "match": {
-              "location": "features/step_definition/comms/messenger.spec.js:19"
+              "location": "features/step_definition/comms/phone.spec.js:28"
             },
             "result": {
               "status": "passed",
-              "duration": 1239000000
+              "duration": 2340000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 19,
-            "name": "I click on Messages button",
+            "name": "I click on Make a Call button again",
             "match": {
-              "location": "features/step_definition/comms/messenger.spec.js:24"
+              "location": "features/step_definition/comms/phone.spec.js:32"
             },
             "result": {
               "status": "passed",
-              "duration": 1292000000
+              "duration": 617000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 20,
-            "name": "I wait for \"2\" seconds",
+            "name": "I maximize the window",
             "match": {
-              "location": "features/step_definition/common.spec.js:18"
+              "location": "features/step_definition/common.spec.js:44"
             },
             "result": {
               "status": "passed",
-              "duration": 2007000000
+              "duration": 1947000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 21,
-            "name": "I click on Aaron McFly button",
+            "name": "I make a call to the number \"8182345566\"",
             "match": {
-              "location": "features/step_definition/comms/messenger.spec.js:33"
+              "location": "features/step_definition/comms/phone.spec.js:36"
             },
             "result": {
               "status": "passed",
-              "duration": 1348000000
+              "duration": 20000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 22,
-            "name": "I wait for \"2\" seconds",
+            "name": "I click on Call button again",
             "match": {
-              "location": "features/step_definition/common.spec.js:18"
+              "location": "features/step_definition/comms/phone.spec.js:40"
             },
             "result": {
               "status": "passed",
-              "duration": 2009000000
+              "duration": 4423000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 23,
-            "name": "I click on Emoji button",
+            "name": "I drag the dialpad \"-360\" for x \"-5\" for y",
             "match": {
-              "location": "features/step_definition/comms/messenger.spec.js:47"
+              "location": "features/step_definition/comms/phone.spec.js:44"
             },
             "result": {
               "status": "passed",
-              "duration": 21094000000
+              "duration": 714000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 24,
-            "name": "I click on Mask Emoji",
+            "name": "I click on Collapse button",
             "match": {
-              "location": "features/step_definition/comms/messenger.spec.js:51"
+              "location": "features/step_definition/comms/phone.spec.js:48"
             },
             "result": {
               "status": "passed",
-              "duration": 1988000000
+              "duration": 689000000
             }
           },
           {
             "arguments": [],
-            "keyword": "Then ",
+            "keyword": "And ",
             "line": 25,
-            "name": "I click on Send Message button",
+            "name": "I click on Minimize button",
             "match": {
-              "location": "features/step_definition/comms/messenger.spec.js:55"
+              "location": "features/step_definition/comms/phone.spec.js:52"
             },
             "result": {
               "status": "passed",
-              "duration": 729000000
+              "duration": 1664000000
             }
           },
           {
             "arguments": [],
-            "keyword": "When ",
+            "keyword": "And ",
             "line": 26,
-            "name": "I click on settings button",
+            "name": "I click on Maximize button",
             "match": {
-              "location": "features/step_definition/common.spec.js:22"
+              "location": "features/step_definition/comms/phone.spec.js:57"
             },
             "result": {
               "status": "passed",
-              "duration": 1376000000
+              "duration": 1503000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 27,
+            "name": "I click on Collapse button again",
+            "match": {
+              "location": "features/step_definition/comms/phone.spec.js:62"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 435000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "I click on Sidepanel button",
+            "match": {
+              "location": "features/step_definition/comms/phone.spec.js:66"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 402000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "I click on the Back button",
+            "match": {
+              "location": "features/step_definition/comms/phone.spec.js:70"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 678000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "I click on Minimize button again",
+            "match": {
+              "location": "features/step_definition/comms/phone.spec.js:74"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 455000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "I click on End Call button again",
+            "match": {
+              "location": "features/step_definition/comms/phone.spec.js:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2108000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 32,
+            "name": "I click on Availability button",
+            "match": {
+              "location": "features/step_definition/comms/phone.spec.js:82"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 798000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "I click on Availability Toggle button",
+            "match": {
+              "location": "features/step_definition/comms/phone.spec.js:86"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 619000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "I click on Availability Toggle button again",
+            "match": {
+              "location": "features/step_definition/comms/phone.spec.js:90"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 344000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 35,
+            "name": "I click on Availability button again",
+            "match": {
+              "location": "features/step_definition/comms/phone.spec.js:94"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 691000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 36,
+            "name": "I click on settings button",
+            "match": {
+              "location": "features/step_definition/common.spec.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 583000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 37,
             "name": "I sign out Scorpion",
             "match": {
               "location": "features/step_definition/common.spec.js:30"
             },
             "result": {
               "status": "passed",
-              "duration": 2343000000
+              "duration": 1039000000
             }
           },
           {
@@ -308,7 +451,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 2000000
+              "duration": 1000000
             }
           },
           {
@@ -316,7 +459,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 7000000
+              "duration": 0
             }
           }
         ],
@@ -333,11 +476,11 @@
         "type": "scenario"
       }
     ],
-    "id": "messenger",
+    "id": "phone",
     "line": 1,
     "keyword": "Feature",
-    "name": "Messenger",
+    "name": "Phone",
     "tags": [],
-    "uri": "features/comms/messenger.feature"
+    "uri": "features/comms/phone.feature"
   }
 ]

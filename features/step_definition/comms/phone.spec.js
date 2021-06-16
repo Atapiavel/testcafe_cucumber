@@ -67,10 +67,30 @@ When('I click on Sidepanel button', async function() {
         await ActionsPage.click_element(PhonePageLocator.SidePan());
 })
 
-When('I click on Exit button', async function() {
-        await ActionsPage.click_element(PhonePageLocator.ExitBtn());
+When('I click on the Back button', async function() {
+        await ActionsPage.click_element(PhonePageLocator.BackToDialPadBtn());
 })
 
-Then('I click on End Call button again', async function () {
-        await ActionsPage.click_element(PhonePageLocator.EndCallBtn());
-});
+When('I click on Minimize button again', async function() {
+        await ActionsPage.click_element(PhonePageLocator.MiniBtn());
+})
+
+When('I click on End Call button again', async function () {
+        await ActionsPage.click_element(PhonePageLocator.EndCallMinBtn());
+})
+
+When('I click on Availability button', async function() {
+        await ActionsPage.click_element(PhonePageLocator.AvailabilityBtn());
+})
+
+When('I click on Availability Toggle button', async function() {
+        await ActionsPage.click_element(PhonePageLocator.AvailToggleBtn());
+})
+
+When('I click on Availability Toggle button again', async function() {
+        await ActionsPage.click_element(PhonePageLocator.AvailToggleBtn());
+})
+
+Then('I click on Availability button again', async function() {
+        await ActionsPage.click_element(PhonePageLocator.AvailabilityBtn());
+})

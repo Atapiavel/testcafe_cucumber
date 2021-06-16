@@ -66,6 +66,11 @@ test('Phone page Test', async t =>{
     .click(phonepage.callBtn)
     .click(phonepage.miniBtn)
     .click(phonepage.endCalMin)
+    .click(phonepage.availabilityBtn)
+    .click(phonepage.avaiToggleBtn)
+    .wait(1000)
+    .click(phonepage.avaiToggleBtn)
+    .click(phonepage.availabilityBtn)
     .click(loginpage.settingsBtn)
     .click(loginpage.signOutBtn);
 })

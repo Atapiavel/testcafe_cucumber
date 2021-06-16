@@ -3,26 +3,26 @@
   "name" : "behaviors",
   "children" : [ {
     "name" : "Messenger page Test",
-    "uid" : "9f9bb2e180bb86f2",
+    "uid" : "5742704d83a61de",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
-      "start" : 1623725963548,
-      "stop" : 1623726048250,
-      "duration" : 84702
+      "start" : 1623758966475,
+      "stop" : 1623759049418,
+      "duration" : 82943
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
   }, {
     "name" : "Phone page Test",
-    "uid" : "d2ad5191f1b635b6",
+    "uid" : "7cfe8ac8a605f745",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
-    "status" : "passed",
+    "status" : "failed",
     "time" : {
-      "start" : 1623728728379,
-      "stop" : 1623728755922,
-      "duration" : 27543
+      "start" : 1623802322777,
+      "stop" : 1623802367332,
+      "duration" : 44555
     },
     "flaky" : false,
     "newFailed" : false,

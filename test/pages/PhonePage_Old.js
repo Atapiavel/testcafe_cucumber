@@ -28,6 +28,8 @@ class PhonePage{
         this.sidePanelBtn = Selector('scorpion-button-icon[svgtitle="Call List"]');
         this.backMainDialPadBtn = Selector('div[title="Back"]');
         this.participants = Selector('span').withText('Participants');
+        this.availabilityBtn = Selector('[aria-label="Set Your Availability"]');
+        this.avaiToggleBtn = Selector('div[data-cy=component]');
      }
 }
 export default new PhonePage();
