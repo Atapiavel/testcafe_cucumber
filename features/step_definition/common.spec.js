@@ -5,7 +5,6 @@ const SettingsPage = require('../../pages/settings.pages.js')
 const sql = require('mssql')
 const config = require('../../db_config');
 const fs = require('fs')
-var assert = require('assert');
 
 Given('I am in Scorpion login page', { timeout: 6 * 5000 }, async function () {
     await ActionsPage.navigate("https://login-integration.scorpion.co/")
@@ -52,14 +51,9 @@ When('I assert we are in Scorpion main page', async function () {
 
 Then('I assert that the text is shown {string}', async function (value) {
     const element = await ActionsPage.select('scorpion-snackbar').innerText;
-    assert(element == value)
+    await testController.expect(element).contains(value)
 })
 
 When('I upload the file', async function () {
     await testController.setFilesToUpload('div > scorpion-file-upload > input', '../../upload/IMG_0071.jpg')
 })
-
-// Then('I assert that the text is shown', async function (datatable) {
-//     const option = Selector(element).withText(value)
-//     await testController.expect(element).ok();
-// })
