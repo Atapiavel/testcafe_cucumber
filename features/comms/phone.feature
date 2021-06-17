@@ -1,6 +1,6 @@
 Feature: Phone
 
-    @e2e
+    @e2e @comms
     Scenario Outline: User Phone E2E Scenario
         Given I am in Scorpion login page
         When I enter "<email>" and "<password>"
@@ -26,8 +26,13 @@ Feature: Phone
         And I click on Maximize button
         And I click on Collapse button again
         And I click on Sidepanel button
-        And I click on Exit button
-        Then I click on End Call button again
+        And I click on the Back button
+        And I click on Minimize button again
+        And I click on End Call button again
+        And I click on Availability button
+        And I click on Availability Toggle button
+        And I click on Availability Toggle button again
+        Then I click on Availability button again
         When I click on settings button
         And I sign out Scorpion
 

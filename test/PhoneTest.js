@@ -3,7 +3,7 @@ import loginpage from '../test/pages/LoginPage_Old';
 import phonepage from '../test/pages/PhonePage_Old';
 
 const dataSet = require('../data/data.json');
-const URL ="https://ui-integration.scorpion.co/phone";
+const URL ="https://ui-integration.scorpion.co/";
 const getURL = ClientFunction(() =>window.location.href);
 
 fixture('Phone Fixture')
@@ -12,17 +12,21 @@ fixture('Phone Fixture')
 dataSet.forEach(data => {    
 test('Phone page Test', async t =>{
     await t
-    .maximizeWindow()
-    .setTestSpeed(0.1)
-    .typeText(loginpage.email, data.email)
-    .typeText(loginpage.password, data.password)
+    .setTestSpeed(1)
+    .typeText(loginpage.email, "joehaus895@gmail.com")
+    .typeText(loginpage.password, "Team123!")
     .click(loginpage.signIn)
-    .typeText(loginpage.searchAccount, 'tho')
-    .wait(1000)
-    .click(loginpage.tpRadionBtn)
-    .click(loginpage.signInBtn)
-    .wait(3000)
-    // .click(phonepage.phoneButton)    
+
+    // .typeText(loginpage.email, data.email)
+    // .typeText(loginpage.password, data.password)
+    // .click(loginpage.signIn)
+    // .typeText(loginpage.searchAccount, 'tho')
+    // .wait(1000)
+    // .click(loginpage.tpRadionBtn)
+    // .click(loginpage.signInBtn)
+    // .wait(3000)
+    .maximizeWindow()
+    .click(phonepage.phoneBtn)    
     .expect(getURL()).contains('phone')
     .click(phonepage.searchBtn)
     .click(phonepage.makeCallBtn)
@@ -37,10 +41,12 @@ test('Phone page Test', async t =>{
     .click(phonepage.miniBtn)
     .click(phonepage.maxiBtn)
     .click(phonepage.sidePanelBtn)
+    .click(phonepage.backMainDialPadBtn)
     
     // .hover(phonepage.participants)
 
-    .click(phonepage.exitBtn)
+    // .click(phonepage.exitBtn)
+    .click(phonepage.collapseBtn)
     .click(phonepage.endCallBtn)
     .click(phonepage.makeCallBtn)
     .click(phonepage.dialFour)
@@ -60,6 +66,11 @@ test('Phone page Test', async t =>{
     .click(phonepage.callBtn)
     .click(phonepage.miniBtn)
     .click(phonepage.endCalMin)
+    .click(phonepage.availabilityBtn)
+    .click(phonepage.avaiToggleBtn)
+    .wait(1000)
+    .click(phonepage.avaiToggleBtn)
+    .click(phonepage.availabilityBtn)
     .click(loginpage.settingsBtn)
     .click(loginpage.signOutBtn);
 })

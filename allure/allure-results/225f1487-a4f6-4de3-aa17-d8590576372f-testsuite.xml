@@ -1,0 +1,46 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1623726172405' stop='1623726172420'>
+    <name>Phone Fixture</name>
+    <title>Phone Fixture</title>
+    <test-cases>
+        <test-case start='1623726172405' status='failed' stop='1623726177199'>
+            <name>Phone page Test</name>
+            <title>Phone page Test</title>
+            <labels>
+                <label name='severity' value='undefined'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='User Agent' value='Chrome 91.0.4472.101 / macOS 10.15.7'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>This test has been broken</message>
+                <stack-trace>Action "selector" argument error:
+                
+                Selector is expected to be initialized with a function, CSS selector string, another Selector, node snapshot or a Promise returned by a Selector, but undefined was passed.
+                
+                Browser: Chrome 91.0.4472.101 / macOS 10.15.7
+                
+                   20 |    .typeText(loginpage.searchAccount, 'tho')
+                   21 |    .wait(1000)
+                   22 |    .click(loginpage.tpRadionBtn)
+                   23 |    .click(loginpage.signInBtn)
+                   24 |    .wait(3000)
+                 > 25 |    .click(phonepage.phoneButton)    
+                   26 |    .expect(getURL()).contains('phone')
+                   27 |    .click(phonepage.searchBtn)
+                   28 |    .click(phonepage.makeCallBtn)
+                   29 |    .click(phonepage.phoneNrEntry)
+                   30 |    .typeText(phonepage.phoneNrEntry, data.phoneNr)
+                
+                   at &lt;anonymous> (/Users/mehrdadfhassani/Documents/Source/Private-Repository/testcafe_cucumber/test/PhoneTest.js:25:6)
+                   at asyncGeneratorStep (/Users/mehrdadfhassani/Documents/Source/Private-Repository/testcafe_cucumber/test/PhoneTest.js:3:278)
+                   at _next (/Users/mehrdadfhassani/Documents/Source/Private-Repository/testcafe_cucumber/test/PhoneTest.js:3:616)
+                   at &lt;anonymous> (/Users/mehrdadfhassani/Documents/Source/Private-Repository/testcafe_cucumber/test/PhoneTest.js:3:781)
+                   at &lt;anonymous> (/Users/mehrdadfhassani/Documents/Source/Private-Repository/testcafe_cucumber/test/PhoneTest.js:3:522)
+                   at &lt;anonymous> (/Users/mehrdadfhassani/Documents/Source/Private-Repository/testcafe_cucumber/test/PhoneTest.js:13:5)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

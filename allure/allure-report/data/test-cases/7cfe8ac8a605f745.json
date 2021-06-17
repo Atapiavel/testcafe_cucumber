@@ -1,0 +1,121 @@
+{
+  "uid" : "7cfe8ac8a605f745",
+  "name" : "Phone page Test",
+  "fullName" : "Phone Fixture.Phone page Test",
+  "historyId" : "9f701123630700382482af650d457cee",
+  "time" : {
+    "start" : 1623802322777,
+    "stop" : 1623802367332,
+    "duration" : 44555
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "This test has been broken",
+  "statusTrace" : "The specified selector does not match any element in the DOM tree.\n                \n                 > | Selector('button.mod-red1')\n                \n                Browser: Chrome 91.0.4472.101 / macOS 10.15.7\n                \n                   63 |    .click(phonepage.dialZero)\n                   64 |    \n                   65 |    .drag(phonepage.dragBtn, -360, -5, {offsetX: 10, offsetY: 10})\n                   66 |    .click(phonepage.callBtn)\n                   67 |    .click(phonepage.miniBtn)\n                 > 68 |    .click(phonepage.endCalMin)\n                   69 |    .click(phonepage.availabilityBtn)\n                   70 |    .click(phonepage.avaiToggleBtn)\n                   71 |    .wait(1000)\n                   72 |    .click(phonepage.avaiToggleBtn)\n                   73 |    .click(phonepage.availabilityBtn)\n                \n                   at <anonymous> (/Users/mehrdad.hassani/Documents/Source/private-repository/testcafe_cucumber/test/PhoneTest.js:68:6)\n                   at asyncGeneratorStep (/Users/mehrdad.hassani/Documents/Source/private-repository/testcafe_cucumber/test/PhoneTest.js:3:278)\n                   at _next (/Users/mehrdad.hassani/Documents/Source/private-repository/testcafe_cucumber/test/PhoneTest.js:3:616)\n                   at <anonymous> (/Users/mehrdad.hassani/Documents/Source/private-repository/testcafe_cucumber/test/PhoneTest.js:3:781)\n                   at <anonymous> (/Users/mehrdad.hassani/Documents/Source/private-repository/testcafe_cucumber/test/PhoneTest.js:3:522)\n                   at <anonymous> (/Users/mehrdad.hassani/Documents/Source/private-repository/testcafe_cucumber/test/PhoneTest.js:13:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "undefined"
+  }, {
+    "name" : "suite",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "testClass",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "testMethod",
+    "value" : "Phone page Test"
+  }, {
+    "name" : "package",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "User Agent",
+    "value" : "Chrome 91.0.4472.101 / macOS 10.15.7"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "6cba1cce1d13cf1b",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1623802210162,
+        "stop" : 1623802249575,
+        "duration" : 39413
+      }
+    }, {
+      "uid" : "5d5e790c77e5309",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1623802068025,
+        "stop" : 1623802107897,
+        "duration" : 39872
+      }
+    }, {
+      "uid" : "87d52e143cdc5737",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1623728728379,
+        "stop" : 1623728755922,
+        "duration" : 27543
+      }
+    }, {
+      "uid" : "e02da80dce3b2bf1",
+      "status" : "failed",
+      "statusDetails" : "This test has been broken",
+      "time" : {
+        "start" : 1623726607512,
+        "stop" : 1623726640537,
+        "duration" : 33025
+      }
+    }, {
+      "uid" : "1d76cf5cc428eb99",
+      "status" : "failed",
+      "statusDetails" : "This test has been broken",
+      "time" : {
+        "start" : 1623726322218,
+        "stop" : 1623726325768,
+        "duration" : 3550
+      }
+    }, {
+      "uid" : "174396185d7bd5cb",
+      "status" : "failed",
+      "statusDetails" : "This test has been broken",
+      "time" : {
+        "start" : 1623726172405,
+        "stop" : 1623726177199,
+        "duration" : 4794
+      }
+    }, {
+      "uid" : "24ee4d7d5469ec89",
+      "status" : "failed",
+      "statusDetails" : "This test has been broken",
+      "time" : {
+        "start" : 1623726071200,
+        "stop" : 1623726088185,
+        "duration" : 16985
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "7cfe8ac8a605f745.json",
+  "parameterValues" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+}

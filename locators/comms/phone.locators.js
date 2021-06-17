@@ -49,7 +49,11 @@ function MaxiBtn() {
 }
 
 function SidePan() {
-    return select('[aria-label="Open Calls Panel"]')
+    return select('scorpion-button-icon[svgtitle="Call List"]')
+}
+
+function BackToDialPadBtn() {
+    return select('div[title="Back"]')
 }
 
 function ExitBtn() {
@@ -61,7 +65,15 @@ function EndCallMinBtn() {
 }
 
 function DragBtn() {
-    return select('[aria-label="drag"]')
+    return select('[aria-label="double_ellipsis"]')
+}
+
+function AvailabilityBtn() {
+    return Selector('[aria-label="Set Your Availability"]')
+}
+
+function AvailToggleBtn() {
+    return Selector('div[data-cy=component]')
 }
 
 module.exports = {
@@ -77,7 +89,10 @@ module.exports = {
     MiniBtn: MiniBtn,
     MaxiBtn: MaxiBtn,
     SidePan: SidePan,
+    BackToDialPadBtn: BackToDialPadBtn,
     ExitBtn: ExitBtn,
     EndCallMinBtn: EndCallMinBtn,
-    DragBtn: DragBtn
+    DragBtn: DragBtn,
+    AvailabilityBtn: AvailabilityBtn,
+    AvailToggleBtn: AvailToggleBtn
 };

@@ -29,6 +29,10 @@ function MessagesBtn() {
     return select('scorpion-tile-select-item:nth-of-type(3)')
 }
 
+function FilesBtn() {
+    return select('scorpion-tile-select-item:nth-of-type(4)')
+}
+
 function PeopleShowMoreBtn() {
     return select('section:nth-child(3) > div > div.ta\:center.nlp-pt15 > scorpion-button > button')
 }
@@ -39,7 +43,7 @@ function AaronBtn() {
 
 function MessageAaron() {
     
-    return select('div[class="nlf-middle-between auto"]')
+    return select('div[class="communications-message-input"]')
 }
 
 function SendMessageBtn() {
@@ -50,8 +54,8 @@ function EmojiBtn() {
     return select('scorpion-message-input > div > div > div.nlf-middle-between.auto > div > scorpion-emoji-select > div > scorpion-button-icon > button > scorpion-icon > div > svg')
 }
 
-function RelaxedEmoji() {
-    return select('[title="relaxed"]')
+function MaskEmoji() {
+    return select('[title="mask"]')
 }
 
 function paperClipBtn() {
@@ -65,11 +69,12 @@ module.exports = {
     PeopleBtn: PeopleBtn,
     GroupsBtn: GroupsBtn,
     MessagesBtn: MessagesBtn,
+    FilesBtn: FilesBtn,
     PeopleShowMoreBtn: PeopleShowMoreBtn,
     AaronBtn: AaronBtn,
     MessageAaron: MessageAaron,
     SendMessageBtn: SendMessageBtn,
     EmojiBtn: EmojiBtn,
-    RelaxedEmoji: RelaxedEmoji,
+    MaskEmoji: MaskEmoji,
     paperClipBtn: paperClipBtn
 };

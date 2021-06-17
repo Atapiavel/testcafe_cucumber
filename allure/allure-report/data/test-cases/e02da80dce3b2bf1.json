@@ -1,0 +1,52 @@
+{
+  "uid" : "e02da80dce3b2bf1",
+  "name" : "Phone page Test",
+  "fullName" : "Phone Fixture.Phone page Test",
+  "historyId" : "9f701123630700382482af650d457cee",
+  "time" : {
+    "start" : 1623726607512,
+    "stop" : 1623726640537,
+    "duration" : 33025
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "This test has been broken",
+  "statusTrace" : "The specified selector does not match any element in the DOM tree.\n                \n                 > | Selector('[aria-label=\"Open Calls Panel\"]')\n                \n                Browser: Chrome 91.0.4472.101 / macOS 10.15.7\n                \n                   38 |    .click(phonepage.miniBtn)\n                   39 |    .click(phonepage.maxiBtn)\n                   40 |    .click(phonepage.collapseBtn)\n                   41 |    .click(phonepage.miniBtn)\n                   42 |    .click(phonepage.maxiBtn)\n                 > 43 |    .click(phonepage.sidePanelBtn)\n                   44 |    \n                   45 |    // .hover(phonepage.participants)\n                   46 |\n                   47 |    .click(phonepage.exitBtn)\n                   48 |    .click(phonepage.endCallBtn)\n                \n                   at <anonymous> (/Users/mehrdadfhassani/Documents/Source/Private-Repository/testcafe_cucumber/test/PhoneTest.js:43:6)\n                   at asyncGeneratorStep (/Users/mehrdadfhassani/Documents/Source/Private-Repository/testcafe_cucumber/test/PhoneTest.js:3:278)\n                   at _next (/Users/mehrdadfhassani/Documents/Source/Private-Repository/testcafe_cucumber/test/PhoneTest.js:3:616)\n                   at <anonymous> (/Users/mehrdadfhassani/Documents/Source/Private-Repository/testcafe_cucumber/test/PhoneTest.js:3:781)\n                   at <anonymous> (/Users/mehrdadfhassani/Documents/Source/Private-Repository/testcafe_cucumber/test/PhoneTest.js:3:522)\n                   at <anonymous> (/Users/mehrdadfhassani/Documents/Source/Private-Repository/testcafe_cucumber/test/PhoneTest.js:13:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "undefined"
+  }, {
+    "name" : "suite",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "testClass",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "testMethod",
+    "value" : "Phone page Test"
+  }, {
+    "name" : "package",
+    "value" : "Phone Fixture"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "User Agent",
+    "value" : "Chrome 91.0.4472.101 / macOS 10.15.7"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e02da80dce3b2bf1.json",
+  "parameterValues" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+}

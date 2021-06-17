@@ -1,0 +1,46 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1623802322777' stop='1623802322792'>
+    <name>Phone Fixture</name>
+    <title>Phone Fixture</title>
+    <test-cases>
+        <test-case start='1623802322777' status='failed' stop='1623802367332'>
+            <name>Phone page Test</name>
+            <title>Phone page Test</title>
+            <labels>
+                <label name='severity' value='undefined'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='User Agent' value='Chrome 91.0.4472.101 / macOS 10.15.7'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>This test has been broken</message>
+                <stack-trace>The specified selector does not match any element in the DOM tree.
+                
+                 > | Selector('button.mod-red1')
+                
+                Browser: Chrome 91.0.4472.101 / macOS 10.15.7
+                
+                   63 |    .click(phonepage.dialZero)
+                   64 |    
+                   65 |    .drag(phonepage.dragBtn, -360, -5, {offsetX: 10, offsetY: 10})
+                   66 |    .click(phonepage.callBtn)
+                   67 |    .click(phonepage.miniBtn)
+                 > 68 |    .click(phonepage.endCalMin)
+                   69 |    .click(phonepage.availabilityBtn)
+                   70 |    .click(phonepage.avaiToggleBtn)
+                   71 |    .wait(1000)
+                   72 |    .click(phonepage.avaiToggleBtn)
+                   73 |    .click(phonepage.availabilityBtn)
+                
+                   at &lt;anonymous> (/Users/mehrdad.hassani/Documents/Source/private-repository/testcafe_cucumber/test/PhoneTest.js:68:6)
+                   at asyncGeneratorStep (/Users/mehrdad.hassani/Documents/Source/private-repository/testcafe_cucumber/test/PhoneTest.js:3:278)
+                   at _next (/Users/mehrdad.hassani/Documents/Source/private-repository/testcafe_cucumber/test/PhoneTest.js:3:616)
+                   at &lt;anonymous> (/Users/mehrdad.hassani/Documents/Source/private-repository/testcafe_cucumber/test/PhoneTest.js:3:781)
+                   at &lt;anonymous> (/Users/mehrdad.hassani/Documents/Source/private-repository/testcafe_cucumber/test/PhoneTest.js:3:522)
+                   at &lt;anonymous> (/Users/mehrdad.hassani/Documents/Source/private-repository/testcafe_cucumber/test/PhoneTest.js:13:5)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

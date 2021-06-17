@@ -1,0 +1,21 @@
+[ {
+  "uid" : "7cfe8ac8a605f745",
+  "name" : "Phone page Test",
+  "time" : {
+    "start" : 1623802322777,
+    "stop" : 1623802367332,
+    "duration" : 44555
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "5742704d83a61de",
+  "name" : "Messenger page Test",
+  "time" : {
+    "start" : 1623758966475,
+    "stop" : 1623759049418,
+    "duration" : 82943
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
