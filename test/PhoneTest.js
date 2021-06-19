@@ -1,5 +1,6 @@
 import {ClientFunction} from 'testcafe';
 import loginpage from '../test/pages/LoginPage_Old';
+import PhonePage_Old from '../test/pages/PhonePage_Old';
 import phonepage from '../test/pages/PhonePage_Old';
 
 const dataSet = require('../data/data.json');
@@ -29,6 +30,14 @@ test('Phone page Test', async t =>{
     .click(phonepage.phoneBtn)    
     .expect(getURL()).contains('phone')
     .click(phonepage.searchBtn)
+    .typeText(phonepage.searchBtn, data.phoneSearch)
+    .wait(2000)
+    .click(phonepage.rowSearchBtn)
+    .click(phonepage.arrowRightBtn)
+    .click(phonepage.clearSearch)
+    .wait(2000)
+    .click(phonepage.filterBtn)
+    .click(phonepage.cancelBtn)
     .click(phonepage.makeCallBtn)
     .click(phonepage.phoneNrEntry)
     .typeText(phonepage.phoneNrEntry, data.phoneNr)

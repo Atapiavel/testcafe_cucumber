@@ -13,6 +13,30 @@ When('I click on Search button from phone page', async function () {
         await ActionsPage.click_element(PhonePageLocator.SearchBtn());
 });
 
+When('I enter a number in the Search box {string}', async function (phoneSearch) {
+        await ActionsPage.type_text(PhonePageLocator.SearchBtn(), phoneSearch);
+});
+
+When('I click on Row for the number', async function() {
+        await ActionsPage.click_element(PhonePageLocator.RowSearchBtn());
+});
+
+When('I click on Arrow Right button', async function() {
+        await ActionsPage.click_element(PhonePageLocator.ArrowRightBtn());
+});
+
+When('I click on Clear Search button', async function() {
+        await ActionsPage.click_element(PhonePageLocator.ClearSearch());
+});
+
+When('I click on Filter button', async function() {
+        await ActionsPage.click_element(PhonePageLocator.FilterBtn());
+})
+
+When('I click on Cancel button', async function() {
+        await ActionsPage.click_element(PhonePageLocator.CancelBtn());
+})
+
 When('I click on Make a Call button', async function () {
         await ActionsPage.click_element(PhonePageLocator.MakeCallBtn());
 });
