@@ -12,6 +12,17 @@ Feature: Phone
         When I wait for "10" seconds
         And I land on Phone page
         And I click on Search button from phone page
+        And I enter a number in the Search box "<phoneNr2>"
+        When I wait for "2" seconds
+        And I click on Row for the number
+        When I wait for "2" seconds
+        And I click on Arrow Right button
+        When I wait for "2" seconds
+        And I click on Clear Search button
+        When I wait for "2" seconds
+        And I click on Filter button
+        When I wait for "2" seconds
+        And I click on Cancel button 
         And I click on Make a Call button
         And I enter numbers in Phone Number entry "<phoneNr>"
         And I click on Call button
@@ -37,5 +48,5 @@ Feature: Phone
         And I sign out Scorpion
 
         Examples:
-            | email                  | password   | phoneNr    |
-            | commcenter@scorpion.co | Comms1234! | 8182345566 |
+            | email                  | password   | phoneNr    | phoneNr2   |
+            | commcenter@scorpion.co | Comms1234! | 8182345566 | 4157979369 |

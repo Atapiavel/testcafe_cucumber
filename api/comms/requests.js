@@ -1,8 +1,8 @@
 
-function getInvoiceList(invoices) {
+function getCommunicationList(invoices) {
   return `
   query{
-    getInvoiceList(first: ` + invoices + `, offset: 0 ){
+    communicationSearch(first: ` + invoices + `, offset: 0 ){
       items{invoiceId}
     }
   }
@@ -10,5 +10,5 @@ function getInvoiceList(invoices) {
 }
 
 module.exports = {
-  getInvoiceList: getInvoiceList,
+  getCommunicationList: getCommunicationList,
 };
