@@ -1,5 +1,5 @@
 {
-  "uid" : "24ee4d7d5469ec89",
+  "uid" : "b2a51fdd50fadb83",
   "name" : "Phone page Test",
   "fullName" : "Phone Fixture.Phone page Test",
   "historyId" : "9f701123630700382482af650d457cee",
@@ -47,6 +47,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "24ee4d7d5469ec89.json",
+  "source" : "b2a51fdd50fadb83.json",
   "parameterValues" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
 }

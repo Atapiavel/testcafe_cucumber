@@ -1,12 +1,12 @@
 {
-  "uid" : "5d5e790c77e5309",
-  "name" : "Phone page Test",
-  "fullName" : "Phone Fixture.Phone page Test",
-  "historyId" : "9f701123630700382482af650d457cee",
+  "uid" : "2537b354a0c9ae19",
+  "name" : "Messenger page Test",
+  "fullName" : "Messenger Fixture.Messenger page Test",
+  "historyId" : "42436fffa361e96b4afa9266452df56c",
   "time" : {
-    "start" : 1623802068025,
-    "stop" : 1623802107897,
-    "duration" : 39872
+    "start" : 1623725963548,
+    "stop" : 1623726048250,
+    "duration" : 84702
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -22,16 +22,16 @@
     "value" : "undefined"
   }, {
     "name" : "suite",
-    "value" : "Phone Fixture"
+    "value" : "Messenger Fixture"
   }, {
     "name" : "testClass",
-    "value" : "Phone Fixture"
+    "value" : "Messenger Fixture"
   }, {
     "name" : "testMethod",
-    "value" : "Phone page Test"
+    "value" : "Messenger page Test"
   }, {
     "name" : "package",
-    "value" : "Phone Fixture"
+    "value" : "Messenger Fixture"
   }, {
     "name" : "resultFormat",
     "value" : "allure1"
@@ -47,6 +47,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "5d5e790c77e5309.json",
+  "source" : "2537b354a0c9ae19.json",
   "parameterValues" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
 }

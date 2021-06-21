@@ -1,3 +1,4 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
 "passed","Tue Jun 15 05:09:26 PDT 2021","Tue Jun 15 05:10:49 PDT 2021","82943","","Messenger Fixture","","Messenger Fixture","Messenger page Test","Messenger page Test",""
+"passed","Tue Jun 15 17:33:05 PDT 2021","Tue Jun 15 17:33:58 PDT 2021","53113","","Phone Fixture","","Phone Fixture","Phone page Test","Phone page Test",""
 "failed","Tue Jun 15 17:12:02 PDT 2021","Tue Jun 15 17:12:47 PDT 2021","44555","","Phone Fixture","","Phone Fixture","Phone page Test","Phone page Test",""

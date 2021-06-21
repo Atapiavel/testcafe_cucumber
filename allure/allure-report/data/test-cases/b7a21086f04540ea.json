@@ -1,12 +1,12 @@
 {
-  "uid" : "6cba1cce1d13cf1b",
+  "uid" : "b7a21086f04540ea",
   "name" : "Phone page Test",
   "fullName" : "Phone Fixture.Phone page Test",
-  "historyId" : "9f701123630700382482af650d457cee",
+  "historyId" : "451152a1d86dcad01d52727d5c5b2d40",
   "time" : {
-    "start" : 1623802210162,
-    "stop" : 1623802249575,
-    "duration" : 39413
+    "start" : 1623803585759,
+    "stop" : 1623803638872,
+    "duration" : 53113
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -38,15 +38,17 @@
   } ],
   "parameters" : [ {
     "name" : "User Agent",
-    "value" : "Chrome 91.0.4472.101 / macOS 10.15.7"
+    "value" : "Microsoft Edge 91.0.864.48 / Windows 10"
   } ],
   "links" : [ ],
-  "hidden" : true,
-  "retry" : true,
+  "hidden" : false,
+  "retry" : false,
   "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "6cba1cce1d13cf1b.json",
-  "parameterValues" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+  "source" : "b7a21086f04540ea.json",
+  "parameterValues" : [ "Microsoft Edge 91.0.864.48 / Windows 10" ]
 }

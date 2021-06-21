@@ -1,5 +1,5 @@
 [ {
-  "uid" : "7cfe8ac8a605f745",
+  "uid" : "8dcf2e086e164ef3",
   "name" : "Phone page Test",
   "time" : {
     "start" : 1623802322777,
@@ -9,7 +9,17 @@
   "status" : "failed",
   "severity" : "normal"
 }, {
-  "uid" : "5742704d83a61de",
+  "uid" : "b7a21086f04540ea",
+  "name" : "Phone page Test",
+  "time" : {
+    "start" : 1623803585759,
+    "stop" : 1623803638872,
+    "duration" : 53113
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "df3fc1e46b0a040d",
   "name" : "Messenger page Test",
   "time" : {
     "start" : 1623758966475,
