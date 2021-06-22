@@ -4,6 +4,714 @@
     "elements": [
       {
         "description": "",
+        "id": "chat-feature;user-chat-e2e-scenario",
+        "keyword": "Scenario Outline",
+        "line": 4,
+        "name": "User Chat E2E Scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 11204000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am in Scorpion login page",
+            "match": {
+              "location": "features/step_definition/common.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 677000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I enter \"commcenter@scorpion.co\" and \"Comms1234!\"",
+            "match": {
+              "location": "features/step_definition/login.spec.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3719000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I click on sign in button",
+            "match": {
+              "location": "features/step_definition/login.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3231000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I wait for \"2\" seconds",
+            "match": {
+              "location": "features/step_definition/common.spec.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2010000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I select the account to use with \"Thomas & Paulk\"",
+            "match": {
+              "location": "features/step_definition/login.spec.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6763000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I wait for \"10\" seconds",
+            "match": {
+              "location": "features/step_definition/common.spec.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10014000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "I am in Scorpion \"chat\" page",
+            "match": {
+              "location": "features/step_definition/common.spec.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1108000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I wait for the Chat display",
+            "match": {
+              "location": "features/step_definition/comms/chat.spec.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I land on chat dashboard page",
+            "match": {
+              "location": "features/step_definition/comms/chat.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I maximize the window",
+            "match": {
+              "location": "features/step_definition/common.spec.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3396000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I click on the Agent Availability button",
+            "match": {
+              "location": "features/step_definition/comms/chat.spec.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4498000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "The Set Your Availability displays",
+            "match": {
+              "location": "features/step_definition/comms/chat.spec.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 26000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I wait for \"2\" seconds",
+            "match": {
+              "location": "features/step_definition/common.spec.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2025000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I click on toggle for Availability",
+            "match": {
+              "location": "features/step_definition/comms/chat.spec.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 605000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "I wait for \"2\" seconds",
+            "match": {
+              "location": "features/step_definition/common.spec.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2015000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "I click on toggle for Availability again",
+            "match": {
+              "location": "features/step_definition/comms/chat.spec.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 481000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "I wait for \"2\" seconds",
+            "match": {
+              "location": "features/step_definition/common.spec.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2022000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "I click on the Agent Availability button again",
+            "match": {
+              "location": "features/step_definition/comms/chat.spec.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 257000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "I wait for \"2\" seconds",
+            "match": {
+              "location": "features/step_definition/common.spec.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2007000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "I click on Mine button",
+            "match": {
+              "location": "features/step_definition/comms/chat.spec.js:34"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 263000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "I wait for \"2\" seconds",
+            "match": {
+              "location": "features/step_definition/common.spec.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2013000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 26,
+            "name": "I click on All button",
+            "match": {
+              "location": "features/step_definition/comms/chat.spec.js:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 234000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "I click on settings button",
+            "match": {
+              "location": "features/step_definition/common.spec.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 258000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "I sign out Scorpion",
+            "match": {
+              "location": "features/step_definition/common.spec.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1470000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 8000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 10000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@e2e",
+            "line": 3
+          },
+          {
+            "name": "@comms",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "chat-feature",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Chat Feature",
+    "tags": [],
+    "uri": "features/comms/chat.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "messenger;user-messenger-e2e-scenario",
+        "keyword": "Scenario Outline",
+        "line": 4,
+        "name": "User Messenger E2E Scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 9964000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am in Scorpion login page",
+            "match": {
+              "location": "features/step_definition/common.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 209000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I enter \"commcenter@scorpion.co\" and \"Comms1234!\"",
+            "match": {
+              "location": "features/step_definition/login.spec.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2470000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I click on sign in button",
+            "match": {
+              "location": "features/step_definition/login.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1457000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I wait for \"2\" seconds",
+            "match": {
+              "location": "features/step_definition/common.spec.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2009000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I select the account to use with \"Thomas & Paulk\"",
+            "match": {
+              "location": "features/step_definition/login.spec.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4891000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I wait for \"10\" seconds",
+            "match": {
+              "location": "features/step_definition/common.spec.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10024000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "I am in Scorpion \"messenger\" page",
+            "match": {
+              "location": "features/step_definition/common.spec.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 852000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I maximize the window",
+            "match": {
+              "location": "features/step_definition/common.spec.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2652000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I wait for \"20\" seconds",
+            "match": {
+              "location": "features/step_definition/common.spec.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20027000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "I click on Search button from messenger page",
+            "match": {
+              "location": "features/step_definition/comms/messenger.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 385000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I click on Files button",
+            "match": {
+              "location": "features/step_definition/comms/messenger.spec.js:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 334000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I click on Groups button",
+            "match": {
+              "location": "features/step_definition/comms/messenger.spec.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1287000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I click on People button",
+            "match": {
+              "location": "features/step_definition/comms/messenger.spec.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1221000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "I click on Messages button",
+            "match": {
+              "location": "features/step_definition/comms/messenger.spec.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1320000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "I wait for \"2\" seconds",
+            "match": {
+              "location": "features/step_definition/common.spec.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2011000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "I click on Aaron McFly button",
+            "match": {
+              "location": "features/step_definition/comms/messenger.spec.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1312000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "I wait for \"2\" seconds",
+            "match": {
+              "location": "features/step_definition/common.spec.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2003000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "I click on Emoji button",
+            "match": {
+              "location": "features/step_definition/comms/messenger.spec.js:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19214000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "I click on Mask Emoji",
+            "match": {
+              "location": "features/step_definition/comms/messenger.spec.js:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3077000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 25,
+            "name": "I click on Send Message button",
+            "match": {
+              "location": "features/step_definition/comms/messenger.spec.js:55"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 758000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "I click on settings button",
+            "match": {
+              "location": "features/step_definition/common.spec.js:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1377000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "I sign out Scorpion",
+            "match": {
+              "location": "features/step_definition/common.spec.js:30"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4079000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 5000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@e2e",
+            "line": 3
+          },
+          {
+            "name": "@comms",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "messenger",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Messenger",
+    "tags": [],
+    "uri": "features/comms/messenger.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
         "id": "phone;user-phone-e2e-scenario",
         "keyword": "Scenario Outline",
         "line": 4,
@@ -14,7 +722,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 13383000000
+              "duration": 9910000000
             }
           },
           {
@@ -27,7 +735,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 873000000
+              "duration": 253000000
             }
           },
           {
@@ -40,7 +748,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3973000000
+              "duration": 2588000000
             }
           },
           {
@@ -53,7 +761,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3265000000
+              "duration": 1951000000
             }
           },
           {
@@ -66,7 +774,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10032000000
+              "duration": 10012000000
             }
           },
           {
@@ -79,7 +787,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5349000000
+              "duration": 6238000000
             }
           },
           {
@@ -92,7 +800,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10012000000
+              "duration": 10019000000
             }
           },
           {
@@ -105,7 +813,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 765000000
+              "duration": 767000000
             }
           },
           {
@@ -118,7 +826,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 7795000000
+              "duration": 10006000000
             }
           },
           {
@@ -131,7 +839,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4000000
+              "duration": 3000000
             }
           },
           {
@@ -144,7 +852,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10416000000
+              "duration": 10378000000
             }
           },
           {
@@ -157,7 +865,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 431000000
+              "duration": 519000000
             }
           },
           {
@@ -170,7 +878,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2019000000
+              "duration": 2008000000
             }
           },
           {
@@ -183,7 +891,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1822000000
+              "duration": 1454000000
             }
           },
           {
@@ -196,7 +904,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2020000000
+              "duration": 2008000000
             }
           },
           {
@@ -209,7 +917,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 339000000
+              "duration": 327000000
             }
           },
           {
@@ -222,7 +930,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2018000000
+              "duration": 2010000000
             }
           },
           {
@@ -235,7 +943,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 270000000
+              "duration": 296000000
             }
           },
           {
@@ -248,7 +956,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2016000000
+              "duration": 2011000000
             }
           },
           {
@@ -261,7 +969,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 522000000
+              "duration": 593000000
             }
           },
           {
@@ -274,7 +982,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2018000000
+              "duration": 2004000000
             }
           },
           {
@@ -287,7 +995,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 486000000
+              "duration": 522000000
             }
           },
           {
@@ -300,7 +1008,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 619000000
+              "duration": 608000000
             }
           },
           {
@@ -313,7 +1021,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 747000000
+              "duration": 1126000000
             }
           },
           {
@@ -326,7 +1034,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 784000000
+              "duration": 931000000
             }
           },
           {
@@ -339,7 +1047,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2168000000
+              "duration": 2435000000
             }
           },
           {
@@ -352,7 +1060,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 431000000
+              "duration": 453000000
             }
           },
           {
@@ -365,7 +1073,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1588000000
+              "duration": 1965000000
             }
           },
           {
@@ -391,7 +1099,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3485000000
+              "duration": 3583000000
             }
           },
           {
@@ -404,7 +1112,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 487000000
+              "duration": 544000000
             }
           },
           {
@@ -417,7 +1125,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 304000000
+              "duration": 501000000
             }
           },
           {
@@ -430,7 +1138,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1274000000
+              "duration": 1421000000
             }
           },
           {
@@ -443,7 +1151,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1318000000
+              "duration": 1335000000
             }
           },
           {
@@ -456,7 +1164,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 235000000
+              "duration": 473000000
             }
           },
           {
@@ -469,7 +1177,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 307000000
+              "duration": 376000000
             }
           },
           {
@@ -482,7 +1190,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 419000000
+              "duration": 469000000
             }
           },
           {
@@ -495,7 +1203,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 379000000
+              "duration": 298000000
             }
           },
           {
@@ -508,7 +1216,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2067000000
+              "duration": 2312000000
             }
           },
           {
@@ -521,7 +1229,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 337000000
+              "duration": 511000000
             }
           },
           {
@@ -534,7 +1242,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 828000000
+              "duration": 831000000
             }
           },
           {
@@ -547,7 +1255,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 324000000
+              "duration": 439000000
             }
           },
           {
@@ -560,7 +1268,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 331000000
+              "duration": 401000000
             }
           },
           {
@@ -573,7 +1281,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 340000000
+              "duration": 465000000
             }
           },
           {
@@ -586,7 +1294,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1000000000
+              "duration": 1041000000
             }
           },
           {
@@ -594,7 +1302,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 0
             }
           },
           {
@@ -602,7 +1310,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 0
             }
           }
         ],
