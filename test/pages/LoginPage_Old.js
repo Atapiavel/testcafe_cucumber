@@ -12,6 +12,7 @@ class LoginPage{
         this.successmsg = Selector('strong').withText('Your Business Growth');
         this.settingsBtn = Selector('div > scorpion-avatar > button');
         this.signOutBtn = Selector('.label').withText('Sign Out');
+        this.appSettingsBtn = Selector('.label').withText('App Settings');
     }
 }
 export default new LoginPage();
