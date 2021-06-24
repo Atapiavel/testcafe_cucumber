@@ -37,7 +37,7 @@ function MakeCallBtn() {
 }
 
 function PhoneNrEntry() {
-    return select('[data-cy=input-wrapper]')
+    return select('[data-cy=dialer-display]')
 }
 
 function CallBtn() {

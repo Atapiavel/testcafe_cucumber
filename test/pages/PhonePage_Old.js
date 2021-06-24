@@ -12,7 +12,7 @@ class PhonePage{
         this.filterBtn = Selector('button').withText('Filter');
         this.cancelBtn = Selector('[data-cy=cancel-button]');
         this.makeCallBtn = Selector('[data-cy=make-a-call]');
-        this.phoneNrEntry = Selector('[data-cy=input-wrapper]');
+        this.phoneNrEntry = Selector('[data-cy=dialer-display]');
         this.callBtn = Selector('[data-cy=call]');
         this.endCallBtn = Selector('[data-cy=end-call]');
         this.miniBtn = Selector('[data-cy=minimize-dialer]');

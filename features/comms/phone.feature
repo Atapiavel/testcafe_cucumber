@@ -32,10 +32,10 @@ Feature: Phone
         And I make a call to the number "<phoneNr>"
         And I click on Call button again
         And I drag the dialpad "-360" for x "-5" for y
-        And I click on Collapse button
+        # And I click on Collapse button
         And I click on Minimize button
         And I click on Maximize button
-        And I click on Collapse button again
+        # And I click on Collapse button again
         And I click on Sidepanel button
         And I click on the Back button
         And I click on Minimize button again
