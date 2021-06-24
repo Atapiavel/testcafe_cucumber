@@ -43,10 +43,10 @@ test('Phone page Test', async t =>{
     .typeText(phonepage.phoneNrEntry, data.phoneNr)
 
     .click(phonepage.callBtn)
-    .click(phonepage.collapseBtn)
+    // .click(phonepage.collapseBtn)
     .click(phonepage.miniBtn)
     .click(phonepage.maxiBtn)
-    .click(phonepage.collapseBtn)
+    // .click(phonepage.collapseBtn)
     .click(phonepage.miniBtn)
     .click(phonepage.maxiBtn)
     .click(phonepage.sidePanelBtn)
@@ -55,7 +55,7 @@ test('Phone page Test', async t =>{
     // .hover(phonepage.participants)
 
     // .click(phonepage.exitBtn)
-    .click(phonepage.collapseBtn)
+    // .click(phonepage.collapseBtn)
     .click(phonepage.endCallBtn)
     .click(phonepage.makeCallBtn)
     .click(phonepage.dialFour)
