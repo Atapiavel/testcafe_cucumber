@@ -378,11 +378,7 @@
             },
             "result": {
               "status": "passed",
-<<<<<<< HEAD
-              "duration": 23000000
-=======
               "duration": 12000000
->>>>>>> 73c2608c57afe0d69c0a7de24dfbbed710cca52d
             }
           },
           {
@@ -408,24 +404,7 @@
             },
             "result": {
               "status": "passed",
-<<<<<<< HEAD
-              "duration": 544000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 35,
-            "name": "I click on Collapse button",
-            "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:72"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 501000000
-=======
               "duration": 507000000
->>>>>>> 73c2608c57afe0d69c0a7de24dfbbed710cca52d
             }
           },
           {
@@ -451,24 +430,7 @@
             },
             "result": {
               "status": "passed",
-<<<<<<< HEAD
-              "duration": 1335000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 38,
-            "name": "I click on Collapse button again",
-            "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:86"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 473000000
-=======
               "duration": 1372000000
->>>>>>> 73c2608c57afe0d69c0a7de24dfbbed710cca52d
             }
           },
           {
