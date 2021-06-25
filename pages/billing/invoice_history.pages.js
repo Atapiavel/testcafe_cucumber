@@ -1,24 +1,22 @@
-const ActionsPage = require("../actions.pages")
-const Requests = require("../../api/billing/requests.js");
-const BillingHistoryPageLocator = require('../../locators/billing/invoice_history.locators.js');
-var assert = require('assert');
-var bearer = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImU1Mzg0NTE3LTdlM2ItNDQxYi1hMjczLTk0MDcxODU1ODEwNSIsInR5cCI6IkpXVCJ9.eyJzdWlkIjoiNjIyMkE4QTExMDM4RjU0QUE1Q0FBRTIxNEQ0N0QwRkYiLCJleHAiOjE2MjM5NTQwNjIsIm5iZiI6IjE2MjM5NTA0NjIiLCJlbnYiOiJpbnRlZ3JhdGlvbi10eCIsImlkZW50aXR5IjoiZWFiYWQzNGItMWVlNi00NzdjLWFiOGYtMmQwNTJkYmE4ZGQ5IiwidXNlcklkIjoxMzM2OCwidXNlckd1aWQiOiIwYWU1YzljZC1kZTZmLTQ0OWYtMDM4Zi0wNzhlOTBjMDUxMGYiLCJuYW1lIjoiQXJ0dXJvIFRhcGlhIFZlbGFzY28iLCJlbWFpbCI6ImFydHVyby50YXBhaWFAc2NvcnBpb24uY28iLCJhY2NvdW50IjoiYjk2YmU5ZDAtNmNhYi05OTQ2LWE0NTgtMmE1MWVlOTE5OTQ4Iiwic2NvcnBpb25Vc2VyIjpmYWxzZSwibG9jYWxVc2VyIjpmYWxzZSwiaW1wZXJzb25hdGVkIjpmYWxzZSwibXVsdGlUZW5hbnQiOmZhbHNlLCJjbGllbnRJZCI6NDE5NywiY2xpZW50R3VpZCI6ImI5NmJlOWQwLTZjYWItOTk0Ni1hNDU4LTJhNTFlZTkxOTk0OCIsIm9yaWdpbmFsQ2xpZW50SWQiOjQxOTcsIm9yaWdpbmFsQ2xpZW50R3VpZCI6ImI5NmJlOWQwLTZjYWItOTk0Ni1hNDU4LTJhNTFlZTkxOTk0OCIsInN5c3RlbVJvbGVzIjoiMCIsImFjY291bnRSb2xlcyI6IjAiLCJwZXJtaXNzaW9ucyI6IlsyNDMxODg0NiwyNjIxNDQsMSw4MjExODk5MjAsMTY3ODExOTIsMCwwLDAsMCwwLDAsMCwwLDAsMCwwXSIsImFwaWtleSI6ZmFsc2UsImVuYWJsZUFwaUxvZyI6ZmFsc2UsImhpcGFhIjpmYWxzZSwiaXNzIjoiaWRlbnRpdHkuc2NvcnBpb24uY28iLCJhdWQiOiJ1c2VycyJ9.Ds-AcX6oTJNjmp-EU6HF0bpyUCTbeZAEm0mvKbBNVi5thSYIj5ex2202Snb_HuaPkLEve6kPCiYQOra8xg7Eod8sR_8--DYYLDb0fETTLVTCDJFw-qx-DezNE0dEsOZLaoEBOvKryOgtFzCn1QNExplZnDpOHohmHqF1O7zPyFhbmh5fTJiDUNHS8ZcgjIcaHdMf1paYQoRQsX3iGKsWeozfZtmfBaj_R9RZLiFL2BxzcMe4ohkSkBt_s_yt_tpkpKu1sf-ATkeh7gYvpeN2-_8qkL7H4vQmsb8qzvVlEwzl20UljrFn9L_1GuCRsuDdkDGAZtG9FdJSUzjl4FOY9UBTynOAy781wqCpvV49Ll_ZrKbl-B4hPzURK0klZZYKcUq18N_7FTbZEjVUJJhiwyxE8PgNNHUMiAHLS4t-jh-Rx3tyKZ_JnmWiD5ivYhP6qPwQIrDXj-RZLWwHXGhob_oqY4msT0cPLPJw6aFNW0p1HDixl02oS22fNTkL9S_yTP2qthFUAXGA2uHba0FTix54dzlQuhi5MGA9KUFMurmBOHF7rr6PSJFscm6Lm0aDRiwxe0Tb5ObIQI6kgUcjZ1feJHzUT5ZeyMcAQXJ2yIa_QMu2rZ5tBjgXF3Hkj9L0WsKP_YFRBPGbpNv3PIsEZ6NchRvsfiV1qCvmYrcC78g"
-var url = "https://integration.scorpion.co/csx/billing/graphql"
-const headers = {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-    "Authorization": "Bearer " + bearer,
-}
 const fetch = require("node-fetch");
+const ActionsPage = require("../actions.pages")
+const Requests = require("../../api/billing/requests");
+const BillingHistoryPageLocator = require('../../locators/billing/invoice_history.locators.js');
+const assert = require('assert');
+const { Selector } = require('testcafe');
+let invoice_arr = []
 var act_date = new Date();
 var year = act_date.getFullYear();
 var month = act_date.getMonth();
 var day = act_date.getDate();
 var prev_date = new Date(year - 1, month, day);
-var invoice_arr = []
 var z = 0
 
-async function assert_historical_invoices() {
+function select(selector) {
+    return Selector(selector).with({ boundTestRun: testController })
+}
+
+async function assert_historical_invoices(url, headers) {
     // Invoice list implementation
     fetch(url, {
         method: 'POST',
@@ -29,8 +27,8 @@ async function assert_historical_invoices() {
     })
         .then(r => r.json())
         .then(data => {
-            var i = data.data.getInvoiceList.items.length
-            for (var n = 0; n < i; n++) {
+            var number_of_invoices = data.data.getInvoiceList.items.length
+            for (var n = 0; n < number_of_invoices; n++) {
                 var invoice = data.data.getInvoiceList.items[n].invoiceId
                 // Invoice implementation
                 fetch(url, {
@@ -42,7 +40,6 @@ async function assert_historical_invoices() {
                 })
                     .then(r => r.json())
                     .then(data => {
-                        console.log(i)
                         let str = new Date(data.data.getInvoice.dueDate);
                         // Adding the invoices matched with dates filters ()
                         if (str > prev_date && str < act_date) {
@@ -72,34 +69,43 @@ async function assert_historical_invoices() {
                                 }
                             }
                             z = z + 1
-                            console.log(z)
-                            console.log(i)
-                            if (z == i - 2) {
+                            if (z == number_of_invoices - 2) {
                                 var sorted = invoice_arr.sort(function (a, b) {
                                     var dateA = new Date(a.date), dateB = new Date(b.date);
                                     return dateA - dateB;
                                 })
-                                console.log(sorted)
-                                console.log(sorted[0])
-                                console.log(sorted[0].date)
                                 for (var n = 0; n < sorted.length; n++) {
+
                                     for (var i = 0; i <= 3; i++) {
+                                        // console.log(sorted)
                                         const record = "tr:nth-of-type(" + (n + 1) + ") > td:nth-of-type(" + (i + 2) + ")"
-                                        const text = ActionsPage.select(record).innerText
-                                        console.log(text)
-                                        // assert(text == data[n][i])
-                                        console.log(sorted[n].date)
-                                        console.log(sorted[n].number)
-                                        console.log(sorted[n].period)
-                                        console.log(sorted[n].status)
-                                        console.log(sorted[n].amount)
+                                        // async function get_text(element) {
+                                        //     const text = await select(element).innerText;
+                                        //     return text
+                                        // }
+                                        var text = async function (element) {
+                                            const value = await select(element).innerText;
+                                            return value
+                                        }
+                                        text(record).then(function (value) {
+                                            console.log(sorted)
+                                            console.log(value)
+                                        })
+                                        // console.log("4" + sorted)
+                                        // console.log(val)
+                                        // assert(val == sorted[n][i])
+                                        // console.log(sorted[n].date)
+                                        // console.log(sorted[n].number)
+                                        // console.log(sorted[n].period)
+                                        // console.log(sorted[n].status)
+                                        // console.log(sorted[n].amount)
+
                                     }
                                 }
                             }
                         }
                     })
             }
-
         });
 }
 

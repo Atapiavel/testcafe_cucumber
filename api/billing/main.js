@@ -1,6 +1,6 @@
 const Requests = require("./requests");
 const fetch = require("node-fetch");
-var bearer = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImU1Mzg0NTE3LTdlM2ItNDQxYi1hMjczLTk0MDcxODU1ODEwNSIsInR5cCI6IkpXVCJ9.eyJzdWlkIjoiNUNCNTgzOTg0Qzc5RUI0N0FERDBBMTQyMjQ1QzBFRjUiLCJleHAiOjE2MjM5ODM5NjMsIm5iZiI6IjE2MjM5ODAzNjMiLCJlbnYiOiJpbnRlZ3JhdGlvbi10eCIsImlkZW50aXR5IjoiZWFiYWQzNGItMWVlNi00NzdjLWFiOGYtMmQwNTJkYmE4ZGQ5IiwidXNlcklkIjoxMzM2OCwidXNlckd1aWQiOiIwYWU1YzljZC1kZTZmLTQ0OWYtMDM4Zi0wNzhlOTBjMDUxMGYiLCJuYW1lIjoiQXJ0dXJvIFRhcGlhIFZlbGFzY28iLCJlbWFpbCI6ImFydHVyby50YXBhaWFAc2NvcnBpb24uY28iLCJhY2NvdW50IjoiYjk2YmU5ZDAtNmNhYi05OTQ2LWE0NTgtMmE1MWVlOTE5OTQ4Iiwic2NvcnBpb25Vc2VyIjpmYWxzZSwibG9jYWxVc2VyIjpmYWxzZSwiaW1wZXJzb25hdGVkIjpmYWxzZSwibXVsdGlUZW5hbnQiOmZhbHNlLCJjbGllbnRJZCI6NDE5NywiY2xpZW50R3VpZCI6ImI5NmJlOWQwLTZjYWItOTk0Ni1hNDU4LTJhNTFlZTkxOTk0OCIsIm9yaWdpbmFsQ2xpZW50SWQiOjQxOTcsIm9yaWdpbmFsQ2xpZW50R3VpZCI6ImI5NmJlOWQwLTZjYWItOTk0Ni1hNDU4LTJhNTFlZTkxOTk0OCIsInN5c3RlbVJvbGVzIjoiMCIsImFjY291bnRSb2xlcyI6IjAiLCJwZXJtaXNzaW9ucyI6IlsyNDMxODg0NiwyNjIxNDQsMSw4MjExODk5MjAsMTY3ODExOTIsMCwwLDAsMCwwLDAsMCwwLDAsMCwwXSIsImFwaWtleSI6ZmFsc2UsImVuYWJsZUFwaUxvZyI6ZmFsc2UsImhpcGFhIjpmYWxzZSwiaXNzIjoiaWRlbnRpdHkuc2NvcnBpb24uY28iLCJhdWQiOiJ1c2VycyJ9.m-DcLBCaWZxoZNkE8MdpPjGjQy5BtIjsS2L0gIzHYwYYEh1MrfuQJZfDq4-wHc4tg2-d9MusVLX5KWI-BjWEHVrkjVjPJLjH0YOwKcFnAGDLLpPfPcFONVzLWEJDRUtRB4FddWBLb-GrHWFn1Bbm0X_eeWNM5ZGwbT8wxh5Au7dISiE3k7CDPLJVcFqK4sRjg6FeU1G6gLtOu5ABAgxVqEsUR4xLYnU94hg4FKRKe17kx8PhrIc2Tjzg54MsCLs775Q5xrZLxW39-TdOfQOXqQ9MEv7-6sugUlaGlit_vSPQC-0hTSHqR9LFO4Pzro4hl_nCAJ0fL5lnHZU_ins6VpGl1YpIKf640tBmQKHSVTOH0QGl068Vok_QruqoH0CrRjgKg4L4XMjQMS7enpSbLBeoN4Wr7tyqvxe4ULrZKLwbtYDO5f4kctXD7pSX4khrSHvQbuOngRQ3ZYKNBsEr_qHNYKNPEfsj3mjcswV3qfpbvS51H3V8EcNR-6BE0AGxC2vE0yzIbOHLrq16f6E3dUYX8X4_pOdQE1Yek63YwQjyGUrvVhmD5DBr4BPZTJjd21AajrcsfWYcrRrURIVOK_He2Hd6XNjrmqta-2KjWZALnPgF7hcTGlQVL_qWt5YscsTBaId8diCrREezcr7yj2KIDX5G1p5xWSW5PEJ0sgU"
+const bearer = "eyJhbGciOiJSUzI1NiIsImtpZCI6ImU1Mzg0NTE3LTdlM2ItNDQxYi1hMjczLTk0MDcxODU1ODEwNSIsInR5cCI6IkpXVCJ9.eyJzdWlkIjoiOEE4MDg5RUM0OUEyOTk0MkJFQUM0RjIxODMwQUNDMzIiLCJleHAiOjE2MjQ1NjU2NDMsIm5iZiI6IjE2MjQ1NjIwNDMiLCJlbnYiOiJpbnRlZ3JhdGlvbi10eCIsImlkZW50aXR5IjoiZWFiYWQzNGItMWVlNi00NzdjLWFiOGYtMmQwNTJkYmE4ZGQ5IiwidXNlcklkIjoxMzM2OCwidXNlckd1aWQiOiIwYWU1YzljZC1kZTZmLTQ0OWYtMDM4Zi0wNzhlOTBjMDUxMGYiLCJuYW1lIjoiQXJ0dXJvIFRhcGlhIFZlbGFzY28iLCJlbWFpbCI6ImFydHVyby50YXBhaWFAc2NvcnBpb24uY28iLCJhY2NvdW50IjoiYjk2YmU5ZDAtNmNhYi05OTQ2LWE0NTgtMmE1MWVlOTE5OTQ4Iiwic2NvcnBpb25Vc2VyIjpmYWxzZSwibG9jYWxVc2VyIjpmYWxzZSwiaW1wZXJzb25hdGVkIjpmYWxzZSwibXVsdGlUZW5hbnQiOmZhbHNlLCJjbGllbnRJZCI6NDE5NywiY2xpZW50R3VpZCI6ImI5NmJlOWQwLTZjYWItOTk0Ni1hNDU4LTJhNTFlZTkxOTk0OCIsIm9yaWdpbmFsQ2xpZW50SWQiOjQxOTcsIm9yaWdpbmFsQ2xpZW50R3VpZCI6ImI5NmJlOWQwLTZjYWItOTk0Ni1hNDU4LTJhNTFlZTkxOTk0OCIsInN5c3RlbVJvbGVzIjoiMCIsImFjY291bnRSb2xlcyI6IjAiLCJwZXJtaXNzaW9ucyI6IlsyNDMxODg0NiwyNjIxNDQsMSw4MjExODk5MjAsMTY3ODExOTIsMCwwLDAsMCwwLDAsMCwwLDAsMCwwXSIsImFwaWtleSI6ZmFsc2UsImVuYWJsZUFwaUxvZyI6ZmFsc2UsImhpcGFhIjpmYWxzZSwiaXNzIjoiaWRlbnRpdHkuc2NvcnBpb24uY28iLCJhdWQiOiJ1c2VycyJ9.UDdC3aGy4_pjcbFKEH0PAMP7BMVXfG2NzIvL70OuLd1Sn68OdfBPq6eDJTSwGxC5J1ooLeG2vTpnKrIZ_JfoQA903cFyHGUt1_IpiSGR0fAAoR6FpMne6cwaAGOjctUQ6xeP4nISUueKuUNgx8HBGb5y9PcUPfUXo_WY0EG1yYtbqtv4k991vZXy6I9p4cW8l1Zntx03wdYbjLpswR4hOduEIUa40XtoIYvycWay0AJ830U74rTGpKSGuZblL6DMONfzaZGPET1c874hhNHXtxFSiXjiSYKIW4oXvEZKrQhRC3Y7BIjANb2PiWQzqOmL8_8lff2kEqzXxHVij9-GiP53mewev8EIhzEHIPF35vSqPvPczvDBkCLpUCu8NWIniqN5Mi74j-F3etF6ZhICA2pv5iK365Ay6leioJWpfnvUJbi_8eyld9kdEahUh1wSbGbrusFTdbi2O1vSwvOifvbiaiSK0eZOMufx62bJhj0843TVKj19hCqEcdtbzS9kNeZTN7ZdHUcRCcg6fN0ImdXmcIb6bAprNb-fAaZP9ywtNBaBWxOJJYV0uwBECZaOWBX8djfU4HqnsiTWlwFqRjIni9-mxYLNZOnYknYW5HT605UJGdXI08mPwRl_AVbOZe7xQ58oih-51YQ-euG-r7a_50g5XAqMG38cf93xCK4"
 var url = "https://integration.scorpion.co/csx/billing/graphql"
 const headers = {
         'Content-Type': 'application/json',
@@ -12,81 +12,13 @@ var act_date = new Date();
 var year = act_date.getFullYear();
 var month = act_date.getMonth();
 var day = act_date.getDate();
-var prev_date = new Date(year - 1, month, day);
-let invoice_arr = []
-var z = 0
+var start_of_month = new Date(year, month, 1)
+var end_of_month = new Date(year, month + 1, 0);
+var current_unpaid_amount = 0
 var amount_due = 0
-
-function getInvoiceHistoryData(url, headers) {
-        // Invoice list implementation
-        fetch(url, {
-                method: 'POST',
-                headers: headers,
-                body: JSON.stringify({
-                        query: Requests.getInvoiceList(100),
-                })
-        })
-                .then(r => r.json())
-                .then(data => {
-                        var i = data.data.getInvoiceList.items.length
-                        for (var n = 0; n < i; n++) {
-                                var invoice = data.data.getInvoiceList.items[n].invoiceId
-                                console.log(invoice)
-                                // Invoice implementation
-                                fetch(url, {
-                                        method: 'POST',
-                                        headers: headers,
-                                        body: JSON.stringify({
-                                                query: Requests.getInvoice(invoice),
-                                        })
-                                })
-                                        .then(r => r.json())
-                                        .then(data => {
-                                                let str = new Date(data.data.getInvoice.dueDate);
-                                                // Adding the invoices matched with dates filters ()
-                                                if (str > prev_date && str < act_date) {
-                                                        const formattedDate = str.toLocaleString("en-US", {
-                                                                month: "short",
-                                                                day: "numeric",
-                                                                year: "numeric"
-                                                        });
-                                                        if (z > 0) {
-                                                                invoice_arr[z] =
-                                                                {
-                                                                        date: formattedDate,
-                                                                        number: data.data.getInvoice.invoiceNumber,
-                                                                        period: data.data.getInvoice.billingFrequency,
-                                                                        status: data.data.getInvoice.invoiceStatus,
-                                                                        amount: data.data.getInvoice.amountDue
-                                                                }
-                                                        }
-                                                        if (z == 0) {
-                                                                invoice_arr[0] =
-                                                                {
-                                                                        date: formattedDate,
-                                                                        number: data.data.getInvoice.invoiceNumber,
-                                                                        period: data.data.getInvoice.billingFrequency,
-                                                                        status: data.data.getInvoice.invoiceStatus,
-                                                                        amount: data.data.getInvoice.amountDue
-                                                                }
-                                                        }
-                                                        z = z + 1
-                                                        console.log(i)
-                                                        console.log(z)
-                                                        if (z == i - 2) {
-                                                                var sorted = invoice_arr.sort(function (a, b) {
-                                                                        var dateA = new Date(a.date), dateB = new Date(b.date);
-                                                                        return dateA - dateB;
-                                                                })
-                                                                console.log(sorted)
-                                                                console.log(sorted[0])
-                                                                console.log(sorted[0].date)
-                                                        }
-                                                }
-                                        })
-                        }
-                });
-}
+var past_amount_due = 0
+var amount_paid = 0
+var current_amount = 0
 
 function getAmountDue(url, headers) {
         fetch(url, {
@@ -100,17 +32,51 @@ function getAmountDue(url, headers) {
                 .then(data => {
                         var i = data.data.getInvoiceList.items.length
                         for (var n = 0; n < i; n++) {
+                                // console.log(data.data.getInvoiceList.items[n].invoiceNumber + ":" + data.data.getInvoiceList.items[n].amountDue + ":" + data.data.getInvoiceList.items[n].amountPaid)
                                 var amount = data.data.getInvoiceList.items[n].amountDue
-                                console.log(amount)
-                                amount_due = amount_due + amount
+                                var amount_paid_aux = data.data.getInvoiceList.items[n].amountPaid
+                                var due_date = new Date(data.data.getInvoiceList.items[n].dueDate)
+                                if (due_date <= end_of_month) {
+                                        amount_due = amount_due + amount
+                                }
+                                if (due_date < start_of_month) {
+                                        past_amount_due = past_amount_due + amount
+                                }
+                                if (due_date >= start_of_month && due_date <= end_of_month) {
+                                        current_unpaid_amount = current_unpaid_amount + amount
+                                        current_amount = current_amount + amount_paid_aux + amount
+                                }
+                                amount_paid = amount_paid + amount_paid_aux
                         }
-                        console.log(amount_due)
+                        console.log("amountDue: " + amount_due)
+                        console.log("pastAmountDue: " + past_amount_due)
+                        // console.log("amountPaid: " + amount_paid)
+                        console.log("estimate: " + current_amount)
+                        // console.log("unpaidEstimate: " + current_unpaid_amount)
                 });
 
 }
 
+function getAccountMonies(url, headers, serviceLineId) {
+        fetch(url, {
+                method: 'POST',
+                headers: headers,
+                body: JSON.stringify({
+                        query: Requests.getAccountMonies(serviceLineId),
+                })
+        })
+                .then(r => r.json())
+                .then(data => {
+                        var availableCredit = data.data.getAccountMonies[0].amount
+                        console.log("availableCredit: " + availableCredit)
+                });
+
+}
+
+
 // getInvoiceHistoryData(url, headers)
 getAmountDue(url, headers)
+// getAccountMonies(url, headers, 1)
 // execute_request(url, bearer, Requests.getAccountMonies(0))
 // execute_request(url, bearer, Requests.getInvoiceList(100))
 // execute_request(url, bearer, Requests.getBillingLocationByClient())

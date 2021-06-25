@@ -2,12 +2,28 @@
 
 function getAccountMonies(serviceLineId) {
   return `
-    query{
-      getAccountMonies(serviceLineId:` + serviceLineId + `){
+  query{
+    getAccountMonies(serviceLineId:` + serviceLineId + `){
+      accountMoniesID,
+      accountMoniesTransaction{
         accountMoniesID,
-        amount
-      }
+        amount,
+        currentBalance,
+        previousAmount,
+        transactionDate,
+        transactionID,
+        transactionTypeID,
+        transactionTypeName
+      },
+      amount,
+      billingLineItemID,
+      clientID,
+      clientPrePayment,
+      credit,
+      creditReason,
+      serviceLineID
     }
+  }
     `
 }
 
@@ -139,10 +155,10 @@ function getPlatformUsers() {
 }
 
 function getBillingOverviewData() {
-  return`
+  return `
   query{
     getBillingOverviewData{
-       amountDue,
+      amountDue,
       availableCredit,
       estimate,
       pastAmountDue

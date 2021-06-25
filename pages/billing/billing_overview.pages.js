@@ -1,5 +1,4 @@
 const ActionsPage = require("../actions.pages")
-const { Selector } = require('testcafe');
 var assert = require('assert');
 
 

@@ -54,7 +54,7 @@ Feature: Billing Contact
                 And I fill billing contact info with
                         | <first_name> | <email_address> | <phone_number> | <notification> |
                 Then I click on add button
-                And I assert that the snackbar is shown
+                And I assert that the text is shown "Contact has been successfully added!"
                 And I assert that contact is shown with
                         | <first_name> | <email_address> | <phone_number> |
 
@@ -79,7 +79,7 @@ Feature: Billing Contact
                 And I fill billing contact info with
                         | <first_name> | <email_address> | <phone_number> |
                 Then I click on update button
-                And I assert that the snackbar is shown
+                Then I assert that the text is shown "Contact has been successfully added!"
                 And I assert that contact is shown with
                         | <first_name> | <email_address> | <phone_number> |
 
@@ -99,7 +99,7 @@ Feature: Billing Contact
                 Then I select the "Billing" option
                 And I wait for "5" seconds
                 When I click "setAsPrimary" option for contact "<contact_name>"
-                Then I assert that the snackbar is shown
+                Then I assert that the text is shown "Contact has been successfully added!"
                 And I assert "<contact_name>" as primary contact
 
                 Examples:

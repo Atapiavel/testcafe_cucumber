@@ -92,6 +92,11 @@ async function drag(element, x, y) {
     await testController.drag(element, value_1, value_2, { offsetX: 10, offsetY: 10 })
 }
 
+async function get_text(element) {
+    const text = await select(element).innerText;
+    return text
+}
+
 module.exports = {
     navigate: navigate,
     click_element: click_element,
@@ -109,5 +114,6 @@ module.exports = {
     read_start_date: read_start_date,
     read_end_date: read_end_date,
     maximize_window: maximize_window,
-    select: select
+    select: select,
+    get_text: get_text
 };
