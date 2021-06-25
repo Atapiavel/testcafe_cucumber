@@ -1,5 +1,5 @@
 {
-  "uid" : "7cfe8ac8a605f745",
+  "uid" : "8dcf2e086e164ef3",
   "name" : "Phone page Test",
   "fullName" : "Phone Fixture.Phone page Test",
   "historyId" : "9f701123630700382482af650d457cee",
@@ -46,7 +46,7 @@
   "extra" : {
     "severity" : "normal",
     "retries" : [ {
-      "uid" : "6cba1cce1d13cf1b",
+      "uid" : "b21f2c515e36e777",
       "status" : "passed",
       "statusDetails" : "This test has been passed.",
       "time" : {
@@ -55,7 +55,7 @@
         "duration" : 39413
       }
     }, {
-      "uid" : "5d5e790c77e5309",
+      "uid" : "cdfd2c0f8f53db4b",
       "status" : "passed",
       "statusDetails" : "This test has been passed.",
       "time" : {
@@ -64,7 +64,7 @@
         "duration" : 39872
       }
     }, {
-      "uid" : "87d52e143cdc5737",
+      "uid" : "ac035f159ab1b381",
       "status" : "passed",
       "statusDetails" : "This test has been passed.",
       "time" : {
@@ -73,7 +73,7 @@
         "duration" : 27543
       }
     }, {
-      "uid" : "e02da80dce3b2bf1",
+      "uid" : "8a524dc9a2eae089",
       "status" : "failed",
       "statusDetails" : "This test has been broken",
       "time" : {
@@ -82,7 +82,7 @@
         "duration" : 33025
       }
     }, {
-      "uid" : "1d76cf5cc428eb99",
+      "uid" : "af2f542fc2610116",
       "status" : "failed",
       "statusDetails" : "This test has been broken",
       "time" : {
@@ -91,7 +91,7 @@
         "duration" : 3550
       }
     }, {
-      "uid" : "174396185d7bd5cb",
+      "uid" : "c6889da2dac00e41",
       "status" : "failed",
       "statusDetails" : "This test has been broken",
       "time" : {
@@ -100,7 +100,7 @@
         "duration" : 4794
       }
     }, {
-      "uid" : "24ee4d7d5469ec89",
+      "uid" : "b2a51fdd50fadb83",
       "status" : "failed",
       "statusDetails" : "This test has been broken",
       "time" : {
@@ -116,6 +116,6 @@
     } ],
     "tags" : [ ]
   },
-  "source" : "7cfe8ac8a605f745.json",
+  "source" : "8dcf2e086e164ef3.json",
   "parameterValues" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
 }

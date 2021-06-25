@@ -12,12 +12,32 @@ function SearchBtn() {
     return select('[data-cy=button-search]')
 }
 
+function RowSearchBtn() {
+    return select('tbody[role="rowgroup"]')
+}
+
+function ArrowRightBtn() {
+    return select('[aria-label="arrow_right"]')
+}
+
+function ClearSearch() {
+    return select('[aria-label="Clear"]')
+}
+
+function FilterBtn() {
+    return select('button').withText('Filter')
+}
+
+function CancelBtn() {
+    return select('[data-cy=cancel-button]')
+}
+
 function MakeCallBtn() {
     return select('[data-cy=make-a-call]')
 }
 
 function PhoneNrEntry() {
-    return select('[data-cy=input-wrapper]')
+    return select('[data-cy=dialer-display]')
 }
 
 function CallBtn() {
@@ -79,6 +99,11 @@ function AvailToggleBtn() {
 module.exports = {
     HomePage: HomePage,
     SearchBtn: SearchBtn,
+    RowSearchBtn: RowSearchBtn,
+    ArrowRightBtn: ArrowRightBtn,
+    ClearSearch: ClearSearch,
+    FilterBtn: FilterBtn,
+    CancelBtn: CancelBtn,
     MakeCallBtn: MakeCallBtn,
     PhoneNrEntry: PhoneNrEntry,
     CallBtn: CallBtn,

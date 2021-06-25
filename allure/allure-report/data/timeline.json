@@ -3,72 +3,7 @@
   "name" : "timeline",
   "children" : [ {
     "name" : "Phone page Test",
-    "uid" : "5d5e790c77e5309",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1623802068025,
-      "stop" : 1623802107897,
-      "duration" : 39872
-    },
-    "flaky" : false,
-    "newFailed" : false,
-    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
-  }, {
-    "name" : "Phone page Test",
-    "uid" : "24ee4d7d5469ec89",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "failed",
-    "time" : {
-      "start" : 1623726071200,
-      "stop" : 1623726088185,
-      "duration" : 16985
-    },
-    "flaky" : false,
-    "newFailed" : false,
-    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
-  }, {
-    "name" : "Messenger page Test",
-    "uid" : "61a58a807d69c218",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1623725963548,
-      "stop" : 1623726048250,
-      "duration" : 84702
-    },
-    "flaky" : false,
-    "newFailed" : false,
-    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
-  }, {
-    "name" : "Phone page Test",
-    "uid" : "174396185d7bd5cb",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "failed",
-    "time" : {
-      "start" : 1623726172405,
-      "stop" : 1623726177199,
-      "duration" : 4794
-    },
-    "flaky" : false,
-    "newFailed" : false,
-    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
-  }, {
-    "name" : "Phone page Test",
-    "uid" : "87d52e143cdc5737",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1623728728379,
-      "stop" : 1623728755922,
-      "duration" : 27543
-    },
-    "flaky" : false,
-    "newFailed" : false,
-    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
-  }, {
-    "name" : "Phone page Test",
-    "uid" : "7cfe8ac8a605f745",
+    "uid" : "8dcf2e086e164ef3",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "failed",
     "time" : {
@@ -81,33 +16,7 @@
     "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
   }, {
     "name" : "Phone page Test",
-    "uid" : "1d76cf5cc428eb99",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "failed",
-    "time" : {
-      "start" : 1623726322218,
-      "stop" : 1623726325768,
-      "duration" : 3550
-    },
-    "flaky" : false,
-    "newFailed" : false,
-    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
-  }, {
-    "name" : "Messenger page Test",
-    "uid" : "5742704d83a61de",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1623758966475,
-      "stop" : 1623759049418,
-      "duration" : 82943
-    },
-    "flaky" : false,
-    "newFailed" : false,
-    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
-  }, {
-    "name" : "Phone page Test",
-    "uid" : "6cba1cce1d13cf1b",
+    "uid" : "b21f2c515e36e777",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
@@ -120,7 +29,98 @@
     "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
   }, {
     "name" : "Phone page Test",
-    "uid" : "e02da80dce3b2bf1",
+    "uid" : "af2f542fc2610116",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1623726322218,
+      "stop" : 1623726325768,
+      "duration" : 3550
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+  }, {
+    "name" : "Messenger page Test",
+    "uid" : "df3fc1e46b0a040d",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1623758966475,
+      "stop" : 1623759049418,
+      "duration" : 82943
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+  }, {
+    "name" : "Phone page Test",
+    "uid" : "ac035f159ab1b381",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1623728728379,
+      "stop" : 1623728755922,
+      "duration" : 27543
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+  }, {
+    "name" : "Phone page Test",
+    "uid" : "c6889da2dac00e41",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1623726172405,
+      "stop" : 1623726177199,
+      "duration" : 4794
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+  }, {
+    "name" : "Messenger page Test",
+    "uid" : "2537b354a0c9ae19",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1623725963548,
+      "stop" : 1623726048250,
+      "duration" : 84702
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+  }, {
+    "name" : "Phone page Test",
+    "uid" : "cdfd2c0f8f53db4b",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1623802068025,
+      "stop" : 1623802107897,
+      "duration" : 39872
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+  }, {
+    "name" : "Phone page Test",
+    "uid" : "b2a51fdd50fadb83",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1623726071200,
+      "stop" : 1623726088185,
+      "duration" : 16985
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+  }, {
+    "name" : "Phone page Test",
+    "uid" : "8a524dc9a2eae089",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "failed",
     "time" : {
@@ -131,5 +131,18 @@
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+  }, {
+    "name" : "Phone page Test",
+    "uid" : "b7a21086f04540ea",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1623803585759,
+      "stop" : 1623803638872,
+      "duration" : 53113
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "Microsoft Edge 91.0.864.48 / Windows 10" ]
   } ]
 }

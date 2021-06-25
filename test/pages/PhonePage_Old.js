@@ -6,8 +6,13 @@ class PhonePage{
         .withText('Phone');
         this.phoneBtn = Selector('[data-cy=dock-app-tile-comms-phone]');
         this.searchBtn = Selector('[data-cy=button-search]');
+        this.rowSearchBtn = Selector('tbody[role="rowgroup"]');
+        this.arrowRightBtn = Selector('[aria-label="arrow_right"]');
+        this.clearSearch = Selector('[aria-label="Clear"]');
+        this.filterBtn = Selector('button').withText('Filter');
+        this.cancelBtn = Selector('[data-cy=cancel-button]');
         this.makeCallBtn = Selector('[data-cy=make-a-call]');
-        this.phoneNrEntry = Selector('[data-cy=input-wrapper]');
+        this.phoneNrEntry = Selector('[data-cy=dialer-display]');
         this.callBtn = Selector('[data-cy=call]');
         this.endCallBtn = Selector('[data-cy=end-call]');
         this.miniBtn = Selector('[data-cy=minimize-dialer]');

@@ -3,7 +3,7 @@
   "name" : "behaviors",
   "children" : [ {
     "name" : "Messenger page Test",
-    "uid" : "5742704d83a61de",
+    "uid" : "df3fc1e46b0a040d",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
@@ -16,7 +16,7 @@
     "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
   }, {
     "name" : "Phone page Test",
-    "uid" : "7cfe8ac8a605f745",
+    "uid" : "8dcf2e086e164ef3",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "failed",
     "time" : {
@@ -27,5 +27,18 @@
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+  }, {
+    "name" : "Phone page Test",
+    "uid" : "b7a21086f04540ea",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1623803585759,
+      "stop" : 1623803638872,
+      "duration" : 53113
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ "Microsoft Edge 91.0.864.48 / Windows 10" ]
   } ]
 }
