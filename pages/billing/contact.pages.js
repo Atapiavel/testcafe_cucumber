@@ -103,6 +103,8 @@ async function assert_primary_contact(contact_name){
         const name = '[id=billing-contact-list-name-' + (i) + ']'
         const text_name = await ActionsPage.select(name).innerText
         if (text_name.includes(contact_name)) {
+            console.log(text_name)
+            console.log(contact_name)
             assert(text_name == contact_name + ' (Primary)')
         }
     }

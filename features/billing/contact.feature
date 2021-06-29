@@ -33,10 +33,6 @@ Feature: Billing Contact
                         | contact_name         |
                         | Amanda Little        |
                         | Arturo Tapia Velasco |
-                        | Christina Davis      |
-                        | Maximo Zoppini       |
-                        | Snehal Vighe         |
-
 
         @billing @contact
         Scenario Outline: Add_billing_contact_functionality
@@ -79,7 +75,7 @@ Feature: Billing Contact
                 And I fill billing contact info with
                         | <first_name> | <email_address> | <phone_number> |
                 Then I click on update button
-                Then I assert that the text is shown "Contact has been successfully added!"
+                Then I assert that the text is shown "Contact has been successfully updated!"
                 And I assert that contact is shown with
                         | <first_name> | <email_address> | <phone_number> |
 
@@ -99,7 +95,7 @@ Feature: Billing Contact
                 Then I select the "Billing" option
                 And I wait for "5" seconds
                 When I click "setAsPrimary" option for contact "<contact_name>"
-                Then I assert that the text is shown "Contact has been successfully added!"
+                Then I assert that the text is shown "Contact has been set as Primary Contact"
                 And I assert "<contact_name>" as primary contact
 
                 Examples:

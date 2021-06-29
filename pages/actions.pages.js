@@ -82,6 +82,11 @@ function read_end_date() {
     return end_date[0]
 }
 
+function read_bearer() {
+    var str = fs.readFileSync('./bearer.txt', 'utf8');
+    return str
+}
+
 function select(selector) {
     return Selector(selector).with({ boundTestRun: testController })
 }
@@ -115,5 +120,6 @@ module.exports = {
     read_end_date: read_end_date,
     maximize_window: maximize_window,
     select: select,
-    get_text: get_text
+    get_text: get_text,
+    read_bearer: read_bearer
 };

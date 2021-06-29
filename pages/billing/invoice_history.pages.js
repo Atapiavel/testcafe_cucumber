@@ -29,84 +29,64 @@ async function assert_historical_invoices(url, headers) {
         .then(data => {
             var number_of_invoices = data.data.getInvoiceList.items.length
             for (var n = 0; n < number_of_invoices; n++) {
-                var invoice = data.data.getInvoiceList.items[n].invoiceId
-                // Invoice implementation
-                fetch(url, {
-                    method: 'POST',
-                    headers: headers,
-                    body: JSON.stringify({
-                        query: Requests.getInvoice(invoice),
-                    })
-                })
-                    .then(r => r.json())
-                    .then(data => {
-                        let str = new Date(data.data.getInvoice.dueDate);
-                        // Adding the invoices matched with dates filters ()
-                        if (str > prev_date && str < act_date) {
-                            const formattedDate = str.toLocaleString("en-US", {
-                                month: "short",
-                                day: "numeric",
-                                year: "numeric"
-                            });
-                            if (z > 0) {
-                                invoice_arr[z] =
-                                {
-                                    date: formattedDate,
-                                    number: data.data.getInvoice.invoiceNumber,
-                                    period: data.data.getInvoice.billingFrequency,
-                                    status: data.data.getInvoice.invoiceStatus,
-                                    amount: data.data.getInvoice.amountDue
+                let due_date = new Date(data.data.getInvoiceList.items[n].dueDate);
+                let start_date = new Date(data.data.getInvoiceList.items[n].startDate)
+                let end_date = new Date(data.data.getInvoiceList.items[n].endDate)
+                // Adding the invoices matched with dates filters ()
+                if (due_date >= prev_date && due_date <= act_date || 
+                    start_date >= prev_date && start_date <= act_date || 
+                    end_date >= prev_date && end_date <= act_date) {
+                    const formattedDate = due_date.toLocaleString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric"
+                    });
+                    if (z > 0) {
+                        invoice_arr[z] =
+                        {
+                            date: formattedDate,
+                            number: data.data.getInvoiceList.items[n].invoiceNumber,
+                            period: data.data.getInvoiceList.items[n].billingFrequencyName,
+                            status: data.data.getInvoiceList.items[n].invoiceStatusName,
+                            amount: data.data.getInvoiceList.items[n].amountDue
+                        }
+                        z = z + 1
+                    }
+                    if (z == 0) {
+                        invoice_arr[0] =
+                        {
+                            date: formattedDate,
+                            number: data.data.getInvoiceList.items[n].invoiceNumber,
+                            period: data.data.getInvoiceList.items[n].billingFrequencyName,
+                            status: data.data.getInvoiceList.items[n].invoiceStatusName,
+                            amount: data.data.getInvoiceList.items[n].amountDue
+                        }
+                        z = z + 1
+                    }
+                    if (z == number_of_invoices - 1) {
+                        var sorted = invoice_arr.sort(function (a, b) {
+                            var dateA = new Date(a.date), dateB = new Date(b.date);
+                            return dateA - dateB;
+                        })
+                        for (var n = 0; n <= sorted.length; n++) {
+                            for (var i = 0; i <= 4; i++) {
+                                const record = "tr:nth-of-type(" + (n + 1) + ") > td:nth-of-type(" + (i + 2) + ")"
+                                var text = async function (element) {
+                                    const value = await select(element).innerText;
+                                    return value
                                 }
-                            }
-                            if (z == 0) {
-                                invoice_arr[0] =
-                                {
-                                    date: formattedDate,
-                                    number: data.data.getInvoice.invoiceNumber,
-                                    period: data.data.getInvoice.billingFrequency,
-                                    status: data.data.getInvoice.invoiceStatus,
-                                    amount: data.data.getInvoice.amountDue
-                                }
-                            }
-                            z = z + 1
-                            if (z == number_of_invoices - 2) {
-                                var sorted = invoice_arr.sort(function (a, b) {
-                                    var dateA = new Date(a.date), dateB = new Date(b.date);
-                                    return dateA - dateB;
+                                text(record).then(value => {
+                                    ActionsPage.hover_element(record)
+                                    console.log(value); // Logs the response
+                                    return value;
                                 })
-                                for (var n = 0; n < sorted.length; n++) {
-
-                                    for (var i = 0; i <= 3; i++) {
-                                        // console.log(sorted)
-                                        const record = "tr:nth-of-type(" + (n + 1) + ") > td:nth-of-type(" + (i + 2) + ")"
-                                        // async function get_text(element) {
-                                        //     const text = await select(element).innerText;
-                                        //     return text
-                                        // }
-                                        var text = async function (element) {
-                                            const value = await select(element).innerText;
-                                            return value
-                                        }
-                                        text(record).then(function (value) {
-                                            console.log(sorted)
-                                            console.log(value)
-                                        })
-                                        // console.log("4" + sorted)
-                                        // console.log(val)
-                                        // assert(val == sorted[n][i])
-                                        // console.log(sorted[n].date)
-                                        // console.log(sorted[n].number)
-                                        // console.log(sorted[n].period)
-                                        // console.log(sorted[n].status)
-                                        // console.log(sorted[n].amount)
-
-                                    }
-                                }
+                                // console.log(text_to_assert)
                             }
                         }
-                    })
+                    }
+                }
             }
-        });
+        })
 }
 
 async function assert_columns(datatable) {
