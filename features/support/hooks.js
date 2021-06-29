@@ -4,6 +4,7 @@ const ActionsPage = require('../../pages/actions.pages.js')
 const testControllerHolder = require('./testControllerHolder');
 const { AfterAll, setDefaultTimeout, Before, After, Status, BeforeAll } = require('cucumber');
 const errorHandling = require('./errorHandling');
+const requests = require('../../api/billing/main');
 const TIMEOUT = 40000;
 
 let isTestCafeError = false;
@@ -47,12 +48,15 @@ function runTest(iteration, browser) {
 setDefaultTimeout(TIMEOUT);
 
 BeforeAll(function () {
+    fs.unlinkSync('bearer.txt');
+    requests.fetchAuthToken("Billing1234!!", "thebillingteam@scorpion.co")
     fs.unlinkSync('date.txt');
     ActionsPage.execute_shell('rmdir /Q /S screenshots')
     ActionsPage.execute_shell('mkdir screenshots')
     ActionsPage.execute_shell('rmdir /Q /S videos')
     ActionsPage.execute_shell('mkdir videos')
     ActionsPage.write_date()
+    require('events').EventEmitter.defaultMaxListeners = 15;
 });
 
 Before(function () {

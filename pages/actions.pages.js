@@ -82,6 +82,11 @@ function read_end_date() {
     return end_date[0]
 }
 
+function read_bearer() {
+    var str = fs.readFileSync('./bearer.txt', 'utf8');
+    return str
+}
+
 function select(selector) {
     return Selector(selector).with({ boundTestRun: testController })
 }
@@ -90,6 +95,11 @@ async function drag(element, x, y) {
     var value_1 = parseInt(x, 10);
     var value_2 = parseInt(y, 10);
     await testController.drag(element, value_1, value_2, { offsetX: 10, offsetY: 10 })
+}
+
+async function get_text(element) {
+    const text = await select(element).innerText;
+    return text
 }
 
 module.exports = {
@@ -109,5 +119,7 @@ module.exports = {
     read_start_date: read_start_date,
     read_end_date: read_end_date,
     maximize_window: maximize_window,
-    select: select
+    select: select,
+    get_text: get_text,
+    read_bearer: read_bearer
 };

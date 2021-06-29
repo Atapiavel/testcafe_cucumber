@@ -1,9 +1,16 @@
 const { When, Then } = require('@cucumber/cucumber');
+const requests = require('../../../api/billing/main')
 const ActionsPage = require('../../../pages/actions.pages.js')
 const BillingHistoryPage = require('../../../pages/billing/invoice_history.pages.js');
 const BillingHistoryPageLocator = require('../../../locators/billing/invoice_history.locators.js');
-const { Selector } = require('testcafe');
 var assert = require('assert');
+const url = "https://integration.scorpion.co/csx/billing/graphql"
+const bearer = ActionsPage.read_bearer()
+const headers = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+    "Authorization": "Bearer " + bearer,
+}
 
 When('I assert the Scorpion Billing History page', async function () {
     const text = await ActionsPage.select(BillingHistoryPageLocator.page_title()).innerText;
@@ -11,7 +18,8 @@ When('I assert the Scorpion Billing History page', async function () {
 })
 
 When('I assert I can see historical invoices', async function () {
-    await BillingHistoryPage.assert_historical_invoices()
+    console.log(headers)
+    await BillingHistoryPage.assert_historical_invoices(url, headers)
 })
 
 When('I verify the columns are showed with', async function (datatable) {
@@ -25,7 +33,6 @@ Then('I assert {string} kebab option is visible for', async function (option, da
 When('I select the filter {string} with {string}', async function (filter, value) {
     await BillingHistoryPage.filter_invoices(filter, value)
 })
-
 
 Then('I assert no invoices are shown', async function () {
     const text = await ActionsPage.select(BillingHistoryPageLocator.no_results()).innerText;

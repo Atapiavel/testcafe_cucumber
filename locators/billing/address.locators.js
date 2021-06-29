@@ -35,7 +35,7 @@ function city() {
 }
 
 function state() {
-    return '#billing-address-form-select-state'
+    return '[data-cy="select-input"]'
 }
 
 function zipcode() {
@@ -47,11 +47,19 @@ function select_address() {
 }
 
 function create_new_address() {
-    return '[data-cy="link"]'
+    return '#billing-address-modal-update-link-create'
+}
+
+function add_button(){
+    return '[id="billing-address-modal-update-button-update"]'
 }
 
 function back_button() {
     return '#billing-address-modal-update-button-back'
+}
+
+function options() {
+    return '[class="select-item"]'
 }
 
 module.exports = {
@@ -68,5 +76,7 @@ module.exports = {
     zipcode: zipcode,
     select_address: select_address,
     create_new_address: create_new_address,
-    back_button: back_button
+    back_button: back_button,
+    add_button: add_button,
+    options: options
 };

@@ -7,7 +7,6 @@ Feature: Billing Invoice History
         And I click on sign in button
         And I wait for "10" seconds
         Given I am in Scorpion "settings" page
-        And I wait for "5" seconds
         And I hover on More option
         Then I select the "Billing" option
         And I click on see all option
@@ -16,6 +15,7 @@ Feature: Billing Invoice History
         Then I verify the columns are showed with
             | Invoice Date | Invoice Number | Billing Period | Status | Amount |
         Then I assert I can see historical invoices
+        And I wait for "5" seconds
 
 #     @billing @invoice_history @focus
 #     Scenario Outline: Invoice_history_kebab_options_are_visible_for_<Invoice_Number>

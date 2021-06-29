@@ -2,12 +2,28 @@
 
 function getAccountMonies(serviceLineId) {
   return `
-    query{
-      getAccountMonies(serviceLineId:` + serviceLineId + `){
+  query{
+    getAccountMonies(serviceLineId:` + serviceLineId + `){
+      accountMoniesID,
+      accountMoniesTransaction{
         accountMoniesID,
-        amount
-      }
+        amount,
+        currentBalance,
+        previousAmount,
+        transactionDate,
+        transactionID,
+        transactionTypeID,
+        transactionTypeName
+      },
+      amount,
+      billingLineItemID,
+      clientID,
+      clientPrePayment,
+      credit,
+      creditReason,
+      serviceLineID
     }
+  }
     `
 }
 
@@ -68,8 +84,19 @@ function getInvoice(id) {
 function getInvoiceList(invoices) {
   return `
   query{
-    getInvoiceList(first: ` + invoices + `, offset: 0 ){
-      items{invoiceId}
+    getInvoiceList(first:100, offset:0){
+      items{
+        amountDue, 
+        amountPaid, 
+        invoiceNumber, 
+        billingFrequencyName,
+        dueDate,
+        endDate,
+        invoiceStatusName
+        startDate,
+        invoiceId
+      },
+      totalCount
     }
   }
   `
@@ -127,6 +154,19 @@ function getPlatformUsers() {
   `
 }
 
+function getBillingOverviewData() {
+  return `
+  query{
+    getBillingOverviewData{
+      amountDue,
+      availableCredit,
+      estimate,
+      pastAmountDue
+    }
+  }
+  `
+}
+
 module.exports = {
   getScorpionAddress: getScorpionAddress,
   getAccountMonies: getAccountMonies,
@@ -137,5 +177,6 @@ module.exports = {
   getInvoiceList: getInvoiceList,
   getPaymentMethods: getPaymentMethods,
   getPlatformLocations: getPlatformLocations,
-  getPlatformUsers: getPlatformUsers
+  getPlatformUsers: getPlatformUsers,
+  getBillingOverviewData: getBillingOverviewData
 };
