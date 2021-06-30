@@ -1,92 +1,29 @@
 const fetch = require("node-fetch");
 const ActionsPage = require("../actions.pages")
-const Requests = require("../../api/billing/requests");
+const requests = require("../../api/billing/main");
 const BillingHistoryPageLocator = require('../../locators/billing/invoice_history.locators.js');
 const assert = require('assert');
-const { Selector } = require('testcafe');
-let invoice_arr = []
-var act_date = new Date();
-var year = act_date.getFullYear();
-var month = act_date.getMonth();
-var day = act_date.getDate();
-var prev_date = new Date(year - 1, month, day);
-var z = 0
+const url = "https://integration.scorpion.co/csx/billing/graphql"
 
-function select(selector) {
-    return Selector(selector).with({ boundTestRun: testController })
-}
-
-async function assert_historical_invoices(url, headers) {
-    // Invoice list implementation
-    fetch(url, {
-        method: 'POST',
-        headers: headers,
-        body: JSON.stringify({
-            query: Requests.getInvoiceList(100),
-        })
-    })
-        .then(r => r.json())
-        .then(data => {
-            var number_of_invoices = data.data.getInvoiceList.items.length
-            for (var n = 0; n < number_of_invoices; n++) {
-                let due_date = new Date(data.data.getInvoiceList.items[n].dueDate);
-                let start_date = new Date(data.data.getInvoiceList.items[n].startDate)
-                let end_date = new Date(data.data.getInvoiceList.items[n].endDate)
-                // Adding the invoices matched with dates filters ()
-                if (due_date >= prev_date && due_date <= act_date || 
-                    start_date >= prev_date && start_date <= act_date || 
-                    end_date >= prev_date && end_date <= act_date) {
-                    const formattedDate = due_date.toLocaleString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                        year: "numeric"
-                    });
-                    if (z > 0) {
-                        invoice_arr[z] =
-                        {
-                            date: formattedDate,
-                            number: data.data.getInvoiceList.items[n].invoiceNumber,
-                            period: data.data.getInvoiceList.items[n].billingFrequencyName,
-                            status: data.data.getInvoiceList.items[n].invoiceStatusName,
-                            amount: data.data.getInvoiceList.items[n].amountDue
-                        }
-                        z = z + 1
-                    }
-                    if (z == 0) {
-                        invoice_arr[0] =
-                        {
-                            date: formattedDate,
-                            number: data.data.getInvoiceList.items[n].invoiceNumber,
-                            period: data.data.getInvoiceList.items[n].billingFrequencyName,
-                            status: data.data.getInvoiceList.items[n].invoiceStatusName,
-                            amount: data.data.getInvoiceList.items[n].amountDue
-                        }
-                        z = z + 1
-                    }
-                    if (z == number_of_invoices - 1) {
-                        var sorted = invoice_arr.sort(function (a, b) {
-                            var dateA = new Date(a.date), dateB = new Date(b.date);
-                            return dateA - dateB;
-                        })
-                        for (var n = 0; n <= sorted.length; n++) {
-                            for (var i = 0; i <= 4; i++) {
-                                const record = "tr:nth-of-type(" + (n + 1) + ") > td:nth-of-type(" + (i + 2) + ")"
-                                var text = async function (element) {
-                                    const value = await select(element).innerText;
-                                    return value
-                                }
-                                text(record).then(value => {
-                                    ActionsPage.hover_element(record)
-                                    console.log(value); // Logs the response
-                                    return value;
-                                })
-                                // console.log(text_to_assert)
-                            }
-                        }
-                    }
-                }
-            }
-        })
+async function assert_historical_invoices(headers) {
+    var data = requests.getInvoiceHistoryData(url, headers)
+    console.log(data)
+    // for (var n = 0; n <= sorted.length; n++) {
+    //         for (var i = 0; i <= 4; i++) {
+    //                 const record = "tr:nth-of-type(" + (n + 1) + ") > td:nth-of-type(" + (i + 2) + ")"
+    //                 var text = async function (element) {
+    //                         // const value = await ActionsPage.select(element).innerText;
+    //                         return value
+    //                 }
+    //                 text(record).then(value => {
+    //                         ActionsPage.hover_element(record)
+    //                         console.log(value)
+    //                         console.log(sorted)
+    //                         return value;
+    //                 })
+    // console.log(text_to_assert)
+    // }
+    // }
 }
 
 async function assert_columns(datatable) {
