@@ -1,9 +1,13 @@
 
-function getCommunicationList(invoices) {
+function getCommunicationList(communication) {
   return `
   query{
-    communicationSearch(first: ` + invoices + `, offset: 0 ){
-      items{invoiceId}
+    communicationSearch(first: ` + communication + `, offset: 0 ){
+      items{
+        callDuration,
+        callStatus,
+        communicationID
+      }
     }
   }
   `
