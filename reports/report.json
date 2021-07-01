@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 11444000000
+              "duration": 8988000000
             }
           },
           {
@@ -23,11 +23,11 @@
             "line": 5,
             "name": "I am in Scorpion login page",
             "match": {
-              "location": "features/step_definition/common.spec.js:10"
+              "location": "features/step_definition/common.spec.js:9"
             },
             "result": {
               "status": "passed",
-              "duration": 725000000
+              "duration": 580000000
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4075000000
+              "duration": 5039000000
             }
           },
           {
@@ -53,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2813000000
+              "duration": 2140000000
             }
           },
           {
@@ -62,11 +62,11 @@
             "line": 8,
             "name": "I wait for \"10\" seconds",
             "match": {
-              "location": "features/step_definition/common.spec.js:18"
+              "location": "features/step_definition/common.spec.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 10015000000
+              "duration": 10011000000
             }
           },
           {
@@ -79,7 +79,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4876000000
+              "duration": 5792000000
             }
           },
           {
@@ -88,11 +88,11 @@
             "line": 10,
             "name": "I wait for \"10\" seconds",
             "match": {
-              "location": "features/step_definition/common.spec.js:18"
+              "location": "features/step_definition/common.spec.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 10009000000
+              "duration": 10018000000
             }
           },
           {
@@ -101,11 +101,11 @@
             "line": 11,
             "name": "I am in Scorpion \"phone\" page",
             "match": {
-              "location": "features/step_definition/common.spec.js:14"
+              "location": "features/step_definition/common.spec.js:13"
             },
             "result": {
               "status": "passed",
-              "duration": 1016000000
+              "duration": 648000000
             }
           },
           {
@@ -114,11 +114,11 @@
             "line": 12,
             "name": "I wait for \"10\" seconds",
             "match": {
-              "location": "features/step_definition/common.spec.js:18"
+              "location": "features/step_definition/common.spec.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 10014000000
+              "duration": 10028000000
             }
           },
           {
@@ -131,7 +131,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4000000
+              "duration": 2000000
             }
           },
           {
@@ -144,7 +144,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10425000000
+              "duration": 10457000000
             }
           },
           {
@@ -157,7 +157,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 523000000
+              "duration": 557000000
             }
           },
           {
@@ -166,11 +166,11 @@
             "line": 16,
             "name": "I wait for \"2\" seconds",
             "match": {
-              "location": "features\\step_definition\\common.spec.js:18"
+              "location": "features/step_definition/common.spec.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 2011000000
+              "duration": 2008000000
             }
           },
           {
@@ -179,11 +179,11 @@
             "line": 17,
             "name": "I click on Row for the number",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:20"
+              "location": "features/step_definition/comms/phone.spec.js:20"
             },
             "result": {
               "status": "passed",
-              "duration": 1408000000
+              "duration": 753000000
             }
           },
           {
@@ -192,11 +192,11 @@
             "line": 18,
             "name": "I wait for \"2\" seconds",
             "match": {
-              "location": "features\\step_definition\\common.spec.js:18"
+              "location": "features/step_definition/common.spec.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 2008000000
+              "duration": 2028000000
             }
           },
           {
@@ -209,7 +209,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 472000000
+              "duration": 551000000
             }
           },
           {
@@ -218,11 +218,11 @@
             "line": 20,
             "name": "I wait for \"2\" seconds",
             "match": {
-              "location": "features\\step_definition\\common.spec.js:18"
+              "location": "features/step_definition/common.spec.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 2006000000
+              "duration": 2009000000
             }
           },
           {
@@ -235,7 +235,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 344000000
+              "duration": 466000000
             }
           },
           {
@@ -244,11 +244,11 @@
             "line": 22,
             "name": "I wait for \"2\" seconds",
             "match": {
-              "location": "features\\step_definition\\common.spec.js:18"
+              "location": "features/step_definition/common.spec.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 2006000000
+              "duration": 2060000000
             }
           },
           {
@@ -261,7 +261,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 622000000
+              "duration": 999000000
             }
           },
           {
@@ -270,11 +270,11 @@
             "line": 24,
             "name": "I wait for \"2\" seconds",
             "match": {
-              "location": "features\\step_definition\\common.spec.js:18"
+              "location": "features/step_definition/common.spec.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 2006000000
+              "duration": 2011000000
             }
           },
           {
@@ -283,11 +283,11 @@
             "line": 25,
             "name": "I click on Cancel button",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:36"
+              "location": "features/step_definition/comms/phone.spec.js:36"
             },
             "result": {
               "status": "passed",
-              "duration": 477000000
+              "duration": 613000000
             }
           },
           {
@@ -296,11 +296,11 @@
             "line": 26,
             "name": "I click on Make a Call button",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:40"
+              "location": "features/step_definition/comms/phone.spec.js:40"
             },
             "result": {
               "status": "passed",
-              "duration": 677000000
+              "duration": 679000000
             }
           },
           {
@@ -309,11 +309,11 @@
             "line": 27,
             "name": "I enter numbers in Phone Number entry \"8182345566\"",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:44"
+              "location": "features/step_definition/comms/phone.spec.js:44"
             },
             "result": {
               "status": "passed",
-              "duration": 906000000
+              "duration": 749000000
             }
           },
           {
@@ -322,11 +322,11 @@
             "line": 28,
             "name": "I click on Call button",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:48"
+              "location": "features/step_definition/comms/phone.spec.js:48"
             },
             "result": {
               "status": "passed",
-              "duration": 858000000
+              "duration": 797000000
             }
           },
           {
@@ -335,11 +335,11 @@
             "line": 29,
             "name": "I click on End Call button",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:52"
+              "location": "features/step_definition/comms/phone.spec.js:52"
             },
             "result": {
               "status": "passed",
-              "duration": 2276000000
+              "duration": 1244000000
             }
           },
           {
@@ -348,11 +348,11 @@
             "line": 30,
             "name": "I click on Make a Call button again",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:56"
+              "location": "features/step_definition/comms/phone.spec.js:56"
             },
             "result": {
               "status": "passed",
-              "duration": 583000000
+              "duration": 518000000
             }
           },
           {
@@ -361,11 +361,11 @@
             "line": 31,
             "name": "I maximize the window",
             "match": {
-              "location": "features/step_definition/common.spec.js:44"
+              "location": "features/step_definition/common.spec.js:43"
             },
             "result": {
               "status": "passed",
-              "duration": 1925000000
+              "duration": 1656000000
             }
           },
           {
@@ -374,11 +374,11 @@
             "line": 32,
             "name": "I make a call to the number \"8182345566\"",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:60"
+              "location": "features/step_definition/comms/phone.spec.js:60"
             },
             "result": {
               "status": "passed",
-              "duration": 12000000
+              "duration": 83000000
             }
           },
           {
@@ -387,11 +387,11 @@
             "line": 33,
             "name": "I click on Call button again",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:64"
+              "location": "features/step_definition/comms/phone.spec.js:64"
             },
             "result": {
               "status": "passed",
-              "duration": 3866000000
+              "duration": 3384000000
             }
           },
           {
@@ -400,11 +400,11 @@
             "line": 34,
             "name": "I drag the dialpad \"-360\" for x \"-5\" for y",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:68"
+              "location": "features/step_definition/comms/phone.spec.js:68"
             },
             "result": {
               "status": "passed",
-              "duration": 507000000
+              "duration": 533000000
             }
           },
           {
@@ -413,11 +413,11 @@
             "line": 36,
             "name": "I click on Minimize button",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:76"
+              "location": "features/step_definition/comms/phone.spec.js:76"
             },
             "result": {
               "status": "passed",
-              "duration": 1351000000
+              "duration": 1370000000
             }
           },
           {
@@ -426,11 +426,11 @@
             "line": 37,
             "name": "I click on Maximize button",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:81"
+              "location": "features/step_definition/comms/phone.spec.js:81"
             },
             "result": {
               "status": "passed",
-              "duration": 1372000000
+              "duration": 1369000000
             }
           },
           {
@@ -439,11 +439,11 @@
             "line": 39,
             "name": "I click on Sidepanel button",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:90"
+              "location": "features/step_definition/comms/phone.spec.js:90"
             },
             "result": {
               "status": "passed",
-              "duration": 416000000
+              "duration": 333000000
             }
           },
           {
@@ -452,11 +452,11 @@
             "line": 40,
             "name": "I click on the Back button",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:94"
+              "location": "features/step_definition/comms/phone.spec.js:94"
             },
             "result": {
               "status": "passed",
-              "duration": 399000000
+              "duration": 383000000
             }
           },
           {
@@ -465,11 +465,11 @@
             "line": 41,
             "name": "I click on Minimize button again",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:98"
+              "location": "features/step_definition/comms/phone.spec.js:98"
             },
             "result": {
               "status": "passed",
-              "duration": 426000000
+              "duration": 305000000
             }
           },
           {
@@ -478,11 +478,11 @@
             "line": 42,
             "name": "I click on End Call button again",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:102"
+              "location": "features/step_definition/comms/phone.spec.js:102"
             },
             "result": {
               "status": "passed",
-              "duration": 2085000000
+              "duration": 1368000000
             }
           },
           {
@@ -491,11 +491,11 @@
             "line": 43,
             "name": "I click on Availability button",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:106"
+              "location": "features/step_definition/comms/phone.spec.js:106"
             },
             "result": {
               "status": "passed",
-              "duration": 474000000
+              "duration": 537000000
             }
           },
           {
@@ -504,11 +504,11 @@
             "line": 44,
             "name": "I click on Availability Toggle button",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:110"
+              "location": "features/step_definition/comms/phone.spec.js:110"
             },
             "result": {
               "status": "passed",
-              "duration": 769000000
+              "duration": 784000000
             }
           },
           {
@@ -517,11 +517,11 @@
             "line": 45,
             "name": "I click on Availability Toggle button again",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:114"
+              "location": "features/step_definition/comms/phone.spec.js:114"
             },
             "result": {
               "status": "passed",
-              "duration": 612000000
+              "duration": 319000000
             }
           },
           {
@@ -530,11 +530,11 @@
             "line": 46,
             "name": "I click on Availability button again",
             "match": {
-              "location": "features\\step_definition\\comms\\phone.spec.js:118"
+              "location": "features/step_definition/comms/phone.spec.js:118"
             },
             "result": {
               "status": "passed",
-              "duration": 429000000
+              "duration": 435000000
             }
           },
           {
@@ -543,11 +543,11 @@
             "line": 47,
             "name": "I click on settings button",
             "match": {
-              "location": "features/step_definition/common.spec.js:22"
+              "location": "features/step_definition/common.spec.js:21"
             },
             "result": {
               "status": "passed",
-              "duration": 464000000
+              "duration": 384000000
             }
           },
           {
@@ -556,11 +556,11 @@
             "line": 48,
             "name": "I sign out Scorpion",
             "match": {
-              "location": "features/step_definition/common.spec.js:30"
+              "location": "features/step_definition/common.spec.js:29"
             },
             "result": {
               "status": "passed",
-              "duration": 4473000000
+              "duration": 1405000000
             }
           },
           {
