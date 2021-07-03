@@ -1,16 +1,9 @@
 const { When, Then } = require('@cucumber/cucumber');
-const requests = require('../../../api/billing/main')
+const fs = require('fs');
 const ActionsPage = require('../../../pages/actions.pages.js')
 const BillingHistoryPage = require('../../../pages/billing/invoice_history.pages.js');
 const BillingHistoryPageLocator = require('../../../locators/billing/invoice_history.locators.js');
 var assert = require('assert');
-const url = "https://integration.scorpion.co/csx/billing/graphql"
-const bearer = ActionsPage.read_bearer()
-const headers = {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-    "Authorization": "Bearer " + bearer,
-}
 
 When('I assert the Scorpion Billing History page', async function () {
     const text = await ActionsPage.select(BillingHistoryPageLocator.page_title()).innerText;
@@ -18,8 +11,13 @@ When('I assert the Scorpion Billing History page', async function () {
 })
 
 When('I assert I can see historical invoices', async function () {
-    console.log(headers)
-    await BillingHistoryPage.assert_historical_invoices(url, headers)
+    var bearer = ActionsPage.read_bearer()
+    const headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + bearer
+    }
+    await BillingHistoryPage.assert_historical_invoices(headers)
 })
 
 When('I verify the columns are showed with', async function (datatable) {
@@ -46,7 +44,7 @@ When('I click on apply button', async function () {
 Then('I assert the results count showing {string}', async function (results) {
     const text = await ActionsPage.select(BillingHistoryPageLocator.results_count()).innerText;
     assert(text == results)
-}) 
+})
 
 Then('I click on clear all filters button', async function () {
     await ActionsPage.click_element(BillingHistoryPageLocator.clear_all_filters())
@@ -62,4 +60,4 @@ Then('I click on cancel button', async function () {
 
 Then('I click on clear all filters link', async function () {
     await ActionsPage.click_element(BillingHistoryPageLocator.clear_all_filters())
-}) 
+})
