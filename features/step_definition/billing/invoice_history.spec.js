@@ -5,19 +5,14 @@ const BillingHistoryPage = require('../../../pages/billing/invoice_history.pages
 const BillingHistoryPageLocator = require('../../../locators/billing/invoice_history.locators.js');
 var assert = require('assert');
 
+
 When('I assert the Scorpion Billing History page', async function () {
     const text = await ActionsPage.select(BillingHistoryPageLocator.page_title()).innerText;
     assert(text == "Billing History")
 })
 
 When('I assert I can see historical invoices', async function () {
-    var bearer = ActionsPage.read_bearer()
-    const headers = {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Authorization': 'Bearer ' + bearer
-    }
-    await BillingHistoryPage.assert_historical_invoices(headers)
+    await BillingHistoryPage.assert_historical_invoices()
 })
 
 When('I verify the columns are showed with', async function (datatable) {

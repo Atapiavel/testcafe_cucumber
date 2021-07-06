@@ -4,10 +4,7 @@ const ActionsPage = require('../../pages/actions.pages.js')
 const testControllerHolder = require('./testControllerHolder');
 const { AfterAll, setDefaultTimeout, Before, After, Status, BeforeAll } = require('cucumber');
 const errorHandling = require('./errorHandling');
-const requests = require('../../api/billing/main');
-// var bearer = fs.readFileSync('../../bearer.txt', 'utf8');
 const TIMEOUT = 40000;
-const base_url = 'https://integration.scorpion.co'
 let isTestCafeError = false;
 let attachScreenshotToReport = null;
 let cafeRunner = null;
@@ -49,7 +46,7 @@ function runTest(iteration, browser) {
 setDefaultTimeout(TIMEOUT);
 
 BeforeAll(function () {    
-    requests.fetchAuthToken(base_url, "Billing1234!!", "thebillingteam@scorpion.co")
+    // requests.fetchAuthToken(base_url, "Billing1234!!", "thebillingteam@scorpion.co")
     fs.unlinkSync('date.txt');
     ActionsPage.execute_shell('rmdir /Q /S screenshots')
     ActionsPage.execute_shell('mkdir screenshots')
@@ -83,12 +80,6 @@ After(async function (testCase) {
 });
 
 AfterAll(function () {
-    var bearer = ActionsPage.read_bearer()
-    const headers = {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Authorization': 'Bearer ' + bearer
-    }
     let intervalId = null;
 
     function waitForTestCafe() {
@@ -105,7 +96,7 @@ AfterAll(function () {
 
     waitForTestCafe();
     ActionsPage.write_date()
-    requests.logoff(base_url, headers)
+    // requests.logoff(base_url, headers)
 });
 
 const getIsTestCafeError = function () {
