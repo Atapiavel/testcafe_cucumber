@@ -1,13 +1,21 @@
-const fetch = require("node-fetch");
 const ActionsPage = require("../actions.pages")
-const Requests = require("../../api/billing/requests");
 const BillingHistoryPageLocator = require('../../locators/billing/invoice_history.locators.js');
 const assert = require('assert');
+const fetch = require("node-fetch");
+const Requests = require("../../api/billing/requests");
+const fs = require('fs');
+
 var username = "commcenter@scorpion.co"
 var password = "Comms1234!"
 // var username = "thebillingteam@scorpion.co"
 // var password = "Billing1234!!"
 
+// URL's
+const url = "https://integration.scorpion.co/csx/billing/graphql"
+const base_url = 'https://integration.scorpion.co'
+const loginUrl = base_url + "/platform/identity/v1/api/oauth2/login2";
+const authorizeUrl = base_url + "/platform/identity/v1/api/oauth2/ropc/authorize";
+const logoff_url = base_url + "/platform/identity/v1/api/oauth2logoff/logoff"
 
 // HEADERS & BODIES
 const auth_headers = {
@@ -20,13 +28,6 @@ const loginBody = {
     username,
 };
 
-// URL's
-const url = "https://integration.scorpion.co/csx/billing/graphql"
-const base_url = 'https://integration.scorpion.co'
-const loginUrl = base_url + "/platform/identity/v1/api/oauth2/login2";
-const authorizeUrl = base_url + "/platform/identity/v1/api/oauth2/ropc/authorize";
-const logoff_url = base_url + "/platform/identity/v1/api/oauth2logoff/logoff"
-
 // DATES VARIABLES
 var act_date = new Date();
 var year = act_date.getFullYear();
@@ -35,6 +36,7 @@ var day = act_date.getDate();
 var prev_date = new Date(year - 1, month, day);
 
 async function assert_historical_invoices() {
+    // Login API
     fetch(loginUrl, {
         method: 'POST',
         headers: auth_headers,
@@ -50,6 +52,7 @@ async function assert_historical_invoices() {
                 client_id: 'D82C3269-F5E3-4311-8C68-E2EAB0533751',
                 code: accessToken.result,
             };
+            // Authorization API
             fetch(authorizeUrl, {
                 method: 'POST',
                 headers: auth_headers,
@@ -57,7 +60,6 @@ async function assert_historical_invoices() {
             })
                 .then(r => r.json())
                 .then(data => {
-                    console.log(data)
                     var bearer = String(data.id_token)
                     const headers = {
                         'Content-Type': 'application/json',
@@ -66,7 +68,7 @@ async function assert_historical_invoices() {
                     }
                     var invoice_arr = []
                     var z = 0
-                    var assert_aux = 0
+                    // Invoice List API
                     fetch(url, {
                         method: 'POST',
                         headers: headers,
@@ -77,6 +79,7 @@ async function assert_historical_invoices() {
                         .then(r => r.json())
                         .then(data => {
                             var number_of_invoices = data.data.getInvoiceList.items.length
+                            // Filtering the invoices for general year filter
                             for (var n = 0; n < number_of_invoices; n++) {
                                 let due_date = new Date(data.data.getInvoiceList.items[n].dueDate);
                                 let start_date = new Date(data.data.getInvoiceList.items[n].startDate)
@@ -111,105 +114,77 @@ async function assert_historical_invoices() {
                                         }
                                         z = z + 1
                                     }
+                                    // Ordering the invoices into an array
                                     if (z == number_of_invoices) {
                                         var newArr = invoice_arr.map(function (item) {
                                             return [item.date, item.number, item.period, item.status, item.amount]
                                         })
+                                        fs.unlinkSync('pages/billing/aux_file.txt');
+                                        var start = "0"
+                                        fs.appendFileSync("pages/billing/aux_file.txt", start, "UTF-8", { 'flags': 'a+' });
                                         for (var i = 0; i < number_of_invoices; i++) {
                                             const date_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(2)"
                                             const number_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(3)"
                                             const period_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(4)"
                                             const status_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(5)"
                                             const amount_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(6)"
-                                            var text = async function (element, counter) {
-                                                const value = await ActionsPage.select(element).innerText;
-                                                const aux_counter = counter
-                                                return [value, aux_counter]
+                                            // Retrieve text for async functions
+                                            async function assertion(element, counter, field) {
+                                                var value = await ActionsPage.select(element).innerText;
+                                                var api_value = newArr[counter][field]
+                                                if (field == "4") {
+                                                    assert(value == formatter.format(api_value))
+                                                    var assert_aux = parseInt(fs.readFileSync('./pages/billing/aux_file.txt', 'utf8'), 10);
+                                                    assert_aux = assert_aux + 1
+                                                    aux_result = assert_aux.toString()
+                                                    console.log(aux_result)
+                                                    fs.unlinkSync('pages/billing/aux_file.txt');
+                                                    fs.appendFileSync("pages/billing/aux_file.txt", aux_result, "UTF-8", { 'flags': 'a+' });
+                                                }
+                                                else {
+                                                    assert(value == api_value)
+                                                    var assert_aux = parseInt(fs.readFileSync('./pages/billing/aux_file.txt', 'utf8'), 10);
+                                                    assert_aux = assert_aux + 1
+                                                    aux_result = assert_aux.toString()
+                                                    console.log(aux_result)
+                                                    fs.unlinkSync('pages/billing/aux_file.txt');
+                                                    fs.appendFileSync("pages/billing/aux_file.txt", aux_result, "UTF-8", { 'flags': 'a+' });
+                                                }
                                             }
-                                            text(date_record, i).then(values => {
-                                                ActionsPage.hover_element(date_record)
-                                                // console.log(values[0])
-                                                // console.log(newArr[values[1]][0])
-                                                assert(values[0] == newArr[values[1]][0])
-                                                assert_aux = assert_aux + 1
-                                                // console.log(aux_counter)
-                                            })
-                                            text(number_record, i).then(values => {
-                                                ActionsPage.hover_element(number_record)
-                                                // console.log(values[0])
-                                                // console.log(newArr[values[1]][1])
-                                                assert(values[0] == newArr[values[1]][1])
-                                                assert_aux = assert_aux + 1
-                                                // console.log(aux_counter)
-                                            })
-                                            text(period_record, i).then(values => {
-                                                ActionsPage.hover_element(period_record)
-                                                // console.log(values[0])
-                                                // console.log(newArr[values[1]][2])
-                                                assert(values[0] == newArr[values[1]][2])
-                                                assert_aux = assert_aux + 1
-                                                // console.log(aux_counter)
-                                            })
-                                            text(status_record, i).then(values => {
-                                                ActionsPage.hover_element(status_record)
-                                                // console.log(values[0])
-                                                // console.log(newArr[values[1]][3])
-                                                assert(values[0] == newArr[values[1]][3])
-                                                assert_aux = assert_aux + 1
-                                                // console.log(aux_counter)
-                                            })
-                                            text(amount_record, i).then(values => {
-                                                var formatter = new Intl.NumberFormat('en-US', {
-                                                    style: 'currency',
-                                                    currency: 'USD',
-                                                 });
-                                                ActionsPage.hover_element(amount_record)
-                                                // console.log(values[0])
-                                                // console.log(newArr[values[1]][4])
-                                                assert(values[0] == newArr[values[1]][4])
-                                                // assert(values[0] == formatter.format(newArr[values[1]][4]))
-                                                assert_aux = assert_aux + 1
-                                                // console.log(aux_counter)
-                                            })
+                                            // Formatter for currency
+                                            var formatter = new Intl.NumberFormat('en-US', {
+                                                style: 'currency',
+                                                currency: 'USD',
+                                            });
+                                            // Assertions API Data & UI Data
+                                            assertion(date_record, i, "0")
+                                            assertion(number_record, i, "1")
+                                            assertion(period_record, i, "2")
+                                            assertion(status_record, i, "3")
+                                            assertion(amount_record, i, "4")
                                         }
-                                        console.log(assert_aux)
-                                        if(assert_aux == number_of_invoices * 5){
-                                            assert.ok(true) 
-                                        }
-                                        else{
-                                            assert.ok(false)
-                                        }
+                                    }
+                                    var final_result = parseInt(fs.readFileSync('./pages/billing/aux_file.txt', 'utf8'))
+                                    if (final_result == (number_of_invoices * 5)) {
+                                        console.log("paso we")
+                                        assert.ok(true)
+                                    }
+                                    else {
+                                        console.log("te la pelas")
+                                        assert.ok(false)
                                     }
                                 }
                             }
+                            // Logoff API
                             fetch(logoff_url, {
                                 method: 'POST',
                                 headers: headers
                             })
                         })
-                    // var data = requests.getInvoiceHistoryData(url, headers)
-                    // console.log(data)
-                    // for (var n = 0; n <= sorted.length; n++) {
-                    //         for (var i = 0; i <= 4; i++) {
-                    //                 const record = "tr:nth-of-type(" + (n + 1) + ") > td:nth-of-type(" + (i + 2) + ")"
-                    //                 var text = async function (element) {
-                    //                         // const value = await ActionsPage.select(element).innerText;
-                    //                         return value
-                    //                 }
-                    //                 text(record).then(value => {
-                    //                         ActionsPage.hover_element(record)
-                    //                         console.log(value)
-                    //                         console.log(sorted)
-                    //                         return value;
-                    //                 })
-                    // console.log(text_to_assert)
-                    // }
-                    // }
                 }
                 )
         })
 }
-
 
 async function assert_columns(datatable) {
     data = datatable.raw()
@@ -345,7 +320,6 @@ async function filter_invoices(filter, value) {
 
     }
 }
-
 
 module.exports = {
     assert_historical_invoices: assert_historical_invoices,

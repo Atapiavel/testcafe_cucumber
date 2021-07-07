@@ -1,5 +1,4 @@
 const { When, Then } = require('@cucumber/cucumber');
-const fs = require('fs');
 const ActionsPage = require('../../../pages/actions.pages.js')
 const BillingHistoryPage = require('../../../pages/billing/invoice_history.pages.js');
 const BillingHistoryPageLocator = require('../../../locators/billing/invoice_history.locators.js');
@@ -19,8 +18,8 @@ When('I verify the columns are showed with', async function (datatable) {
     await BillingHistoryPage.assert_columns(datatable)
 })
 
-Then('I assert {string} kebab option is visible for', async function (option, datatable) {
-    await BillingHistoryPage.assert_kebab_option(option, datatable)
+Then('I assert {string} kebab option is visible for historical invoices', async function (option) {
+    await BillingHistoryPage.assert_kebab_option(option)
 })
 
 When('I select the filter {string} with {string}', async function (filter, value) {

@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 19268000000
+              "duration": 4711000000
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1180000000
+              "duration": 562000000
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6308000000
+              "duration": 4082000000
             }
           },
           {
@@ -53,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2733000000
+              "duration": 2097000000
             }
           },
           {
@@ -66,7 +66,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10011000000
+              "duration": 10016000000
             }
           },
           {
@@ -79,72 +79,85 @@
             },
             "result": {
               "status": "passed",
-              "duration": 712000000
+              "duration": 343000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 10,
-            "name": "I hover on More option",
-            "match": {
-              "location": "features\\step_definition\\common.spec.js:33"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 6644000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 11,
-            "name": "I select the \"Billing\" option",
-            "match": {
-              "location": "features\\step_definition\\common.spec.js:25"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2265000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 12,
-            "name": "I click on see all option",
-            "match": {
-              "location": "features\\step_definition\\billing\\billing_overview.spec.js:6"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1832000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 13,
             "name": "I wait for \"5\" seconds",
             "match": {
               "location": "features\\step_definition\\common.spec.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 5029000000
+              "duration": 5005000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I hover on More option",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 199000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 14,
-            "name": "I assert the Scorpion Billing History page",
+            "line": 12,
+            "name": "I select the \"Billing\" option",
             "match": {
-              "location": "features\\step_definition\\billing\\invoice_history.spec.js:9"
+              "location": "features\\step_definition\\common.spec.js:25"
             },
             "result": {
               "status": "passed",
-              "duration": 161000000
+              "duration": 852000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I click on see all option",
+            "match": {
+              "location": "features\\step_definition\\billing\\billing_overview.spec.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1426000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I wait for \"5\" seconds",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5014000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "I assert the Scorpion Billing History page",
+            "match": {
+              "location": "features\\step_definition\\billing\\invoice_history.spec.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 49000000
             }
           },
           {
@@ -164,40 +177,40 @@
               }
             ],
             "keyword": "Then ",
-            "line": 15,
+            "line": 16,
             "name": "I verify the columns are showed with",
             "match": {
-              "location": "features\\step_definition\\billing\\invoice_history.spec.js:18"
+              "location": "features\\step_definition\\billing\\invoice_history.spec.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 805000000
+              "duration": 248000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 17,
+            "line": 18,
             "name": "I assert I can see historical invoices",
             "match": {
-              "location": "features\\step_definition\\billing\\invoice_history.spec.js:14"
+              "location": "features\\step_definition\\billing\\invoice_history.spec.js:13"
             },
             "result": {
               "status": "passed",
-              "duration": 12000000
+              "duration": 3000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 18,
+            "line": 19,
             "name": "I wait for \"5\" seconds",
             "match": {
               "location": "features\\step_definition\\common.spec.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 5034000000
+              "duration": 5014000000
             }
           },
           {
@@ -205,7 +218,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 2000000
+              "duration": 1000000
             }
           },
           {
@@ -213,7 +226,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 3000000
+              "duration": 0
             }
           }
         ],
