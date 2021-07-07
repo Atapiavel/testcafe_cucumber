@@ -83,6 +83,7 @@ function read_end_date() {
 }
 
 function read_bearer() {
+    var str = fs.readFileSync('bearer.txt', 'utf8');
     // var str = fs.readFileSync('./bearer.txt', 'utf8');
     var str = fs.readFileSync('./../../bearer.txt', 'utf8');
     return str
