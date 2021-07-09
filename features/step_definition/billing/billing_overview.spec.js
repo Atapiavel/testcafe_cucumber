@@ -7,12 +7,12 @@ When('I click on see all option', async function () {
     await ActionsPage.click_element(BillingOverviewPageLocator.billing_history())
 })
 
-When('I verify the columns are showed in billing overview with', async function (datatable) {
+Then('I verify the columns are shown on the billing overview page with', async function (datatable) {
     await BillingOverviewPage.assert_columns(datatable)
 })
 
-Then('I assert I can see recent invoices with', async function (datatable) {
-    await BillingOverviewPage.assert_recent_invoices(datatable)
+Then('I assert I can see recent invoices', async function () {
+    await BillingOverviewPage.assert_recent_invoices()
 })
 
 Then('I assert {string} kebab option is visible on the billing overview page for', async function (option, datatable) {

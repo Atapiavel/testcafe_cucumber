@@ -132,30 +132,22 @@ async function assert_historical_invoices() {
                                             async function assertion(element, counter, field) {
                                                 var value = await ActionsPage.select(element).innerText;
                                                 var api_value = newArr[counter][field]
+                                                // Formatter for currency
+                                                var formatter = new Intl.NumberFormat('en-US', {
+                                                    style: 'currency',
+                                                    currency: 'USD',
+                                                });
                                                 if (field == "4") {
-                                                    assert(value == formatter.format(api_value))
-                                                    var assert_aux = parseInt(fs.readFileSync('./pages/billing/aux_file.txt', 'utf8'), 10);
-                                                    assert_aux = assert_aux + 1
-                                                    aux_result = assert_aux.toString()
-                                                    console.log(aux_result)
-                                                    fs.unlinkSync('pages/billing/aux_file.txt');
-                                                    fs.appendFileSync("pages/billing/aux_file.txt", aux_result, "UTF-8", { 'flags': 'a+' });
+                                                    api_value = formatter.format(api_value)
                                                 }
-                                                else {
-                                                    assert(value == api_value)
-                                                    var assert_aux = parseInt(fs.readFileSync('./pages/billing/aux_file.txt', 'utf8'), 10);
-                                                    assert_aux = assert_aux + 1
-                                                    aux_result = assert_aux.toString()
-                                                    console.log(aux_result)
-                                                    fs.unlinkSync('pages/billing/aux_file.txt');
-                                                    fs.appendFileSync("pages/billing/aux_file.txt", aux_result, "UTF-8", { 'flags': 'a+' });
-                                                }
+                                                assert(value == api_value)
+                                                var data = fs.readFileSync('./pages/billing/aux_file.txt', 'utf8')
+                                                data = data.split("-")
+                                                assert_aux = parseInt(data[0], 10) + 1
+                                                aux_result = assert_aux.toString()
+                                                fs.unlinkSync('pages/billing/aux_file.txt');
+                                                fs.appendFileSync("pages/billing/aux_file.txt", aux_result + "-" + number_of_invoices, "UTF-8", { 'flags': 'a+' });
                                             }
-                                            // Formatter for currency
-                                            var formatter = new Intl.NumberFormat('en-US', {
-                                                style: 'currency',
-                                                currency: 'USD',
-                                            });
                                             // Assertions API Data & UI Data
                                             assertion(date_record, i, "0")
                                             assertion(number_record, i, "1")
@@ -164,15 +156,7 @@ async function assert_historical_invoices() {
                                             assertion(amount_record, i, "4")
                                         }
                                     }
-                                    var final_result = parseInt(fs.readFileSync('./pages/billing/aux_file.txt', 'utf8'))
-                                    if (final_result == (number_of_invoices * 5)) {
-                                        console.log("paso we")
-                                        assert.ok(true)
-                                    }
-                                    else {
-                                        console.log("te la pelas")
-                                        assert.ok(false)
-                                    }
+
                                 }
                             }
                             // Logoff API
@@ -184,6 +168,17 @@ async function assert_historical_invoices() {
                 }
                 )
         })
+}
+
+async function assert_results() {
+    var data = fs.readFileSync('./pages/billing/aux_file.txt', 'utf8')
+    data = data.split("-")
+    if (data[0] == (data[1] * 5)) {
+        assert.ok(true)
+    }
+    else {
+        assert.ok(false)
+    }
 }
 
 async function assert_columns(datatable) {
@@ -323,6 +318,7 @@ async function filter_invoices(filter, value) {
 
 module.exports = {
     assert_historical_invoices: assert_historical_invoices,
+    assert_results: assert_results,
     assert_columns: assert_columns,
     assert_kebab_option: assert_kebab_option,
     filter_invoices: filter_invoices
