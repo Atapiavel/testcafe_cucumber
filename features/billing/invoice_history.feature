@@ -7,6 +7,7 @@ Feature: Billing Invoice History
         And I click on sign in button
         And I wait for "10" seconds
         Given I am in Scorpion "settings" page
+        And I wait for "5" seconds
         And I hover on More option
         Then I select the "Billing" option
         And I click on see all option
@@ -17,43 +18,24 @@ Feature: Billing Invoice History
         Then I assert I can see historical invoices
         And I wait for "5" seconds
 
-#     @billing @invoice_history @focus
-#     Scenario Outline: Invoice_history_kebab_options_are_visible_for_<Invoice_Number>
-#         Given I am in Scorpion login page
-#         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
-#         And I click on sign in button
-#         And I wait for "10" seconds
-#         Given I am in Scorpion "settings" page
-#         And I wait for "5" seconds
-#         And I hover on More option
-#         Then I select the "Billing" option
-#         And I click on see all option
-#         And I wait for "5" seconds
-#         Then I assert the Scorpion Billing History page
-#         And I assert "send" kebab option is visible for
-#             | <Invoice_Date> | <Invoice_Number> | <Billing_Period> | <Status> | <Amount> |
-#         And I wait for "1" seconds
-#         And I assert "print" kebab option is visible for
-#             | <Invoice_Date> | <Invoice_Number> | <Billing_Period> | <Status> | <Amount> |
-#         And I wait for "1" seconds
-#         And I assert "download_PDF" kebab option is visible for
-#             | <Invoice_Date> | <Invoice_Number> | <Billing_Period> | <Status> | <Amount> |
-#         And I wait for "1" seconds
-#         And I assert "download_DOC" kebab option is visible for
-#             | <Invoice_Date> | <Invoice_Number> | <Billing_Period> | <Status> | <Amount> |
-#         And I wait for "1" seconds
-#         And I assert "download_CSV" kebab option is visible for
-#             | <Invoice_Date> | <Invoice_Number> | <Billing_Period> | <Status> | <Amount> |
-
-#         Examples:
-
-#             | Invoice_Date | Invoice_Number | Billing_Period | Status | Amount     |
-#             | May 8, 2021  | 20210508-0029  | Monthly        | Unpaid | $40,000.00 |
-#             | May 1, 2021  | 20210501-0006  | Monthly        | Unpaid | $20,000.00 |
-#             | Apr 12, 2021 | 20210412-0005  | Monthly        | Unpaid | $20,000.00 |
-#             | Apr 8, 2021  | 20210408-0004  | Monthly        | Unpaid | $40,000.00 |
-#             | Feb 18, 2021 | 2              | Monthly        | Unpaid | $80,000.00 |
-#             | Feb 18, 2021 | 1              | Monthly        | Paid   | $80,000.00 |
+    # @billing @invoice_history @focus
+    # Scenario Outline: Invoice_history_kebab_options_are_visible_for_<Invoice_Number>
+    #     Given I am in Scorpion login page
+    #     When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
+    #     And I click on sign in button
+    #     And I wait for "10" seconds
+    #     Given I am in Scorpion "settings" page
+    #     And I wait for "3" seconds
+    #     And I hover on More option
+    #     Then I select the "Billing" option
+    #     And I click on see all option
+    #     And I wait for "5" seconds
+    #     Then I assert the Scorpion Billing History page
+    #     And I assert "send" kebab option is visible for historical invoices
+    #     And I assert "print" kebab option is visible for historical invoices
+    #     And I assert "download_PDF" kebab option is visible for historical invoices
+    #     And I assert "download_DOC" kebab option is visible for historical invoices
+    #     And I assert "download_CSV" kebab option is visible for historical invoices
 
 #     @billing @invoice_history
 #     Scenario: Invoice_filtering_by_year

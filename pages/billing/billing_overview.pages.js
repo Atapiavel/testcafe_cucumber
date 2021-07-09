@@ -1,16 +1,202 @@
 const ActionsPage = require("../actions.pages")
 var assert = require('assert');
+const fetch = require("node-fetch");
+const Requests = require("../../api/billing/requests");
+const fs = require('fs');
 
+var username = "commcenter@scorpion.co"
+var password = "Comms1234!"
+// var username = "thebillingteam@scorpion.co"
+// var password = "Billing1234!!"
 
-async function assert_recent_invoices(datatable) {
-    data = datatable.raw()
-    for (var n = 0; n < data.length; n++) {
-        for (var i = 0; i < data[n].length; i++) {
-            const record = "tr:nth-of-type(" + (n + 1) + ") > td:nth-of-type(" + (i + 1) + ")"
-            const text = await ActionsPage.select(record).innerText
-            assert(text == data[n][i])
-        }
-    }
+// URL's
+const url = "https://integration.scorpion.co/csx/billing/graphql"
+const base_url = 'https://integration.scorpion.co'
+const loginUrl = base_url + "/platform/identity/v1/api/oauth2/login2";
+const authorizeUrl = base_url + "/platform/identity/v1/api/oauth2/ropc/authorize";
+const logoff_url = base_url + "/platform/identity/v1/api/oauth2logoff/logoff"
+
+// HEADERS & BODIES
+const auth_headers = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+}
+const loginBody = {
+    client_id: 'D82C3269-F5E3-4311-8C68-E2EAB0533751',
+    password,
+    username,
+};
+
+// DATES VARIABLES
+var act_date = new Date();
+var year = act_date.getFullYear();
+var month = act_date.getMonth();
+var day = act_date.getDate();
+var prev_date = new Date(year - 1, month, day);
+
+async function assert_recent_invoices() {
+    // Login API
+    fetch(loginUrl, {
+        method: 'POST',
+        headers: auth_headers,
+        body: JSON.stringify(loginBody)
+    })
+        .then(r => r.json())
+        .then((accessToken) => {
+            if (typeof window !== "undefined") {
+                window.localStorage.clear();
+                window.localStorage.setItem('platform.auth-access-token', JSON.stringify(accessToken))
+            }
+            const authorizeBody = {
+                client_id: 'D82C3269-F5E3-4311-8C68-E2EAB0533751',
+                code: accessToken.result,
+            };
+            // Authorization API
+            fetch(authorizeUrl, {
+                method: 'POST',
+                headers: auth_headers,
+                body: JSON.stringify(authorizeBody)
+            })
+                .then(r => r.json())
+                .then(data => {
+                    var bearer = String(data.id_token)
+                    const headers = {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'Authorization': 'Bearer ' + bearer
+                    }
+                    var invoice_arr = []
+                    var z = 0
+                    // Invoice List API
+                    fetch(url, {
+                        method: 'POST',
+                        headers: headers,
+                        body: JSON.stringify({
+                            query: Requests.getInvoiceList(100),
+                        })
+                    })
+                        .then(r => r.json())
+                        .then(data => {
+                            var number_of_invoices = data.data.getInvoiceList.items.length
+                            // Filtering the invoices for general year filter
+                            for (var n = 0; n < number_of_invoices; n++) {
+                                let due_date = new Date(data.data.getInvoiceList.items[n].dueDate);
+                                let start_date = new Date(data.data.getInvoiceList.items[n].startDate)
+                                let end_date = new Date(data.data.getInvoiceList.items[n].endDate)
+                                if (due_date >= prev_date && due_date <= act_date ||
+                                    start_date >= prev_date && start_date <= act_date ||
+                                    end_date >= prev_date && end_date <= act_date) {
+                                    const formattedDate = due_date.toLocaleString("en-US", {
+                                        month: "short",
+                                        day: "numeric",
+                                        year: "numeric"
+                                    });
+                                    if (z > 0) {
+                                        invoice_arr[z] =
+                                        {
+                                            date: formattedDate,
+                                            number: data.data.getInvoiceList.items[n].invoiceNumber,
+                                            period: data.data.getInvoiceList.items[n].billingFrequencyName,
+                                            status: data.data.getInvoiceList.items[n].invoiceStatusName,
+                                            amount: data.data.getInvoiceList.items[n].amountDue
+                                        }
+                                        z = z + 1
+                                    }
+                                    if (z == 0) {
+                                        invoice_arr[0] =
+                                        {
+                                            date: formattedDate,
+                                            number: data.data.getInvoiceList.items[n].invoiceNumber,
+                                            period: data.data.getInvoiceList.items[n].billingFrequencyName,
+                                            status: data.data.getInvoiceList.items[n].invoiceStatusName,
+                                            amount: data.data.getInvoiceList.items[n].amountDue
+                                        }
+                                        z = z + 1
+                                    }
+                                    // Ordering the invoices into an array
+                                    if (z == number_of_invoices) {
+                                        var newArr = invoice_arr.map(function (item) {
+                                            return [item.date, item.number, item.period, item.status, item.amount]
+                                        })
+                                        fs.unlinkSync('pages/billing/aux_file.txt');
+                                        var start = "0"
+                                        fs.appendFileSync("pages/billing/aux_file.txt", start, "UTF-8", { 'flags': 'a+' });
+                                        for (var i = 0; i < 5; i++) {
+                                            console.log(i)
+                                            const date_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(2)"
+                                            const number_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(3)"
+                                            const period_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(4)"
+                                            const status_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(5)"
+                                            const amount_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(6)"
+                                            // Retrieve text for async functions
+                                            async function assertion(element, counter, field) {
+                                                var value = await ActionsPage.select(element).innerText;
+                                                var api_value = newArr[counter][field]
+                                                if (field == "4") {
+                                                    console.log(value)
+                                                    console.log(api_value)
+                                                    assert(value == formatter.format(api_value))
+                                                    var assert_aux = parseInt(fs.readFileSync('./pages/billing/aux_file.txt', 'utf8'), 10);
+                                                    assert_aux = assert_aux + 1
+                                                    aux_result = assert_aux.toString()
+                                                    console.log(aux_result)
+                                                    fs.unlinkSync('pages/billing/aux_file.txt');
+                                                    fs.appendFileSync("pages/billing/aux_file.txt", aux_result, "UTF-8", { 'flags': 'a+' });
+                                                }
+                                                else {
+                                                    console.log(value)
+                                                    console.log(api_value)
+                                                    assert(value == api_value)
+                                                    var assert_aux = parseInt(fs.readFileSync('./pages/billing/aux_file.txt', 'utf8'), 10);
+                                                    assert_aux = assert_aux + 1
+                                                    aux_result = assert_aux.toString()
+                                                    console.log(aux_result)
+                                                    fs.unlinkSync('pages/billing/aux_file.txt');
+                                                    fs.appendFileSync("pages/billing/aux_file.txt", aux_result, "UTF-8", { 'flags': 'a+' });
+                                                }
+                                            }
+                                            // Formatter for currency
+                                            var formatter = new Intl.NumberFormat('en-US', {
+                                                style: 'currency',
+                                                currency: 'USD',
+                                            });
+                                            // Assertions API Data & UI Data
+                                            assertion(date_record, i, "0")
+                                            assertion(number_record, i, "1")
+                                            assertion(period_record, i, "2")
+                                            assertion(status_record, i, "3")
+                                            assertion(amount_record, i, "4")
+                                        }
+                                    }
+                                    var final_result = parseInt(fs.readFileSync('./pages/billing/aux_file.txt', 'utf8'))
+                                    console.log(final_result)
+                                    // if (final_result == (number_of_invoices * 5)) {
+                                    //     console.log("paso we")
+                                    //     assert.ok(true)
+                                    // }
+                                    // else {
+                                    //     console.log("te la pelas")
+                                    //     assert.ok(false)
+                                    // }
+                                }
+                            }
+                            // Logoff API
+                            fetch(logoff_url, {
+                                method: 'POST',
+                                headers: headers
+                            })
+                        })
+                }
+                )
+        })
+    // data = datatable.raw()
+    // for (var n = 0; n < data.length; n++) {
+    //     for (var i = 0; i < data[n].length; i++) {
+    //         const record = "tr:nth-of-type(" + (n + 1) + ") > td:nth-of-type(" + (i + 1) + ")"
+    //         const text = await ActionsPage.select(record).innerText
+    //         assert(text == data[n][i])
+    //     }
+    // }
 }
 
 async function assert_columns(datatable) {
