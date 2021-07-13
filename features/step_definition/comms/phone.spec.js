@@ -95,6 +95,18 @@ When('I click on the Back button', async function() {
         await ActionsPage.click_element(PhonePageLocator.BackToDialPadBtn());
 })
 
+When('I click on the Address Book button', async function() {
+        await ActionsPage.click_element(PhonePageLocator.AddressBookBtn());
+})
+
+When('I click on the Sidepanel button again', async function() {
+        await ActionsPage.click_element(PhonePageLocator.SidePan());
+})
+
+When('I click on the Back button again', async function() {
+        await ActionsPage.click_element(PhonePageLocator.BackToDialPadBtn());
+})
+
 When('I click on Minimize button again', async function() {
         await ActionsPage.click_element(PhonePageLocator.MiniBtn());
 })

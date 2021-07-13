@@ -69,11 +69,15 @@ function MaxiBtn() {
 }
 
 function SidePan() {
-    return select('scorpion-button-icon[svgtitle="Call List"]')
+    return select('scorpion-dialer-button[svgtitle="Call List"]')
 }
 
 function BackToDialPadBtn() {
     return select('div[title="Back"]')
+}
+
+function AddressBookBtn() {
+    return select('div[title="Address Book"]')
 }
 
 function ExitBtn() {
@@ -115,6 +119,7 @@ module.exports = {
     MaxiBtn: MaxiBtn,
     SidePan: SidePan,
     BackToDialPadBtn: BackToDialPadBtn,
+    AddressBookBtn: AddressBookBtn,
     ExitBtn: ExitBtn,
     EndCallMinBtn: EndCallMinBtn,
     DragBtn: DragBtn,

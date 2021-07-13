@@ -30,8 +30,9 @@ class PhonePage{
         this.endCalMin = Selector('button.mod-red');
         this.dragBtn = Selector('[aria-label="double_ellipsis"]');
         this.collapseBtn = Selector('[aria-label="Dialpad"]');
-        this.sidePanelBtn = Selector('scorpion-button-icon[svgtitle="Call List"]');
+        this.sidePanelBtn = Selector('scorpion-dialer-button[svgtitle="Call List"]');
         this.backMainDialPadBtn = Selector('div[title="Back"]');
+        this.addressBookBtn = Selector('div[title="Address Book"]');
         this.participants = Selector('span').withText('Participants');
         this.availabilityBtn = Selector('[aria-label="Set Your Availability"]');
         this.avaiToggleBtn = Selector('div[data-cy=component]');

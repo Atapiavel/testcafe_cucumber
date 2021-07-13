@@ -27,8 +27,9 @@ test('Phone page Test', async t =>{
     // .click(loginpage.signInBtn)
     // .wait(3000)
     .maximizeWindow()
+    .wait(3000)
     .click(phonepage.phoneBtn)    
-    .expect(getURL()).contains('phone')
+    // .expect(getURL()).contains('phone')
     .click(phonepage.searchBtn)
     .typeText(phonepage.searchBtn, data.phoneSearch)
     .wait(2000)
@@ -43,19 +44,21 @@ test('Phone page Test', async t =>{
     .typeText(phonepage.phoneNrEntry, data.phoneNr)
 
     .click(phonepage.callBtn)
-    // .click(phonepage.collapseBtn)
+
     .click(phonepage.miniBtn)
     .click(phonepage.maxiBtn)
-    // .click(phonepage.collapseBtn)
+
     .click(phonepage.miniBtn)
     .click(phonepage.maxiBtn)
     .click(phonepage.sidePanelBtn)
     .click(phonepage.backMainDialPadBtn)
-    
-    // .hover(phonepage.participants)
+    .click(phonepage.addressBookBtn)
+    .wait(2000)
+    .click(phonepage.sidePanelBtn)
+    .click(phonepage.backMainDialPadBtn)
 
-    // .click(phonepage.exitBtn)
-    // .click(phonepage.collapseBtn)
+
+
     .click(phonepage.endCallBtn)
     .click(phonepage.makeCallBtn)
     .click(phonepage.dialFour)
