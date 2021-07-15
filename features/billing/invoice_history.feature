@@ -1,6 +1,6 @@
 Feature: Billing Invoice History
 
-    @billing @invoice_history
+    @billing @invoice_history @focus
     Scenario: Invoice_history_columns_and_records
         Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
@@ -18,7 +18,7 @@ Feature: Billing Invoice History
         Then I assert I can see historical invoices
         And I wait for "5" seconds
 
-    # @billing @invoice_history @focus
+    # @billing @invoice_history
     # Scenario Outline: Invoice_history_kebab_options_are_visible_for_<Invoice_Number>
     #     Given I am in Scorpion login page
     #     When I enter "thebillingteam@scorpion.co" and "Billing1234!!"

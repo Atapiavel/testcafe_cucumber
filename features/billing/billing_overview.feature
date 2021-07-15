@@ -7,48 +7,35 @@ Feature: Billing Overview
         And I click on sign in button
         And I wait for "10" seconds
         Given I am in Scorpion "settings" page
-        And I wait for "5" seconds
+        When I wait for "5" seconds
         And I hover on More option
         Then I select the "Billing" option
-        Then I verify the columns are shown on the billing overview page with
+        And I verify the columns are shown on the billing overview page with
             | Invoice Date | Invoice | Billing Period | Status | Amount |
-        Then I assert I can see recent invoices
+        And I assert I can see recent invoices
         And I wait for "5" seconds
 
-#     @billing @overview
-#     Scenario Outline: Recent_invoices_kebab_options_are_visible_for_<Invoice_Number>
-#         Given I am in Scorpion login page
-#         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
-#         And I click on sign in button
-#         And I wait for "10" seconds
-#         Given I am in Scorpion "settings" page
-#         And I wait for "5" seconds
-#         And I hover on More option
-#         Then I select the "Billing" option
-#         And I wait for "5" seconds
-#         And I assert "send" kebab option is visible on the billing overview page for
-#             | <Invoice_Date> | <Invoice_Number> | <Billing_Period> | <Status> | <Amount> |
-#         And I wait for "2" seconds
-#         And I assert "print" kebab option is visible on the billing overview page for
-#             | <Invoice_Date> | <Invoice_Number> | <Billing_Period> | <Status> | <Amount> |
-#         And I wait for "2" seconds
-#         And I assert "download_PDF" kebab option is visible on the billing overview page for
-#             | <Invoice_Date> | <Invoice_Number> | <Billing_Period> | <Status> | <Amount> |
-#         And I wait for "2" seconds
-#         And I assert "download_DOC" kebab option is visible on the billing overview page for
-#             | <Invoice_Date> | <Invoice_Number> | <Billing_Period> | <Status> | <Amount> |
-#         And I wait for "2" seconds
-#         And I assert "download_CSV" kebab option is visible on the billing overview page for
-#             | <Invoice_Date> | <Invoice_Number> | <Billing_Period> | <Status> | <Amount> |
+    # @billing @overview @focus
+    # Scenario: Recent_invoices_kebab_options_are_visible_for_<Invoice_Number>
+    #     Given I am in Scorpion login page
+    #     When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
+    #     And I click on sign in button
+    #     And I wait for "10" seconds
+    #     Given I am in Scorpion "settings" page
+    #     And I wait for "5" seconds
+    #     And I hover on More option
+    #     Then I select the "Billing" option
+    #     And I wait for "5" seconds
+    #     And I assert "<option>" kebab option is visible for recent invoices
+    #     And I wait for "10" seconds
 
-#         Examples:
-
-#             | Invoice_Date | Invoice_Number | Billing_Period | Status | Amount     |
-#             | May 12, 2021 | 20210512-0008  | Monthly        | Unpaid | $20,000.00 |
-#             | May 8, 2021  | 20210508-0029  | Monthly        | Unpaid | $40,000.00 |
-#             | May 1, 2021  | 20210501-0006  | Monthly        | Unpaid | $20,000.00 |
-#             | Apr 12, 2021 | 20210412-0005  | Monthly        | Unpaid | $20,000.00 |
-#             | Apr 8, 2021  | 20210408-0004  | Monthly        | Unpaid | $40,000.00 |
+    #     Examples:
+    #         | option       |
+    #         | send         |
+            # | print        |
+            # | download_PDF |
+            # | download_DOC |
+            # | download_CSV |
 
 # # Scenario: <module>_<kebab_option>_option_is_visible
 # #     Given I am in Scorpion login page

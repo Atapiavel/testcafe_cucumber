@@ -75,6 +75,7 @@ Feature: Payment
         Then I select the "Billing" option
         And I wait for "5" seconds
         When I click on add payment method
+        And I wait for "2" seconds
         And I select the payment method with "<payment_method>"
         And I click on continue button
         Then I fill payment method information with

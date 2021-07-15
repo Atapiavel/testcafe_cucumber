@@ -60,6 +60,7 @@ async function assert_historical_invoices() {
             })
                 .then(r => r.json())
                 .then(data => {
+                    console.log(data)
                     var bearer = String(data.id_token)
                     const headers = {
                         'Content-Type': 'application/json',
@@ -78,6 +79,7 @@ async function assert_historical_invoices() {
                     })
                         .then(r => r.json())
                         .then(data => {
+                            console.log(data.data.getInvoiceList)
                             var number_of_invoices = data.data.getInvoiceList.items.length
                             // Filtering the invoices for general year filter
                             for (var n = 0; n < number_of_invoices; n++) {
@@ -116,9 +118,14 @@ async function assert_historical_invoices() {
                                     }
                                     // Ordering the invoices into an array
                                     if (z == number_of_invoices) {
-                                        var newArr = invoice_arr.map(function (item) {
+                                        var sorted = invoice_arr.sort(function (a, b) {
+                                            var dateA = new Date(a.date), dateB = new Date(b.date);
+                                            return dateA - dateB;
+                                        }).reverse()
+                                        var newArr = sorted.map(function (item) {
                                             return [item.date, item.number, item.period, item.status, item.amount]
                                         })
+                                        console.log(newArr)
                                         fs.unlinkSync('pages/billing/aux_file.txt');
                                         var start = "0"
                                         fs.appendFileSync("pages/billing/aux_file.txt", start, "UTF-8", { 'flags': 'a+' });
@@ -140,6 +147,8 @@ async function assert_historical_invoices() {
                                                 if (field == "4") {
                                                     api_value = formatter.format(api_value)
                                                 }
+                                                console.log("Front End value: " + value)    
+                                                console.log("API value: " + api_value + "\n")
                                                 assert(value == api_value)
                                                 var data = fs.readFileSync('./pages/billing/aux_file.txt', 'utf8')
                                                 data = data.split("-")
@@ -174,6 +183,7 @@ async function assert_results() {
     var data = fs.readFileSync('./pages/billing/aux_file.txt', 'utf8')
     data = data.split("-")
     if (data[0] == (data[1] * 5)) {
+        console.log(data)
         assert.ok(true)
     }
     else {

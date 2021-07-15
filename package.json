@@ -12,6 +12,7 @@
     "billing_overview": "cucumber-js --tags @overview --format json:reports/report.json",
     "billing_invoice_history": "cucumber-js --tags @invoice_history --format json:reports/report.json",
     "billing_address": "cucumber-js --tags @address --format json:reports/report.json",
+    "billing_cycle": "cucumber-js --tags @billing_cycle --format json:reports/report.json",
     "comms": "cucumber-js --tags @comms --format json:reports/report.json",
     "normal_option": "testcafe chrome",
     "report": "node report_generator.js",

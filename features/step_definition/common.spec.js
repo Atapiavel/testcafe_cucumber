@@ -3,7 +3,7 @@ const { Given, When, Then } = require('cucumber');
 const MainPageLocator = require('../../locators/main.locators.js');
 const SettingsPage = require('../../pages/settings.pages.js')
 const sql = require('mssql')
-const config = require('../../db_config');
+// const config = require('../../db_config');
 const fs = require('fs')
 
 Given('I am in Scorpion login page', { timeout: 30000 }, async function () {
@@ -34,11 +34,12 @@ When('I hover on More option', { timeout: 30000 }, async function () {
     await SettingsPage.hover_more_option()
 });
 
-When('I execute the next query {string}', { timeout: 30000 }, async function (file) {
-    await sql.connect(config)
-    var query_file = fs.readFileSync('./sql/' + file + '.sql', 'utf8');
-    await sql.query([query_file])
-})
+// DB Code - VPN DEPENDENCY - DEPRECATED
+// When('I execute the next query {string}', { timeout: 30000 }, async function (file) {
+//     await sql.connect(config)
+//     var query_file = fs.readFileSync('./sql/' + file + '.sql', 'utf8');
+//     await sql.query([query_file])
+// })
 
 When('I maximize the window', { timeout: 30000 }, async function () {
     await ActionsPage.maximize_window()
