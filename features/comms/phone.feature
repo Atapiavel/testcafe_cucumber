@@ -38,6 +38,10 @@ Feature: Phone
         # And I click on Collapse button again
         And I click on Sidepanel button
         And I click on the Back button
+        And I click on the Address Book button
+        When I wait for "2" seconds
+        And I click on the Sidepanel button again
+        And I click on the Back button again
         And I click on Minimize button again
         And I click on End Call button again
         And I click on Availability button

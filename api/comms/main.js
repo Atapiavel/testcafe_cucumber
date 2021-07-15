@@ -91,6 +91,7 @@ function logoff(base_url, headers) {
                 )
 }
 
-execute_request(url, headers, Requests.getCommunicationList(100))
+execute_request(url, headers, Requests.getCommunicationList(10))
 // fetchAuthToken("https://integration.scorpion.co","Team123!", "joehaus895@gmail.com")
+// fetchAuthToken("https://integration.scorpion.co","Comms1234!", "commcenter@scorpion.co")
 // logoff("https://integration.scorpion.co", headers)
