@@ -14,6 +14,9 @@ class PhonePage{
         this.makeCallBtn = Selector('[data-cy=make-a-call]');
         this.phoneNrEntry = Selector('[data-cy=dialer-display]');
         this.callBtn = Selector('[data-cy=call]');
+        this.muteBtn = Selector('div:nth-child(2) > scorpion-dialer-button > div > button');
+        this.holdBtn = Selector('div:nth-child(1) > scorpion-dialer-button > div > button');
+        this.dialBtn = Selector('div:nth-child(5) > scorpion-dialer-button > div > button')
         this.endCallBtn = Selector('[data-cy=end-call]');
         this.miniBtn = Selector('[data-cy=minimize-dialer]');
         this.maxiBtn = Selector('[data-cy=maximize-dialer]');
@@ -30,7 +33,7 @@ class PhonePage{
         this.endCalMin = Selector('button.mod-red');
         this.dragBtn = Selector('[aria-label="double_ellipsis"]');
         this.collapseBtn = Selector('[aria-label="Dialpad"]');
-        this.sidePanelBtn = Selector('scorpion-dialer-button[svgtitle="Call List"]');
+        this.sidePanelBtn = Selector('div[title="Call List"]');
         this.backMainDialPadBtn = Selector('div[title="Back"]');
         this.addressBookBtn = Selector('div[title="Address Book"]');
         this.participants = Selector('span').withText('Participants');
