@@ -56,7 +56,20 @@ test('Phone page Test', async t =>{
     .wait(2000)
     .click(phonepage.sidePanelBtn)
     .click(phonepage.backMainDialPadBtn)
-
+    .wait(4000)
+    // Mute the call then Unmute it
+    .click(phonepage.muteBtn)
+    .wait(1000)
+    .click(phonepage.muteBtn)
+    .wait(1000)
+    // Hold the call then Unhold it
+    .click(phonepage.holdBtn)
+    .wait(1000)
+    .click(phonepage.holdBtn)
+    .wait(1000)
+    // Dial button then back
+    .click(phonepage.dialBtn)
+    .click(phonepage.backMainDialPadBtn)
 
 
     .click(phonepage.endCallBtn)
