@@ -2,6 +2,7 @@ const BillingCycleLocator = require('../../locators/billing/billing_cycle.locato
 const ActionsPage = require("../actions.pages")
 const fetch = require("node-fetch");
 const Requests = require("../../api/billing/requests");
+const assert = require('assert');
 
 var username = "commcenter@scorpion.co"
 var password = "Comms1234!"
@@ -63,7 +64,6 @@ async function see_graph_details() {
             })
                 .then(r => r.json())
                 .then(data => {
-                    console.log(data)
                     var bearer = String(data.id_token)
                     const headers = {
                         'Content-Type': 'application/json',
@@ -80,10 +80,8 @@ async function see_graph_details() {
                     })
                         .then(r => r.json())
                         .then(data => {
-                            console.log(data)
                             var i = data.data.getInvoiceList.items.length
                             for (var n = 0; n < i; n++) {
-                                // console.log(data.data.getInvoiceList.items[n].invoiceNumber + ":" + data.data.getInvoiceList.items[n].amountDue + ":" + data.data.getInvoiceList.items[n].amountPaid)
                                 var amount = data.data.getInvoiceList.items[n].amountDue
                                 var amount_paid_aux = data.data.getInvoiceList.items[n].amountPaid
                                 var due_date = new Date(data.data.getInvoiceList.items[n].dueDate)
@@ -99,43 +97,57 @@ async function see_graph_details() {
                                 }
                                 amount_paid = amount_paid + amount_paid_aux
                             }
-                            console.log("amountDue: " + amount_due)
-                            console.log("amountPaid: " + amount_paid)
-                            console.log("estimate: " + current_amount)
-                            console.log("pastAmountDue: " + past_amount_due)
-                            console.log("unpaidEstimate: " + current_unpaid_amount)
-                            fetch(url, {
-                                method: 'POST',
-                                headers: headers,
-                                body: JSON.stringify({
-                                    query: Requests.getAccountMonies(0),
-                                })
-                            })
-                                .then(r => r.json())
-                                .then(data => {
-                                    var availableCredit = data.data.getAccountMonies[0].amount
-                                    console.log("availableCredit: " + availableCredit)
+                            async function assert_graph() {
+                                var formatter = new Intl.NumberFormat('en-US', {
+                                    style: 'currency',
+                                    currency: 'USD',
                                 });
-                            var billing_cycle_title = ActionsPage.select(BillingCycleLocator.billing_cycle_title()).innerText
-                            var date_range = ActionsPage.select(BillingCycleLocator.date_range()).innerText
-                            var estimate_value = ActionsPage.select(BillingCycleLocator.estimate_value()).innerText
-                            var estimate_text = ActionsPage.select(BillingCycleLocator.estimate_text()).innerText
-                            var bar_desc_1 = ActionsPage.select(BillingCycleLocator.bar_desc_1()).innerText
-                            var bar_desc_2 = ActionsPage.select(BillingCycleLocator.bar_desc_2()).innerText
-                            var bar_desc_3 = ActionsPage.select(BillingCycleLocator.bar_desc_3()).innerText
-                            var total_balance_due_value = ActionsPage.select(BillingCycleLocator.total_balance_due_value()).innerText
-                            var credit_available_value = ActionsPage.select(BillingCycleLocator.credit_available_value()).innerText
-                            console.log(billing_cycle_title)
-                            console.log(date_range)
-                            console.log(estimate_value)
-                            console.log(estimate_text)
-                            console.log(bar_desc_1)
-                            console.log(bar_desc_2)
-                            console.log(bar_desc_3)
-                            console.log(total_balance_due_value)
-                            console.log(credit_available_value)
-                            console.log(data.data.getInvoiceList)
+                                const formatted_start_of_month = start_of_month.toLocaleString("en-US", {
+                                    month: "short",
+                                    day: "numeric",
+                                });
+                                const formatted_end_of_month = end_of_month.toLocaleString("en-US", {
+                                    month: "short",
+                                    day: "numeric",
+                                });
+                                var actual_range = formatted_start_of_month + " - " + formatted_end_of_month
+                                var billing_cycle_title = await ActionsPage.select(BillingCycleLocator.billing_cycle_title()).innerText
+                                var date_range = await ActionsPage.select(BillingCycleLocator.date_range()).innerText
+                                var estimate_value = await ActionsPage.select(BillingCycleLocator.estimate_value()).innerText
+                                var estimate_text = await ActionsPage.select(BillingCycleLocator.estimate_text()).innerText
+                                var total_balance_due_value = await ActionsPage.select(BillingCycleLocator.total_balance_due_value()).innerText
+                                await ActionsPage.wait(1)
+                                assert(estimate_value == formatter.format(current_amount))
+                                assert(total_balance_due_value == formatter.format(amount_due))
+                                assert(actual_range == date_range)
+                                assert(billing_cycle_title == "Monthly Billing Cycle")
+                                assert(estimate_text == "ESTIMATE")
+                            }
+                            assert_graph()
                         })
+                    fetch(url, {
+                        method: 'POST',
+                        headers: headers,
+                        body: JSON.stringify({
+                            query: Requests.getAccountMonies(1),
+                        })
+                    })
+                        .then(r => r.json())
+                        .then(data => {
+                            async function assert_credit() {
+                                var formatter = new Intl.NumberFormat('en-US', {
+                                    style: 'currency',
+                                    currency: 'USD',
+                                });
+                                var credit_available_value = await ActionsPage.select(BillingCycleLocator.credit_available_value()).innerText
+                                var credit_amount = 0
+                                for (var i = 0; i < data.data.getAccountMonies.length; i++) {
+                                    credit_amount = credit_amount + data.data.getAccountMonies[i].amount
+                                }
+                                assert(credit_available_value == " " + formatter.format(credit_amount))
+                            }
+                            assert_credit()
+                        });
                     fetch(logoff_url, {
                         method: 'POST',
                         headers: headers

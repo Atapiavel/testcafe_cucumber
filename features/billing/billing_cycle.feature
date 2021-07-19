@@ -10,7 +10,7 @@ Feature: Billing Cycle Graph
         When I wait for "5" seconds
         And I hover on More option
         Then I select the "Billing" option
-        # And I verify the columns are shown on the billing overview page with
-        #     | Invoice Date | Invoice | Billing Period | Status | Amount |
+        And I verify the columns are shown on the billing overview page with
+            | Invoice Date | Invoice | Billing Period | Status | Amount |
         And I assert I can see the graph information
         And I wait for "5" seconds
