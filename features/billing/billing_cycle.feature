@@ -1,7 +1,7 @@
 Feature: Billing Cycle Graph
 
     @billing @billing_cycle
-    Scenario: See_invoice_details
+    Scenario: Billing_cycle_graph
         Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
         And I click on sign in button

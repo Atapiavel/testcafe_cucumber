@@ -1,0 +1,214 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "billing-cycle-graph;billing_cycle_graph",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Billing_cycle_graph",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 4216000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am in Scorpion login page",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 649000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I enter \"thebillingteam@scorpion.co\" and \"Billing1234!!\"",
+            "match": {
+              "location": "features\\step_definition\\login.spec.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3330000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I click on sign in button",
+            "match": {
+              "location": "features\\step_definition\\login.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1872000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I wait for \"10\" seconds",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10011000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 9,
+            "name": "I am in Scorpion \"settings\" page",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 360000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I wait for \"5\" seconds",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5009000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I hover on More option",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 349000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "I select the \"Billing\" option",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1156000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Invoice Date",
+                      "Invoice",
+                      "Billing Period",
+                      "Status",
+                      "Amount"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I verify the columns are shown on the billing overview page with",
+            "match": {
+              "location": "features\\step_definition\\billing\\billing_overview.spec.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2992000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "I assert I can see the graph information",
+            "match": {
+              "location": "features\\step_definition\\billing\\billing_cycle.spec.js:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3081000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I wait for \"5\" seconds",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5787000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@billing",
+            "line": 3
+          },
+          {
+            "name": "@billing_cycle",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "billing-cycle-graph",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Billing Cycle Graph",
+    "tags": [],
+    "uri": "features\\billing\\billing_cycle.feature"
+  }
+]

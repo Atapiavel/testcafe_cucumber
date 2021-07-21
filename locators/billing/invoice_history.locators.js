@@ -30,24 +30,12 @@ function actions_dropdown() {
     return "scorpion-button[icon='dropdown']"
 }
 
-function by_month() {
-    return "li:nth-of-type(2) > .ng-star-inserted.nlf-middle-center"
+function filter_buttons() {
+    return ".ng-star-inserted > button"
 }
 
-function by_year() {
-    return "li:nth-of-type(3) > .ng-star-inserted.nlf-middle-center"
-}
-
-function custom() {
-    return "li:nth-of-type(4) > .ng-star-inserted.nlf-middle-center"
-}
-
-function year_buttons() {
-    return ".ng-star-inserted.years > button > .label"
-}
-
-function month_buttons() {
-    return ".months.ng-star-inserted > button"
+function months_buttons(){
+    return "div.month-grid > button > span.label"
 }
 
 function no_results() {
@@ -96,18 +84,15 @@ module.exports = {
     clear_filters: clear_filters,
     selected_records: selected_records,
     actions_dropdown: actions_dropdown,
-    by_month: by_month,
-    by_year: by_year,
-    year_buttons: year_buttons,
-    month_buttons: month_buttons,
     no_results: no_results,
     apply_button: apply_button,
-    custom: custom,
+    filter_buttons: filter_buttons,
     min_price: min_price,
     max_price: max_price,
     results_count: results_count,
     paid_checkbox: paid_checkbox,
     unpaid_checkbox: unpaid_checkbox,
     partially_paid_checkbox: partially_paid_checkbox,
-    clear_all_filters: clear_all_filters
+    clear_all_filters: clear_all_filters,
+    months_buttons: months_buttons
 }

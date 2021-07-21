@@ -191,6 +191,10 @@ async function assert_results() {
     }
 }
 
+async function assert_filtered_invoices(filter, value){
+    console.log("need to code here")
+}
+
 async function assert_columns(datatable) {
     data = datatable.raw()
     data_flat = data.flat()
@@ -287,8 +291,8 @@ async function assert_kebab_option(option, datatable) {
 async function filter_invoices(filter, value) {
     if (filter == 'by_year') {
         await ActionsPage.click_element(BillingHistoryPageLocator.start_date())
-        await ActionsPage.click_element(BillingHistoryPageLocator.by_year())
-        await ActionsPage.click_element_from_list(BillingHistoryPageLocator.year_buttons(), value)
+        await ActionsPage.click_element_from_list(BillingHistoryPageLocator.filter_buttons(), "Years")
+        await ActionsPage.click_element_from_list(BillingHistoryPageLocator.filter_buttons(), value)
     }
     else if (filter == 'by_date') {
         dates = value.split('-')
@@ -298,14 +302,9 @@ async function filter_invoices(filter, value) {
         await ActionsPage.type_text(BillingHistoryPageLocator.end_date(), dates[1])
     }
     else if (filter == 'by_month') {
-        month = value.split('-')
         await ActionsPage.click_element(BillingHistoryPageLocator.start_date())
-        await ActionsPage.click_element(BillingHistoryPageLocator.by_month())
-        // await ActionsPage.click_element_from_list(BillingHistoryPageLocator.month_buttons(), month[0] + "\n" + month[1]) 
-        const record = BillingHistoryPageLocator.month_buttons()
-        const text = await ActionsPage.select(record).innerText
-        console.log(text)
-        // await ActionsPage.click_element_from_list(BillingHistoryPageLocator.start_date(), dates[0])
+        await ActionsPage.click_element_from_list(BillingHistoryPageLocator.filter_buttons(), "Months")
+        await ActionsPage.click_element_from_list(BillingHistoryPageLocator.months_buttons(), value)
     }
     else if (filter == 'by_price') {
         prices = value.split('-')
@@ -328,6 +327,7 @@ async function filter_invoices(filter, value) {
 
 module.exports = {
     assert_historical_invoices: assert_historical_invoices,
+    assert_filtered_invoices: assert_filtered_invoices,
     assert_results: assert_results,
     assert_columns: assert_columns,
     assert_kebab_option: assert_kebab_option,
