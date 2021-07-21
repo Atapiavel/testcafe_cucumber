@@ -1,6 +1,10 @@
 const { Selector } = require('testcafe');
 var shell = require('shelljs');
 const fs = require('fs');
+const fetch = require("node-fetch");
+const Requests = require("./.././api/billing/requests");
+const billing_url = "https://integration.scorpion.co/csx/billing/graphql"
+const base_url = 'https://integration.scorpion.co'
 
 async function navigate(url) {
     await testController.navigateTo(url);
@@ -82,13 +86,6 @@ function read_end_date() {
     return end_date[0]
 }
 
-function read_bearer() {
-    var str = fs.readFileSync('bearer.txt', 'utf8');
-    // var str = fs.readFileSync('./bearer.txt', 'utf8');
-    var str = fs.readFileSync('./../../bearer.txt', 'utf8');
-    return str
-}
-
 function select(selector) {
     return Selector(selector).with({ boundTestRun: testController })
 }
@@ -102,6 +99,109 @@ async function drag(element, x, y) {
 async function get_text(element) {
     const text = await select(element).innerText;
     return text
+}
+
+async function login(username, password) {
+    const loginUrl = base_url + "/platform/identity/v1/api/oauth2/login2";
+    const auth_headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+    }
+    const loginBody = {
+        client_id: 'D82C3269-F5E3-4311-8C68-E2EAB0533751',
+        password,
+        username,
+    };
+    return fetch(loginUrl, {
+        method: 'POST',
+        headers: auth_headers,
+        body: JSON.stringify(loginBody)
+    })
+        .then((response) => {
+            return response.json().then((data) => {
+                return data;
+            })
+        })
+}
+
+async function auth(token) {
+    const authorizeUrl = base_url + "/platform/identity/v1/api/oauth2/ropc/authorize";
+    const auth_headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+    }
+    const authorizeBody = {
+        client_id: 'D82C3269-F5E3-4311-8C68-E2EAB0533751',
+        code: token,
+    };
+    return fetch(authorizeUrl, {
+        method: 'POST',
+        headers: auth_headers,
+        body: JSON.stringify(authorizeBody)
+    })
+        .then((response) => {
+            return response.json().then((data) => {
+                console.log(data)
+                return data;
+            })
+        })
+}
+
+async function bearer() {
+    // let token_data = await login("thebillingteam@scorpion.co", "Billing1234!!")
+    let token_data = await login("commcenter@scorpion.co", "Comms1234!")
+    let bearer_data = await auth(token_data.result)
+    let bearer_token = bearer_data.id_token
+    const headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + bearer_token
+    }
+    return headers
+}
+
+async function logoff(headers) {
+    const url = base_url + "/platform/identity/v1/api/oauth2logoff/logoff"
+    return fetch(url, {
+        method: 'POST',
+        headers: headers
+    })
+        .then((response) => {
+            return response.json().then((data) => {
+                console.log(data)
+                return data;
+            })
+        })
+}
+
+async function get_invoice_list(headers, invoices) {
+    return fetch(billing_url, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({
+            query: Requests.getInvoiceList(invoices),
+        })
+    })
+        .then((response) => {
+            return response.json().then((data) => {
+                return data;
+            })
+        })
+}
+
+async function get_account_monies(headers, service_line) {
+    return fetch(billing_url, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({
+            query: Requests.getAccountMonies(service_line),
+        })
+    })
+        .then((response) => {
+            return response.json().then((data) => {
+                return data;
+            })
+        })
 }
 
 module.exports = {
@@ -123,5 +223,8 @@ module.exports = {
     maximize_window: maximize_window,
     select: select,
     get_text: get_text,
-    read_bearer: read_bearer
+    bearer: bearer,
+    logoff: logoff,
+    get_invoice_list: get_invoice_list,
+    get_account_monies: get_account_monies
 };

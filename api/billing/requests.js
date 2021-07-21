@@ -84,7 +84,7 @@ function getInvoice(id) {
 function getInvoiceList(invoices) {
   return `
   query{
-    getInvoiceList(first:100, offset:0){
+    getInvoiceList(first:` + invoices + `, offset:0){
       items{
         amountDue, 
         amountPaid, 

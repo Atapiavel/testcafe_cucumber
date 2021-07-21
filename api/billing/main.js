@@ -1,14 +1,7 @@
 const Requests = require("./requests");
+const ActionsPage = require("../../pages/actions.pages")
 const fetch = require("node-fetch");
 const fs = require('fs');
-const ActionsPage = require("../../pages/actions.pages")
-
-var bearer = ActionsPage.read_bearer()
-const headers = {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Authorization': 'Bearer ' + bearer
-}
 const billing_url = "https://integration.scorpion.co/csx/billing/graphql"
 var act_date = new Date();
 var year = act_date.getFullYear();
@@ -137,8 +130,32 @@ function getInvoiceHistoryData(url, headers) {
                         }
                 })
 }
-
 // Platform API's
+
+ActionsPage.bearer().then(data => {
+        const headers = {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + data
+        }
+        ActionsPage.logoff(headers).then(data => console.log(data))
+})
+
+// bearer().then(data => console.log(data))
+
+
+// async function fetch_auth_token(username, password) {
+
+//                                                 .then(r => r.json())
+//                 .then(data => {
+//                         var bearer = String(data.id_token)
+//                         return bearer
+//                 })
+// })
+//         }
+// console.log(headers)
+// return headers
+// }
 
 function fetchAuthToken(base_url, password, username) {
         const auth_headers = {
@@ -197,23 +214,10 @@ function getCurrentUser(base_url, headers) {
                 .then(data => console.log(data))
 }
 
-function logoff(base_url, headers) {
-        const url = base_url + "/platform/identity/v1/api/oauth2logoff/logoff"
-        fetch(url, {
-                method: 'POST',
-                headers: headers
-        })
-                .then(r => r.json())
-                .then(data => {
-                        console.log(data)
-                }
-                )
-}
-
 // Playground
 // const billing_url = "https://integration.scorpion.co/csx/billing/graphql"
 // logoff("https://integration.scorpion.co", headers)
-getAmountDue(billing_url, headers)
+// getAmountDue(billing_url, headers)
 // getAccountMonies(billing_url, headers, 1)
 // getInvoiceHistoryData(billing_url, headers)
 // fs.unlinkSync('../../bearer.txt');
@@ -224,6 +228,5 @@ module.exports = {
         getAmountDue: getAmountDue,
         getAccountMonies: getAccountMonies,
         getCurrentUser: getCurrentUser,
-        logoff: logoff,
         getInvoiceHistoryData: getInvoiceHistoryData
 }

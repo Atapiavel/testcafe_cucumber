@@ -13,8 +13,10 @@ Then('I verify the columns are shown on the billing overview page with', async f
 
 Then('I assert I can see recent invoices', async function () {
     await BillingOverviewPage.assert_recent_invoices()
+    await ActionsPage.wait(5)
+    await BillingOverviewPage.assert_results()
 })
 
-Then('I assert {string} kebab option is visible on the billing overview page for', async function (option, datatable) {
-    await BillingOverviewPage.assert_kebab_option(option, datatable)
+Then('I assert {string} kebab option is visible for recent invoices', async function (option) {
+    await BillingOverviewPage.assert_kebab_option(option)
 })

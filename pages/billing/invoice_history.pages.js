@@ -60,6 +60,7 @@ async function assert_historical_invoices() {
             })
                 .then(r => r.json())
                 .then(data => {
+                    console.log(data)
                     var bearer = String(data.id_token)
                     const headers = {
                         'Content-Type': 'application/json',
@@ -78,6 +79,7 @@ async function assert_historical_invoices() {
                     })
                         .then(r => r.json())
                         .then(data => {
+                            console.log(data.data.getInvoiceList)
                             var number_of_invoices = data.data.getInvoiceList.items.length
                             // Filtering the invoices for general year filter
                             for (var n = 0; n < number_of_invoices; n++) {
@@ -116,9 +118,14 @@ async function assert_historical_invoices() {
                                     }
                                     // Ordering the invoices into an array
                                     if (z == number_of_invoices) {
-                                        var newArr = invoice_arr.map(function (item) {
+                                        var sorted = invoice_arr.sort(function (a, b) {
+                                            var dateA = new Date(a.date), dateB = new Date(b.date);
+                                            return dateA - dateB;
+                                        }).reverse()
+                                        var newArr = sorted.map(function (item) {
                                             return [item.date, item.number, item.period, item.status, item.amount]
                                         })
+                                        console.log(newArr)
                                         fs.unlinkSync('pages/billing/aux_file.txt');
                                         var start = "0"
                                         fs.appendFileSync("pages/billing/aux_file.txt", start, "UTF-8", { 'flags': 'a+' });
@@ -140,6 +147,8 @@ async function assert_historical_invoices() {
                                                 if (field == "4") {
                                                     api_value = formatter.format(api_value)
                                                 }
+                                                console.log("Front End value: " + value)    
+                                                console.log("API value: " + api_value + "\n")
                                                 assert(value == api_value)
                                                 var data = fs.readFileSync('./pages/billing/aux_file.txt', 'utf8')
                                                 data = data.split("-")
@@ -174,11 +183,16 @@ async function assert_results() {
     var data = fs.readFileSync('./pages/billing/aux_file.txt', 'utf8')
     data = data.split("-")
     if (data[0] == (data[1] * 5)) {
+        console.log(data)
         assert.ok(true)
     }
     else {
         assert.ok(false)
     }
+}
+
+async function assert_filtered_invoices(filter, value){
+    console.log("need to code here")
 }
 
 async function assert_columns(datatable) {
@@ -277,8 +291,8 @@ async function assert_kebab_option(option, datatable) {
 async function filter_invoices(filter, value) {
     if (filter == 'by_year') {
         await ActionsPage.click_element(BillingHistoryPageLocator.start_date())
-        await ActionsPage.click_element(BillingHistoryPageLocator.by_year())
-        await ActionsPage.click_element_from_list(BillingHistoryPageLocator.year_buttons(), value)
+        await ActionsPage.click_element_from_list(BillingHistoryPageLocator.filter_buttons(), "Years")
+        await ActionsPage.click_element_from_list(BillingHistoryPageLocator.filter_buttons(), value)
     }
     else if (filter == 'by_date') {
         dates = value.split('-')
@@ -288,14 +302,9 @@ async function filter_invoices(filter, value) {
         await ActionsPage.type_text(BillingHistoryPageLocator.end_date(), dates[1])
     }
     else if (filter == 'by_month') {
-        month = value.split('-')
         await ActionsPage.click_element(BillingHistoryPageLocator.start_date())
-        await ActionsPage.click_element(BillingHistoryPageLocator.by_month())
-        // await ActionsPage.click_element_from_list(BillingHistoryPageLocator.month_buttons(), month[0] + "\n" + month[1]) 
-        const record = BillingHistoryPageLocator.month_buttons()
-        const text = await ActionsPage.select(record).innerText
-        console.log(text)
-        // await ActionsPage.click_element_from_list(BillingHistoryPageLocator.start_date(), dates[0])
+        await ActionsPage.click_element_from_list(BillingHistoryPageLocator.filter_buttons(), "Months")
+        await ActionsPage.click_element_from_list(BillingHistoryPageLocator.months_buttons(), value)
     }
     else if (filter == 'by_price') {
         prices = value.split('-')
@@ -318,6 +327,7 @@ async function filter_invoices(filter, value) {
 
 module.exports = {
     assert_historical_invoices: assert_historical_invoices,
+    assert_filtered_invoices: assert_filtered_invoices,
     assert_results: assert_results,
     assert_columns: assert_columns,
     assert_kebab_option: assert_kebab_option,
