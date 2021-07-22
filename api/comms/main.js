@@ -3,8 +3,8 @@ const fetch = require("node-fetch");
 const ActionsPage = require('../../pages/actions.pages.js')
 const fs = require('fs');
 
-var username = "commcenter@scorpion.co"
-var password = "Comms1234!"
+var username = "joehaus895@gmail.com"
+var password = "Team123!"
 // var username = "thebillingteam@scorpion.co"
 // var password = "Billing1234!!"
 
