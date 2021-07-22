@@ -1,25 +1,6 @@
 Feature: Billing Invoice History
 
 
-    @billing @invoice_history @focus
-
-    Scenario: Invoice_history_columns_and_records
-        Given I am in Scorpion login page
-        When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
-        And I click on sign in button
-        And I wait for "10" seconds
-        Given I am in Scorpion "settings" page
-        And I wait for "5" seconds
-        And I hover on More option
-        Then I select the "Billing" option
-        And I click on see all option
-        And I wait for "5" seconds
-        Then I assert the Scorpion Billing History page
-        Then I verify the columns are showed with
-            | Invoice Date | Invoice Number | Billing Period | Status | Amount |
-        Then I assert I can see historical invoices
-        And I wait for "5" seconds
-
     # @billing @invoice_history @focus
     # Scenario: Invoice_history_columns_and_records
     #     Given I am in Scorpion login page
@@ -35,30 +16,52 @@ Feature: Billing Invoice History
     #     Then I assert the Scorpion Billing History page
     #     Then I verify the columns are showed with
     #         | Invoice Date | Invoice Number | Billing Period | Status | Amount |
-    #     Then I assert I can see historical invoices
+    #     Then I assert I can see historical invoices filtered "-" with "-"
     #     And I wait for "5" seconds
+
+# @billing @invoice_history
+# Scenario Outline: Invoice_history_kebab_options_are_visible_for_<Invoice_Number>
+#     Given I am in Scorpion login page
+#     When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
+#     And I click on sign in button
+#     And I wait for "10" seconds
+#     Given I am in Scorpion "settings" page
+#     And I wait for "3" seconds
+#     And I hover on More option
+#     Then I select the "Billing" option
+#     And I click on see all option
+#     And I wait for "5" seconds
+#     Then I assert the Scorpion Billing History page
+#     And I assert "send" kebab option is visible for historical invoices
+#     And I assert "print" kebab option is visible for historical invoices
+#     And I assert "download_PDF" kebab option is visible for historical invoices
+#     And I assert "download_DOC" kebab option is visible for historical invoices
+#     And I assert "download_CSV" kebab option is visible for historical invoices
+
+@billing @invoice_history @focus
+Scenario: Invoice_filtering_by_year
+    Given I am in Scorpion login page
+    When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
+    And I click on sign in button
+    And I wait for "10" seconds
+    Given I am in Scorpion "settings" page
+    And I wait for "5" seconds
+    And I hover on More option
+    Then I select the "Billing" option
+    And I click on see all option
+    And I wait for "5" seconds
+    Then I assert the Scorpion Billing History page
+    When I select the filter "by_year" with "2020"
+    And I click on apply button
+    And I wait for "1" seconds
+    Then I assert I can see historical invoices filtered "by_year" with "2020"
+    When I select the filter "by_year" with "2021"
+    And I click on apply button
+    And I wait for "1" seconds
+    Then I assert I can see historical invoices filtered "by_year" with "2021"
 
     # @billing @invoice_history
-    # Scenario Outline: Invoice_history_kebab_options_are_visible_for_<Invoice_Number>
-    #     Given I am in Scorpion login page
-    #     When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
-    #     And I click on sign in button
-    #     And I wait for "10" seconds
-    #     Given I am in Scorpion "settings" page
-    #     And I wait for "3" seconds
-    #     And I hover on More option
-    #     Then I select the "Billing" option
-    #     And I click on see all option
-    #     And I wait for "5" seconds
-    #     Then I assert the Scorpion Billing History page
-    #     And I assert "send" kebab option is visible for historical invoices
-    #     And I assert "print" kebab option is visible for historical invoices
-    #     And I assert "download_PDF" kebab option is visible for historical invoices
-    #     And I assert "download_DOC" kebab option is visible for historical invoices
-    #     And I assert "download_CSV" kebab option is visible for historical invoices
-
-    # @billing @invoice_history @focus
-    # Scenario: Invoice_filtering_by_year
+    # Scenario: Invoice_filtering_by_date
     #     Given I am in Scorpion login page
     #     When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
     #     And I click on sign in button
@@ -70,52 +73,29 @@ Feature: Billing Invoice History
     #     And I click on see all option
     #     And I wait for "5" seconds
     #     Then I assert the Scorpion Billing History page
-    #     When I select the filter "by_year" with "2020"
+    #     When I select the filter "by_date" with "1st-half-year"
     #     And I click on apply button
-    #     And I wait for "1" seconds
-    #     Then I assert I can see historical invoices filtered "by_year" with "2020"
-    #     When I select the filter "by_year" with "2021"
+    #     Then I assert I can see historical invoices filtered "by_date" with "custom_date"
+    #     When I select the filter "by_date" with "2nd-half-year"
     #     And I click on apply button
-    #     And I wait for "1" seconds
-    #     Then I assert I can see historical invoices filtered "by_year" with "2021"
+    #     Then I assert I can see historical invoices filtered "by_date" with "custom_date"
 
-#     @billing @invoice_history
-#     Scenario: Invoice_filtering_by_date
-#         Given I am in Scorpion login page
-#         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
-#         And I click on sign in button
-#         And I wait for "10" seconds
-#         Given I am in Scorpion "settings" page
-#         And I wait for "5" seconds
-#         And I hover on More option
-#         Then I select the "Billing" option
-#         And I click on see all option
-#         And I wait for "5" seconds
-#         Then I assert the Scorpion Billing History page
-#         When I select the filter "by_date" with "30 Mar 2020-30 Mar 2021"
-#         And I click on apply button
-#         Then I assert I can see historical invoices filtered "by_year" with "2020"
-#             | Invoice Date | Invoice | description | Billing Period | Status | Amount     |
-#             | ...          | 22      | description | Monthly        | Paid   | $20,000.00 |
-#             | ...          | 21      | description | Monthly        | Paid   | $20,000.00 |
-#             | ...          | 20      | description | Monthly        | Paid   | $20,000.00 |
-
-    @billing @invoice_history @focus
-    Scenario: Invoice_filtering_by_month
-        Given I am in Scorpion login page
-        When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
-        And I click on sign in button
-        And I wait for "10" seconds
-        Given I am in Scorpion "settings" page
-        And I wait for "5" seconds
-        And I hover on More option
-        Then I select the "Billing" option
-        And I click on see all option
-        And I wait for "5" seconds
-        Then I assert the Scorpion Billing History page
-        When I select the filter "by_month" with "April"
-        And I click on apply button
-        Then I assert I can see historical invoices filtered "by_month" with "April"
+# @billing @invoice_history @focus
+# Scenario: Invoice_filtering_by_month
+#     Given I am in Scorpion login page
+#     When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
+#     And I click on sign in button
+#     And I wait for "10" seconds
+#     Given I am in Scorpion "settings" page
+#     And I wait for "5" seconds
+#     And I hover on More option
+#     Then I select the "Billing" option
+#     And I click on see all option
+#     And I wait for "5" seconds
+#     Then I assert the Scorpion Billing History page
+#     When I select the filter "by_month" with "April"
+#     And I click on apply button
+#     Then I assert I can see historical invoices filtered "by_month" with "April"
 
 #     @billing @invoice_history
 #     Scenario: Invoice_filtering_by_price

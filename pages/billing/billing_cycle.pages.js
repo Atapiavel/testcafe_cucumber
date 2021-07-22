@@ -61,7 +61,7 @@ async function see_graph_details() {
         credit_amount = credit_amount + account_monies.data.getAccountMonies[i].amount
     }
     assert(credit_available_value == " " + formatter.format(credit_amount))
-    ActionsPage.logoff(headers)
+    await ActionsPage.logoff(headers)
 }
 
 module.exports = {

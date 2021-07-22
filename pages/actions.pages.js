@@ -141,7 +141,11 @@ async function auth(token) {
     })
         .then((response) => {
             return response.json().then((data) => {
-                console.log(data)
+                console.log("\nAuthentication response:\n" + response.status)
+                console.log(response.statusText + "\n")
+                if (response.status != 200) {
+                    console.log(data.status.message)
+                }
                 return data;
             })
         })
@@ -168,7 +172,11 @@ async function logoff(headers) {
     })
         .then((response) => {
             return response.json().then((data) => {
-                console.log(data)
+                console.log("\nLogoff response:\n" + response.status)
+                console.log(response.statusText)
+                if (response.status != 200) {
+                    console.log(data.status.message)
+                }
                 return data;
             })
         })

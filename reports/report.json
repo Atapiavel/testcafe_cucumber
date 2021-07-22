@@ -4,62 +4,62 @@
     "elements": [
       {
         "description": "",
-        "id": "billing-cycle-graph;billing_cycle_graph",
+        "id": "billing-invoice-history;invoice_filtering_by_year",
         "keyword": "Scenario",
-        "line": 4,
-        "name": "Billing_cycle_graph",
+        "line": 42,
+        "name": "Invoice_filtering_by_year",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 4216000000
+              "duration": 14404000000
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 5,
+            "line": 43,
             "name": "I am in Scorpion login page",
             "match": {
               "location": "features\\step_definition\\common.spec.js:9"
             },
             "result": {
               "status": "passed",
-              "duration": 649000000
+              "duration": 706000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 6,
+            "line": 44,
             "name": "I enter \"thebillingteam@scorpion.co\" and \"Billing1234!!\"",
             "match": {
               "location": "features\\step_definition\\login.spec.js:6"
             },
             "result": {
               "status": "passed",
-              "duration": 3330000000
+              "duration": 3287000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 7,
+            "line": 45,
             "name": "I click on sign in button",
             "match": {
               "location": "features\\step_definition\\login.spec.js:10"
             },
             "result": {
               "status": "passed",
-              "duration": 1872000000
+              "duration": 2383000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 8,
+            "line": 46,
             "name": "I wait for \"10\" seconds",
             "match": {
               "location": "features\\step_definition\\common.spec.js:17"
@@ -72,114 +72,206 @@
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 9,
+            "line": 47,
             "name": "I am in Scorpion \"settings\" page",
             "match": {
               "location": "features\\step_definition\\common.spec.js:13"
             },
             "result": {
               "status": "passed",
-              "duration": 360000000
+              "duration": 209000000
             }
           },
           {
             "arguments": [],
-            "keyword": "When ",
-            "line": 10,
+            "keyword": "And ",
+            "line": 48,
             "name": "I wait for \"5\" seconds",
             "match": {
               "location": "features\\step_definition\\common.spec.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 5009000000
+              "duration": 5004000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 11,
+            "line": 49,
             "name": "I hover on More option",
             "match": {
               "location": "features\\step_definition\\common.spec.js:33"
             },
             "result": {
               "status": "passed",
-              "duration": 349000000
+              "duration": 203000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 12,
+            "line": 50,
             "name": "I select the \"Billing\" option",
             "match": {
               "location": "features\\step_definition\\common.spec.js:25"
             },
             "result": {
               "status": "passed",
-              "duration": 1156000000
-            }
-          },
-          {
-            "arguments": [
-              {
-                "rows": [
-                  {
-                    "cells": [
-                      "Invoice Date",
-                      "Invoice",
-                      "Billing Period",
-                      "Status",
-                      "Amount"
-                    ]
-                  }
-                ]
-              }
-            ],
-            "keyword": "And ",
-            "line": 13,
-            "name": "I verify the columns are shown on the billing overview page with",
-            "match": {
-              "location": "features\\step_definition\\billing\\billing_overview.spec.js:10"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2992000000
+              "duration": 518000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 15,
-            "name": "I assert I can see the graph information",
+            "line": 51,
+            "name": "I click on see all option",
             "match": {
-              "location": "features\\step_definition\\billing\\billing_cycle.spec.js:4"
+              "location": "features\\step_definition\\billing\\billing_overview.spec.js:6"
             },
             "result": {
               "status": "passed",
-              "duration": 3081000000
+              "duration": 913000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 16,
+            "line": 52,
             "name": "I wait for \"5\" seconds",
             "match": {
               "location": "features\\step_definition\\common.spec.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 5787000000
+              "duration": 5007000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 53,
+            "name": "I assert the Scorpion Billing History page",
+            "match": {
+              "location": "features\\step_definition\\billing\\invoice_history.spec.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 64000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 54,
+            "name": "I select the filter \"by_year\" with \"2020\"",
+            "match": {
+              "location": "features\\step_definition\\billing\\invoice_history.spec.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1049000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 55,
+            "name": "I click on apply button",
+            "match": {
+              "location": "features\\step_definition\\billing\\invoice_history.spec.js:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 333000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 56,
+            "name": "I wait for \"1\" seconds",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1006000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 57,
+            "name": "I assert I can see historical invoices filtered \"by_year\" with \"2020\"",
+            "match": {
+              "location": "features\\step_definition\\billing\\invoice_history.spec.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6622000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 58,
+            "name": "I select the filter \"by_year\" with \"2021\"",
+            "match": {
+              "location": "features\\step_definition\\billing\\invoice_history.spec.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1205000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 59,
+            "name": "I click on apply button",
+            "match": {
+              "location": "features\\step_definition\\billing\\invoice_history.spec.js:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 366000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 60,
+            "name": "I wait for \"1\" seconds",
+            "match": {
+              "location": "features\\step_definition\\common.spec.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1012000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 61,
+            "name": "I assert I can see historical invoices filtered \"by_year\" with \"2021\"",
+            "match": {
+              "location": "features\\step_definition\\billing\\invoice_history.spec.js:13"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 3694000000,
+              "error_message": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(date_value == date_api_value)\n\n    + expected - actual\n\n    -false\n    +true\n\n    at Object.assert_historical_invoices (C:\\Users\\artur\\OneDrive\\Documentos\\testcafe_cucumber\\pages\\billing\\invoice_history.pages.js:102:17)\n    at CustomWorld.<anonymous> (C:\\Users\\artur\\OneDrive\\Documentos\\testcafe_cucumber\\features\\step_definition\\billing\\invoice_history.spec.js:16:9)"
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "failed",
+              "duration": 6000000,
+              "error_message": "Error: ENOENT: no such file or directory, open 'screenshots/Invoice_filtering_by_year/Invoice_filtering_by_year.png'\n    at Object.openSync (fs.js:476:3)\n    at Object.readFileSync (fs.js:377:35)\n    at Object.exports.base64Sync (C:\\Users\\artur\\OneDrive\\Documentos\\testcafe_cucumber\\node_modules\\base64-img\\base64-img.js:60:17)\n    at CustomWorld.attachScreenshotToReport (C:\\Users\\artur\\OneDrive\\Documentos\\testcafe_cucumber\\features\\support\\world.js:41:39)\n    at CustomWorld.<anonymous> (C:\\Users\\artur\\OneDrive\\Documentos\\testcafe_cucumber\\features\\support\\hooks.js:77:14)"
             }
           },
           {
@@ -194,21 +286,25 @@
         "tags": [
           {
             "name": "@billing",
-            "line": 3
+            "line": 41
           },
           {
-            "name": "@billing_cycle",
-            "line": 3
+            "name": "@invoice_history",
+            "line": 41
+          },
+          {
+            "name": "@focus",
+            "line": 41
           }
         ],
         "type": "scenario"
       }
     ],
-    "id": "billing-cycle-graph",
+    "id": "billing-invoice-history",
     "line": 1,
     "keyword": "Feature",
-    "name": "Billing Cycle Graph",
+    "name": "Billing Invoice History",
     "tags": [],
-    "uri": "features\\billing\\billing_cycle.feature"
+    "uri": "features\\billing\\invoice_history.feature"
   }
 ]
