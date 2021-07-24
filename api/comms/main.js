@@ -68,6 +68,7 @@ function execute_request(url, request) {
                                                 .then(r => r.json())
                                                 .then(data => {
                                                         console.log(data)
+                                                        console.log(data.data.communicationSearch.items)
                                                 })
                                         fetch(logoff_url, {
                                                 method: 'POST',

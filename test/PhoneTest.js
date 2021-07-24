@@ -54,6 +54,9 @@ test('Phone page Test', async t =>{
     .click(phonepage.backMainDialPadBtn)
     .click(phonepage.addressBookBtn)
     .wait(2000)
+    .typeText(phonepage.addressBookSearch, "Ktan")
+    .click(phonepage.ktanScorpion)
+
     .click(phonepage.sidePanelBtn)
     .click(phonepage.backMainDialPadBtn)
     .wait(4000)
