@@ -93,35 +93,33 @@ async function see_invoice_details(invoice) {
     }
     if (platform_z > 0) {
         for (i = 0; i < platform_z; i++) {
-            console.log(platform_array[i].billingLineItemName)
-            console.log(fe_item_name.nth(z))
-            assert(platform_array[i].billingLineItemName == fe_item_name.nth(z))
-            assert(platform_array[i].unitPrice==await ActionsPage.get_text(fe_unit_price.nth(z)))
-            assert(platform_array[i].quantity==await ActionsPage.get_text(fe_quantity.nth(z)))
-            assert(platform_array[i].amount==await ActionsPage.get_text(fe_item_amount.nth(z)))
+            assert(platform_array[i].billingLineItemName == await ActionsPage.get_text(fe_item_name.nth(z)))
+            assert(platform_array[i].unitPrice == await ActionsPage.get_text(fe_unit_price.nth(z)))
+            assert(platform_array[i].quantity == await ActionsPage.get_text(fe_quantity.nth(z)))
+            assert(platform_array[i].amount == await ActionsPage.get_text(fe_item_amount.nth(z)))
             z = z + 1
         }
     }
     if (advertising_z > 0) {
         for (i = 0; i < advertising_z; i++) {
-            assert(advertising_array[i].billingLineItemName == fe_item_name.nth(z))
-            assert(advertising_array[i].unitPrice==await ActionsPage.get_text(fe_unit_price.nth(z)))
-            assert(advertising_array[i].quantity==await ActionsPage.get_text(fe_quantity.nth(z)))
-            assert(advertising_array[i].amount==await ActionsPage.get_text(fe_item_amount.nth(z)))
+            assert(advertising_array[i].billingLineItemName == await ActionsPage.get_text(fe_item_name.nth(z)))
+            assert(advertising_array[i].unitPrice == await ActionsPage.get_text(fe_unit_price.nth(z)))
+            assert(advertising_array[i].quantity == await ActionsPage.get_text(fe_quantity.nth(z)))
+            assert(advertising_array[i].amount == await ActionsPage.get_text(fe_item_amount.nth(z)))
             z = z + 1
         }
     }
     if (setup_z > 0) {
         for (i = 0; i < setup_z; i++) {
-            assert(setup_array[i].billingLineItemName == fe_item_name.nth(z))
-            assert(setup_array[i].unitPrice==await ActionsPage.get_text(fe_unit_price.nth(z)))
-            assert(setup_array[i].quantity==await ActionsPage.get_text(fe_quantity.nth(z)))
-            assert(setup_array[i].amount==await ActionsPage.get_text(fe_item_amount.nth(z)))
+            assert(setup_array[i].billingLineItemName == await ActionsPage.get_text(fe_item_name.nth(z)))
+            assert(setup_array[i].unitPrice == await ActionsPage.get_text(fe_unit_price.nth(z)))
+            assert(setup_array[i].quantity == await ActionsPage.get_text(fe_quantity.nth(z)))
+            assert(setup_array[i].amount == await ActionsPage.get_text(fe_item_amount.nth(z)))
             z = z + 1
         }
     }
-    // console.log(invoice_data.data.getInvoice.payments[i])
-    // console.log(invoice_data.data.getInvoice.subscription[i])
+    console.log(invoice_data.data.getInvoice.payments[i])
+    console.log(invoice_data.data.getInvoice.subscription[i])
     await ActionsPage.logoff(headers)
 }
 
