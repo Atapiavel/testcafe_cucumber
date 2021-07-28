@@ -6,6 +6,25 @@ const Requests = require("./.././api/billing/requests");
 const billing_url = "https://integration.scorpion.co/csx/billing/graphql"
 const base_url = 'https://integration.scorpion.co'
 
+async function format_currency(value){
+    var formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    });
+    var formatted_string = formatter.format(value)
+    return formatted_string
+}
+
+async function format_date(value){
+    var date = new Date(value)
+    const formatted_date = date
+    // .toLocaleString("en-US", {
+    //     month: "short",
+    //     day: "numeric",
+    // });
+    return formatted_date
+}
+
 async function navigate(url) {
     await testController.navigateTo(url);
 }
@@ -197,6 +216,21 @@ async function get_invoice_list(headers, invoices) {
         })
 }
 
+async function get_invoice(headers, id) {
+    return fetch(billing_url, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({
+            query: Requests.getInvoice(id),
+        })
+    })
+        .then((response) => {
+            return response.json().then((data) => {
+                return data;
+            })
+        })
+}
+
 async function get_account_monies(headers, service_line) {
     return fetch(billing_url, {
         method: 'POST',
@@ -213,6 +247,8 @@ async function get_account_monies(headers, service_line) {
 }
 
 module.exports = {
+    format_date: format_date,
+    format_currency: format_currency,
     navigate: navigate,
     click_element: click_element,
     take_screenshot: take_screenshot,
@@ -234,5 +270,6 @@ module.exports = {
     bearer: bearer,
     logoff: logoff,
     get_invoice_list: get_invoice_list,
-    get_account_monies: get_account_monies
+    get_account_monies: get_account_monies,
+    get_invoice: get_invoice
 };

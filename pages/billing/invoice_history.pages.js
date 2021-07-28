@@ -14,6 +14,9 @@ var start_of_month = new Date(year, month, 1)
 var end_of_month = new Date(year, month + 1, 0);
 var start_date = 0
 var end_date = 0
+var months = {
+    0: "January", 1: "February", 2: "March", 3: "April", 4: "May", 5: "June", 6: "July", 7: "August", 8: "September", 9: "October", 10: "November", 11: "December",
+}
 
 var formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -24,23 +27,31 @@ async function assert_historical_invoices(headers, filter, value) {
     if (filter == "by_year") {
         var filtering_date_start = new Date(value, 0, 1)
         var filtering_date_end = new Date(value, 11, 31)
-        console.log(filtering_date_start)
-        console.log(filtering_date_end)
     }
     if (filter == "by_month") {
-        var months = {
-            "January": 0, "February": 1, "March": 2, "April": 3, "May": 4, "June": 5, "July": 6, "August": 7, "September": 8, "October": 9, "November": 10, "December": 11,
+        if (value == "Actual") {
+            var filtering_date_start = new Date(year, month, 1)
+            var filtering_date_end = new Date(year, month + 1, 0)
         }
-        var filtering_date_start = new Date(year, months[value], 1)
-        var filtering_date_end = new Date(year, months[value] + 1, 0)
-        console.log(filtering_date_start)
-        console.log(filtering_date_end)
+        else {
+            var filtering_date_start = new Date(year, months[value], 1)
+            var filtering_date_end = new Date(year, months[value] + 1, 0)
+        }
     }
-    if (filter == "-"){
+    if (filter == "-" || filter == "by_price" || filter == "by_status") {
         var filtering_date_start = prev_date
         var filtering_date_end = act_date
-        console.log(filtering_date_start)
-        console.log(filtering_date_end)
+    }
+    if (filter == "by_date") {
+        if (value == "Actual") {
+            var filtering_date_start = new Date(year, month, 1)
+            var filtering_date_end = new Date(year, month, 28)
+        }
+        else {
+            var dates_filter = value.split("-")
+            var filtering_date_start = new Date(dates_filter[0])
+            var filtering_date_end = new Date(dates_filter[1])
+        }
     }
     var invoice_list = await ActionsPage.get_invoice_list(headers, 100)
     var number_of_invoices = invoice_list.data.getInvoiceList.totalCount
@@ -50,60 +61,164 @@ async function assert_historical_invoices(headers, filter, value) {
         let due_date = new Date(invoice_list.data.getInvoiceList.items[n].dueDate);
         let start_date = new Date(invoice_list.data.getInvoiceList.items[n].startDate)
         let end_date = new Date(invoice_list.data.getInvoiceList.items[n].endDate)
+        let invoice_price = invoice_list.data.getInvoiceList.items[n].amountDue + invoice_list.data.getInvoiceList.items[n].amountPaid
+        let invoice_status = invoice_list.data.getInvoiceList.items[n].invoiceStatusName
+        const formattedDate = due_date.toLocaleString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric"
+        });
         if (due_date >= filtering_date_start && due_date <= filtering_date_end ||
             start_date >= filtering_date_start && start_date <= filtering_date_end ||
             end_date >= filtering_date_start && end_date <= filtering_date_end) {
-                console.log("entered")
-            const formattedDate = due_date.toLocaleString("en-US", {
-                month: "short",
-                day: "numeric",
-                year: "numeric"
-            });
-            invoice_arr[z] =
-            {
-                date: formattedDate,
-                number: invoice_list.data.getInvoiceList.items[n].invoiceNumber,
-                period: invoice_list.data.getInvoiceList.items[n].billingFrequencyName,
-                status: invoice_list.data.getInvoiceList.items[n].invoiceStatusName,
-                amount: invoice_list.data.getInvoiceList.items[n].amountDue
-            }
+            if (filter == "by_price") {
+                var prices = value.split("-")
+                if (invoice_price >= prices[0] && invoice_price <= prices[1]) {
+                    invoice_arr[z] =
+                    {
+                        date: formattedDate,
+                        number: invoice_list.data.getInvoiceList.items[n].invoiceNumber,
+                        period: invoice_list.data.getInvoiceList.items[n].billingFrequencyName,
+                        status: invoice_list.data.getInvoiceList.items[n].invoiceStatusName,
+                        amount: invoice_list.data.getInvoiceList.items[n].amountDue
+                    }
 
-            z = z + 1
-            // if (z == number_of_invoices) {
-            var sorted = invoice_arr.sort(function (a, b) {
-                var dateA = new Date(a.date), dateB = new Date(b.date);
-                return dateA - dateB;
-            }).reverse()
-            var newArr = sorted.map(function (item) {
-                return [item.date, item.number, item.period, item.status, item.amount]
-            })
-            for (var i = 0; i < z; i++) {
-                console.log(newArr)
-                const date_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(2)"
-                const number_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(3)"
-                const period_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(4)"
-                const status_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(5)"
-                const amount_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(6)"
-                var date_value = await ActionsPage.select(date_record).innerText;
-                var number_value = await ActionsPage.select(number_record).innerText;
-                var period_value = await ActionsPage.select(period_record).innerText;
-                var status_value = await ActionsPage.select(status_record).innerText;
-                var amount_value = await ActionsPage.select(amount_record).innerText;
-                var date_api_value = newArr[i][0]
-                var number_api_value = newArr[i][1]
-                var period_api_value = newArr[i][2]
-                var status_api_value = newArr[i][3]
-                var amount_api_value = formatter.format(newArr[i][4])
-                console.log(date_value + " - " + date_api_value)
-                console.log(number_value + " - " + number_api_value)
-                console.log(period_value + " - " + period_api_value)
-                console.log(status_value + " - " + status_api_value)
-                console.log(amount_value + " - " + amount_api_value + "\n")
-                assert(date_value == date_api_value)
-                assert(number_value == number_api_value)
-                assert(period_value == period_api_value)
-                assert(status_value == status_api_value)
-                assert(amount_value == amount_api_value)
+                    z = z + 1
+                    // if (z == number_of_invoices) {
+                    var sorted = invoice_arr.sort(function (a, b) {
+                        var dateA = new Date(a.date), dateB = new Date(b.date);
+                        return dateA - dateB;
+                    }).reverse()
+                    var newArr = sorted.map(function (item) {
+                        return [item.date, item.number, item.period, item.status, item.amount]
+                    })
+                    for (var i = 0; i < z; i++) {
+                        console.log(newArr)
+                        const date_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(2)"
+                        const number_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(3)"
+                        const period_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(4)"
+                        const status_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(5)"
+                        const amount_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(6)"
+                        var date_value = await ActionsPage.select(date_record).innerText;
+                        var number_value = await ActionsPage.select(number_record).innerText;
+                        var period_value = await ActionsPage.select(period_record).innerText;
+                        var status_value = await ActionsPage.select(status_record).innerText;
+                        var amount_value = await ActionsPage.select(amount_record).innerText;
+                        var date_api_value = newArr[i][0]
+                        var number_api_value = newArr[i][1]
+                        var period_api_value = newArr[i][2]
+                        var status_api_value = newArr[i][3]
+                        var amount_api_value = formatter.format(newArr[i][4])
+                        console.log(date_value + " - " + date_api_value)
+                        console.log(number_value + " - " + number_api_value)
+                        console.log(period_value + " - " + period_api_value)
+                        console.log(status_value + " - " + status_api_value)
+                        console.log(amount_value + " - " + amount_api_value + "\n")
+                        assert(date_value == date_api_value)
+                        assert(number_value == number_api_value)
+                        assert(period_value == period_api_value)
+                        assert(status_value == status_api_value)
+                        assert(amount_value == amount_api_value)
+                    }
+                }
+            }
+            if (filter == "by_status") {
+                if (invoice_status == value) {
+                    invoice_arr[z] =
+                    {
+                        date: formattedDate,
+                        number: invoice_list.data.getInvoiceList.items[n].invoiceNumber,
+                        period: invoice_list.data.getInvoiceList.items[n].billingFrequencyName,
+                        status: invoice_list.data.getInvoiceList.items[n].invoiceStatusName,
+                        amount: invoice_list.data.getInvoiceList.items[n].amountDue
+                    }
+
+                    z = z + 1
+                    // if (z == number_of_invoices) {
+                    var sorted = invoice_arr.sort(function (a, b) {
+                        var dateA = new Date(a.date), dateB = new Date(b.date);
+                        return dateA - dateB;
+                    }).reverse()
+                    var newArr = sorted.map(function (item) {
+                        return [item.date, item.number, item.period, item.status, item.amount]
+                    })
+                    for (var i = 0; i < z; i++) {
+                        console.log(newArr)
+                        const date_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(2)"
+                        const number_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(3)"
+                        const period_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(4)"
+                        const status_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(5)"
+                        const amount_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(6)"
+                        var date_value = await ActionsPage.select(date_record).innerText;
+                        var number_value = await ActionsPage.select(number_record).innerText;
+                        var period_value = await ActionsPage.select(period_record).innerText;
+                        var status_value = await ActionsPage.select(status_record).innerText;
+                        var amount_value = await ActionsPage.select(amount_record).innerText;
+                        var date_api_value = newArr[i][0]
+                        var number_api_value = newArr[i][1]
+                        var period_api_value = newArr[i][2]
+                        var status_api_value = newArr[i][3]
+                        var amount_api_value = formatter.format(newArr[i][4])
+                        console.log(date_value + " - " + date_api_value)
+                        console.log(number_value + " - " + number_api_value)
+                        console.log(period_value + " - " + period_api_value)
+                        console.log(status_value + " - " + status_api_value)
+                        console.log(amount_value + " - " + amount_api_value + "\n")
+                        assert(date_value == date_api_value)
+                        assert(number_value == number_api_value)
+                        assert(period_value == period_api_value)
+                        assert(status_value == status_api_value)
+                        assert(amount_value == amount_api_value)
+                    }
+                }
+            }
+            else {
+                invoice_arr[z] =
+                {
+                    date: formattedDate,
+                    number: invoice_list.data.getInvoiceList.items[n].invoiceNumber,
+                    period: invoice_list.data.getInvoiceList.items[n].billingFrequencyName,
+                    status: invoice_list.data.getInvoiceList.items[n].invoiceStatusName,
+                    amount: invoice_list.data.getInvoiceList.items[n].amountDue
+                }
+
+                z = z + 1
+                // if (z == number_of_invoices) {
+                var sorted = invoice_arr.sort(function (a, b) {
+                    var dateA = new Date(a.date), dateB = new Date(b.date);
+                    return dateA - dateB;
+                }).reverse()
+                var newArr = sorted.map(function (item) {
+                    return [item.date, item.number, item.period, item.status, item.amount]
+                })
+                for (var i = 0; i < z; i++) {
+                    console.log(newArr)
+                    const date_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(2)"
+                    const number_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(3)"
+                    const period_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(4)"
+                    const status_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(5)"
+                    const amount_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(6)"
+                    var date_value = await ActionsPage.select(date_record).innerText;
+                    var number_value = await ActionsPage.select(number_record).innerText;
+                    var period_value = await ActionsPage.select(period_record).innerText;
+                    var status_value = await ActionsPage.select(status_record).innerText;
+                    var amount_value = await ActionsPage.select(amount_record).innerText;
+                    var date_api_value = newArr[i][0]
+                    var number_api_value = newArr[i][1]
+                    var period_api_value = newArr[i][2]
+                    var status_api_value = newArr[i][3]
+                    var amount_api_value = formatter.format(newArr[i][4])
+                    console.log(date_value + " - " + date_api_value)
+                    console.log(number_value + " - " + number_api_value)
+                    console.log(period_value + " - " + period_api_value)
+                    console.log(status_value + " - " + status_api_value)
+                    console.log(amount_value + " - " + amount_api_value + "\n")
+                    assert(date_value == date_api_value)
+                    assert(number_value == number_api_value)
+                    assert(period_value == period_api_value)
+                    assert(status_value == status_api_value)
+                    assert(amount_value == amount_api_value)
+                }
             }
         }
     }
@@ -209,38 +324,39 @@ async function filter_invoices(filter, value) {
         await ActionsPage.click_element_from_list(BillingHistoryPageLocator.filter_buttons(), value)
     }
     else if (filter == 'by_date') {
-        if (value == "1st-half-year") {
-            start_date = new Date(value, 0, 1)
-            end_date = new Date(value, 5, 30)
+        if (value == "Actual") {
+            var date_filter_start = months[month].substring(0, 3) + " " + 1 + " " + year
+            var date_filter_end = months[month].substring(0, 3) + " " + 28 + " " + year
         }
-        else if (value == "2nd-half-year") {
-            start_date = new Date(value, 6, 1)
-            end_date = new Date(value, 11, 31)
+        else {
+            var dates_filter = value.split("-")
+            var date_filter_start = dates_filter[0]
+            var date_filter_end = dates_filter[1]
         }
         await ActionsPage.click_element(BillingHistoryPageLocator.start_date())
         await ActionsPage.click_element_from_list(BillingHistoryPageLocator.filter_buttons(), "Custom")
-        await ActionsPage.type_text(BillingHistoryPageLocator.start_date(), start_date.toLocaleString("en-US", {
-            month: "short",
-            day: "numeric",
-            year: "numeric"
-        }))
-        await ActionsPage.type_text(BillingHistoryPageLocator.end_date(), end_date.toLocaleString("en-US", {
-            month: "short",
-            day: "numeric",
-            year: "numeric"
-        }))
+        await ActionsPage.type_text(BillingHistoryPageLocator.start_date(), date_filter_start)
+        await ActionsPage.type_text(BillingHistoryPageLocator.end_date(), date_filter_end)
     }
     else if (filter == 'by_month') {
+        if (value == "Actual") {
+            var month_filter = months[month]
+        }
+        else {
+            var month_filter = months[value]
+        }
         await ActionsPage.click_element(BillingHistoryPageLocator.start_date())
         await ActionsPage.click_element_from_list(BillingHistoryPageLocator.filter_buttons(), "Months")
-        await ActionsPage.click_element_from_list(BillingHistoryPageLocator.months_buttons(), value)
+        await ActionsPage.click_element_from_list(BillingHistoryPageLocator.months_buttons(), month_filter)
     }
     else if (filter == 'by_price') {
         prices = value.split('-')
+        await ActionsPage.click_element(BillingHistoryPageLocator.filter_button())
         await ActionsPage.type_text(BillingHistoryPageLocator.min_price(), prices[0])
         await ActionsPage.type_text(BillingHistoryPageLocator.max_price(), prices[1])
     }
     else if (filter == 'by_status') {
+        await ActionsPage.click_element(BillingHistoryPageLocator.filter_button())
         if (value == 'Paid') {
             await ActionsPage.click_element(BillingHistoryPageLocator.paid_checkbox())
         }

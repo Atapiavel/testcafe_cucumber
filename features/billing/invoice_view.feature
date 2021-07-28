@@ -1,7 +1,7 @@
-Feature: Billing Cycle Graph
+Feature: Billing Invoice View
 
-    @billing @billing_cycle
-    Scenario: Billing_cycle_graph
+    @billing @invoice_view
+    Scenario: Billing_invoice_view
         Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
         And I click on sign in button
@@ -10,8 +10,8 @@ Feature: Billing Cycle Graph
         When I wait for "5" seconds
         And I hover on More option
         Then I select the "Billing" option
-        When I wait for "3" seconds
+        When I wait for "5" seconds
         And I verify the columns are shown on the billing overview page with
             | Invoice Date | Invoice | Billing Period | Status | Amount |
-        And I assert I can see the graph information
-        And I wait for "3" seconds
+        And I select the "first" invoice
+        

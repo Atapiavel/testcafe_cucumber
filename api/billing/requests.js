@@ -70,12 +70,71 @@ function getInvoice(id) {
   return `
   query{
     getInvoice(invoiceId:"` + id + `"){
-      invoiceID,
-      dueDate,
-      invoiceNumber,
+      accountMoniesPaid,
+			amountDue,
+      amountPaid,
       billingFrequency,
-      invoiceStatus
-      amountDue
+      billingLineItems{
+        amount,
+        billingLineItemDescription,
+        billingLineItemID,
+        billingLineItemName,
+        businessTypeID,
+        businessTypeName,
+        clientID,
+        location{
+          address1,
+          address2,
+          city,
+          clientID,
+          locationID,
+          locationName,
+          state,
+          zip
+        }
+        locationID,
+        payoutTarget,
+        payoutTargetID,
+        quantity,
+        scorpionCommissionAmount,
+        scorpionCommissionPercent,
+        serviceLineID,
+        serviceLineName,
+        unitPrice
+      }
+      clientID,
+      dueDate,
+      endDate,
+      invoiceCreatedDate,
+      invoiceID,
+      invoiceNumber,
+      invoiceStatus,
+      invoiceStatusID,
+      paidInFull,
+      paymentMethod,
+      paymentMethodID,
+      payments{
+        clientID,
+        credit,
+        paymentAmount,
+        paymentDate,
+        paymentID,
+        paymentMethod,
+        paymentMethodID,
+        processorID,
+        responseCode,
+        success
+      }
+      sourceID,
+      sourceName,
+      startDate,
+      subscription{
+        autopay,
+        clientID,
+        friendlyName,
+        subscriptionID
+      }
+      subscriptionID
     }
   }
   `
