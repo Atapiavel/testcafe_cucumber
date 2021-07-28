@@ -80,6 +80,12 @@ function AddressBookBtn() {
     return select('div[title="Address Book"]')
 }
 
+function AddressBookSearch() {
+    return select('input[data-cy=search-input]')
+}
+function KtanScorpion() {
+    return select('div').withText('ktan scorpion')
+}
 function ExitBtn() {
     return select('[aria-label="exit"]')
 }
@@ -120,6 +126,8 @@ module.exports = {
     SidePan: SidePan,
     BackToDialPadBtn: BackToDialPadBtn,
     AddressBookBtn: AddressBookBtn,
+    AddressBookSearch: AddressBookSearch,
+    KtanScorpion: KtanScorpion,
     ExitBtn: ExitBtn,
     EndCallMinBtn: EndCallMinBtn,
     DragBtn: DragBtn,

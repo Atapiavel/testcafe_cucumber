@@ -36,6 +36,8 @@ class PhonePage{
         this.sidePanelBtn = Selector('div[title="Call List"]');
         this.backMainDialPadBtn = Selector('div[title="Back"]');
         this.addressBookBtn = Selector('div[title="Address Book"]');
+        this.addressBookSearch = Selector('input[data-cy=search-input]');
+        this.ktanScorpion = Selector('div').withText('ktan scorpion')
         this.participants = Selector('span').withText('Participants');
         this.availabilityBtn = Selector('[aria-label="Set Your Availability"]');
         this.avaiToggleBtn = Selector('div[data-cy=component]');

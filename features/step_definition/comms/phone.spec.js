@@ -99,6 +99,14 @@ When('I click on the Address Book button', async function() {
         await ActionsPage.click_element(PhonePageLocator.AddressBookBtn());
 })
 
+When('I enter in the Address Book Search {string}', async function(KtanSearch) {
+        await ActionsPage.type_text(PhonePageLocator.AddressBookSearch(), KtanSearch);
+})
+
+When('I click on Ktan Scorpion', async function() {
+        await ActionsPage.click_element(PhonePageLocator.KtanScorpion());
+})
+
 When('I click on the Sidepanel button again', async function() {
         await ActionsPage.click_element(PhonePageLocator.SidePan());
 })
