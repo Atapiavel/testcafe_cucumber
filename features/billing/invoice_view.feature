@@ -13,5 +13,5 @@ Feature: Billing Invoice View
         When I wait for "5" seconds
         And I verify the columns are shown on the billing overview page with
             | Invoice Date | Invoice | Billing Period | Status | Amount |
-        And I select the "first" invoice
+        And I select the "first" invoice and assert invoice details
         
