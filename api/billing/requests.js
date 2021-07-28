@@ -226,6 +226,44 @@ function getBillingOverviewData() {
   `
 }
 
+function getAllSubscriptions() {
+  return `
+  query{
+    getAllSubscriptions{
+      item1{
+        autopay,
+        billingFrequencyID,
+        billingStartDay,
+        clientID,
+        friendlyName,
+        monthToMonth,
+        paymentMethodID,
+        subscriptionEndDate,
+        subscriptionExternalID,
+        subscriptionID,
+        subscriptionStartDate,
+        subscriptionSystem,
+        void,
+      }
+      item2{
+        accountType,
+        aCH,
+        cardBrand,
+        creditCard,
+        defaultPaymentMethod,
+        expiration,
+        friendlyName,
+        last4,
+        paymentMethodID,
+        processorExternalID,
+        processorExternalToken,
+        processorID
+      }
+    }
+  }
+  `
+}
+
 module.exports = {
   getScorpionAddress: getScorpionAddress,
   getAccountMonies: getAccountMonies,
@@ -237,5 +275,6 @@ module.exports = {
   getPaymentMethods: getPaymentMethods,
   getPlatformLocations: getPlatformLocations,
   getPlatformUsers: getPlatformUsers,
-  getBillingOverviewData: getBillingOverviewData
+  getBillingOverviewData: getBillingOverviewData,
+  getAllSubscriptions: getAllSubscriptions
 };
