@@ -246,6 +246,21 @@ async function get_account_monies(headers, service_line) {
         })
 }
 
+async function get_all_subscriptions(headers){
+    return fetch(billing_url, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({
+            query: Requests.getAllSubscriptions(),
+        })
+    })
+        .then((response) => {
+            return response.json().then((data) => {
+                return data;
+            })
+        })
+}
+
 module.exports = {
     format_date: format_date,
     format_currency: format_currency,
@@ -271,5 +286,6 @@ module.exports = {
     logoff: logoff,
     get_invoice_list: get_invoice_list,
     get_account_monies: get_account_monies,
-    get_invoice: get_invoice
+    get_invoice: get_invoice,
+    get_all_subscriptions: get_all_subscriptions
 };
