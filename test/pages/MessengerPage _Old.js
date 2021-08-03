@@ -17,14 +17,21 @@ class MessengerPage{
         this.searchTeamMembers = Selector('[data-cy=member-search]');
         this.memberCheckboxBtn = Selector('[class="checkbox-button"]');
         this.createBtn = Selector('[data-cy="create-button"]');
-        this.groupsKebobBtn = Selector('section:nth-child(2) [aria-label="ellipsis"]');
+        this.autotestgrpBtn = Selector('scorpion-ui-card').withText('Auto Test Group1');
+        this.groupsKebobBtn = Selector('section:nth-child(2) > div > scorpion-conversation-card:nth-child(4) [aria-label="ellipsis"]');
+        // this.groupsKebobBtn = Selector('scorpion-icon').withText('Auto Test Group1');
         this.deleteGroupBtn = Selector('span').withText('Delete Group');
         this.yesBtn = Selector('button').withText('Yes');
         this.peopleSearchInput = Selector('[type="search"]');
         this.peopleRadioBtn = Selector('[data-cy=shared-radio-circle-container]')
         this.startBtn = Selector('button').withText('Start');
-        this.shawnKebobBtn = Selector('section:nth-child(3) > div > div:nth-child(2) [aria-label="ellipsis"]');
+        this.shawnKebobBtn = Selector('section:nth-child(3) > div > scorpion-conversation-card:nth-child(1) [aria-label="ellipsis"]');
         this.hideBtn = Selector('scorpion-menu-item > span');
+        this.groupsSortBtn = Selector('section:nth-child(2) scorpion-icon[icon="dropdown"]');        
+        this.peopleSortBtn = Selector('section:nth-child(3) scorpion-icon[icon="dropdown"]');
+        this.alphaSort = Selector('div[ngprojectas="scorpion-menu-item"]').withText('Alphabetically');
+        this.dateCreatSort = Selector('div[ngprojectas="scorpion-menu-item"]').withText('Date Created');
+        this.mostRecentSort = Selector('div[ngprojectas="scorpion-menu-item"]').withText('Most Recent');
         this.aaronBtn = Selector('scorpion-ui-card').withText('Aaron McFly');
         this.messageField = Selector('body[contenteditable=true]');
         this.sendMessageBtn = Selector('[class="send-message"]');

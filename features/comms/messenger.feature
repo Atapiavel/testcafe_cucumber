@@ -1,12 +1,12 @@
 Feature: Messenger
 
-    @e2e
+    @e2e @comms
     Scenario Outline: User Messenger E2E Scenario
         Given I am in Scorpion login page
         When I enter "<email>" and "<password>"
         And I click on sign in button
         And I wait for "2" seconds
-        And I select the account to use with "Thomas & Paulk"
+        # And I select the account to use with "Thomas & Paulk"
         And I wait for "10" seconds
         Given I am in Scorpion "messenger" page
         # And I land on Messenger page
@@ -19,7 +19,7 @@ Feature: Messenger
         And I click on Messages button        
         And I wait for "2" seconds
         And I click on Aaron McFly button
-        And I wait for "2" seconds        
+        And I wait for "190" seconds        
         And I click on Emoji button
         And I click on Mask Emoji
         Then I click on Send Message button
@@ -27,5 +27,5 @@ Feature: Messenger
         And I sign out Scorpion
 
         Examples:
-            | email                  | password   | 
-            | commcenter@scorpion.co | Comms1234! | 
+            | email                     | password  | 
+            | mehrdad.tp@mailinator.com     | Team123!  | 
