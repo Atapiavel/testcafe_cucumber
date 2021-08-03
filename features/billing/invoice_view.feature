@@ -7,7 +7,7 @@ Feature: Billing Invoice View
         And I click on sign in button
         And I wait for "10" seconds
         Given I am in Scorpion "settings" page
-        When I wait for "5" seconds
+        When I wait for "8" seconds
         And I hover on More option
         Then I select the "Billing" option
         When I wait for "5" seconds

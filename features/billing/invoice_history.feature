@@ -1,6 +1,6 @@
 Feature: Billing Invoice History
 
-    @billing @invoice_history @focus
+    @billing @invoice_history
     Scenario: Invoice_history_columns_and_records
         Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
@@ -43,7 +43,7 @@ Feature: Billing Invoice History
             | by_price | 10000000-1000001        |
             | by_month | 0                       |
 
-    @billing @invoice_history @focus
+    @billing @invoice_history
     Scenario: Invoice_filtering_by_year
         Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
@@ -82,7 +82,7 @@ Feature: Billing Invoice History
         And I click on apply button
         Then I assert I can see historical invoices filtered "by_date" with "Actual"
 
-    @billing @invoice_history @focus
+    @billing @invoice_history
     Scenario: Invoice_filtering_by_month
         Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"

@@ -7,13 +7,16 @@ async function see_invoice_details(invoice) {
     if (invoice == "first") {
         var headers = await ActionsPage.bearer()
         var invoice_list = await ActionsPage.get_invoice_list(headers, 1)
+        await ActionsPage.logoff(headers)
         await ActionsPage.click_element_from_list(InvoiceViewLocator.invoice_numbers(), invoice_list.data.getInvoiceList.items[0].invoiceNumber)
     }
     else {
         await ActionsPage.click_element_from_list(InvoiceViewLocator.invoice_numbers(), value)
     }
     //API Data
+    var headers = await ActionsPage.bearer()
     var invoice_data = await ActionsPage.get_invoice(headers, invoice_list.data.getInvoiceList.items[0].invoiceId)
+    await ActionsPage.logoff(headers)
     var api_amount_due = await ActionsPage.format_currency(invoice_data.data.getInvoice.amountDue)
     var api_invoice_number = invoice_data.data.getInvoice.invoiceNumber
     var api_amount_paid = await ActionsPage.format_currency(invoice_data.data.getInvoice.amountPaid)
@@ -48,6 +51,13 @@ async function see_invoice_details(invoice) {
     var fe_quantity = Selector(InvoiceViewLocator.quantities())
     var fe_item_amount = Selector(InvoiceViewLocator.items_amounts())
     // Assertions
+    console.log("API Value" + api_amount_due + " - Front End Value" + fe_amount_due)
+    console.log("API Value" + " " + api_invoice_number + " - Front End Value" + fe_invoice_number)
+    console.log("API Value" + api_amount_paid + " - Front End Value" + fe_amount_paid)
+    console.log("API Value" + due_api_month + "/" + due_api_day + "/" + due_api_year + " - Front End Value" + fe_due_date)
+    console.log("API Value" + start_api_month + "/" + start_api_day + "/" + start_api_year + " - " +
+        due_api_month + "/" + due_api_day + "/" + due_api_year + " - Front End Value" + fe_billing_period)
+
     assert(api_amount_due == fe_amount_due)
     assert(" " + api_invoice_number == fe_invoice_number)
     assert(api_amount_paid == fe_amount_paid)
@@ -93,6 +103,10 @@ async function see_invoice_details(invoice) {
     }
     if (platform_z > 0) {
         for (i = 0; i < platform_z; i++) {
+            console.log(platform_array[i].billingLineItemName + " - "+ await ActionsPage.get_text(fe_item_name.nth(z)))
+            console.log(platform_array[i].unitPrice + " - "+ await ActionsPage.get_text(fe_unit_price.nth(z)))
+            console.log(platform_array[i].quantity + " - "+ await ActionsPage.get_text(fe_quantity.nth(z)))
+            console.log(platform_array[i].amount + " - "+ await ActionsPage.get_text(fe_item_amount.nth(z)))
             assert(platform_array[i].billingLineItemName == await ActionsPage.get_text(fe_item_name.nth(z)))
             assert(platform_array[i].unitPrice == await ActionsPage.get_text(fe_unit_price.nth(z)))
             assert(platform_array[i].quantity == await ActionsPage.get_text(fe_quantity.nth(z)))
@@ -118,9 +132,8 @@ async function see_invoice_details(invoice) {
             z = z + 1
         }
     }
-    console.log(invoice_data.data.getInvoice.payments[i])
-    console.log(invoice_data.data.getInvoice.subscription[i])
-    await ActionsPage.logoff(headers)
+    // console.log(invoice_data.data.getInvoice.payments[i])
+    // console.log(invoice_data.data.getInvoice.subscription[i])
 }
 
 module.exports = {

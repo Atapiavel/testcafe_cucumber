@@ -17,6 +17,6 @@ Then('I assert I can see recent invoices', async function () {
     await BillingOverviewPage.assert_results()
 })
 
-Then('I assert {string} kebab option is visible for recent invoices', async function (option) {
-    await BillingOverviewPage.assert_kebab_option(option)
+Then('I assert kebab options are visible for recent invoices', { timeout: 500000 }, async function () {
+    await BillingOverviewPage.assert_kebab_options()
 })

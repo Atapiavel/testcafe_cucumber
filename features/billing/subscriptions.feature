@@ -14,10 +14,5 @@ Feature: Billing Subscriptions
         Then I verify the columns are shown on the billing overview page with
             | Invoice Date | Invoice | Billing Period | Status | Amount |
         And I verify the columns for subscriptions are visible
-            | Contract Name | Valid Until | Assigned Payment | Autopay |
+            | Contract Name | Valid Until | Assigned Payment | Auto Pay |
         And I assert that subscriptions information is visible
-
-
-# And I click the kebab option "Edit" for "Subscriptions"
-# And I select the assigned payment method with "Credit Card ****3857" and "Enabled" autopay
-# And I click on save button

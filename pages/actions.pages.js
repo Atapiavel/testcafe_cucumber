@@ -18,10 +18,6 @@ async function format_currency(value){
 async function format_date(value){
     var date = new Date(value)
     const formatted_date = date
-    // .toLocaleString("en-US", {
-    //     month: "short",
-    //     day: "numeric",
-    // });
     return formatted_date
 }
 
@@ -240,7 +236,7 @@ async function get_account_monies(headers, service_line) {
         })
     })
         .then((response) => {
-            return response.json().then((data) => {
+            return response.json().then((data) => {            
                 return data;
             })
         })
@@ -256,6 +252,7 @@ async function get_all_subscriptions(headers){
     })
         .then((response) => {
             return response.json().then((data) => {
+                console.log(data)
                 return data;
             })
         })
