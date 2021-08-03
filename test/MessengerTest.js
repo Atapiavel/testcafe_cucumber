@@ -34,7 +34,8 @@ test('Messenger page Test', async t =>{
     // .click(loginpage.signInBtn)
     // .wait(3000)
     .maximizeWindow()
-    .setNativeDialogHandler(() => true)    
+    .setNativeDialogHandler(() => true)
+    .wait(10000)    
     .click(messengerpage.messengerBtn)
     .expect(getURL()).contains('messenger')
     .wait(1000)
@@ -48,6 +49,10 @@ test('Messenger page Test', async t =>{
     .typeText(messengerpage.searchTeamMembers, "aa")
     .click(messengerpage.memberCheckboxBtn)
     .click(messengerpage.createBtn)
+    // Sorting Groups Alphabetically in the Ascending order
+    // .click(messengerpage.groupsSortBtn)
+    // .click(messengerpage.alphaSort)
+    .click(messengerpage.autotestgrpBtn)
     .click(messengerpage.groupsKebobBtn)
     .click(messengerpage.deleteGroupBtn)
     .click(messengerpage.yesBtn)
@@ -59,6 +64,12 @@ test('Messenger page Test', async t =>{
     .click(messengerpage.shawnKebobBtn) 
     .click(messengerpage.hideBtn)
     .wait(1000)
+    // Sorting People Alphabetically in the Ascending order
+    .click(messengerpage.peopleSortBtn)
+    .wait(1000)
+    .click(messengerpage.alphaSort)
+    .wait(1000)
+    .click(messengerpage.alphaSort)
     .click(messengerpage.aaronBtn)
     .wait(10000)
     .switchToIframe(iframeName)
@@ -73,7 +84,13 @@ test('Messenger page Test', async t =>{
     .click(messengerpage.paperClipBtn)
     .expect(fileAttachment.exists).ok()
     .click(fileUpload)
-    .click(messengerpage.cancelModalBtn)    
+    .click(messengerpage.cancelModalBtn)
+    // Sorring People Alphabetically in the Descending order
+    // .click(messengerpage.peopleSortBtn)
+    // .click(messengerpage.alphaSort)
+    //  // Sorring Groups Alphabetically in the Descending order
+    // .click(messengerpage.groupsSortBtn)
+    // .click(messengerpage.alphaSort)      
     .click(loginpage.settingsBtn)
     .click(loginpage.signOutBtn);
     

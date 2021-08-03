@@ -1,6 +1,6 @@
 Feature: Phone
 
-    @e2e @comms
+    @e2e
     Scenario Outline: User Phone E2E Scenario
         Given I am in Scorpion login page
         When I enter "<email>" and "<password>"
