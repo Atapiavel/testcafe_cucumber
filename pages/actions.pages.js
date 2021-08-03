@@ -6,6 +6,21 @@ const Requests = require("./.././api/billing/requests");
 const billing_url = "https://integration.scorpion.co/csx/billing/graphql"
 const base_url = 'https://integration.scorpion.co'
 
+async function format_currency(value){
+    var formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    });
+    var formatted_string = formatter.format(value)
+    return formatted_string
+}
+
+async function format_date(value){
+    var date = new Date(value)
+    const formatted_date = date
+    return formatted_date
+}
+
 async function navigate(url) {
     await testController.navigateTo(url);
 }
@@ -141,7 +156,11 @@ async function auth(token) {
     })
         .then((response) => {
             return response.json().then((data) => {
-                console.log(data)
+                console.log("\nAuthentication response:\n" + response.status)
+                console.log(response.statusText + "\n")
+                if (response.status != 200) {
+                    console.log(data.status.message)
+                }
                 return data;
             })
         })
@@ -168,7 +187,11 @@ async function logoff(headers) {
     })
         .then((response) => {
             return response.json().then((data) => {
-                console.log(data)
+                console.log("\nLogoff response:\n" + response.status)
+                console.log(response.statusText)
+                if (response.status != 200) {
+                    console.log(data.status.message)
+                }
                 return data;
             })
         })
@@ -189,12 +212,12 @@ async function get_invoice_list(headers, invoices) {
         })
 }
 
-async function get_account_monies(headers, service_line) {
+async function get_invoice(headers, id) {
     return fetch(billing_url, {
         method: 'POST',
         headers: headers,
         body: JSON.stringify({
-            query: Requests.getAccountMonies(service_line),
+            query: Requests.getInvoice(id),
         })
     })
         .then((response) => {
@@ -204,7 +227,40 @@ async function get_account_monies(headers, service_line) {
         })
 }
 
+async function get_account_monies(headers, service_line) {
+    return fetch(billing_url, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({
+            query: Requests.getAccountMonies(service_line),
+        })
+    })
+        .then((response) => {
+            return response.json().then((data) => {            
+                return data;
+            })
+        })
+}
+
+async function get_all_subscriptions(headers){
+    return fetch(billing_url, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({
+            query: Requests.getAllSubscriptions(),
+        })
+    })
+        .then((response) => {
+            return response.json().then((data) => {
+                console.log(data)
+                return data;
+            })
+        })
+}
+
 module.exports = {
+    format_date: format_date,
+    format_currency: format_currency,
     navigate: navigate,
     click_element: click_element,
     take_screenshot: take_screenshot,
@@ -226,5 +282,7 @@ module.exports = {
     bearer: bearer,
     logoff: logoff,
     get_invoice_list: get_invoice_list,
-    get_account_monies: get_account_monies
+    get_account_monies: get_account_monies,
+    get_invoice: get_invoice,
+    get_all_subscriptions: get_all_subscriptions
 };

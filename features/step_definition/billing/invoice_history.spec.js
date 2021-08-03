@@ -10,14 +10,8 @@ When('I assert the Scorpion Billing History page', async function () {
     assert(text == "Billing History")
 })
 
-When('I assert I can see historical invoices', async function () {
-    await BillingHistoryPage.assert_historical_invoices()
-    await ActionsPage.wait(5)
-    await BillingHistoryPage.assert_results()
-})
-
-Then('I assert I can see historical invoices filtered {string} with {string}', async function (filter, value) {
-    await BillingHistoryPage.assert_filtered_invoices(filter, value)
+When('I assert I can see historical invoices filtered {string} with {string}', async function (filter, value) {
+        await BillingHistoryPage.assert_historical_invoices(filter, value)
 })
 
 When('I verify the columns are showed with', async function (datatable) {

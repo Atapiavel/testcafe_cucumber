@@ -7,11 +7,11 @@ function filter_button() {
 }
 
 function start_date() {
-    return "div > scorpion-mega-date-range-picker > div > div > label:nth-child(1) > div.nlf-middle > div > input"
+    return "div > scorpion-mega-date-range-picker > div > div > label > div > div:nth-child(1) > input"
 }
 
 function end_date() {
-    return "div > scorpion-mega-date-range-picker > div > div > label:nth-child(2) > div.nlf-middle > div > input"
+    return "div > scorpion-mega-date-range-picker > div > div > label > div > div:nth-child(3) > input"
 }
 
 function edit() {
