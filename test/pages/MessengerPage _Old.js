@@ -18,7 +18,7 @@ class MessengerPage{
         this.memberCheckboxBtn = Selector('[class="checkbox-button"]');
         this.createBtn = Selector('[data-cy="create-button"]');
         this.autotestgrpBtn = Selector('scorpion-ui-card').withText('Auto Test Group1');
-        this.groupsKebobBtn = Selector('section:nth-child(2) > div > scorpion-conversation-card:nth-child(4) [aria-label="ellipsis"]');
+        this.groupsKebobBtn = Selector('section:nth-child(2) > div > scorpion-conversation-card:nth-child(1) [aria-label="ellipsis"]');
         // this.groupsKebobBtn = Selector('scorpion-icon').withText('Auto Test Group1');
         this.deleteGroupBtn = Selector('span').withText('Delete Group');
         this.yesBtn = Selector('button').withText('Yes');
