@@ -20,13 +20,13 @@ class MessengerPage{
         this.autotestgrpBtn = Selector('scorpion-ui-card').withText('Auto Test Group1');
         this.groupsKebobBtn = Selector('section:nth-child(2) > div > scorpion-conversation-card:nth-child(1) [aria-label="ellipsis"]');
         // this.groupsKebobBtn = Selector('scorpion-icon').withText('Auto Test Group1');
-        this.deleteGroupBtn = Selector('span').withText('Delete Group');
+        this.deleteGroupBtn = Selector('section:nth-child(2) > div > scorpion-conversation-card:nth-child(1) [aria-label="trash"]');
         this.yesBtn = Selector('button').withText('Yes');
         this.peopleSearchInput = Selector('[type="search"]');
         this.peopleRadioBtn = Selector('[data-cy=shared-radio-circle-container]')
         this.startBtn = Selector('button').withText('Start');
         this.shawnKebobBtn = Selector('section:nth-child(3) > div > scorpion-conversation-card:nth-child(1) [aria-label="ellipsis"]');
-        this.hideBtn = Selector('scorpion-menu-item > span');
+        this.hideBtn = Selector('section:nth-child(3) > div > scorpion-conversation-card:nth-child(1) [aria-label="hide_comment"]');
         this.groupsSortBtn = Selector('section:nth-child(2) scorpion-icon[icon="dropdown"]');        
         this.peopleSortBtn = Selector('section:nth-child(3) scorpion-icon[icon="dropdown"]');
         this.alphaSort = Selector('div[ngprojectas="scorpion-menu-item"]').withText('Alphabetically');
@@ -40,8 +40,16 @@ class MessengerPage{
         this.paperClipBtn = Selector('scorpion-button-icon[icon="paperclip"]');
         // this.fileUpload = Selector('[class="upload-action"]');
         this.uploadSendBtn = Selector('button').withText('Send');
-        this.cancelModalBtn = Selector('button').withText('Cancel')
+        this.cancelModalBtn = Selector('button').withText('Cancel');
         this.clickAddMoreBtn = Selector('button').withText('click');
+        this.appearAsAwayBtn = Selector('[title="Appear As Away"]');
+        this.aAAToggleBtn = Selector('[class="toggle"]');
+        this.aAAInputField = Selector('[placeholder="Update"]');
+        this.aAAEmojiBtn = Selector('div.nlf-middle-between.nlp-pt05.cm\:20 > div > scorpion-emoji-select > div > scorpion-button-icon > button > scorpion-icon > div');
+        this.dromedaryCamelBtn = Selector(' emoji-category:nth-child(2) > section > div > ngx-emoji:nth-child(7) > span > span');
+        this.clearBtn = Selector('span').withText('Clear');
+
+
         
 
 
