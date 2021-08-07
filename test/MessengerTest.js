@@ -105,7 +105,7 @@ test('Messenger page Test', async t =>{
     .click(messengerpage.aAAToggleBtn)
     .wait(1000)
     .typeText(messengerpage.aAAInputField, "Hey I'm here to chat!!!")
-    .wait(10000)
+    // .wait(10000)
     // .click(messengerpage.aAAEmojiBtn)
     // .wait(1000)
     // .click(messengerpage.dromedaryCamelBtn)

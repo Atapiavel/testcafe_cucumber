@@ -83,8 +83,8 @@ function AddressBookBtn() {
 function AddressBookSearch() {
     return select('input[data-cy=search-input]')
 }
-function KtanScorpion() {
-    return select('div').withText('ktan scorpion')
+function FeaScorpion() {
+    return select('div').withText('George Featherman')
 }
 function ExitBtn() {
     return select('[aria-label="exit"]')
@@ -127,7 +127,7 @@ module.exports = {
     BackToDialPadBtn: BackToDialPadBtn,
     AddressBookBtn: AddressBookBtn,
     AddressBookSearch: AddressBookSearch,
-    KtanScorpion: KtanScorpion,
+    FeaScorpion: FeaScorpion,
     ExitBtn: ExitBtn,
     EndCallMinBtn: EndCallMinBtn,
     DragBtn: DragBtn,

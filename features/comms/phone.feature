@@ -1,6 +1,6 @@
 Feature: Phone
 
-    @e2e
+    @e2e @comms
     Scenario Outline: User Phone E2E Scenario
         Given I am in Scorpion login page
         When I enter "<email>" and "<password>"
@@ -40,8 +40,8 @@ Feature: Phone
         And I click on the Back button
         And I click on the Address Book button
         When I wait for "2" seconds
-        And I enter in the Address Book Search "<KtanSearch>"
-        And I click on Ktan Scorpion
+        And I enter in the Address Book Search "<FeaSearch>"
+        And I click on Fea Scorpion
         And I click on the Sidepanel button again
         And I click on the Back button again
         And I click on Minimize button again
@@ -54,5 +54,5 @@ Feature: Phone
         And I sign out Scorpion
 
         Examples:
-            | email                  | password   | phoneNr    | phoneNr2   | KtanSearch |
-            | commcenter@scorpion.co | Comms1234! | 8182345566 | 4157979369 | Ktan       |
+            | email                  | password   | phoneNr    | phoneNr2   | FeaSearch |
+            | commcenter@scorpion.co | Comms1234! | 8182345566 | 4157979369 | Fea       |
