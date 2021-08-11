@@ -1,9 +1,10 @@
 import {Selector,t} from 'testcafe';
 
 class ChatSettingsPage{
-    constructor(){                
+    constructor(){
+        this.chatAppSettingsMngBtn = Selector('li:nth-child(1) span[data-cy=text]');            
         this.successMsg = Selector('strong').withText('Your Business Growth');
-        this.partMngBtn = Selector('div:nth-child(1) > scorpion-service-description > scorpion-ui-card > div > scorpion-button > button');
+        this.yourServicepartMngBtn = Selector('scorpion-service-description [type="button"]');
         // this.partMngBtn = Selector('span').withText('Manage')        
         this.closeMngBtn = Selector('[data-cy=exit-button]');
         this.budgetBtn = Selector('strong').withText('Budget');

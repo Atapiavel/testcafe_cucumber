@@ -4,7 +4,7 @@ import chatsettingspage from '../test/pages/ChatSettingsPage';
 
 // Adding this const for the Data Driven testing
 const dataSet = require('../data/data.json');
-const URL ="https://ui-integration.scorpion.co/settings/apps/chat/agents";
+const URL ="https://ui-integration.scorpion.co/settings/apps";
 const getURL = ClientFunction(() =>window.location.href);
 
 fixture('Chat Settings Fixture')
@@ -25,6 +25,7 @@ test('Enter Chat Settings Test', async t =>{
     .click(loginpage.signInBtn)
     .takeScreenshot()
     .wait(3000)
+    .click(chatsettingspage.chatAppSettingsMngBtn)
     .click(chatsettingspage.partMngBtn)
     .wait(3000)
     .click(chatsettingspage.closeMngBtn)
