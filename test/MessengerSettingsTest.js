@@ -48,13 +48,6 @@ test('Enter Chat Settings Test', async t =>{
     .click(messengersettingspage.nextBtn2)
     .click(messengersettingspage.nextBtn3)
     .click(messengersettingspage.doneBtn)
-    .click(messengersettingspage.yadcloseBtn)
-
-    .click(messengersettingspage.nextBtn1)
-    .click(messengersettingspage.nextBtn2)
-    .click(messengersettingspage.nextBtn3)
-    .click(messengersettingspage.doneBtn)
-    .click(messengersettingspage.yadcloseBtn)
 
     .click(loginpage.settingsBtn)
     .click(loginpage.signOutBtn);
