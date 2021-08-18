@@ -8,8 +8,13 @@ async function assert_columns(datatable) {
     for (var i = 0; i < data_flat.length; i++) {
         const header = "scorpion-billing-subscriptions > table[role='grid'] > thead > tr[role='row'] > th:nth-of-type(" + (i + 1) + ")"
         const text = await ActionsPage.select(header).innerText
-        console.log(text + "-" + data_flat[i])
-        assert(text == data_flat[i])
+        if(text == data_flat[i]){
+            assert.ok(true)
+        }
+        else{
+            console.log(text + " - " + data_flat[i])
+            assert.ok(false)
+        }
     }
 }
 
@@ -57,18 +62,68 @@ async function assert_subscriptions_data() {
         var fe_assigned_payment = await ActionsPage.get_text(SubscriptionsLocator.assigned_payments() + i)
         var fe_autopay = await ActionsPage.get_text(SubscriptionsLocator.autopay() + i)
         // Assertions
-        console.log(api_contract_name + "-" + fe_contract_name)
-        console.log(api_valid_until + "-" + fe_valid_until)
-        console.log(api_assigned_payment + "-" + fe_assigned_payment)
-        console.log(api_autopay + "-" + fe_autopay)
-        assert(api_contract_name == fe_contract_name)
-        assert(api_valid_until == fe_valid_until)
-        assert(api_assigned_payment == fe_assigned_payment)
-        assert(api_autopay == fe_autopay)
+        if(api_contract_name == fe_contract_name){
+            assert.ok(true)
+        }
+        else{
+            console.log(api_contract_name == fe_contract_name)
+            assert.ok(false)
+        }
+        if(api_valid_until == fe_valid_until){
+            assert.ok(true)
+        }
+        else{
+            console.log(api_valid_until == fe_valid_until)
+            assert.ok(false)
+        }
+        if(api_assigned_payment == fe_assigned_payment){
+            assert.ok(true)
+        }
+        else{
+            console.log(api_assigned_payment == fe_assigned_payment)
+            assert.ok(false)
+        }
+        if(api_autopay == fe_autopay){
+            assert.ok(true)
+        }
+        else{
+            console.log(api_autopay == fe_autopay)
+            assert.ok(false)
+        }
     }
+}
+
+async function edit_contract(payment_method, autopay) {
+    await ActionsPage.hover_element(SubscriptionsLocator.kebab_options() + "0")
+    await ActionsPage.click_element(SubscriptionsLocator.kebab_options() + "0")
+    await ActionsPage.hover_element(SubscriptionsLocator.edit_options() + "0")
+    await ActionsPage.click_element(SubscriptionsLocator.edit_options() + "0")
+    await ActionsPage.hover_element(SubscriptionsLocator.open_dropdown())
+    await ActionsPage.click_element(SubscriptionsLocator.open_dropdown())
+    var headers = await ActionsPage.bearer()
+    var subscriptions_list = await ActionsPage.get_all_subscriptions(headers)
+    var payment_methods_list = await ActionsPage.get_payment_methods(headers)
+    if (payment_method == "first") {
+        var payment_method_id = 0
+        var friendly_name = payment_methods_list.data.getPaymentMethods[0].friendlyName
+    }
+    if (payment_method == "last") {
+        var payment_methods_lenght = payment_methods_list.data.getPaymentMethods.length
+        var payment_method_id = payment_methods_lenght - 1
+        var friendly_name = payment_methods_list.data.getPaymentMethods[payment_method_id].friendlyName
+    }
+    await ActionsPage.hover_element_from_list(SubscriptionsLocator.payment_methods(), friendly_name)
+    await ActionsPage.click_element_from_list(SubscriptionsLocator.payment_methods(), friendly_name)
+    await ActionsPage.logoff(headers)
+    if (subscriptions_list.data.getAllSubscriptions[0].item1.autopay == false && autopay == "On" ||
+        subscriptions_list.data.getAllSubscriptions[0].item1.autopay == true && autopay == "Off") {
+        await ActionsPage.click_element(SubscriptionsLocator.autopay_switch())
+    }
+    await ActionsPage.click_element(SubscriptionsLocator.save_subscription())
 }
 
 module.exports = {
     assert_columns: assert_columns,
-    assert_subscriptions_data: assert_subscriptions_data
+    assert_subscriptions_data: assert_subscriptions_data,
+    edit_contract: edit_contract
 }

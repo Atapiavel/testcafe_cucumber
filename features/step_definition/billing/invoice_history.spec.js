@@ -35,9 +35,10 @@ When('I click on apply button', async function () {
     await ActionsPage.click_element_from_list(BillingHistoryPageLocator.apply_button(), "Apply")
 })
 
-Then('I assert the results count showing {string}', async function (results) {
+Then('I assert the results for the filter {string} with {string}', async function (filter, value) {
+    await BillingHistoryPage.results_validation(filter, value)
     const text = await ActionsPage.select(BillingHistoryPageLocator.results_count()).innerText;
-    assert(text == results)
+    assert(text == await BillingHistoryPage.results_validation(filter, value) + " Results")
 })
 
 Then('I click on clear all filters button', async function () {

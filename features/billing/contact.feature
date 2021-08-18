@@ -1,7 +1,7 @@
 Feature: Billing Contact
 
         @billing @contact
-        Scenario Outline: Contact_module_is_visible
+        Scenario: Contact_module_is_visible
                 Given I am in Scorpion login page
                 When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
                 And I click on sign in button
@@ -35,7 +35,7 @@ Feature: Billing Contact
                         | Arturo Tapia Velasco |
 
         @billing @contact
-        Scenario Outline: Add_billing_contact_functionality
+        Scenario: Add_billing_contact_functionality
                 Given I am in Scorpion login page
                 When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
                 And I click on sign in button
@@ -48,19 +48,14 @@ Feature: Billing Contact
                 When I click on add billing contact
                 And I click on create a new billing contact
                 And I fill billing contact info with
-                        | <first_name> | <email_address> | <phone_number> | <notification> |
+                        | Samm | samrobinson@gmail.com | (485) 569-3859 | Y |
                 Then I click on add button
                 And I assert that the text is shown "Contact has been successfully added!"
                 And I assert that contact is shown with
-                        | <first_name> | <email_address> | <phone_number> |
-
-                Examples:
-                        | first_name | email_address         | phone_number   | notification |
-                        | Samm       | samrobinson@gmail.com | (485) 569-3859 | Y            |
-
+                        | Samm | samrobinson@gmail.com | (485) 569-3859 |      |
 
         @billing @contact
-        Scenario Outline: Update_billing_contact_functionality
+        Scenario: Update_billing_contact_functionality
                 Given I am in Scorpion login page
                 When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
                 And I click on sign in button
@@ -70,21 +65,17 @@ Feature: Billing Contact
                 And I hover on More option
                 Then I select the "Billing" option
                 And I wait for "5" seconds
-                When I click "update" option for contact "<contact_name>"
+                When I click "update" option for contact "Samm"
                 And I wait for "2" seconds
                 And I fill billing contact info with
-                        | <first_name> | <email_address> | <phone_number> |
+                        | Tester | testerrobinson@gmail.com | (485) 569-5555 |
                 Then I click on update button
                 Then I assert that the text is shown "Contact has been successfully updated!"
                 And I assert that contact is shown with
-                        | <first_name> | <email_address> | <phone_number> |
-
-                Examples:
-                        | contact_name | first_name | email_address            | phone_number   |
-                        | Samm         | Tester     | testerrobinson@gmail.com | (485) 569-5555 |
+                        | Tester | testerrobinson@gmail.com| (485) 569-5555 |
 
         @billing @contact
-        Scenario Outline: Set_as_primary_functionality_from_<module>
+        Scenario: Set_as_primary_functionality_from_Billing_contact
                 Given I am in Scorpion login page
                 When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
                 And I click on sign in button
@@ -94,13 +85,9 @@ Feature: Billing Contact
                 And I hover on More option
                 Then I select the "Billing" option
                 And I wait for "5" seconds
-                When I click "setAsPrimary" option for contact "<contact_name>"
+                When I click "setAsPrimary" option for contact "Tester"
                 Then I assert that the text is shown "Contact has been set as Primary Contact"
-                And I assert "<contact_name>" as primary contact
-
-                Examples:
-                        | module          | contact_name |
-                        | Billing_contact | Tester       |
+                And I assert "Tester" as primary contact
 
 #     # @billing @contact
 #     # Scenario Outline: Delete_functionality_from_<module>

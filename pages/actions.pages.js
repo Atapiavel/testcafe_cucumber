@@ -37,6 +37,10 @@ async function type_text(element, value) {
     await testController.typeText(element, value, { replace: true })
 }
 
+async function clear_text(element){
+    await testController.pressKey('ctrl+a delete')
+}
+
 async function click_element_from_list(element, value) {
     const option = Selector(element).withText(value)
     await testController.click(option)
@@ -156,8 +160,6 @@ async function auth(token) {
     })
         .then((response) => {
             return response.json().then((data) => {
-                console.log("\nAuthentication response:\n" + response.status)
-                console.log(response.statusText + "\n")
                 if (response.status != 200) {
                     console.log(data.status.message)
                 }
@@ -187,8 +189,6 @@ async function logoff(headers) {
     })
         .then((response) => {
             return response.json().then((data) => {
-                console.log("\nLogoff response:\n" + response.status)
-                console.log(response.statusText)
                 if (response.status != 200) {
                     console.log(data.status.message)
                 }
@@ -252,7 +252,21 @@ async function get_all_subscriptions(headers){
     })
         .then((response) => {
             return response.json().then((data) => {
-                console.log(data)
+                return data;
+            })
+        })
+}
+
+async function get_payment_methods(headers){
+    return fetch(billing_url, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({
+            query: Requests.getPaymentMethods(),
+        })
+    })
+        .then((response) => {
+            return response.json().then((data) => {
                 return data;
             })
         })
@@ -266,6 +280,7 @@ module.exports = {
     take_screenshot: take_screenshot,
     execute_shell: execute_shell,
     type_text: type_text,
+    clear_text: clear_text,
     click_element_from_list: click_element_from_list,
     fill_element_from_list: fill_element_from_list,
     hover_element: hover_element,
@@ -284,5 +299,6 @@ module.exports = {
     get_invoice_list: get_invoice_list,
     get_account_monies: get_account_monies,
     get_invoice: get_invoice,
-    get_all_subscriptions: get_all_subscriptions
+    get_all_subscriptions: get_all_subscriptions,
+    get_payment_methods: get_payment_methods
 };

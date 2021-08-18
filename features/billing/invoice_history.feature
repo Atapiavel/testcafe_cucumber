@@ -19,7 +19,7 @@ Feature: Billing Invoice History
         And I wait for "5" seconds
 
     @billing @invoice_history
-    Scenario Outline: Invoice_filtering_with_no_results_filtering_<filter>
+    Scenario: Invoice_filtering_with_no_results_filtering_<filter>
         Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
         And I click on sign in button
@@ -31,17 +31,10 @@ Feature: Billing Invoice History
         And I click on see all option
         And I wait for "5" seconds
         Then I assert the Scorpion Billing History page
-        When I select the filter "<filter>" with "<value>"
+        When I select the filter "by_price" with "10000000-1000001"
         And I wait for "2" seconds
         And I click on apply button
-        Then I assert no invoices are shown
-
-        Examples:
-
-            | filter   | value                   |
-            | by_date  | 30 Mar 2010-30 Mar 2010 |
-            | by_price | 10000000-1000001        |
-            | by_month | 0                       |
+        Then I assert no invoices are shown                    
 
     @billing @invoice_history
     Scenario: Invoice_filtering_by_year
@@ -65,22 +58,23 @@ Feature: Billing Invoice History
         And I wait for "1" seconds
         Then I assert I can see historical invoices filtered "by_year" with "2021"
 
-    @billing @invoice_history
-    Scenario: Invoice_filtering_by_date
-        Given I am in Scorpion login page
-        When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
-        And I click on sign in button
-        And I wait for "10" seconds
-        Given I am in Scorpion "settings" page
-        And I wait for "5" seconds
-        And I hover on More option
-        Then I select the "Billing" option
-        And I click on see all option
-        And I wait for "5" seconds
-        Then I assert the Scorpion Billing History page
-        When I select the filter "by_date" with "Actual"
-        And I click on apply button
-        Then I assert I can see historical invoices filtered "by_date" with "Actual"
+    # need to refactor date filtering
+    # @billing @invoice_history
+    # Scenario: Invoice_filtering_by_date
+    #     Given I am in Scorpion login page
+    #     When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
+    #     And I click on sign in button
+    #     And I wait for "10" seconds
+    #     Given I am in Scorpion "settings" page
+    #     And I wait for "5" seconds
+    #     And I hover on More option
+    #     Then I select the "Billing" option
+    #     And I click on see all option
+    #     And I wait for "5" seconds
+    #     Then I assert the Scorpion Billing History page
+    #     When I select the filter "by_date" with "Actual"
+    #     And I click on apply button
+    #     Then I assert I can see historical invoices filtered "by_date" with "Actual"
 
     @billing @invoice_history
     Scenario: Invoice_filtering_by_month
@@ -113,9 +107,9 @@ Feature: Billing Invoice History
         And I wait for "5" seconds
         Then I assert the Scorpion Billing History page
         And I click on filter button
-        When I select the filter "by_price" with "1000.00-10000.00"
+        When I select the filter "by_price" with "1000.00-3000.00"
         When I click on apply button
-        Then I assert I can see historical invoices filtered "by_price" with "1000.00-10000.00"
+        Then I assert I can see historical invoices filtered "by_price" with "1000.00-3000.00"
 
     @billing @invoice_history
     Scenario: Invoice_filtering_by_paid_status
@@ -171,195 +165,69 @@ Feature: Billing Invoice History
         And I click on apply button
         Then I assert I can see historical invoices filtered "by_status" with "Partially paid"
 
-#     @billing @invoice_history
-#     Scenario: Results_counter_from_filter_modal
-#         Given I am in Scorpion login page
-#         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
-#         And I click on sign in button
-#         And I wait for "10" seconds
-#         Given I am in Scorpion "settings" page
-#         And I wait for "5" seconds
-#         And I hover on More option
-#         Then I select the "Billing" option
-#         And I click on see all option
-#         And I wait for "5" seconds
-#         Then I assert the Scorpion Billing History page
-#         And I click on filter button
-#         When I select the filter "by_status" with "Paid"
-#         And I wait for "2" seconds
-#         Then I assert the results count showing "1 Result"
-#         And I click on cancel button
-#         And I click on filter button
-#         When I select the filter "by_status" with "Unpaid"
-#         And I wait for "2" seconds
-#         Then I assert the results count showing "3 Results"
-#         And I click on cancel button
-#         And I click on filter button
-#         When I select the filter "by_price" with "20000.00-40000.00"
-#         And I wait for "2" seconds
-#         Then I assert the results count showing "2 Results"
-#         And I click on cancel button
-#         And I click on filter button
-#         And I wait for "1" seconds
-#         When I select the filter "by_price" with "80000.00-80000.00"
-#         And I click on filter button
-#         And I wait for "2" seconds
-#         Then I assert the results count showing "2 Results"
+    @billing @invoice_history
+    Scenario: Results_counter_from_filter_modal
+        Given I am in Scorpion login page
+        When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
+        And I click on sign in button
+        And I wait for "10" seconds
+        Given I am in Scorpion "settings" page
+        And I wait for "5" seconds
+        And I hover on More option
+        Then I select the "Billing" option
+        And I click on see all option
+        And I wait for "5" seconds
+        Then I assert the Scorpion Billing History page
+        And I click on filter button
+        When I select the filter "by_status" with "Paid"
+        And I wait for "2" seconds
+        Then I assert the results for the filter "by_status" with "Paid"
+        And I click on cancel button
+        And I click on filter button
+        When I select the filter "by_status" with "Unpaid"
+        And I wait for "2" seconds
+        Then I assert the results for the filter "by_status" with "Unpaid"
+        And I click on cancel button
+        And I click on filter button
+        When I select the filter "by_price" with "1000.00-4000.00"
+        And I wait for "2" seconds
+        Then I assert the results for the filter "by_price" with "1000.00-4000.00"
+        And I click on cancel button
+        And I click on filter button
+        And I wait for "1" seconds
+        When I select the filter "by_price" with "100.00-2000.00"
+        And I click on filter button
+        And I wait for "2" seconds
+        Then I assert the results for the filter "by_price" with "100.00-2000.00"
 
-#     @billing @invoice_history
-#     Scenario Outline: Clear_all_filters_functionality
-#         Given I am in Scorpion login page
-#         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
-#         And I click on sign in button
-#         And I wait for "10" seconds
-#         Given I am in Scorpion "settings" page
-#         And I wait for "5" seconds
-#         And I hover on More option
-#         Then I select the "Billing" option
-#         And I click on see all option
-#         And I wait for "5" seconds
-#         Then I assert the Scorpion Billing History page
-#         When I select the filter "by_year" with "2020"
-#         And I click on apply button
-#         And I wait for "1" seconds
-#         Then I assert I can see historical invoices filtered "by_year" with "2020"
-#             | Feb 18, 2020 | 3 | Monthly | Unpaid | $80,000.00 |
-#         And I click on clear all filters link
-#         And I assert I can see historical invoices filtered "by_year" with "2020"
-#             | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
-#             | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
-#             | Feb 18, 2021 | 2             | Monthly | Unpaid | $80,000.00 |
-#             | Feb 18, 2021 | 1             | Monthly | Paid   | $80,000.00 |
-#         And I click on filter button
-#         When I select the filter "by_price" with "20000.00-40000.00"
-#         And I wait for "2" seconds
-#         Then I assert the results count showing "2 Results"
-#         When I click on apply button
-#         And I wait for "1" seconds
-#         Then I assert I can see historical invoices filtered "by_year" with "2020"
-#             | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
-#             | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
-#         And I click on clear all filters link
-#         And I assert I can see historical invoices filtered "by_year" with "2020"
-#             | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
-#             | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
-#             | Feb 18, 2021 | 2             | Monthly | Unpaid | $80,000.00 |
-#             | Feb 18, 2021 | 1             | Monthly | Paid   | $80,000.00 |
-#         And I click on filter button
-#         When I select the filter "by_price" with "80000.00-80000.00"
-#         And I wait for "2" seconds
-#         Then I assert the results count showing "2 Results"
-#         And I click on apply button
-#         And I wait for "1" seconds
-#         Then I assert I can see historical invoices filtered "by_year" with "2020"
-#             | Feb 18, 2021 | 2 | Monthly | Unpaid | $80,000.00 |
-#             | Feb 18, 2021 | 1 | Monthly | Paid   | $80,000.00 |
-#         And I click on clear all filters link
-#         And I assert I can see historical invoices filtered "by_year" with "2020"
-#             | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
-#             | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
-#             | Feb 18, 2021 | 2             | Monthly | Unpaid | $80,000.00 |
-#             | Feb 18, 2021 | 1             | Monthly | Paid   | $80,000.00 |
-#         And I click on filter button
-#         When I select the filter "by_status" with "Paid"
-#         And I wait for "2" seconds
-#         Then I assert the results count showing "1 Result"
-#         And I click on apply button
-#         And I wait for "1" seconds
-#         Then I assert I can see historical invoices filtered "by_year" with "2020"
-#             | Feb 18, 2021 | 1 | Monthly | Paid | $80,000.00 |
-#         And I click on clear all filters link
-#         And I assert I can see historical invoices filtered "by_year" with "2020"
-#             | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
-#             | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
-#             | Feb 18, 2021 | 2             | Monthly | Unpaid | $80,000.00 |
-#             | Feb 18, 2021 | 1             | Monthly | Paid   | $80,000.00 |
-#         And I click on filter button
-#         When I select the filter "by_status" with "Unpaid"
-#         And I wait for "2" seconds
-#         Then I assert the results count showing "3 Results"
-#         And I click on apply button
-#         And I wait for "1" seconds
-#         Then I assert I can see historical invoices filtered "by_year" with "2020"
-#             | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
-#             | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
-#             | Feb 18, 2021 | 2             | Monthly | Unpaid | $80,000.00 |
-#         And I click on clear all filters link
-#         And I assert I can see historical invoices filtered "by_year" with "2020"
-#             | Apr 12, 2021 | 20210412-0005 | Monthly | Unpaid | $20,000.00 |
-#             | Apr 8, 2021  | 20210408-0004 | Monthly | Unpaid | $40,000.00 |
-#             | Feb 18, 2021 | 2             | Monthly | Unpaid | $80,000.00 |
-#             | Feb 18, 2021 | 1             | Monthly | Paid   | $80,000.00 |
-
-# # @billing @invoice_history
-# # Scenario Outline: Download_<download_option>_functionality
-# #     Given I am in Scorpion login page
-# #     When I enter "commcenter@scorpion.co" and "Comms1234!"
-# #     And I click on sign in button
-# #     And I wait for "2" seconds
-# #     And I select the account to use with "Thomas & Paulk"
-# #     And I wait for "10" seconds
-# #     Given I am in Scorpion "settings" page
-# #     And I wait for "5" seconds
-# #     And I hover on More option
-# #     Then I select the "Billing" option
-# #     And I click on see all option
-# #     And I wait for "5" seconds
-# #     Then I assert the Scorpion Billing History page
-# #     Then I click the kebab option "<kebab_option>" for "Billing History" with
-# #         | Invoice Date | Invoice | Description | Billing Period | Status | Amount     |
-# #         | ...          | 22      |             | Monthly        | Unpaid | $10,000.00 |
-# #     And I assert "<dowload_option>" dowload option
-
-# #     Examples:
-# #         | kebab_option | download_option |
-# #         | Download     | CSV             |
-# #         | Download     | PDF             |
-# #         | Download     | DOC             |
-
-# # @billing @invoice_history
-# # Scenario: Send_functionality
-# #     Given I am in Scorpion login page
-# #     When I enter "commcenter@scorpion.co" and "Comms1234!"
-# #     And I click on sign in button
-# #     And I wait for "2" seconds
-# #     And I select the account to use with "Thomas & Paulk"
-# #     And I wait for "10" seconds
-# #     Given I am in Scorpion "settings" page
-# #     And I wait for "5" seconds
-# #     And I hover on More option
-# #     Then I select the "Billing" option
-# #     And I click on see all option
-# #     And I wait for "5" seconds
-# #     Then I assert the Scorpion Billing History page
-# #     Then I click the kebab option "Send" for "Billing History" with
-# #         | Invoice Date | Invoice | Description | Billing Period | Status | Amount     |
-# #         | ...          | 22      |             | Monthly        | Unpaid | $10,000.00 |
-# #     And I fill the contact information with
-# #         | David Gilmore | jamesissac@gmail.com |
-# #     And I click on send button
-# #     And I assert that the text is shown
-# #         | Success! |
-
-# # @billing @invoice_history
-# # Scenario: Print_functionality
-# #     Given I am in Scorpion login page
-# #     When I enter "commcenter@scorpion.co" and "Comms1234!"
-# #     And I click on sign in button
-# #     And I wait for "2" seconds
-# #     And I select the account to use with "Thomas & Paulk"
-# #     And I wait for "10" seconds
-# #     Given I am in Scorpion "settings" page
-# #     And I wait for "5" seconds
-# #     And I hover on More option
-# #     Then I select the "Billing" option
-# #     And I click on see all option
-# #     And I wait for "5" seconds
-# #     Then I assert the Scorpion Billing History page
-# #     Then I click the kebab option "Print" for "Billing History" with
-# #         | Invoice Date | Invoice | Description | Billing Period | Status | Amount     |
-# #         | ...          | 22      |             | Monthly        | Unpaid | $10,000.00 |
-# #     And I assert print functionality
+    @billing @invoice_history
+    Scenario: Clear_all_filters_functionality
+        Given I am in Scorpion login page
+        When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
+        And I click on sign in button
+        And I wait for "10" seconds
+        Given I am in Scorpion "settings" page
+        And I wait for "5" seconds
+        And I hover on More option
+        Then I select the "Billing" option
+        And I click on see all option
+        And I wait for "5" seconds
+        Then I assert the Scorpion Billing History page
+        When I select the filter "by_year" with "2020"
+        And I click on apply button
+        And I wait for "1" seconds
+        Then I assert I can see historical invoices filtered "by_year" with "2020"
+        And I click on clear all filters link
+        And I assert I can see historical invoices filtered "-" with "-"
+        And I click on filter button
+        When I select the filter "by_price" with "1000.00-3000.00"
+        And I wait for "2" seconds
+        Then I assert the results for the filter "by_price" with "1000.00-3000.00"
+        When I click on apply button
+        And I wait for "1" seconds
+        Then I assert I can see historical invoices filtered "by_price" with "1000.00-3000.00"
+        And I click on clear all filters link
+        And I assert I can see historical invoices filtered "-" with "-"
 
 # # @billing @invoice_history
 # # Scenario: Order_by_date

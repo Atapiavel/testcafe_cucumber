@@ -51,19 +51,43 @@ async function see_invoice_details(invoice) {
     var fe_quantity = Selector(InvoiceViewLocator.quantities())
     var fe_item_amount = Selector(InvoiceViewLocator.items_amounts())
     // Assertions
-    console.log("API Value" + api_amount_due + " - Front End Value" + fe_amount_due)
-    console.log("API Value" + " " + api_invoice_number + " - Front End Value" + fe_invoice_number)
-    console.log("API Value" + api_amount_paid + " - Front End Value" + fe_amount_paid)
-    console.log("API Value" + due_api_month + "/" + due_api_day + "/" + due_api_year + " - Front End Value" + fe_due_date)
-    console.log("API Value" + start_api_month + "/" + start_api_day + "/" + start_api_year + " - " +
-        due_api_month + "/" + due_api_day + "/" + due_api_year + " - Front End Value" + fe_billing_period)
-
-    assert(api_amount_due == fe_amount_due)
-    assert(" " + api_invoice_number == fe_invoice_number)
-    assert(api_amount_paid == fe_amount_paid)
-    assert(due_api_month + "/" + due_api_day + "/" + due_api_year == fe_due_date)
-    assert(start_api_month + "/" + start_api_day + "/" + start_api_year + " - " +
-        due_api_month + "/" + due_api_day + "/" + due_api_year == fe_billing_period)
+    if (api_amount_due == fe_amount_due) {
+        assert.ok(true)
+    }
+    else {
+        console.log("API Value" + api_amount_due + " - Front End Value" + fe_amount_due)
+        assert.ok(false)
+    }
+    if (" " + api_invoice_number == fe_invoice_number) {
+        assert.ok(true)
+    }
+    else {
+        console.log("API Value" + " " + api_invoice_number + " - Front End Value" + fe_invoice_number)
+        assert.ok(false)
+    }
+    if (api_amount_paid == fe_amount_paid) {
+        assert.ok(true)
+    }
+    else {
+        console.log("API Value" + api_amount_paid + " - Front End Value" + fe_amount_paid)
+        assert.ok(false)
+    }
+    if (due_api_month + "/" + due_api_day + "/" + due_api_year == fe_due_date) {
+        assert.ok(true)
+    }
+    else {
+        console.log("API Value" + due_api_month + "/" + due_api_day + "/" + due_api_year + " - Front End Value" + fe_due_date)
+        assert.ok(false)
+    }
+    if (start_api_month + "/" + start_api_day + "/" + start_api_year + " - " +
+        due_api_month + "/" + due_api_day + "/" + due_api_year == fe_billing_period) {
+        assert.ok(true)
+    }
+    else {
+        console.log("API Value" + start_api_month + "/" + start_api_day + "/" + start_api_year + " - " +
+            due_api_month + "/" + due_api_day + "/" + due_api_year + " - Front End Value" + fe_billing_period)
+            assert.ok(false)
+    }
     // Initial variables
     var platform_array = []
     var advertising_array = []
@@ -103,14 +127,34 @@ async function see_invoice_details(invoice) {
     }
     if (platform_z > 0) {
         for (i = 0; i < platform_z; i++) {
-            console.log(platform_array[i].billingLineItemName + " - "+ await ActionsPage.get_text(fe_item_name.nth(z)))
-            console.log(platform_array[i].unitPrice + " - "+ await ActionsPage.get_text(fe_unit_price.nth(z)))
-            console.log(platform_array[i].quantity + " - "+ await ActionsPage.get_text(fe_quantity.nth(z)))
-            console.log(platform_array[i].amount + " - "+ await ActionsPage.get_text(fe_item_amount.nth(z)))
-            assert(platform_array[i].billingLineItemName == await ActionsPage.get_text(fe_item_name.nth(z)))
-            assert(platform_array[i].unitPrice == await ActionsPage.get_text(fe_unit_price.nth(z)))
-            assert(platform_array[i].quantity == await ActionsPage.get_text(fe_quantity.nth(z)))
-            assert(platform_array[i].amount == await ActionsPage.get_text(fe_item_amount.nth(z)))
+            if(platform_array[i].billingLineItemName == await ActionsPage.get_text(fe_item_name.nth(z))){
+                assert.ok(true)
+            }
+            else{
+                console.log(platform_array[i].billingLineItemName + " - " + await ActionsPage.get_text(fe_item_name.nth(z)))
+                assert.ok(false)
+            }
+            if(platform_array[i].unitPrice == await ActionsPage.get_text(fe_unit_price.nth(z))){
+                assert.ok(true)
+            }
+            else{
+                console.log(platform_array[i].unitPrice + " - " + await ActionsPage.get_text(fe_unit_price.nth(z)))
+                assert.ok(false)
+            }
+            if(platform_array[i].quantity == await ActionsPage.get_text(fe_quantity.nth(z))){
+                assert.ok(true)
+            }
+            else{
+                console.log(platform_array[i].quantity + " - " + await ActionsPage.get_text(fe_quantity.nth(z)))
+                assert.ok(false)
+            }
+            if(platform_array[i].amount == await ActionsPage.get_text(fe_item_amount.nth(z))){
+                assert.ok(true)
+            }
+            else{
+                console.log(platform_array[i].amount + " - " + await ActionsPage.get_text(fe_item_amount.nth(z)))
+                assert.ok(false)
+            }
             z = z + 1
         }
     }

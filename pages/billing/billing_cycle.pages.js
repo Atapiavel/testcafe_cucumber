@@ -52,15 +52,34 @@ async function see_graph_details() {
     var estimate_text = await ActionsPage.get_text(BillingCycleLocator.estimate_text())
     var total_balance_due_value = await ActionsPage.get_text(BillingCycleLocator.total_balance_due_value())
     ActionsPage.wait(1)
-    console.log("API Value" + estimate_value + " - Front End Value" + formatter.format(current_amount))
-    console.log("API Value" + total_balance_due_value + " - Front End Value" + formatter.format(amount_due))
-    console.log("API Value" + actual_range + " - Front End Value" + date_range)
-    console.log("API Value" + estimate_text + " - Front End Value" + "ESTIMATE")
-
-    assert(estimate_value == formatter.format(current_amount))
-    assert(total_balance_due_value == formatter.format(amount_due))
-    assert(actual_range == date_range)
-    assert(estimate_text == "ESTIMATE")
+    if (estimate_value == formatter.format(current_amount)) {
+        assert.ok(true)
+    }
+    else {
+        console.log(estimate_value + " - " + formatter.format(current_amount))
+        assert.ok(false)
+    }
+    if (total_balance_due_value == formatter.format(amount_due)) {
+        assert.ok(true)
+    }
+    else {
+        console.log(total_balance_due_value + " - " + formatter.format(amount_due))
+        assert.ok(false)
+    }
+    if (actual_range == date_range) {
+        assert.ok(true)
+    }
+    else {
+        console.log(actual_range + " - " + date_range)
+        assert.ok(false)
+    }
+    if (estimate_text == "ESTIMATE") {
+        assert.ok(true)
+    }
+    else {
+        console.log(estimate_text + " - " + "ESTIMATE")
+        assert.ok(false)
+    }
     var headers = await ActionsPage.bearer()
     var account_monies = await ActionsPage.get_account_monies(headers, 1)
     await ActionsPage.logoff(headers)
@@ -68,8 +87,13 @@ async function see_graph_details() {
     for (var i = 0; i < account_monies.data.getAccountMonies.length; i++) {
         credit_amount = credit_amount + account_monies.data.getAccountMonies[i].amount
     }
-    console.log(credit_available_value + "-" + " " + formatter.format(credit_amount))
-    assert(credit_available_value == " " + formatter.format(credit_amount))
+    if(credit_available_value == " " + formatter.format(credit_amount)){
+        assert.ok(true)
+    }
+    else{
+        console.log(credit_available_value + "-" + " " + formatter.format(credit_amount))
+        assert.ok(false)
+    }
 }
 
 module.exports = {

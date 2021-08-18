@@ -168,8 +168,17 @@ function getPaymentMethods() {
       accountType,
       aCH,
       cardBrand,
-      last4
-    }  
+      creditCard,
+      defaultPaymentMethod,
+      expiration,
+      friendlyName,
+      last4,
+      paymentMethodID,
+      processorExternalID,
+      processorExternalToken,
+      processorID
+    }
+  }
   `
 }
 

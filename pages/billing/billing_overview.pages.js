@@ -52,7 +52,6 @@ async function assert_recent_invoices() {
         }
     }
     for (var i = 0; i < 5; i++) {
-        console.log(newArr)
         const date_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(1)"
         const number_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(2)"
         const period_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(3)"
@@ -68,16 +67,40 @@ async function assert_recent_invoices() {
         var period_api_value = newArr[i][2]
         var status_api_value = newArr[i][3]
         var amount_api_value = formatter.format(newArr[i][4])
-        console.log(date_value + " - " + date_api_value)
-        console.log(number_value + " - " + number_api_value)
-        console.log(period_value + " - " + period_api_value)
-        console.log(status_value + " - " + status_api_value)
-        console.log(amount_value + " - " + amount_api_value + "\n")
-        assert(date_value == date_api_value)
-        assert(number_value == number_api_value)
-        assert(period_value == period_api_value)
-        assert(status_value == status_api_value)
-        assert(amount_value == amount_api_value)
+        if(date_value == date_api_value){
+            assert.ok(true)
+        }
+        else{
+            console.log(date_value + " - " + date_api_value)
+        }
+        if(number_value == number_api_value){
+            assert.ok(true)
+        }
+        else{
+            console.log(number_value + " - " + number_api_value)
+            assert.ok(false)
+        }
+        if(period_value == period_api_value){
+            assert.ok(true)
+        }
+        else{
+            console.log(period_value + " - " + period_api_value)
+            assert.ok(false)
+        }
+        if(status_value == status_api_value){
+            assert.ok(true)
+        }
+        else{
+            console.log(status_value + " - " + status_api_value)
+            assert.ok(false)
+        }
+        if(amount_value == amount_api_value){
+            assert.ok(true)
+        }
+        else{
+            console.log(amount_value + " - " + amount_api_value)
+            assert.ok(false)
+        }
     }
 }
 
@@ -87,7 +110,14 @@ async function assert_columns(datatable) {
     for (var i = 0; i < data_flat.length; i++) {
         const header = "tr[role='row'] > th:nth-of-type(" + (i + 1) + ")"
         const text = await ActionsPage.select(header).innerText
-        assert(text == data_flat[i])
+        if(text == data_flat[i]){
+            assert.ok(true)
+        }
+        else{
+            console.log(text + " - " + data_flat[i])
+            assert.ok(false)
+        }
+        
     }
 }
 
@@ -117,10 +147,6 @@ async function assert_kebab_options() {
         var send_option_text = await ActionsPage.get_text("#billing-recent-invoices-menu-option-send-" + i)
         var print_option_text = await ActionsPage.get_text("#billing-recent-invoices-menu-option-print-" + i)
         var download_option_text = await ActionsPage.get_text("#billing-recent-invoices-menu-option-download-" + i)
-        console.log(pay_option_text)
-        console.log(send_option_text)
-        console.log(print_option_text)
-        console.log(download_option_text)
         assert(pay_option_text == "Pay")
         assert(send_option_text == "Send")
         assert(print_option_text == "Print")

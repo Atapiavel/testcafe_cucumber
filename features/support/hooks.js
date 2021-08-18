@@ -4,7 +4,7 @@ const ActionsPage = require('../../pages/actions.pages.js')
 const testControllerHolder = require('./testControllerHolder');
 const { AfterAll, setDefaultTimeout, Before, After, Status, BeforeAll } = require('cucumber');
 const errorHandling = require('./errorHandling');
-const TIMEOUT = 40000;
+const TIMEOUT = 60000;
 let isTestCafeError = false;
 let attachScreenshotToReport = null;
 let cafeRunner = null;
@@ -46,14 +46,13 @@ function runTest(iteration, browser) {
 setDefaultTimeout(TIMEOUT);
 
 BeforeAll(function () {    
-    // requests.fetchAuthToken(base_url, "Billing1234!!", "thebillingteam@scorpion.co")
     fs.unlinkSync('date.txt');
     ActionsPage.execute_shell('rmdir /Q /S screenshots')
     ActionsPage.execute_shell('mkdir screenshots')
     ActionsPage.execute_shell('rmdir /Q /S videos')
     ActionsPage.execute_shell('mkdir videos')
     ActionsPage.write_date()
-    require('events').EventEmitter.defaultMaxListeners = 15;
+    process.setMaxListeners(0);
 });
 
 Before(function () {
@@ -74,7 +73,6 @@ After(async function (testCase) {
     if (testCase.result.status === Status.FAILED) {
         ActionsPage.take_screenshot(testCase.pickle.name)
         isTestCafeError = true;
-        this.attachScreenshotToReport('screenshots/' + scenario + '/' + scenario + '.png');
         errorHandling.addErrorToController();
     }
 });
