@@ -30,18 +30,33 @@ test('Enter Chat Settings Test', async t =>{
     .wait(3000)
     .click(chatsettingspage.closeMngBtn)
     .wait(3000)
-    .click(chatsettingspage.budgetBtn)
+    // Agents & Hours Tab
+    .click(chatsettingspage.agentNHrsTab)
     .wait(3000)
-    .click(chatsettingspage.chatHrsBtn)
+    // Service Overview
+    .click(chatsettingspage.serviceOverviewTab)
     .wait(3000)
-    .click(chatsettingspage.chatWidDisBtn)
+    // Budget
+    .click(chatsettingspage.budgetTab)
+    .wait(3000)
+    // Knowledge Base
+    .click(chatsettingspage.knowledgeBaseTab)
+    .wait(3000)
+    .click(chatsettingspage.saveNExitBtn)
     .wait(3000)
     .click(chatsettingspage.desktopChatBtn)
-    .wait(3000)
+    .wait(3000)    
     .click(chatsettingspage.mobileChatBtn)
     .wait(3000)
     .click(chatsettingspage.fbChatBtn)
     .wait(3000)
-    .click(chatsettingspage.budgetBtn);
-})
+    .click(chatsettingspage.chatWidDisBtn)
+    .click(chatsettingspage.allowSomeBtn)
+    .wait(3000)
+    .click(chatsettingspage.closeMngBtn)
+    .wait(3000)
+    .click(chatsettingspage.blockSomeBtn)
+    .wait(3000)
+    .click(chatsettingspage.closeMngBtn);
+    })
 });
