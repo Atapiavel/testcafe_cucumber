@@ -58,3 +58,15 @@ Then('I assert that the text is shown {string}', { timeout: 30000 }, async funct
 When('I upload the file', { timeout: 30000 }, async function () {
     await testController.setFilesToUpload('div > scorpion-file-upload > input', '../../upload/IMG_0071.jpg')
 })
+
+When('I run the request {string} with {string}', async function (request, param_1) {
+    var headers = await ActionsPage.bearer()
+    await ActionsPage.execute_request_param(headers, request, param_1)
+    await ActionsPage.logoff(headers)
+})
+
+When('I run the request {string}', async function (request) {
+    var headers = await ActionsPage.bearer()
+    await ActionsPage.execute_request(headers, request)
+    await ActionsPage.logoff(headers)
+})

@@ -63,7 +63,7 @@ Feature: Payment
     #             | update       | Payment_method  |
     #             | add          | Payment_method  |
 
-    @billing @payment @focus
+    @billing @payment
     Scenario: Add_payment_method_functionality
         Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
