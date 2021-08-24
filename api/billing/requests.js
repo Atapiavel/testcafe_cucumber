@@ -1,5 +1,4 @@
 
-
 function getAccountMonies(serviceLineId) {
   return `
   query{
@@ -40,13 +39,69 @@ function getActiveSubscriptions() {
   `
 }
 
+function getAllServiceLines() {
+  return`
+  query {
+    getAllServiceLines{
+      serviceLineID,
+      serviceLineName
+    }
+  }
+  
+  `
+}
+
+function getAllSubscriptions() {
+  return`
+  query {
+    getAllSubscriptions{
+      item1{
+        autopay,
+        billingFrequencyID,
+        billingStartDay,
+        clientID,
+        friendlyName,
+        monthToMonth,
+        paymentMethodID,
+        subscriptionEndDate,
+        subscriptionExternalID,
+        subscriptionID,
+        subscriptionStartDate
+        subscriptionSystem,
+        void,
+      },
+      item2{
+        accountType,
+        aCH,
+        cardBrand,
+        creditCard,
+        defaultPaymentMethod,
+        expiration,
+        friendlyName,
+        last4,
+        paymentMethodID,
+        processorExternalID,
+        processorExternalToken,
+        processorID
+      }
+    }
+  }  
+  ` 
+}
+
 function getBillingContacts() {
   return `
   query{
     getBillingContacts{
       billingContactID,
+      clientID,
+      email,
+      invoiceType,
+      monthlyNotification,
       name,
-      primaryContact
+      phoneNumber
+      primaryContact,
+      userID
     }
   }
   `
@@ -168,8 +223,17 @@ function getPaymentMethods() {
       accountType,
       aCH,
       cardBrand,
-      last4
-    }  
+      creditCard,
+      defaultPaymentMethod,
+      expiration,
+      friendlyName,
+      last4,
+      paymentMethodID,
+      processorExternalID,
+      processorExternalToken,
+      processorID
+    }
+  }
   `
 }
 
@@ -264,17 +328,28 @@ function getAllSubscriptions() {
   `
 }
 
+function deleteBillingContact(BillingContactId){
+  return`
+  mutation{
+    deleteBillingContact(billingContactId:"` + BillingContactId + `")
+  }
+  `
+}
+
 module.exports = {
-  getScorpionAddress: getScorpionAddress,
   getAccountMonies: getAccountMonies,
   getActiveSubscriptions: getActiveSubscriptions,
+  getAllServiceLines: getAllServiceLines,
+  getAllSubscriptions: getAllSubscriptions,
   getBillingContacts: getBillingContacts,
   getBillingLocationByClient: getBillingLocationByClient,
+  getBillingOverviewData: getBillingOverviewData,
   getInvoice: getInvoice,
   getInvoiceList: getInvoiceList,
   getPaymentMethods: getPaymentMethods,
   getPlatformLocations: getPlatformLocations,
   getPlatformUsers: getPlatformUsers,
-  getBillingOverviewData: getBillingOverviewData,
-  getAllSubscriptions: getAllSubscriptions
+  getScorpionAddress: getScorpionAddress,
+  getAllSubscriptions: getAllSubscriptions,
+  deleteBillingContact: deleteBillingContact
 };

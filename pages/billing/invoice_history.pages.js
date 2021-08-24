@@ -27,8 +27,9 @@ async function assert_historical_invoices(filter, value) {
             var filtering_date_end = new Date(year, month + 1, 0)
         }
         else {
-            var filtering_date_start = new Date(year, months[value], 1)
-            var filtering_date_end = new Date(year, months[value] + 1, 0)
+            var dates_filter = value.split("-")
+            var filtering_date_start = new Date(dates_filter[1], months[dates_filter[0]], 1)
+            var filtering_date_end = new Date(dates_filter[1], months[dates_filter[0]] + 1, 0)
         }
     }
     if (filter == "-" || filter == "by_price" || filter == "by_status") {
@@ -75,17 +76,11 @@ async function assert_historical_invoices(filter, value) {
                         number: invoice_list.data.getInvoiceList.items[n].invoiceNumber,
                         period: invoice_list.data.getInvoiceList.items[n].billingFrequencyName,
                         status: invoice_list.data.getInvoiceList.items[n].invoiceStatusName,
-                        amount: invoice_list.data.getInvoiceList.items[n].amountDue
+                        amount: invoice_list.data.getInvoiceList.items[n].amountDue + invoice_list.data.getInvoiceList.items[n].amountPaid
                     }
 
                     z = z + 1
-                    var sorted = invoice_arr.sort(function (a, b) {
-                        var dateA = new Date(a.date), dateB = new Date(b.date);
-                        return dateA - dateB;
-                    }).reverse()
-                    var newArr = sorted.map(function (item) {
-                        return [item.date, item.number, item.period, item.status, item.amount]
-                    })
+
                 }
             }
             if (filter == "by_status") {
@@ -96,20 +91,13 @@ async function assert_historical_invoices(filter, value) {
                         number: invoice_list.data.getInvoiceList.items[n].invoiceNumber,
                         period: invoice_list.data.getInvoiceList.items[n].billingFrequencyName,
                         status: invoice_list.data.getInvoiceList.items[n].invoiceStatusName,
-                        amount: invoice_list.data.getInvoiceList.items[n].amountDue
+                        amount: invoice_list.data.getInvoiceList.items[n].amountDue + invoice_list.data.getInvoiceList.items[n].amountPaid
                     }
 
                     z = z + 1
-                    var sorted = invoice_arr.sort(function (a, b) {
-                        var dateA = new Date(a.date), dateB = new Date(b.date);
-                        return dateA - dateB;
-                    }).reverse()
-                    var newArr = sorted.map(function (item) {
-                        return [item.date, item.number, item.period, item.status, item.amount]
-                    })
                 }
             }
-            else {
+            if (filter == "by_date" || filter == "by_month" || filter == "by_year" || filter == "-") {
                 invoice_arr[z] =
                 {
                     date: formattedDate,
@@ -120,18 +108,17 @@ async function assert_historical_invoices(filter, value) {
                 }
 
                 z = z + 1
-                var sorted = invoice_arr.sort(function (a, b) {
-                    var dateA = new Date(a.date), dateB = new Date(b.date);
-                    return dateA - dateB;
-                }).reverse()
-                var newArr = sorted.map(function (item) {
-                    return [item.date, item.number, item.period, item.status, item.amount]
-                })
             }
+            var sorted = invoice_arr.sort(function (a, b) {
+                var dateA = new Date(a.date), dateB = new Date(b.date);
+                return dateA - dateB;
+            }).reverse()
+            var newArr = sorted.map(function (item) {
+                return [item.date, item.number, item.period, item.status, item.amount]
+            })
         }
     }
     for (var i = 0; i < z; i++) {
-        console.log(newArr)
         const date_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(2)"
         const number_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(3)"
         const period_record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(4)"
@@ -147,16 +134,41 @@ async function assert_historical_invoices(filter, value) {
         var period_api_value = newArr[i][2]
         var status_api_value = newArr[i][3]
         var amount_api_value = formatter.format(newArr[i][4])
-        console.log(date_value + " - " + date_api_value)
-        console.log(number_value + " - " + number_api_value)
-        console.log(period_value + " - " + period_api_value)
-        console.log(status_value + " - " + status_api_value)
-        console.log(amount_value + " - " + amount_api_value + "\n")
-        assert(date_value == date_api_value)
-        assert(number_value == number_api_value)
-        assert(period_value == period_api_value)
-        assert(status_value == status_api_value)
-        assert(amount_value == amount_api_value)
+        if(date_value == date_api_value){
+            assert.ok(true)
+        }
+        else{
+            console.log(date_value + " - " + date_api_value)
+            assert.ok(false)
+        }
+        if(number_value == number_api_value){
+            assert.ok(true)
+        }
+        else{
+            console.log(number_value + " - " + number_api_value)
+            assert.ok(false)
+        }
+        if(period_value == period_api_value){
+            assert.ok(true)
+        }
+        else{
+            console.log(period_value + " - " + period_api_value)
+            assert.ok(false)
+        }
+        if(status_value == status_api_value){
+            assert.ok(true)
+        }
+        else{
+            console.log(status_value + " - " + status_api_value)
+            assert.ok(false)
+        }
+        if(amount_value == amount_api_value){
+            assert.ok(true)
+        }
+        else{
+            console.log(amount_value + " - " + amount_api_value)
+            assert.ok(false)
+        }
     }
 }
 
@@ -271,6 +283,7 @@ async function filter_invoices(filter, value) {
         }
         await ActionsPage.click_element(BillingHistoryPageLocator.start_date())
         await ActionsPage.click_element_from_list(BillingHistoryPageLocator.filter_buttons(), "Custom")
+        await ActionsPage.click_element("[text=clear]")
         await ActionsPage.type_text(BillingHistoryPageLocator.start_date(), date_filter_start)
         await ActionsPage.type_text(BillingHistoryPageLocator.end_date(), date_filter_end)
     }
@@ -306,9 +319,76 @@ async function filter_invoices(filter, value) {
     }
 }
 
+async function results_validation(filter, value) {
+    if (filter == "by_year") {
+        var filtering_date_start = new Date(value, 0, 1)
+        var filtering_date_end = new Date(value, 11, 31)
+    }
+    if (filter == "by_month") {
+        if (value == "Actual") {
+            var filtering_date_start = new Date(year, month, 1)
+            var filtering_date_end = new Date(year, month + 1, 0)
+        }
+        else {
+            var dates_filter = value.split("-")
+            var filtering_date_start = new Date(dates_filter[1], months[dates_filter[0]], 1)
+            var filtering_date_end = new Date(dates_filter[1], months[dates_filter[0]] + 1, 0)
+        }
+    }
+    if (filter == "-" || filter == "by_price" || filter == "by_status") {
+        var filtering_date_start = prev_date
+        var filtering_date_end = act_date
+    }
+    if (filter == "by_date") {
+        if (value == "Actual") {
+            var filtering_date_start = new Date(year, month, 1)
+            var filtering_date_end = new Date(year, month, 28)
+        }
+        else {
+            var dates_filter = value.split("-")
+            var filtering_date_start = new Date(dates_filter[0])
+            var filtering_date_end = new Date(dates_filter[1])
+        }
+    }
+    var headers = await ActionsPage.bearer()
+    var invoice_list = await ActionsPage.get_invoice_list(headers, 100)
+    await ActionsPage.logoff(headers)
+    var number_of_invoices = invoice_list.data.getInvoiceList.totalCount
+    var z = 0
+    for (var n = 0; n < number_of_invoices; n++) {
+        let due_date = new Date(invoice_list.data.getInvoiceList.items[n].dueDate);
+        let start_date = new Date(invoice_list.data.getInvoiceList.items[n].startDate)
+        let end_date = new Date(invoice_list.data.getInvoiceList.items[n].endDate)
+        let invoice_price = invoice_list.data.getInvoiceList.items[n].amountDue + invoice_list.data.getInvoiceList.items[n].amountPaid
+        let invoice_status = invoice_list.data.getInvoiceList.items[n].invoiceStatusName
+        if (due_date >= filtering_date_start && due_date <= filtering_date_end ||
+            start_date >= filtering_date_start && start_date <= filtering_date_end ||
+            end_date >= filtering_date_start && end_date <= filtering_date_end) {
+            if (filter == "by_price") {
+                var prices = value.split("-")
+                if (invoice_price >= prices[0] && invoice_price <= prices[1]) {
+                    z = z + 1
+
+                }
+            }
+            if (filter == "by_status") {
+                if (invoice_status == value) {
+                    z = z + 1
+                }
+            }
+            if (filter == "by_date" || filter == "by_month" || filter == "by_year") {
+                z = z + 1
+            }
+
+        }
+    }
+    return z
+}
+
 module.exports = {
     assert_historical_invoices: assert_historical_invoices,
     assert_columns: assert_columns,
     assert_kebab_option: assert_kebab_option,
-    filter_invoices: filter_invoices
+    filter_invoices: filter_invoices,
+    results_validation: results_validation
 };

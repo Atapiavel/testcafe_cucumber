@@ -7,7 +7,7 @@ function select_payment_method() {
 }
 
 function payment_method_item() {
-    return "scorpion-select-item"
+    return "scorpion-select-item > span > button"
 }
 
 function payment_buttons() {

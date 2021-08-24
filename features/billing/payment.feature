@@ -64,7 +64,7 @@ Feature: Payment
     #             | add          | Payment_method  |
 
     @billing @payment
-    Scenario Outline: Add_payment_method_functionality
+    Scenario: Add_payment_method_functionality
         Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
         And I click on sign in button
@@ -76,17 +76,10 @@ Feature: Payment
         And I wait for "5" seconds
         When I click on add payment method
         And I wait for "2" seconds
-        And I select the payment method with "<payment_method>"
+        And I select the payment method with "Credit and Debit cards"
         And I click on continue button
         Then I fill payment method information with
-            | <payment_method> | <payment_nickname> | <account_name> | <account_number> | <expiration> | <CVV> |
-
-        Examples:
-
-            | module         | payment_method         | payment_nickname | account_name       | account_number   | expiration | CVV |
-            | Payment_method | Credit and Debit cards | El tester        | Testing Automation | 4242424242424242 | 0723       | 111 |
-# | Payment_method | eCheck                 |                  | Name here          | 00000000         |            |111|
-
+            | Credit and Debit cards | El tester | Testing Automation | 4242424242424242 | 0723 | 111 |
 
 #     @billing @payment
 #     Scenario Outline: Update_payment_method_functionality

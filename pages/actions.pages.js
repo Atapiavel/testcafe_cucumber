@@ -6,7 +6,7 @@ const Requests = require("./.././api/billing/requests");
 const billing_url = "https://integration.scorpion.co/csx/billing/graphql"
 const base_url = 'https://integration.scorpion.co'
 
-async function format_currency(value){
+async function format_currency(value) {
     var formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
@@ -15,7 +15,7 @@ async function format_currency(value){
     return formatted_string
 }
 
-async function format_date(value){
+async function format_date(value) {
     var date = new Date(value)
     const formatted_date = date
     return formatted_date
@@ -35,6 +35,10 @@ async function take_screenshot(scenario) {
 
 async function type_text(element, value) {
     await testController.typeText(element, value, { replace: true })
+}
+
+async function clear_text(element) {
+    await testController.pressKey('ctrl+a delete')
 }
 
 async function click_element_from_list(element, value) {
@@ -156,8 +160,6 @@ async function auth(token) {
     })
         .then((response) => {
             return response.json().then((data) => {
-                console.log("\nAuthentication response:\n" + response.status)
-                console.log(response.statusText + "\n")
                 if (response.status != 200) {
                     console.log(data.status.message)
                 }
@@ -187,8 +189,6 @@ async function logoff(headers) {
     })
         .then((response) => {
             return response.json().then((data) => {
-                console.log("\nLogoff response:\n" + response.status)
-                console.log(response.statusText)
                 if (response.status != 200) {
                     console.log(data.status.message)
                 }
@@ -236,13 +236,13 @@ async function get_account_monies(headers, service_line) {
         })
     })
         .then((response) => {
-            return response.json().then((data) => {            
+            return response.json().then((data) => {
                 return data;
             })
         })
 }
 
-async function get_all_subscriptions(headers){
+async function get_all_subscriptions(headers) {
     return fetch(billing_url, {
         method: 'POST',
         headers: headers,
@@ -252,7 +252,60 @@ async function get_all_subscriptions(headers){
     })
         .then((response) => {
             return response.json().then((data) => {
+                return data;
+            })
+        })
+}
+
+async function get_payment_methods(headers) {
+    return fetch(billing_url, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({
+            query: Requests.getPaymentMethods(),
+        })
+    })
+        .then((response) => {
+            return response.json().then((data) => {
+                return data;
+            })
+        })
+}
+
+async function execute_request_param(headers, request, param_1) {
+    var query_run = eval("Requests." + request + "('" + param_1 + "')")
+    return fetch(billing_url, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({
+            query: query_run
+        })
+    })
+        .then((response) => {
+            console.log(response.status)
+            console.log(response.statusText)
+            return response.json().then((data) => {
                 console.log(data)
+                // console.log(data.errors[0].message)
+                return data;
+            })
+        })
+}
+
+async function execute_request(headers, request) {
+    return fetch(billing_url, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({
+            query: eval("Requests." + request + "()")
+        })
+    })
+        .then((response) => {
+            console.log(response.status)
+            console.log(response.statusText)
+            return response.json().then((data) => {
+                console.log(data)
+                console.log(data.errors)
                 return data;
             })
         })
@@ -266,6 +319,7 @@ module.exports = {
     take_screenshot: take_screenshot,
     execute_shell: execute_shell,
     type_text: type_text,
+    clear_text: clear_text,
     click_element_from_list: click_element_from_list,
     fill_element_from_list: fill_element_from_list,
     hover_element: hover_element,
@@ -284,5 +338,8 @@ module.exports = {
     get_invoice_list: get_invoice_list,
     get_account_monies: get_account_monies,
     get_invoice: get_invoice,
-    get_all_subscriptions: get_all_subscriptions
+    get_all_subscriptions: get_all_subscriptions,
+    get_payment_methods: get_payment_methods,
+    execute_request_param: execute_request_param,
+    execute_request: execute_request
 };

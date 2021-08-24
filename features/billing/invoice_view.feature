@@ -1,6 +1,6 @@
 Feature: Billing Invoice View
 
-    @billing @invoice_view
+    @billing @invoice_view 
     Scenario: Billing_invoice_view
         Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
@@ -14,4 +14,3 @@ Feature: Billing Invoice View
         And I verify the columns are shown on the billing overview page with
             | Invoice Date | Invoice | Billing Period | Status | Amount |
         And I select the "first" invoice and assert invoice details
-        
