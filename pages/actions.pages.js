@@ -51,6 +51,10 @@ async function fill_element_from_list(element, value, string) {
     await testController.typeText(selector, string, { replace: true })
 }
 
+async function fill_element(element, value) {
+    await testController.typeText(element, value, { replace: true })
+}
+
 async function hover_element(element) {
     await testController.hover(element)
 }
@@ -169,8 +173,8 @@ async function auth(token) {
 }
 
 async function bearer() {
-    // let token_data = await login("thebillingteam@scorpion.co", "Billing1234!!")
-    let token_data = await login("commcenter@scorpion.co", "Comms1234!")
+    let token_data = await login("thebillingteam@scorpion.co", "Billing1234!!")
+    // let token_data = await login("commcenter@scorpion.co", "Comms1234!")
     let bearer_data = await auth(token_data.result)
     let bearer_token = bearer_data.id_token
     const headers = {
@@ -322,6 +326,7 @@ module.exports = {
     clear_text: clear_text,
     click_element_from_list: click_element_from_list,
     fill_element_from_list: fill_element_from_list,
+    fill_element: fill_element,
     hover_element: hover_element,
     hover_element_from_list: hover_element_from_list,
     wait: wait,
