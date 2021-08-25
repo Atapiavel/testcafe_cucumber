@@ -1,5 +1,43 @@
 Feature: Payment
 
+    @billing @payment @focus
+    Scenario: Add_payment_method_functionality
+        Given I am in Scorpion login page
+        When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
+        And I click on sign in button
+        And I wait for "10" seconds
+        Given I am in Scorpion "settings" page
+        And I wait for "5" seconds
+        And I hover on More option
+        Then I select the "Billing" option
+        And I wait for "5" seconds
+        When I click on add payment method
+        And I wait for "2" seconds
+        And I select the payment method with "Credit and Debit cards"
+        And I click on continue button
+        Then I fill payment method information with
+            | Credit and Debit cards | Testing Automation | Testing Automation | 4 2 4 2 4 2 4 2 4 2 4 2 4 2 4 2 | 0 4 2 5 | 6 7 6 | 09700 |
+        When I click on add card button
+        And I wait for "3" seconds
+        Then I assert that the text is shown "Payment Method has been successfully added!"
+        And I assert that payment method is shown with "Testing Automation"
+
+
+    @billing @payment
+    Scenario: Update_payment_method_functionality
+        Given I am in Scorpion login page
+        When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
+        And I click on sign in button
+        And I wait for "10" seconds
+        Given I am in Scorpion "settings" page
+        And I wait for "5" seconds
+        And I hover on More option
+        Then I select the "Billing" option
+        And I wait for "5" seconds
+        Given I am in Scorpion "billing" page
+        When I click the kebab option "update" for "Payment_method"
+        And we update the payment nickname with "Automation test"
+
     #     @billing @payment
     #     Scenario Outline: Set_as_primary_functionality_from_<module>
     #         Given I am in Scorpion login page
@@ -63,58 +101,6 @@ Feature: Payment
     #             | update       | Payment_method  |
     #             | add          | Payment_method  |
 
-    @billing @payment
-    Scenario: Add_payment_method_functionality
-        Given I am in Scorpion login page
-        When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
-        And I click on sign in button
-        And I wait for "10" seconds
-        Given I am in Scorpion "settings" page
-        And I wait for "5" seconds
-        And I hover on More option
-        Then I select the "Billing" option
-        And I wait for "5" seconds
-        When I click on add payment method
-        And I wait for "2" seconds
-        And I select the payment method with "Credit and Debit cards"
-        And I click on continue button
-        Then I fill payment method information with
-            | Credit and Debit cards | El tester | Testing Automation | 4242424242424242 | 0723 | 111 |
-
-#     @billing @payment
-#     Scenario Outline: Update_payment_method_functionality
-#         Given I am in Scorpion login page
-#         When I enter "commcenter@scorpion.co" and "Comms1234!"
-#         And I click on sign in button
-#         And I wait for "2" seconds
-#         And I select the account to use with "Thomas & Paulk"
-#         And I wait for "10" seconds
-#         When I click on settings button
-#         And I select the "Billing" option
-#         And I wait for "5" seconds
-#         Given I am in Scorpion "billing" page
-#         When I click the kebab option "<kebab_option>" for "<module>"
-#         Then I update "<module>" card information with
-#             | Credit_Number    | Name_on_Card   | Expiration | CVV |
-#             | 1111222233333495 | Gandalf D Grey | 04/24      | 469 |
-#         And I update "<module>" billing address with
-#             | Address_Line_1      | Address_Line_2 | City    | State    | Zipcode |
-#             | 1204 W Chestnube St | 123 Street     | Chicago | Illinois | 20405   |
-#         And I assert that the text is shown
-#             | Success! |
-#         When I click the kebab option "<kebab_option>" for "<module>"
-#         Then I assert "<module>" card information with
-#             | Credit_Number    | Name_on_Card   | Expiration | CVV |
-#             | 1111222233333495 | Gandalf D Grey | 04/24      | 469 |
-#         And I assert "<module>" billing address with
-#             | Address_Line_1      | Address_Line_2 | City    | State    | Zipcode |
-#             | 1204 W Chestnube St | 123 Street     | Chicago | Illinois | 20405   |
-#         And I click on cancel button
-
-#         Examples:
-
-#             | kebab_option | module         |
-#             | update       | Payment_method |
 
 #     @billing @payment
 #     Scenario Outline: Delete_functionality_from_<module>
