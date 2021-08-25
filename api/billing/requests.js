@@ -328,10 +328,20 @@ function getAllSubscriptions() {
   `
 }
 
+//MUTATIONS
+
 function deleteBillingContact(BillingContactId){
   return`
   mutation{
     deleteBillingContact(billingContactId:"` + BillingContactId + `")
+  }
+  `
+}
+
+function deletePaymentMethod(PaymentMethdoId){
+  return`
+  mutation{
+    deletePaymentMethod(paymentMethodId:` + BillingContactId + `)
   }
   `
 }
@@ -351,5 +361,6 @@ module.exports = {
   getPlatformUsers: getPlatformUsers,
   getScorpionAddress: getScorpionAddress,
   getAllSubscriptions: getAllSubscriptions,
-  deleteBillingContact: deleteBillingContact
+  deleteBillingContact: deleteBillingContact,
+  deletePaymentMethod: deletePaymentMethod
 };
