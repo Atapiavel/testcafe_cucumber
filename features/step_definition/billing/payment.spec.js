@@ -32,3 +32,19 @@ When('I click on add card button', async function () {
 Then('I assert that payment method is shown with {string}', async function (name) {
     await PaymentPage.verify_payment_method(name)
 })
+
+When('I click the kebab option update for {string} payment method', async function (name) {
+    await PaymentPage.click_update_payment_method(name)
+})
+
+When('I click the kebab option delete for {string} payment method', async function  (name) {
+    await PaymentPage.click_delete_payment_method(name)
+})
+
+When('we update the payment nickname with {string}', async function (name) {
+    await PaymentPage.update_payment_method(name)
+})
+
+When('we click on update button from payment method', async function () {
+    await ActionsPage.click_element(PaymentPageLocator.update_button())
+})
