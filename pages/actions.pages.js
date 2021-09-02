@@ -173,8 +173,8 @@ async function auth(token) {
 }
 
 async function bearer() {
-    let token_data = await login("thebillingteam@scorpion.co", "Billing1234!!")
-    // let token_data = await login("commcenter@scorpion.co", "Comms1234!")
+    // let token_data = await login("thebillingteam@scorpion.co", "Billing1234!!")
+    let token_data = await login("commcenter@scorpion.co", "Comms1234!")
     let bearer_data = await auth(token_data.result)
     let bearer_token = bearer_data.id_token
     const headers = {
@@ -196,6 +196,7 @@ async function logoff(headers) {
                 if (response.status != 200) {
                     console.log(data.status.message)
                 }
+                console.log(data)
                 return data;
             })
         })

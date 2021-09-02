@@ -1,58 +1,58 @@
 Feature: API scenarios
 
-    @api @focus
+    @billing @api 
     Scenario: getAccountMonies
         Then I run the request "getAccountMonies" with "1"
 
-    @api @focus
+    @billing @api 
     Scenario: getActiveSubscriptions
         Then I run the request "getActiveSubscriptions"
 
-    @api @focus
+    @billing @api 
     Scenario: getAllServiceLines
         Then I run the request "getAllServiceLines"
 
-    @api @focus
+    @billing @api 
     Scenario: getAllSubscriptions
         Then I run the request "getAllSubscriptions"
 
-    @api @focus
+    @billing @api 
     Scenario: getBillingContacts
         Then I run the request "getBillingContacts"
 
-    @api @focus
+    @billing @api 
     Scenario: getBillingLocationByClient
         Then I run the request "getBillingLocationByClient"
 
-    @api @focus
+    @api
     Scenario: getBillingOverviewData
         Then I run the request "getBillingOverviewData"
 
-    @api @focus
+    @billing @api 
     Scenario: getInvoiceList
         Then I run the request "getInvoiceList" with "100"
 
-    @api @focus
+    @api
     Scenario: getPaymentMethods
         Then I run the request "getPaymentMethods"
 
-    @api @focus
+    @billing @api 
     Scenario: getPlatformLocations
         Then I run the request "getPlatformLocations"
 
-    @api @focus
+    @billing @api 
     Scenario: getPlatformUsers
         Then I run the request "getPlatformUsers"
 
-    @api @focus
+    @billing @api 
     Scenario: getScorpionAddress
         Then I run the request "getScorpionAddress" with "1"
 
-    @api @focus
+    @billing @api 
     Scenario: getScorpionAddress
         Then I run the request "getScorpionAddress" with "2"
 
-    @api @focus
+    @billing @api 
     Scenario: deleteBillingContact
         Then I run the request "deleteBillingContact" with "53cab284-28b8-31d2-1d12-e6e90abdcbfa"
 

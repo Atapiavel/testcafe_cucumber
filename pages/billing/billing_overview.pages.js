@@ -137,19 +137,19 @@ async function assert_kebab_options() {
         await ActionsPage.click_element(kebab_menu)
         var pay_option = "#billing-recent-invoices-menu-option-pay-" + i
         var send_option = "#billing-recent-invoices-menu-option-send-" + i
-        var print_option = "#billing-recent-invoices-menu-option-print-" + i
+        // var print_option = "#billing-recent-invoices-menu-option-print-" + i
         var download_option = "#billing-recent-invoices-menu-option-download-" + i
         await ActionsPage.hover_element(pay_option)
         await ActionsPage.hover_element(send_option)
-        await ActionsPage.hover_element(print_option)
+        // await ActionsPage.hover_element(print_option)
         await ActionsPage.hover_element(download_option)
         var pay_option_text = await ActionsPage.get_text("#billing-recent-invoices-menu-option-pay-" + i)
         var send_option_text = await ActionsPage.get_text("#billing-recent-invoices-menu-option-send-" + i)
-        var print_option_text = await ActionsPage.get_text("#billing-recent-invoices-menu-option-print-" + i)
+        // var print_option_text = await ActionsPage.get_text("#billing-recent-invoices-menu-option-print-" + i)
         var download_option_text = await ActionsPage.get_text("#billing-recent-invoices-menu-option-download-" + i)
         assert(pay_option_text == "Pay")
         assert(send_option_text == "Send")
-        assert(print_option_text == "Print")
+        // assert(print_option_text == "Print")
         assert(download_option_text == "Download")
     }
 }

@@ -12,7 +12,7 @@ Feature: Billing Subscriptions
         Then I select the "Billing" option
         When I wait for "5" seconds
         Then I verify the columns are shown on the billing overview page with
-            | Invoice Date | Invoice | Billing Period | Status | Amount |
+            | INVOICE DATE | INVOICE | BILLING PERIOD | STATUS | AMOUNT |
         And I verify the columns for subscriptions are visible
             | Contract Name | Valid Until | Assigned Payment | Auto Pay |
         And I assert that subscriptions information is visible
@@ -29,7 +29,7 @@ Feature: Billing Subscriptions
         Then I select the "Billing" option
         When I wait for "5" seconds
         Then I verify the columns are shown on the billing overview page with
-            | Invoice Date | Invoice | Billing Period | Status | Amount |
+            | INVOICE DATE | INVOICE | BILLING PERIOD | STATUS | AMOUNT |
         And I verify the columns for subscriptions are visible
             | Contract Name | Valid Until | Assigned Payment | Auto Pay |
         And I assert that subscriptions information is visible

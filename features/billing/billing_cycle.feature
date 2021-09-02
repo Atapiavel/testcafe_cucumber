@@ -12,6 +12,6 @@ Feature: Billing Cycle Graph
         Then I select the "Billing" option
         When I wait for "3" seconds
         And I verify the columns are shown on the billing overview page with
-            | Invoice Date | Invoice | Billing Period | Status | Amount |
+            | INVOICE DATE | INVOICE | BILLING PERIOD | STATUS | AMOUNT |
         And I assert I can see the graph information
         And I wait for "3" seconds

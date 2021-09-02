@@ -34,7 +34,7 @@ Feature: Billing Contact
                         | Amanda Little        |
                         | Arturo Tapia Velasco |
 
-        @billing @contact
+        @billing @contact @focus
         Scenario: Add_billing_contact_functionality
                 Given I am in Scorpion login page
                 When I enter "thebillingteam@scorpion.co" and "Billing1234!!"

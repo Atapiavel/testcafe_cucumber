@@ -15,6 +15,7 @@
     "billing_cycle": "cucumber-js --tags @billing_cycle --format json:reports/report.json",
     "invoice_view": "cucumber-js --tags @invoice_view --format json:reports/report.json",
     "subscriptions": "cucumber-js --tags @subscriptions --format json:reports/report.json",
+    "api": "cucumber-js --tags @api --format json:reports/report.json",
     "comms": "cucumber-js --tags @comms --format json:reports/report.json",
     "normal_option": "testcafe chrome",
     "report": "node report_generator.js",
