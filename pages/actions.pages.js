@@ -125,6 +125,7 @@ async function get_text(element) {
 }
 
 async function login(username, password) {
+    //console.log("Login API Response")
     const loginUrl = base_url + "/platform/identity/v1/api/oauth2/login2";
     const auth_headers = {
         'Content-Type': 'application/json',
@@ -141,13 +142,16 @@ async function login(username, password) {
         body: JSON.stringify(loginBody)
     })
         .then((response) => {
+            //console.log(response)
             return response.json().then((data) => {
+                //console.log(data)
                 return data;
             })
         })
 }
 
 async function auth(token) {
+    //console.log("Auth API Response")
     const authorizeUrl = base_url + "/platform/identity/v1/api/oauth2/ropc/authorize";
     const auth_headers = {
         'Content-Type': 'application/json',
@@ -163,18 +167,20 @@ async function auth(token) {
         body: JSON.stringify(authorizeBody)
     })
         .then((response) => {
+            //console.log(response)
             return response.json().then((data) => {
                 if (response.status != 200) {
                     console.log(data.status.message)
                 }
+                //console.log(data)
                 return data;
             })
         })
 }
 
 async function bearer() {
-    // let token_data = await login("thebillingteam@scorpion.co", "Billing1234!!")
-    let token_data = await login("commcenter@scorpion.co", "Comms1234!")
+    let token_data = await login("thebillingteam@scorpion.co", "Billing1234!!")
+    // let token_data = await login("commcenter@scorpion.co", "Comms1234!")
     let bearer_data = await auth(token_data.result)
     let bearer_token = bearer_data.id_token
     const headers = {
@@ -186,23 +192,26 @@ async function bearer() {
 }
 
 async function logoff(headers) {
+    //console.log("Logoff API Response")
     const url = base_url + "/platform/identity/v1/api/oauth2logoff/logoff"
     return fetch(url, {
         method: 'POST',
         headers: headers
     })
         .then((response) => {
+            //console.log(response)
             return response.json().then((data) => {
                 if (response.status != 200) {
                     console.log(data.status.message)
                 }
-                console.log(data)
+                //console.log(data)
                 return data;
             })
         })
 }
 
 async function get_invoice_list(headers, invoices) {
+    //console.log("Get Invoice List API Response")
     return fetch(billing_url, {
         method: 'POST',
         headers: headers,
@@ -211,6 +220,7 @@ async function get_invoice_list(headers, invoices) {
         })
     })
         .then((response) => {
+            //console.log(response)
             return response.json().then((data) => {
                 return data;
             })
@@ -218,6 +228,7 @@ async function get_invoice_list(headers, invoices) {
 }
 
 async function get_invoice(headers, id) {
+    //console.log("Get Invoice API Response")
     return fetch(billing_url, {
         method: 'POST',
         headers: headers,
@@ -226,6 +237,7 @@ async function get_invoice(headers, id) {
         })
     })
         .then((response) => {
+            //console.log(response)
             return response.json().then((data) => {
                 return data;
             })
@@ -233,6 +245,7 @@ async function get_invoice(headers, id) {
 }
 
 async function get_account_monies(headers, service_line) {
+    //console.log("Get Account Monies API Response")
     return fetch(billing_url, {
         method: 'POST',
         headers: headers,
@@ -241,6 +254,7 @@ async function get_account_monies(headers, service_line) {
         })
     })
         .then((response) => {
+            //console.log(response)
             return response.json().then((data) => {
                 return data;
             })
@@ -248,6 +262,7 @@ async function get_account_monies(headers, service_line) {
 }
 
 async function get_all_subscriptions(headers) {
+    //console.log("Get All Subscriptions API Response")
     return fetch(billing_url, {
         method: 'POST',
         headers: headers,
@@ -256,6 +271,7 @@ async function get_all_subscriptions(headers) {
         })
     })
         .then((response) => {
+            //console.log(response)
             return response.json().then((data) => {
                 return data;
             })
@@ -263,6 +279,7 @@ async function get_all_subscriptions(headers) {
 }
 
 async function get_payment_methods(headers) {
+    //console.log("Get Payment Mehtods API Response")
     return fetch(billing_url, {
         method: 'POST',
         headers: headers,
@@ -271,6 +288,24 @@ async function get_payment_methods(headers) {
         })
     })
         .then((response) => {
+            //console.log(response)
+            return response.json().then((data) => {
+                return data;
+            })
+        })
+}
+
+async function get_billing_overview_data(headers) {
+    //console.log("Get Payment Mehtods API Response")
+    return fetch(billing_url, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({
+            query: Requests.getBillingOverviewData(),
+        })
+    })
+        .then((response) => {
+            //console.log(response)
             return response.json().then((data) => {
                 return data;
             })
@@ -290,7 +325,7 @@ async function execute_request_param(headers, request, param_1) {
             console.log(response.status)
             console.log(response.statusText)
             return response.json().then((data) => {
-                console.log(data)
+                //console.log(data)
                 // console.log(data.errors[0].message)
                 return data;
             })
@@ -309,7 +344,7 @@ async function execute_request(headers, request) {
             console.log(response.status)
             console.log(response.statusText)
             return response.json().then((data) => {
-                console.log(data)
+                //console.log(data)
                 console.log(data.errors)
                 return data;
             })
@@ -346,6 +381,7 @@ module.exports = {
     get_invoice: get_invoice,
     get_all_subscriptions: get_all_subscriptions,
     get_payment_methods: get_payment_methods,
+    get_billing_overview_data: get_billing_overview_data,
     execute_request_param: execute_request_param,
     execute_request: execute_request
 };
