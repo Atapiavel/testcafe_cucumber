@@ -39,17 +39,20 @@ When('I click in the message field', async function() {
       await ActionsPage.click_element(MessengerPageLocator.MessageAaron());
 })
 
-When('I enter a {string} into the message field', async function(message) {
-      await waitFor(1000);
-      await ActionsPage.type_text(MessengerPageLocator.MessageAaron(), message);
-});
-
 When('I click on Emoji button', async function() {
       await ActionsPage.click_element(MessengerPageLocator.EmojiBtn());
 });
 
 When('I click on Mask Emoji', async function() {
       await ActionsPage.click_element(MessengerPageLocator.MaskEmoji());
+});
+
+When('I enter a {string} into the message field', async function(message) {
+      await waitFor(1000);
+      await ActionsPage.click_element(MessengerPageLocator.MessageAaron());
+      await testController.pressKey(message)
+      // await ActionsPage.type_text(MessengerPageLocator.MessageAaron(), "testing");
+      // await ActionsPage.type_text(MessengerPageLocator.MessageAaron(), message);
 });
 
 Then('I click on Send Message button', async function() {
