@@ -380,7 +380,6 @@ module.exports = {
     take_screenshot: take_screenshot,
     execute_shell: execute_shell,
     type_text: type_text,
-    clear_text: clear_text,
     press_keys: press_keys,
     click_element_from_list: click_element_from_list,
     fill_element_from_list: fill_element_from_list,
