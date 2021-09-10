@@ -47,7 +47,7 @@ function MessageAaron() {
 }
 
 function SendMessageBtn() {
-    return select('[class="send-message"]')
+    return select('[title="Send"]')
 }
 
 function EmojiBtn() {
