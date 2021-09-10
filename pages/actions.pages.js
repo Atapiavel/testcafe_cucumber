@@ -6,6 +6,7 @@ const Requests = require("./.././api/billing/requests");
 const billing_url = "https://integration.scorpion.co/csx/billing/graphql"
 const base_url = 'https://integration.scorpion.co'
 
+
 async function format_currency(value) {
     var formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -37,8 +38,12 @@ async function type_text(element, value) {
     await testController.typeText(element, value, { replace: true })
 }
 
-async function clear_text(element) {
-    await testController.pressKey('ctrl+a delete')
+async function press_keys(string) {
+    var string_for_keys = ""
+    for(var i = 0; i < string.length; i++ ){
+        string_for_keys = string_for_keys + string[i] + " "
+    }
+    await testController.pressKey(string_for_keys)  
 }
 
 async function click_element_from_list(element, value) {
@@ -312,6 +317,22 @@ async function get_billing_overview_data(headers) {
         })
 }
 
+async function get_platform_locations(headers) {
+        return fetch(billing_url, {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify({
+                query: Requests.getPlatformLocations(),
+            })
+        })
+            .then((response) => {
+                //console.log(response)
+                return response.json().then((data) => {
+                    return data;
+                })
+            })
+}
+
 async function execute_request_param(headers, request, param_1) {
     var query_run = eval("Requests." + request + "('" + param_1 + "')")
     return fetch(billing_url, {
@@ -360,6 +381,7 @@ module.exports = {
     execute_shell: execute_shell,
     type_text: type_text,
     clear_text: clear_text,
+    press_keys: press_keys,
     click_element_from_list: click_element_from_list,
     fill_element_from_list: fill_element_from_list,
     fill_element: fill_element,
@@ -382,6 +404,7 @@ module.exports = {
     get_all_subscriptions: get_all_subscriptions,
     get_payment_methods: get_payment_methods,
     get_billing_overview_data: get_billing_overview_data,
+    get_platform_locations: get_platform_locations,
     execute_request_param: execute_request_param,
     execute_request: execute_request
 };

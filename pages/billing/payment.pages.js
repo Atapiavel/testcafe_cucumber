@@ -3,8 +3,7 @@ const ActionsPage = require("../actions.pages")
 const PaymentPageLocator = require('../../locators/billing/payment.locators.js');
 
 async function fill_payment_info(datatable) {
-    data = datatable.raw()
-    data_flat = data.flat()
+    data_flat = datatable.raw().flat()
     var name = data_flat[1]
     var name_on_card = data_flat[2]
     var card = data_flat[3]
@@ -13,13 +12,10 @@ async function fill_payment_info(datatable) {
     var zipcode = data_flat[6]
     await ActionsPage.fill_element_from_list(PaymentPageLocator.scorpion_input(), 'Payment Nickname', name)
     await ActionsPage.fill_element_from_list(PaymentPageLocator.scorpion_input(), 'Name on Card', name_on_card)
-    // await ActionsPage.click_element(PaymentPageLocator.card())
     await ActionsPage.fill_element(PaymentPageLocator.card(), card)
     await testController.pressKey(card)
-    // await ActionsPage.click_element(PaymentPageLocator.card_expiration())
     await ActionsPage.fill_element(PaymentPageLocator.card_expiration(), expiration)
     await testController.pressKey(expiration)
-    // await ActionsPage.click_element(PaymentPageLocator.card_cvc())
     await ActionsPage.fill_element(PaymentPageLocator.card_cvc(), cvc)
     await testController.pressKey(cvc)
     await ActionsPage.fill_element_from_list(PaymentPageLocator.scorpion_input(), 'Zip Code*', zipcode)

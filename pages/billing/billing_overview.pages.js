@@ -1,5 +1,6 @@
 const ActionsPage = require("../actions.pages")
 var assert = require('assert');
+const sourceFile = require('../../features/support/hooks');
 
 // DATES VARIABLES
 var act_date = new Date();
@@ -13,16 +14,17 @@ var formatter = new Intl.NumberFormat('en-US', {
 });
 
 async function assert_recent_invoices() {
-    var headers = await ActionsPage.bearer()
-    var invoice_list = await ActionsPage.get_invoice_list(headers, 100)
-    await ActionsPage.logoff(headers)
-    var number_of_invoices = invoice_list.data.getInvoiceList.totalCount
+    async function return_data() {
+        return sourceFile.data.then(function (val) { return val })
+    }
+    var data = await return_data()
+    var number_of_invoices = data[1].data.getInvoiceList.totalCount
     var z = 0
     var invoice_arr = []
     for (var n = 0; n < number_of_invoices; n++) {
-        let due_date = new Date(invoice_list.data.getInvoiceList.items[n].dueDate);
-        let start_date = new Date(invoice_list.data.getInvoiceList.items[n].startDate)
-        let end_date = new Date(invoice_list.data.getInvoiceList.items[n].endDate)
+        let due_date = new Date(data[1].data.getInvoiceList.items[n].dueDate);
+        let start_date = new Date(data[1].data.getInvoiceList.items[n].startDate)
+        let end_date = new Date(data[1].data.getInvoiceList.items[n].endDate)
         const formattedDate = due_date.toLocaleString("en-US", {
             month: "short",
             day: "numeric",
@@ -36,10 +38,10 @@ async function assert_recent_invoices() {
             invoice_arr[z] =
             {
                 date: formattedDate,
-                number: invoice_list.data.getInvoiceList.items[n].invoiceNumber,
-                period: invoice_list.data.getInvoiceList.items[n].billingFrequencyName,
-                status: invoice_list.data.getInvoiceList.items[n].invoiceStatusName,
-                amount: invoice_list.data.getInvoiceList.items[n].amountDue + invoice_list.data.getInvoiceList.items[n].amountPaid,
+                number: data[1].data.getInvoiceList.items[n].invoiceNumber,
+                period: data[1].data.getInvoiceList.items[n].billingFrequencyName,
+                status: data[1].data.getInvoiceList.items[n].invoiceStatusName,
+                amount: data[1].data.getInvoiceList.items[n].amountDue + data[1].data.getInvoiceList.items[n].amountPaid,
             }
             z = z + 1
             var sorted = invoice_arr.sort(function (a, b) {
@@ -67,37 +69,37 @@ async function assert_recent_invoices() {
         var period_api_value = newArr[i][2]
         var status_api_value = newArr[i][3]
         var amount_api_value = formatter.format(newArr[i][4])
-        if(date_value == date_api_value){
+        if (date_value == date_api_value) {
             assert.ok(true)
         }
-        else{
+        else {
             console.log(date_value + " - " + date_api_value)
         }
-        if(number_value == number_api_value){
+        if (number_value == number_api_value) {
             assert.ok(true)
         }
-        else{
+        else {
             console.log(number_value + " - " + number_api_value)
             assert.ok(false)
         }
-        if(period_value == period_api_value){
+        if (period_value == period_api_value) {
             assert.ok(true)
         }
-        else{
+        else {
             console.log(period_value + " - " + period_api_value)
             assert.ok(false)
         }
-        if(status_value == status_api_value){
+        if (status_value == status_api_value) {
             assert.ok(true)
         }
-        else{
+        else {
             console.log(status_value + " - " + status_api_value)
             assert.ok(false)
         }
-        if(amount_value == amount_api_value){
+        if (amount_value == amount_api_value) {
             assert.ok(true)
         }
-        else{
+        else {
             console.log(amount_value + " - " + amount_api_value)
             assert.ok(false)
         }
@@ -105,31 +107,31 @@ async function assert_recent_invoices() {
 }
 
 async function assert_columns(datatable) {
-    data = datatable.raw()
-    data_flat = data.flat()
+    data_flat = datatable.raw().flat()
     for (var i = 0; i < data_flat.length; i++) {
         const header = "tr[role='row'] > th:nth-of-type(" + (i + 1) + ")"
         const text = await ActionsPage.select(header).innerText
-        if(text == data_flat[i]){
+        if (text == data_flat[i]) {
             assert.ok(true)
         }
-        else{
+        else {
             console.log(text + " - " + data_flat[i])
             assert.ok(false)
         }
-        
+
     }
 }
 
 async function assert_kebab_options() {
-    var headers = await ActionsPage.bearer()
-    var invoice_list = await ActionsPage.get_invoice_list(headers, 100)
-    await ActionsPage.logoff(headers)
-    if (invoice_list.data.getInvoiceList.totalCount >= 5) {
+    async function return_data() {
+        return sourceFile.data.then(function (val) { return val })
+    }
+    var data = await return_data()
+    if (data[1].data.getInvoiceList.totalCount >= 5) {
         var counter = 5
     }
     else {
-        var counter = invoice_list.data.getInvoiceList.totalCount
+        var counter = data[1].data.getInvoiceList.totalCount
     }
     for (var i = 0; i < counter; i++) {
         var kebab_menu = "#billing-recent-invoices-column-menu-" + i + " > button > scorpion-icon"

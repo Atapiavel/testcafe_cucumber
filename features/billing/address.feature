@@ -44,7 +44,7 @@ Feature: Billing Address
         Then I click on add button from address page
         And I assert that the text is shown "Billing Address has been successfully updated!"
 
-    @billing @address
+    @billing @address @focus
     Scenario: Update_address_functionality
         Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
@@ -56,7 +56,7 @@ Feature: Billing Address
         When I click on billing address to use dropdown
         And I click on update option
         And I click on select a billing address to use
-        And I select the address to use with "217 N. Howard Ave."
+        And I select the first address
         Then I click on update button from address page
         And I assert that the text is shown "Billing Address has been successfully updated!"
 

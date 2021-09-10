@@ -2,26 +2,25 @@ const InvoiceViewLocator = require('../../locators/billing/invoice_view.locators
 const ActionsPage = require("../actions.pages")
 const assert = require('assert');
 const { Selector } = require('testcafe');
+const sourceFile = require('../../features/support/hooks');
 
 async function see_invoice_details(invoice) {
     if (invoice == "first") {
-        var headers = await ActionsPage.bearer()
-        var invoice_list = await ActionsPage.get_invoice_list(headers, 1)
-        await ActionsPage.logoff(headers)
-        await ActionsPage.click_element_from_list(InvoiceViewLocator.invoice_numbers(), invoice_list.data.getInvoiceList.items[0].invoiceNumber)
+        async function return_data() {
+            return sourceFile.data.then(function (val) { return val })
+        }
+        var data = await return_data()
+        await ActionsPage.click_element_from_list(InvoiceViewLocator.invoice_numbers(), data[3].data.getInvoice.invoiceNumber)
     }
     else {
         await ActionsPage.click_element_from_list(InvoiceViewLocator.invoice_numbers(), value)
     }
     //API Data
-    var headers = await ActionsPage.bearer()
-    var invoice_data = await ActionsPage.get_invoice(headers, invoice_list.data.getInvoiceList.items[0].invoiceId)
-    await ActionsPage.logoff(headers)
-    var api_amount_due = await ActionsPage.format_currency(invoice_data.data.getInvoice.amountDue)
-    var api_invoice_number = invoice_data.data.getInvoice.invoiceNumber
-    var api_amount_paid = await ActionsPage.format_currency(invoice_data.data.getInvoice.amountPaid)
-    var api_due_date = await ActionsPage.format_date(invoice_data.data.getInvoice.dueDate)
-    var api_start_date = await ActionsPage.format_date(invoice_data.data.getInvoice.startDate)
+    var api_amount_due = await ActionsPage.format_currency(data[3].data.getInvoice.amountDue)
+    var api_invoice_number = data[3].data.getInvoice.invoiceNumber
+    var api_amount_paid = await ActionsPage.format_currency(data[3].data.getInvoice.amountPaid)
+    var api_due_date = await ActionsPage.format_date(data[3].data.getInvoice.dueDate)
+    var api_start_date = await ActionsPage.format_date(data[3].data.getInvoice.startDate)
     var due_api_month = api_due_date.getMonth()
     var due_api_day = api_due_date.getDate()
     var due_api_year = api_due_date.getFullYear()
@@ -96,31 +95,31 @@ async function see_invoice_details(invoice) {
     var advertising_z = 0
     var setup_z = 0
     var z = 0
-    for (var i = 0; i < invoice_data.data.getInvoice.billingLineItems.length; i++) {
-        if (invoice_data.data.getInvoice.billingLineItems[i].serviceLineName == "Platform") {
+    for (var i = 0; i < data[3].data.getInvoice.billingLineItems.length; i++) {
+        if (data[3].data.getInvoice.billingLineItems[i].serviceLineName == "Platform") {
             platform_array[platform_z] = {
-                billingLineItemName: invoice_data.data.getInvoice.billingLineItems[i].billingLineItemName,
-                unitPrice: await ActionsPage.format_currency(invoice_data.data.getInvoice.billingLineItems[i].unitPrice),
-                quantity: invoice_data.data.getInvoice.billingLineItems[i].quantity,
-                amount: await ActionsPage.format_currency(invoice_data.data.getInvoice.billingLineItems[i].amount),
+                billingLineItemName: data[3].data.getInvoice.billingLineItems[i].billingLineItemName,
+                unitPrice: await ActionsPage.format_currency(data[3].data.getInvoice.billingLineItems[i].unitPrice),
+                quantity: data[3].data.getInvoice.billingLineItems[i].quantity,
+                amount: await ActionsPage.format_currency(data[3].data.getInvoice.billingLineItems[i].amount),
             }
             platform_z = platform_z + 1
         }
-        if (invoice_data.data.getInvoice.billingLineItems[i].serviceLineName == "Advertising") {
+        if (data[3].data.getInvoice.billingLineItems[i].serviceLineName == "Advertising") {
             advertising_array[advertising_z] = {
-                billingLineItemName: invoice_data.data.getInvoice.billingLineItems[i].billingLineItemName,
-                unitPrice: await ActionsPage.format_currency(invoice_data.data.getInvoice.billingLineItems[i].unitPrice),
-                quantity: invoice_data.data.getInvoice.billingLineItems[i].quantity,
-                amount: await ActionsPage.format_currency(invoice_data.data.getInvoice.billingLineItems[i].amount),
+                billingLineItemName: data[3].data.getInvoice.billingLineItems[i].billingLineItemName,
+                unitPrice: await ActionsPage.format_currency(data[3].data.getInvoice.billingLineItems[i].unitPrice),
+                quantity: data[3].data.getInvoice.billingLineItems[i].quantity,
+                amount: await ActionsPage.format_currency(data[3].data.getInvoice.billingLineItems[i].amount),
             }
             advertising_z = advertising_z + 1
         }
-        if (invoice_data.data.getInvoice.billingLineItems[i].serviceLineName == "Setup") {
+        if (data[3].data.getInvoice.billingLineItems[i].serviceLineName == "Setup") {
             setup_array[setup_z] = {
-                billingLineItemName: invoice_data.data.getInvoice.billingLineItems[i].billingLineItemName,
-                unitPrice: await ActionsPage.format_currency(invoice_data.data.getInvoice.billingLineItems[i].unitPrice),
-                quantity: invoice_data.data.getInvoice.billingLineItems[i].quantity,
-                amount: await ActionsPage.format_currency(invoice_data.data.getInvoice.billingLineItems[i].amount),
+                billingLineItemName: data[3].data.getInvoice.billingLineItems[i].billingLineItemName,
+                unitPrice: await ActionsPage.format_currency(data[3].data.getInvoice.billingLineItems[i].unitPrice),
+                quantity: data[3].data.getInvoice.billingLineItems[i].quantity,
+                amount: await ActionsPage.format_currency(data[3].data.getInvoice.billingLineItems[i].amount),
             }
             setup_z = setup_z + 1
         }
@@ -176,8 +175,8 @@ async function see_invoice_details(invoice) {
             z = z + 1
         }
     }
-    // console.log(invoice_data.data.getInvoice.payments[i])
-    // console.log(invoice_data.data.getInvoice.subscription[i])
+    // console.log(data[3].data.getInvoice.payments[i])
+    // console.log(data[3].data.getInvoice.subscription[i])
 }
 
 module.exports = {

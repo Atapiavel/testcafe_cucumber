@@ -55,23 +55,22 @@ BeforeAll(function () {
     process.setMaxListeners(0);
 });
 
-async function get_billing_overview_data() {
+async function get_data() {
     var headers = await ActionsPage.bearer()
     var get_billing_overview_data = await ActionsPage.get_billing_overview_data(headers)
-    // var subscriptions_list = ActionsPage.get_all_subscriptions(headers)
-    // var payment_methods_list = await ActionsPage.get_payment_methods(headers)
+    var subscriptions_list = await ActionsPage.get_all_subscriptions(headers)
+    var payment_methods_list = await ActionsPage.get_payment_methods(headers)
     var invoice_list = await ActionsPage.get_invoice_list(headers, 100)
+    var first_invoice = await ActionsPage.get_invoice(headers, invoice_list.data.getInvoiceList.items[0].invoiceId)
     var account_monies = await ActionsPage.get_account_monies(headers, 1)
+    var platform_locations = await ActionsPage.get_platform_locations(headers)
     await ActionsPage.logoff(headers)
-    return [get_billing_overview_data, invoice_list, account_monies]
+    return [get_billing_overview_data, invoice_list, account_monies, first_invoice, subscriptions_list, payment_methods_list, platform_locations]
 }
 
-var billing_overview_data = get_billing_overview_data().then(function(val){
+var data = get_data().then(function(val){
     return val
 })
-// console.log(billing_overview_data)
-// console.log(billing_overview_data[0])
-// console.log(billing_overview_data[1])
 
 Before(function () {
     runTest(n, this.setBrowser());
@@ -127,5 +126,5 @@ exports.getIsTestCafeError = getIsTestCafeError;
 exports.getAttachScreenshotToReport = getAttachScreenshotToReport;
 
 module.exports = {
-    billing_overview_data,
+    data,
 }
