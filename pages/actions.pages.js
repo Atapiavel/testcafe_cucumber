@@ -6,6 +6,7 @@ const Requests = require("./.././api/billing/requests");
 const billing_url = "https://integration.scorpion.co/csx/billing/graphql"
 const base_url = 'https://integration.scorpion.co'
 
+
 async function format_currency(value) {
     var formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -37,8 +38,12 @@ async function type_text(element, value) {
     await testController.typeText(element, value, { replace: true })
 }
 
-async function clear_text(element) {
-    await testController.pressKey('ctrl+a delete')
+async function press_keys(string) {
+    var string_for_keys = ""
+    for(var i = 0; i < string.length; i++ ){
+        string_for_keys = string_for_keys + string[i] + " "
+    }
+    await testController.pressKey(string_for_keys)  
 }
 
 async function click_element_from_list(element, value) {
@@ -125,6 +130,7 @@ async function get_text(element) {
 }
 
 async function login(username, password) {
+    //console.log("Login API Response")
     const loginUrl = base_url + "/platform/identity/v1/api/oauth2/login2";
     const auth_headers = {
         'Content-Type': 'application/json',
@@ -141,13 +147,16 @@ async function login(username, password) {
         body: JSON.stringify(loginBody)
     })
         .then((response) => {
+            //console.log(response)
             return response.json().then((data) => {
+                //console.log(data)
                 return data;
             })
         })
 }
 
 async function auth(token) {
+    //console.log("Auth API Response")
     const authorizeUrl = base_url + "/platform/identity/v1/api/oauth2/ropc/authorize";
     const auth_headers = {
         'Content-Type': 'application/json',
@@ -163,10 +172,12 @@ async function auth(token) {
         body: JSON.stringify(authorizeBody)
     })
         .then((response) => {
+            //console.log(response)
             return response.json().then((data) => {
                 if (response.status != 200) {
                     console.log(data.status.message)
                 }
+                //console.log(data)
                 return data;
             })
         })
@@ -186,22 +197,26 @@ async function bearer() {
 }
 
 async function logoff(headers) {
+    //console.log("Logoff API Response")
     const url = base_url + "/platform/identity/v1/api/oauth2logoff/logoff"
     return fetch(url, {
         method: 'POST',
         headers: headers
     })
         .then((response) => {
+            //console.log(response)
             return response.json().then((data) => {
                 if (response.status != 200) {
                     console.log(data.status.message)
                 }
+                //console.log(data)
                 return data;
             })
         })
 }
 
 async function get_invoice_list(headers, invoices) {
+    //console.log("Get Invoice List API Response")
     return fetch(billing_url, {
         method: 'POST',
         headers: headers,
@@ -210,6 +225,7 @@ async function get_invoice_list(headers, invoices) {
         })
     })
         .then((response) => {
+            //console.log(response)
             return response.json().then((data) => {
                 return data;
             })
@@ -217,6 +233,7 @@ async function get_invoice_list(headers, invoices) {
 }
 
 async function get_invoice(headers, id) {
+    //console.log("Get Invoice API Response")
     return fetch(billing_url, {
         method: 'POST',
         headers: headers,
@@ -225,6 +242,7 @@ async function get_invoice(headers, id) {
         })
     })
         .then((response) => {
+            //console.log(response)
             return response.json().then((data) => {
                 return data;
             })
@@ -232,6 +250,7 @@ async function get_invoice(headers, id) {
 }
 
 async function get_account_monies(headers, service_line) {
+    //console.log("Get Account Monies API Response")
     return fetch(billing_url, {
         method: 'POST',
         headers: headers,
@@ -240,6 +259,7 @@ async function get_account_monies(headers, service_line) {
         })
     })
         .then((response) => {
+            //console.log(response)
             return response.json().then((data) => {
                 return data;
             })
@@ -247,6 +267,7 @@ async function get_account_monies(headers, service_line) {
 }
 
 async function get_all_subscriptions(headers) {
+    //console.log("Get All Subscriptions API Response")
     return fetch(billing_url, {
         method: 'POST',
         headers: headers,
@@ -255,6 +276,7 @@ async function get_all_subscriptions(headers) {
         })
     })
         .then((response) => {
+            //console.log(response)
             return response.json().then((data) => {
                 return data;
             })
@@ -262,6 +284,7 @@ async function get_all_subscriptions(headers) {
 }
 
 async function get_payment_methods(headers) {
+    //console.log("Get Payment Mehtods API Response")
     return fetch(billing_url, {
         method: 'POST',
         headers: headers,
@@ -270,10 +293,44 @@ async function get_payment_methods(headers) {
         })
     })
         .then((response) => {
+            //console.log(response)
             return response.json().then((data) => {
                 return data;
             })
         })
+}
+
+async function get_billing_overview_data(headers) {
+    //console.log("Get Payment Mehtods API Response")
+    return fetch(billing_url, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({
+            query: Requests.getBillingOverviewData(),
+        })
+    })
+        .then((response) => {
+            //console.log(response)
+            return response.json().then((data) => {
+                return data;
+            })
+        })
+}
+
+async function get_platform_locations(headers) {
+        return fetch(billing_url, {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify({
+                query: Requests.getPlatformLocations(),
+            })
+        })
+            .then((response) => {
+                //console.log(response)
+                return response.json().then((data) => {
+                    return data;
+                })
+            })
 }
 
 async function execute_request_param(headers, request, param_1) {
@@ -289,7 +346,7 @@ async function execute_request_param(headers, request, param_1) {
             console.log(response.status)
             console.log(response.statusText)
             return response.json().then((data) => {
-                console.log(data)
+                //console.log(data)
                 // console.log(data.errors[0].message)
                 return data;
             })
@@ -308,7 +365,7 @@ async function execute_request(headers, request) {
             console.log(response.status)
             console.log(response.statusText)
             return response.json().then((data) => {
-                console.log(data)
+                //console.log(data)
                 console.log(data.errors)
                 return data;
             })
@@ -324,6 +381,7 @@ module.exports = {
     execute_shell: execute_shell,
     type_text: type_text,
     clear_text: clear_text,
+    press_keys: press_keys,
     click_element_from_list: click_element_from_list,
     fill_element_from_list: fill_element_from_list,
     fill_element: fill_element,
@@ -345,6 +403,8 @@ module.exports = {
     get_invoice: get_invoice,
     get_all_subscriptions: get_all_subscriptions,
     get_payment_methods: get_payment_methods,
+    get_billing_overview_data: get_billing_overview_data,
+    get_platform_locations: get_platform_locations,
     execute_request_param: execute_request_param,
     execute_request: execute_request
 };

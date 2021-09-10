@@ -12,9 +12,9 @@ Feature: Billing Subscriptions
         Then I select the "Billing" option
         When I wait for "5" seconds
         Then I verify the columns are shown on the billing overview page with
-            | Invoice Date | Invoice | Billing Period | Status | Amount |
+            | INVOICE DATE | INVOICE | BILLING PERIOD | STATUS | AMOUNT |
         And I verify the columns for subscriptions are visible
-            | Contract Name | Valid Until | Assigned Payment | Auto Pay |
+            | CONTRACT NAME | VALID UNTIL | ASSIGNED PAYMENT | AUTO PAY |
         And I assert that subscriptions information is visible
 
     @billing @subscriptions
@@ -29,9 +29,9 @@ Feature: Billing Subscriptions
         Then I select the "Billing" option
         When I wait for "5" seconds
         Then I verify the columns are shown on the billing overview page with
-            | Invoice Date | Invoice | Billing Period | Status | Amount |
+            | INVOICE DATE | INVOICE | BILLING PERIOD | STATUS | AMOUNT |
         And I verify the columns for subscriptions are visible
-            | Contract Name | Valid Until | Assigned Payment | Auto Pay |
+            | CONTRACT NAME | VALID UNTIL | ASSIGNED PAYMENT | AUTO PAY |
         And I assert that subscriptions information is visible
         When I select the first contract to edit with the "first" payment method and "On" autopay
         Then I assert that subscriptions information is visible

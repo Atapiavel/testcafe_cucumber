@@ -1,6 +1,7 @@
 const ActionsPage = require("../actions.pages")
 const BillingHistoryPageLocator = require('../../locators/billing/invoice_history.locators.js');
 const assert = require('assert');
+const sourceFile = require('../../features/support/hooks');
 
 // DATES VARIABLES
 var act_date = new Date();
@@ -47,18 +48,19 @@ async function assert_historical_invoices(filter, value) {
             var filtering_date_end = new Date(dates_filter[1])
         }
     }
-    var headers = await ActionsPage.bearer()
-    var invoice_list = await ActionsPage.get_invoice_list(headers, 100)
-    await ActionsPage.logoff(headers)
-    var number_of_invoices = invoice_list.data.getInvoiceList.totalCount
+    async function return_data() {
+        return sourceFile.data.then(function (val) { return val })
+    }
+    var data = await return_data()
+    var number_of_invoices = data[1].data.getInvoiceList.totalCount
     var z = 0
     var invoice_arr = []
     for (var n = 0; n < number_of_invoices; n++) {
-        let due_date = new Date(invoice_list.data.getInvoiceList.items[n].dueDate);
-        let start_date = new Date(invoice_list.data.getInvoiceList.items[n].startDate)
-        let end_date = new Date(invoice_list.data.getInvoiceList.items[n].endDate)
-        let invoice_price = invoice_list.data.getInvoiceList.items[n].amountDue + invoice_list.data.getInvoiceList.items[n].amountPaid
-        let invoice_status = invoice_list.data.getInvoiceList.items[n].invoiceStatusName
+        let due_date = new Date(data[1].data.getInvoiceList.items[n].dueDate);
+        let start_date = new Date(data[1].data.getInvoiceList.items[n].startDate)
+        let end_date = new Date(data[1].data.getInvoiceList.items[n].endDate)
+        let invoice_price = data[1].data.getInvoiceList.items[n].amountDue + data[1].data.getInvoiceList.items[n].amountPaid
+        let invoice_status = data[1].data.getInvoiceList.items[n].invoiceStatusName
         const formattedDate = due_date.toLocaleString("en-US", {
             month: "short",
             day: "numeric",
@@ -73,10 +75,10 @@ async function assert_historical_invoices(filter, value) {
                     invoice_arr[z] =
                     {
                         date: formattedDate,
-                        number: invoice_list.data.getInvoiceList.items[n].invoiceNumber,
-                        period: invoice_list.data.getInvoiceList.items[n].billingFrequencyName,
-                        status: invoice_list.data.getInvoiceList.items[n].invoiceStatusName,
-                        amount: invoice_list.data.getInvoiceList.items[n].amountDue + invoice_list.data.getInvoiceList.items[n].amountPaid
+                        number: data[1].data.getInvoiceList.items[n].invoiceNumber,
+                        period: data[1].data.getInvoiceList.items[n].billingFrequencyName,
+                        status: data[1].data.getInvoiceList.items[n].invoiceStatusName,
+                        amount: data[1].data.getInvoiceList.items[n].amountDue + data[1].data.getInvoiceList.items[n].amountPaid
                     }
 
                     z = z + 1
@@ -88,10 +90,10 @@ async function assert_historical_invoices(filter, value) {
                     invoice_arr[z] =
                     {
                         date: formattedDate,
-                        number: invoice_list.data.getInvoiceList.items[n].invoiceNumber,
-                        period: invoice_list.data.getInvoiceList.items[n].billingFrequencyName,
-                        status: invoice_list.data.getInvoiceList.items[n].invoiceStatusName,
-                        amount: invoice_list.data.getInvoiceList.items[n].amountDue + invoice_list.data.getInvoiceList.items[n].amountPaid
+                        number: data[1].data.getInvoiceList.items[n].invoiceNumber,
+                        period: data[1].data.getInvoiceList.items[n].billingFrequencyName,
+                        status: data[1].data.getInvoiceList.items[n].invoiceStatusName,
+                        amount: data[1].data.getInvoiceList.items[n].amountDue + data[1].data.getInvoiceList.items[n].amountPaid
                     }
 
                     z = z + 1
@@ -101,10 +103,10 @@ async function assert_historical_invoices(filter, value) {
                 invoice_arr[z] =
                 {
                     date: formattedDate,
-                    number: invoice_list.data.getInvoiceList.items[n].invoiceNumber,
-                    period: invoice_list.data.getInvoiceList.items[n].billingFrequencyName,
-                    status: invoice_list.data.getInvoiceList.items[n].invoiceStatusName,
-                    amount: invoice_list.data.getInvoiceList.items[n].amountDue + invoice_list.data.getInvoiceList.items[n].amountPaid
+                    number: data[1].data.getInvoiceList.items[n].invoiceNumber,
+                    period: data[1].data.getInvoiceList.items[n].billingFrequencyName,
+                    status: data[1].data.getInvoiceList.items[n].invoiceStatusName,
+                    amount: data[1].data.getInvoiceList.items[n].amountDue + data[1].data.getInvoiceList.items[n].amountPaid
                 }
 
                 z = z + 1
@@ -173,8 +175,7 @@ async function assert_historical_invoices(filter, value) {
 }
 
 async function assert_columns(datatable) {
-    data = datatable.raw()
-    data_flat = data.flat()
+    data_flat = datatable.raw().flat()
     for (var i = 0; i < data_flat.length; i++) {
         const header = "tr[role='row'] > th:nth-of-type(" + (i + 2) + ")"
         const text = await ActionsPage.select(header).innerText
@@ -205,14 +206,9 @@ async function assert_kebab_file_download(option_text, option) {
 }
 
 async function assert_kebab_option(option, datatable) {
-    //counting the columns
-    data = datatable.raw()
-    data_flat = data.flat()
-    //counting the records
+    data_flat = datatable.raw().flat()
     const records = ActionsPage.select('td:nth-of-type(2)');
     const records_count = await records.count
-    //i = records
-    //n = columns
     var z = 0
     for (var i = 0; i < records_count; i++) {
         const record = "tr:nth-of-type(" + (i + 1) + ") > td:nth-of-type(2)"
@@ -350,17 +346,18 @@ async function results_validation(filter, value) {
             var filtering_date_end = new Date(dates_filter[1])
         }
     }
-    var headers = await ActionsPage.bearer()
-    var invoice_list = await ActionsPage.get_invoice_list(headers, 100)
-    await ActionsPage.logoff(headers)
-    var number_of_invoices = invoice_list.data.getInvoiceList.totalCount
+    async function return_data() {
+        return sourceFile.data.then(function (val) { return val })
+    }
+    var data = await return_data()
+    var number_of_invoices = data[1].data.getInvoiceList.totalCount
     var z = 0
     for (var n = 0; n < number_of_invoices; n++) {
-        let due_date = new Date(invoice_list.data.getInvoiceList.items[n].dueDate);
-        let start_date = new Date(invoice_list.data.getInvoiceList.items[n].startDate)
-        let end_date = new Date(invoice_list.data.getInvoiceList.items[n].endDate)
-        let invoice_price = invoice_list.data.getInvoiceList.items[n].amountDue + invoice_list.data.getInvoiceList.items[n].amountPaid
-        let invoice_status = invoice_list.data.getInvoiceList.items[n].invoiceStatusName
+        let due_date = new Date(data[1].data.getInvoiceList.items[n].dueDate);
+        let start_date = new Date(data[1].data.getInvoiceList.items[n].startDate)
+        let end_date = new Date(data[1].data.getInvoiceList.items[n].endDate)
+        let invoice_price = data[1].data.getInvoiceList.items[n].amountDue + data[1].data.getInvoiceList.items[n].amountPaid
+        let invoice_status = data[1].data.getInvoiceList.items[n].invoiceStatusName
         if (due_date >= filtering_date_start && due_date <= filtering_date_end ||
             start_date >= filtering_date_start && start_date <= filtering_date_end ||
             end_date >= filtering_date_start && end_date <= filtering_date_end) {

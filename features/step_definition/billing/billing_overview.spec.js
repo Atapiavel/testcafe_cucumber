@@ -14,7 +14,6 @@ Then('I verify the columns are shown on the billing overview page with', async f
 Then('I assert I can see recent invoices', async function () {
     await BillingOverviewPage.assert_recent_invoices()
     await ActionsPage.wait(5)
-    await BillingOverviewPage.assert_results()
 })
 
 Then('I assert kebab options are visible for recent invoices', { timeout: 500000 }, async function () {

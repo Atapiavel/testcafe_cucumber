@@ -45,7 +45,7 @@ function runTest(iteration, browser) {
 
 setDefaultTimeout(TIMEOUT);
 
-BeforeAll(function () {    
+BeforeAll(function () {
     fs.unlinkSync('date.txt');
     ActionsPage.execute_shell('rmdir /Q /S screenshots')
     ActionsPage.execute_shell('mkdir screenshots')
@@ -54,6 +54,23 @@ BeforeAll(function () {
     ActionsPage.write_date()
     process.setMaxListeners(0);
 });
+
+async function get_data() {
+    var headers = await ActionsPage.bearer()
+    var get_billing_overview_data = await ActionsPage.get_billing_overview_data(headers)
+    var subscriptions_list = await ActionsPage.get_all_subscriptions(headers)
+    var payment_methods_list = await ActionsPage.get_payment_methods(headers)
+    var invoice_list = await ActionsPage.get_invoice_list(headers, 100)
+    var first_invoice = await ActionsPage.get_invoice(headers, invoice_list.data.getInvoiceList.items[0].invoiceId)
+    var account_monies = await ActionsPage.get_account_monies(headers, 1)
+    var platform_locations = await ActionsPage.get_platform_locations(headers)
+    await ActionsPage.logoff(headers)
+    return [get_billing_overview_data, invoice_list, account_monies, first_invoice, subscriptions_list, payment_methods_list, platform_locations]
+}
+
+var data = get_data().then(function(val){
+    return val
+})
 
 Before(function () {
     runTest(n, this.setBrowser());
@@ -67,7 +84,7 @@ After(function () {
     testControllerHolder.free();
 });
 
-After(async function (testCase) {
+After(function (testCase) {
     const world = this;
     var scenario = testCase.pickle.name
     if (testCase.result.status === Status.FAILED) {
@@ -107,3 +124,7 @@ const getAttachScreenshotToReport = function (path) {
 
 exports.getIsTestCafeError = getIsTestCafeError;
 exports.getAttachScreenshotToReport = getAttachScreenshotToReport;
+
+module.exports = {
+    data,
+}

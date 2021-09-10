@@ -3,6 +3,7 @@ const { When, Then } = require('@cucumber/cucumber');
 const AddressPage = require('../../../pages/billing/address.pages.js');
 const AddressPageLocator = require('../../../locators/billing/address.locators.js');
 var assert = require('assert');
+const sourceFile = require('../../support/hooks');
 
 
 Then('I assert address module is visible', async function () {
@@ -47,7 +48,12 @@ When('I click on select a billing address to use', async function () {
     await ActionsPage.click_element(AddressPageLocator.back_button())
 })
 
-When('I select the address to use with {string}', async function (address) {
+When('I select the first address', async function () {
+    async function return_data() {
+        return sourceFile.data.then(function (val) { return val })
+    }
+    var data = await return_data()
+    var address = data[6].data.getPlatformLocations[0].address1
     await ActionsPage.click_element(AddressPageLocator.select_address())
     await ActionsPage.hover_element_from_list(AddressPageLocator.options(), address)
     await ActionsPage.click_element_from_list(AddressPageLocator.options(), address)

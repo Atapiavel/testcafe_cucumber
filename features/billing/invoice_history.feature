@@ -14,12 +14,12 @@ Feature: Billing Invoice History
         And I wait for "5" seconds
         Then I assert the Scorpion Billing History page
         Then I verify the columns are showed with
-            | Invoice Date | Invoice Number | Billing Period | Status | Amount |
+            | INVOICE DATE | INVOICE | BILLING PERIOD | STATUS | AMOUNT |
         Then I assert I can see historical invoices filtered "-" with "-"
         And I wait for "5" seconds
 
     @billing @invoice_history
-    Scenario: Invoice_filtering_with_no_results_filtering_<filter>
+    Scenario: Invoice_filtering_with_no_results
         Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
         And I click on sign in button
@@ -34,7 +34,7 @@ Feature: Billing Invoice History
         When I select the filter "by_price" with "10000000-1000001"
         And I wait for "2" seconds
         And I click on apply button
-        Then I assert no invoices are shown                    
+        Then I assert no invoices are shown
 
     @billing @invoice_history
     Scenario: Invoice_filtering_by_year

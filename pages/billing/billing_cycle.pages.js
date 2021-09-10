@@ -1,27 +1,31 @@
 const BillingCycleLocator = require('../../locators/billing/billing_cycle.locators');
 const ActionsPage = require("../actions.pages")
 const assert = require('assert');
+const sourceFile = require('../../features/support/hooks');
+
+// VARIABLES
+var act_date = new Date();
+var year = act_date.getFullYear();
+var month = act_date.getMonth();
+var start_of_month = new Date(year, month, 1, 0, 0, 0, 0)
+var end_of_month = new Date(year, month + 1, 0, 18, 59, 59);
+var current_unpaid_amount = 0
+var amount_due = 0
+var past_amount_due = 0
+var amount_paid = 0
+var current_amount = 0
+var credit_amount = 0
 
 async function see_graph_details() {
-    var act_date = new Date();
-    var year = act_date.getFullYear();
-    var month = act_date.getMonth();
-    var start_of_month = new Date(year, month, 1, 0, 0, 0, 0)
-    var end_of_month = new Date(year, month + 1, 0, 18, 59, 59);
-    var current_unpaid_amount = 0
-    var amount_due = 0
-    var past_amount_due = 0
-    var amount_paid = 0
-    var current_amount = 0
-    var credit_amount = 0
-    var headers = await ActionsPage.bearer()
-    var invoice_list = await ActionsPage.get_invoice_list(headers, 100)
-    await ActionsPage.logoff(headers)
-    var i = invoice_list.data.getInvoiceList.totalCount
+    async function return_data() {
+        return sourceFile.data.then(function (val) { return val })
+    }
+    var data = await return_data()
+    var i = data[1].data.getInvoiceList.totalCount
     for (var n = 0; n < i; n++) {
-        var amount = invoice_list.data.getInvoiceList.items[n].amountDue
-        var amount_paid_aux = invoice_list.data.getInvoiceList.items[n].amountPaid
-        var due_date = new Date(invoice_list.data.getInvoiceList.items[n].dueDate)
+        var amount = data[1].data.getInvoiceList.items[n].amountDue
+        var amount_paid_aux = data[1].data.getInvoiceList.items[n].amountPaid
+        var due_date = new Date(data[1].data.getInvoiceList.items[n].dueDate)
         if (due_date <= end_of_month) {
             amount_due = amount_due + amount
         }
@@ -80,17 +84,14 @@ async function see_graph_details() {
         console.log(estimate_text + " - " + "ESTIMATE")
         assert.ok(false)
     }
-    var headers = await ActionsPage.bearer()
-    var account_monies = await ActionsPage.get_account_monies(headers, 1)
-    await ActionsPage.logoff(headers)
     var credit_available_value = await ActionsPage.get_text(BillingCycleLocator.credit_available_value())
-    for (var i = 0; i < account_monies.data.getAccountMonies.length; i++) {
-        credit_amount = credit_amount + account_monies.data.getAccountMonies[i].amount
+    for (var i = 0; i < data[2].data.getAccountMonies.length; i++) {
+        credit_amount = credit_amount + data[2].data.getAccountMonies[i].amount
     }
-    if(credit_available_value == " " + formatter.format(credit_amount)){
+    if (credit_available_value == " " + formatter.format(credit_amount)) {
         assert.ok(true)
     }
-    else{
+    else {
         console.log(credit_available_value + "-" + " " + formatter.format(credit_amount))
         assert.ok(false)
     }

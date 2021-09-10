@@ -4,8 +4,7 @@ const { Selector } = require('testcafe');
 const assert = require("assert");
 
 async function fill_contact_info(datatable) {
-    data = datatable.raw()
-    data_flat = data.flat()
+    data_flat = datatable.raw().flat()
     await ActionsPage.type_text(ContactPageLocator.name(), data_flat[0])
     await ActionsPage.type_text(ContactPageLocator.email(), data_flat[1])
     await ActionsPage.type_text(ContactPageLocator.phone(), data_flat[2])
@@ -15,8 +14,7 @@ async function fill_contact_info(datatable) {
 }
 
 async function verify_contact(datatable) {
-    data = datatable.raw()
-    data_flat = data.flat()
+    data_flat = datatable.raw().flat()
     const records = ActionsPage.select('[id^=billing-contact-list-name-]');
     const records_count = await records.count
     var n = 0;
