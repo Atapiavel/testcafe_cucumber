@@ -29,4 +29,4 @@ Feature: Messenger
 
         Examples:
             | email                     | password  | message |
-            | mehrdad.tp@mailinator.com     | Team123!  | H e y     A a r o n   ,   w h a t ' s     u p ? |
+            | mehrdad.tp@mailinator.com     | Team123!  | Hey Aaron, what's up? |

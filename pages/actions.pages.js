@@ -41,7 +41,12 @@ async function type_text(element, value) {
 async function press_keys(string) {
     var string_for_keys = ""
     for(var i = 0; i < string.length; i++ ){
-        string_for_keys = string_for_keys + string[i] + " "
+        if(string[i]==" "){
+            string_for_keys = string_for_keys + "space "
+        }
+        else{
+            string_for_keys = string_for_keys + string[i] + " "
+        }
     }
     await testController.pressKey(string_for_keys)  
 }
@@ -184,8 +189,8 @@ async function auth(token) {
 }
 
 async function bearer() {
-    let token_data = await login("thebillingteam@scorpion.co", "Billing1234!!")
-    // let token_data = await login("commcenter@scorpion.co", "Comms1234!")
+    // let token_data = await login("thebillingteam@scorpion.co", "Billing1234!!")
+    let token_data = await login("commcenter@scorpion.co", "Comms1234!")
     let bearer_data = await auth(token_data.result)
     let bearer_token = bearer_data.id_token
     const headers = {

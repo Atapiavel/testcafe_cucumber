@@ -50,7 +50,7 @@ When('I click on Mask Emoji', async function() {
 When('I enter a {string} into the message field', async function(message) {
       await waitFor(1000);
       await ActionsPage.click_element(MessengerPageLocator.MessageAaron());
-      await testController.pressKey(message)
+      await ActionsPage.press_keys(message);
       // await ActionsPage.type_text(MessengerPageLocator.MessageAaron(), "testing");
       // await ActionsPage.type_text(MessengerPageLocator.MessageAaron(), message);
 });
