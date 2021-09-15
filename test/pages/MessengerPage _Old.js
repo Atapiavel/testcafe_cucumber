@@ -34,7 +34,7 @@ class MessengerPage{
         this.mostRecentSort = Selector('div[ngprojectas="scorpion-menu-item"]').withText('Most Recent');
         this.aaronBtn = Selector('scorpion-ui-card').withText('Aaron McFly');
         this.messageField = Selector('p[class="NgxEditor__Placeholder"]');
-        this.sendMessageBtn = Selector('[class="send-message"]');
+        this.sendMessageBtn = Selector('[title="Send"]');
         this.emojiBtn = Selector('scorpion-message-input > div > div > div.nlf-middle-between.auto > div > scorpion-emoji-select > div > scorpion-button-icon > button > scorpion-icon > div > svg');
         this.maskEmoji = Selector('[title="mask"]');
         this.paperClipBtn = Selector('scorpion-button-icon[icon="paperclip"]');

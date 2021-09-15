@@ -1,0 +1,63 @@
+{
+  "uid" : "9b4eccb1a2102019",
+  "name" : "Messenger page Test",
+  "fullName" : "Messenger Fixture.Messenger page Test",
+  "historyId" : "42436fffa361e96b4afa9266452df56c",
+  "time" : {
+    "start" : 1623758966475,
+    "stop" : 1623759049418,
+    "duration" : 82943
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusMessage" : "This test has been passed.",
+  "statusTrace" : "no error",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "undefined"
+  }, {
+    "name" : "suite",
+    "value" : "Messenger Fixture"
+  }, {
+    "name" : "testClass",
+    "value" : "Messenger Fixture"
+  }, {
+    "name" : "testMethod",
+    "value" : "Messenger page Test"
+  }, {
+    "name" : "package",
+    "value" : "Messenger Fixture"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "User Agent",
+    "value" : "Chrome 91.0.4472.101 / macOS 10.15.7"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "7623eaf3dbacbf15",
+      "status" : "passed",
+      "statusDetails" : "This test has been passed.",
+      "time" : {
+        "start" : 1623725963548,
+        "stop" : 1623726048250,
+        "duration" : 84702
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "9b4eccb1a2102019.json",
+  "parameterValues" : [ "Chrome 91.0.4472.101 / macOS 10.15.7" ]
+}
