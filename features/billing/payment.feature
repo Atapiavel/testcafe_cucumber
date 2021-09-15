@@ -1,6 +1,6 @@
 Feature: Payment
 
-    @billing @payment
+    @billing @payment @focus
     Scenario: Add_payment_method_functionality
         Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
@@ -16,14 +16,14 @@ Feature: Payment
         And I select the payment method with "Credit and Debit cards"
         And I click on continue button
         Then I fill payment method information with
-            | Credit and Debit cards | Testing Automation | Testing Automation | 4 2 4 2 4 2 4 2 4 2 4 2 4 2 4 2 | 0 4 2 5 | 6 7 6 | 09700 |
+            | Credit and Debit cards | Testing Automation | Testing Automation | 4242424242424242 | 0425 | 676 | 09700 |
         When I click on add card button
         And I wait for "3" seconds
         Then I assert that the text is shown "Payment Method has been successfully added!"
         And I assert that payment method is shown with "Testing Automation"
 
 
-    @billing @payment
+    @billing @payment @focus
     Scenario: Update_payment_method_functionality
         Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
@@ -47,7 +47,7 @@ Feature: Payment
         And I wait for "5" seconds
         And I assert that payment method is shown with "Testing Automation"
 
-    @billing @payment
+    @billing @payment @focus
     Scenario: Delete_payment_method_functionality
         Given I am in Scorpion login page
         When I enter "thebillingteam@scorpion.co" and "Billing1234!!"

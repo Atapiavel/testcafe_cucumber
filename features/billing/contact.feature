@@ -14,27 +14,6 @@ Feature: Billing Contact
                 Then I assert contact module is visible
 
         @billing @contact
-        Scenario: Contact_kebab_options_are_visible_for_<contact_name>
-                Given I am in Scorpion login page
-                When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
-                And I click on sign in button
-                And I wait for "10" seconds
-                Given I am in Scorpion "settings" page
-                And I wait for "5" seconds
-                And I hover on More option
-                Then I select the "Billing" option
-                And I wait for "5" seconds
-                Then I assert "setAsPrimary" option is visible for contact "<contact_name>"
-                And I assert "update" option is visible for contact "<contact_name>"
-                And I assert "delete" option is visible for contact "<contact_name>"
-
-                Examples:
-
-                        | contact_name         |
-                        | Amanda Little        |
-                        | Arturo Tapia Velasco |
-
-        @billing @contact
         Scenario: Add_billing_contact_functionality
                 Given I am in Scorpion login page
                 When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
@@ -52,9 +31,29 @@ Feature: Billing Contact
                 Then I click on add button
                 And I assert that the text is shown "Contact has been successfully added!"
                 And I assert that contact is shown with
-                        | Samm | samrobinson@gmail.com | (485) 569-3859 |      |
+                        | Samm | samrobinson@gmail.com | (485) 569-3859 |  |
 
         @billing @contact
+        Scenario: Contact_kebab_options_are_visible_for_<contact_name>
+                Given I am in Scorpion login page
+                When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
+                And I click on sign in button
+                And I wait for "10" seconds
+                Given I am in Scorpion "settings" page
+                And I wait for "5" seconds
+                And I hover on More option
+                Then I select the "Billing" option
+                And I wait for "5" seconds
+                Then I assert "setAsPrimary" option is visible for contact "<contact_name>"
+                And I assert "update" option is visible for contact "<contact_name>"
+                And I assert "delete" option is visible for contact "<contact_name>"
+
+                Examples:
+
+                        | contact_name |
+                        | Samm         |
+
+        @billing @contact @focus
         Scenario: Update_billing_contact_functionality
                 Given I am in Scorpion login page
                 When I enter "thebillingteam@scorpion.co" and "Billing1234!!"
@@ -72,9 +71,9 @@ Feature: Billing Contact
                 Then I click on update button
                 Then I assert that the text is shown "Contact has been successfully updated!"
                 And I assert that contact is shown with
-                        | Tester | testerrobinson@gmail.com| (485) 569-5555 |
+                        | Tester | testerrobinson@gmail.com | (485) 569-5555 |
 
-        @billing @contact
+        @billing @contact @focus
         Scenario: Set_as_primary_functionality_from_Billing_contact
                 Given I am in Scorpion login page
                 When I enter "thebillingteam@scorpion.co" and "Billing1234!!"

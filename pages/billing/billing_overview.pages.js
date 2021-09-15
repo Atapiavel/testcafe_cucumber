@@ -73,7 +73,7 @@ async function assert_recent_invoices() {
             assert.ok(true)
         }
         else {
-            console.log(date_value + " - " + date_api_value)
+            console.log("\n" + date_value + " - " + date_api_value)
         }
         if (number_value == number_api_value) {
             assert.ok(true)
@@ -109,16 +109,15 @@ async function assert_recent_invoices() {
 async function assert_columns(datatable) {
     data_flat = datatable.raw().flat()
     for (var i = 0; i < data_flat.length; i++) {
-        const header = "tr[role='row'] > th:nth-of-type(" + (i + 1) + ")"
+        const header = "scorpion-construct-table > div > div > table > thead > tr[role='row'] > th:nth-of-type(" + (i + 1) + ")"
         const text = await ActionsPage.select(header).innerText
         if (text == data_flat[i]) {
             assert.ok(true)
         }
         else {
-            console.log(text + " - " + data_flat[i])
+            console.log("\n" + text + " - " + data_flat[i])
             assert.ok(false)
         }
-
     }
 }
 
@@ -139,19 +138,15 @@ async function assert_kebab_options() {
         await ActionsPage.click_element(kebab_menu)
         var pay_option = "#billing-recent-invoices-menu-option-pay-" + i
         var send_option = "#billing-recent-invoices-menu-option-send-" + i
-        // var print_option = "#billing-recent-invoices-menu-option-print-" + i
         var download_option = "#billing-recent-invoices-menu-option-download-" + i
         await ActionsPage.hover_element(pay_option)
         await ActionsPage.hover_element(send_option)
-        // await ActionsPage.hover_element(print_option)
         await ActionsPage.hover_element(download_option)
         var pay_option_text = await ActionsPage.get_text("#billing-recent-invoices-menu-option-pay-" + i)
         var send_option_text = await ActionsPage.get_text("#billing-recent-invoices-menu-option-send-" + i)
-        // var print_option_text = await ActionsPage.get_text("#billing-recent-invoices-menu-option-print-" + i)
         var download_option_text = await ActionsPage.get_text("#billing-recent-invoices-menu-option-download-" + i)
         assert(pay_option_text == "Pay")
         assert(send_option_text == "Send")
-        // assert(print_option_text == "Print")
         assert(download_option_text == "Download")
     }
 }

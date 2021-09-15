@@ -35,7 +35,6 @@
     "mssql": "^6.3.1",
     "node-base64-image": "^2.0.3",
     "node-fetch": "^2.6.1",
-    "parallel-cucumber": "^1.1.0",
     "shelljs": "^0.8.4",
     "testcafe": "^1.10.1",
     "testcafe-reporter-allure": "^1.0.5",
