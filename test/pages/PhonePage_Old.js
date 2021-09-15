@@ -7,7 +7,7 @@ class PhonePage{
         this.phoneBtn = Selector('[data-cy=dock-app-tile-comms-phone]');
         this.searchBtn = Selector('[data-cy=button-search]');
         this.rowSearchBtn = Selector('tbody[role="rowgroup"]');
-        this.arrowRightBtn = Selector('[aria-label="arrow_right"]');
+        this.arrowRightBtn = Selector('[data-cy=collapse-button]');
         this.clearSearch = Selector('[aria-label="Clear"]');
         this.filterBtn = Selector('button').withText('Filter');
         this.cancelBtn = Selector('[data-cy=cancel-button]');
@@ -37,7 +37,7 @@ class PhonePage{
         this.backMainDialPadBtn = Selector('div[title="Back"]');
         this.addressBookBtn = Selector('div[title="Address Book"]');
         this.addressBookSearch = Selector('input[data-cy=search-input]');
-        this.feaScorpion = Selector('div').withText('George Featherman')
+        this.mehrScorpion = Selector('div').withText('Mehrdad Tetetesting')
         this.participants = Selector('span').withText('Participants');
         this.availabilityBtn = Selector('[aria-label="Set Your Availability"]');
         this.avaiToggleBtn = Selector('div[data-cy=component]');

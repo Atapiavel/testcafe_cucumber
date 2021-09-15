@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 10766000000
+              "duration": 14190000000
             }
           },
           {
@@ -23,11 +23,11 @@
             "line": 5,
             "name": "I am in Scorpion login page",
             "match": {
-              "location": "features/step_definition/common.spec.js:9"
+              "location": "features\\step_definition\\common.spec.js:9"
             },
             "result": {
               "status": "passed",
-              "duration": 742000000
+              "duration": 780000000
             }
           },
           {
@@ -36,11 +36,11 @@
             "line": 6,
             "name": "I enter \"mehrdad.tp@mailinator.com\" and \"Team123!\"",
             "match": {
-              "location": "features/step_definition/login.spec.js:6"
+              "location": "features\\step_definition\\login.spec.js:6"
             },
             "result": {
               "status": "passed",
-              "duration": 3905000000
+              "duration": 6488000000
             }
           },
           {
@@ -49,11 +49,11 @@
             "line": 7,
             "name": "I click on sign in button",
             "match": {
-              "location": "features/step_definition/login.spec.js:10"
+              "location": "features\\step_definition\\login.spec.js:10"
             },
             "result": {
               "status": "passed",
-              "duration": 1713000000
+              "duration": 1377000000
             }
           },
           {
@@ -62,11 +62,11 @@
             "line": 8,
             "name": "I wait for \"2\" seconds",
             "match": {
-              "location": "features/step_definition/common.spec.js:17"
+              "location": "features\\step_definition\\common.spec.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 2015000000
+              "duration": 2014000000
             }
           },
           {
@@ -75,11 +75,11 @@
             "line": 10,
             "name": "I wait for \"10\" seconds",
             "match": {
-              "location": "features/step_definition/common.spec.js:17"
+              "location": "features\\step_definition\\common.spec.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 10008000000
+              "duration": 10016000000
             }
           },
           {
@@ -88,11 +88,11 @@
             "line": 11,
             "name": "I am in Scorpion \"messenger\" page",
             "match": {
-              "location": "features/step_definition/common.spec.js:13"
+              "location": "features\\step_definition\\common.spec.js:13"
             },
             "result": {
               "status": "passed",
-              "duration": 532000000
+              "duration": 1819000000
             }
           },
           {
@@ -101,11 +101,11 @@
             "line": 13,
             "name": "I maximize the window",
             "match": {
-              "location": "features/step_definition/common.spec.js:44"
+              "location": "features\\step_definition\\common.spec.js:44"
             },
             "result": {
               "status": "passed",
-              "duration": 3000000000
+              "duration": 3585000000
             }
           },
           {
@@ -114,11 +114,11 @@
             "line": 14,
             "name": "I wait for \"30\" seconds",
             "match": {
-              "location": "features/step_definition/common.spec.js:17"
+              "location": "features\\step_definition\\common.spec.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 30007000000
+              "duration": 30024000000
             }
           },
           {
@@ -127,11 +127,11 @@
             "line": 15,
             "name": "I click on Search button from messenger page",
             "match": {
-              "location": "features/step_definition/comms/messenger.spec.js:10"
+              "location": "features\\step_definition\\comms\\messenger.spec.js:10"
             },
             "result": {
               "status": "passed",
-              "duration": 617000000
+              "duration": 715000000
             }
           },
           {
@@ -140,11 +140,11 @@
             "line": 16,
             "name": "I click on Files button",
             "match": {
-              "location": "features/step_definition/comms/messenger.spec.js:29"
+              "location": "features\\step_definition\\comms\\messenger.spec.js:29"
             },
             "result": {
               "status": "passed",
-              "duration": 548000000
+              "duration": 1024000000
             }
           },
           {
@@ -153,11 +153,11 @@
             "line": 17,
             "name": "I click on Groups button",
             "match": {
-              "location": "features/step_definition/comms/messenger.spec.js:14"
+              "location": "features\\step_definition\\comms\\messenger.spec.js:14"
             },
             "result": {
               "status": "passed",
-              "duration": 1413000000
+              "duration": 1362000000
             }
           },
           {
@@ -166,11 +166,11 @@
             "line": 18,
             "name": "I click on People button",
             "match": {
-              "location": "features/step_definition/comms/messenger.spec.js:19"
+              "location": "features\\step_definition\\comms\\messenger.spec.js:19"
             },
             "result": {
               "status": "passed",
-              "duration": 1343000000
+              "duration": 1368000000
             }
           },
           {
@@ -179,11 +179,11 @@
             "line": 19,
             "name": "I click on Messages button",
             "match": {
-              "location": "features/step_definition/comms/messenger.spec.js:24"
+              "location": "features\\step_definition\\comms\\messenger.spec.js:24"
             },
             "result": {
               "status": "passed",
-              "duration": 1412000000
+              "duration": 1336000000
             }
           },
           {
@@ -192,11 +192,11 @@
             "line": 20,
             "name": "I wait for \"2\" seconds",
             "match": {
-              "location": "features/step_definition/common.spec.js:17"
+              "location": "features\\step_definition\\common.spec.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 2009000000
+              "duration": 2018000000
             }
           },
           {
@@ -205,11 +205,11 @@
             "line": 21,
             "name": "I click on Aaron McFly button",
             "match": {
-              "location": "features/step_definition/comms/messenger.spec.js:33"
+              "location": "features\\step_definition\\comms\\messenger.spec.js:33"
             },
             "result": {
               "status": "passed",
-              "duration": 20713000000
+              "duration": 22828000000
             }
           },
           {
@@ -218,11 +218,11 @@
             "line": 22,
             "name": "I wait for \"10\" seconds",
             "match": {
-              "location": "features/step_definition/common.spec.js:17"
+              "location": "features\\step_definition\\common.spec.js:17"
             },
             "result": {
               "status": "passed",
-              "duration": 10122000000
+              "duration": 10010000000
             }
           },
           {
@@ -231,11 +231,11 @@
             "line": 25,
             "name": "I enter a \"Hey Aaron, what's up?\" into the message field",
             "match": {
-              "location": "features/step_definition/comms/messenger.spec.js:50"
+              "location": "features\\step_definition\\comms\\messenger.spec.js:50"
             },
             "result": {
               "status": "passed",
-              "duration": 3484000000
+              "duration": 2937000000
             }
           },
           {
@@ -244,11 +244,11 @@
             "line": 26,
             "name": "I click on Send Message button",
             "match": {
-              "location": "features/step_definition/comms/messenger.spec.js:58"
+              "location": "features\\step_definition\\comms\\messenger.spec.js:58"
             },
             "result": {
               "status": "passed",
-              "duration": 497000000
+              "duration": 383000000
             }
           },
           {
@@ -257,11 +257,11 @@
             "line": 27,
             "name": "I click on settings button",
             "match": {
-              "location": "features/step_definition/common.spec.js:21"
+              "location": "features\\step_definition\\common.spec.js:21"
             },
             "result": {
               "status": "passed",
-              "duration": 1483000000
+              "duration": 541000000
             }
           },
           {
@@ -270,11 +270,11 @@
             "line": 28,
             "name": "I sign out Scorpion",
             "match": {
-              "location": "features/step_definition/common.spec.js:29"
+              "location": "features\\step_definition\\common.spec.js:29"
             },
             "result": {
               "status": "passed",
-              "duration": 3008000000
+              "duration": 2900000000
             }
           },
           {
@@ -312,6 +312,6 @@
     "keyword": "Feature",
     "name": "Messenger",
     "tags": [],
-    "uri": "features/comms/messenger.feature"
+    "uri": "features\\comms\\messenger.feature"
   }
 ]

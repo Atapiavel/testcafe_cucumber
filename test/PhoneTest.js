@@ -67,8 +67,8 @@ test('Phone page Test', async t =>{
     
     .click(phonepage.addressBookBtn)
     .wait(2000)
-    .typeText(phonepage.addressBookSearch, "Fea")
-    .click(phonepage.feaScorpion)
+    .typeText(phonepage.addressBookSearch, "Mehrdad")
+    .click(phonepage.mehrScorpion)
 
     .click(phonepage.sidePanelBtn)
     .click(phonepage.backMainDialPadBtn)
