@@ -17,7 +17,7 @@ function RowSearchBtn() {
 }
 
 function ArrowRightBtn() {
-    return select('[aria-label="arrow_right"]')
+    return select('[data-cy=collapse-button]')
 }
 
 function ClearSearch() {
