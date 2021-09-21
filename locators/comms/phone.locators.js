@@ -69,7 +69,7 @@ function MaxiBtn() {
 }
 
 function SidePan() {
-    return select('scorpion-dialer-button[svgtitle="Call List"]')
+    return select('[title="Call List"]')
 }
 
 function BackToDialPadBtn() {
@@ -83,8 +83,8 @@ function AddressBookBtn() {
 function AddressBookSearch() {
     return select('input[data-cy=search-input]')
 }
-function FeaScorpion() {
-    return select('div').withText('Mehrdad Tetesting')
+function MehrScorpion() {
+    return select('div').withText('Mehrdad Tetetesting')
 }
 function ExitBtn() {
     return select('[aria-label="exit"]')
@@ -127,7 +127,7 @@ module.exports = {
     BackToDialPadBtn: BackToDialPadBtn,
     AddressBookBtn: AddressBookBtn,
     AddressBookSearch: AddressBookSearch,
-    FeaScorpion: FeaScorpion,
+    MehrScorpion: MehrScorpion,
     ExitBtn: ExitBtn,
     EndCallMinBtn: EndCallMinBtn,
     DragBtn: DragBtn,
