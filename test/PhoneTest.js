@@ -27,7 +27,7 @@ test('Phone page Test', async t =>{
     // .click(loginpage.signInBtn)
     // .wait(3000)
     .maximizeWindow()
-    .wait(3000)
+    .wait(10000)
     .click(phonepage.phoneBtn)    
     // .expect(getURL()).contains('phone')
     .click(phonepage.searchBtn)
