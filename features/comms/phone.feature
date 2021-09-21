@@ -40,7 +40,7 @@ Feature: Phone
         And I click on the Back button
         And I click on the Address Book button
         When I wait for "2" seconds
-        And I enter in the Address Book Search "<FeaSearch>"
+        And I enter in the Address Book Search "<MehrSearch>"
         And I click on Fea Scorpion
         And I click on the Sidepanel button again
         And I click on the Back button again
@@ -54,5 +54,5 @@ Feature: Phone
         And I sign out Scorpion
 
         Examples:
-            | email                  | password   | phoneNr    | phoneNr2   | FeaSearch |
-            | commcenter@scorpion.co | Comms1234! | 8182345566 | 4157979369 | Fea       |
+            | email                  | password   | phoneNr    | phoneNr2   | MehrSearch |
+            | commcenter@scorpion.co | Comms1234! | 8182345566 | 4157979369 | Mehrdad       |
